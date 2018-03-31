@@ -1,0 +1,14 @@
+.grid {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    height: inherit;
+
+    &-even {
+        justify-content: space-evenly;
+    }
+
+    .grid-item {}
+
+}

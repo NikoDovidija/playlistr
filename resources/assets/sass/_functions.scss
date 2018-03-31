@@ -1,0 +1,71 @@
+$breakpoints: ( "sm": $sm, "md": $md, "lg": $lg, "xl": $xl, ) !default;
+$expressions: ( "screen": "screen", ) !default;
+$units: ( "px": 1, "em": 0.01, "rem": 0.1, "": 0, ) !default;
+
+@function get-operator($expression) {
+    @each $operator in ('>=', '>', '<=', '<') {
+        @if str-index($expression, $operator) {
+            @return $operator;
+        }
+    }
+}
+
+@function get-prefix($operator) {
+    @return if(index(('<', '<='), $operator), 'max', 'min');
+}
+
+@function get-value($expression, $operator) {
+    $operator-index: str-index($expression, $operator);
+    $value: str-slice($expression, $operator-index + str-length($operator));
+    @if map-has-key($breakpoints, $value) {
+        $value: map-get($breakpoints, $value);
+    }
+    @else {
+        $value: to-number($value);
+    }
+    $interval: map-get($units, unit($value));
+    @if $operator=='>' {
+        $value: $value + $interval;
+    }
+    @else if $operator=='<' {
+        $value: $value - $interval;
+    }
+    @return $value;
+}
+
+@function parse($expression) {
+    @if map-has-key($map: $expressions, $key: $expression) {
+        @return map-get($map: $expressions, $key: $expression);
+    }
+    $operator: get-operator($expression);
+    $prefix: get-prefix($operator);
+    $value: get-value($expression, $operator);
+    @return "(#{$prefix}-width: #{$value})";
+}
+
+@function split($list, $start: 1, $end: length($list)) {
+    @if length($list) < 1 or $start > $end {
+      @return ();
+    }
+  
+    $result: ();
+  
+    @for $i from $start through $end {
+      $result: append($result, nth($list, $i));
+    }
+  
+    @return $result;
+}
+
+@mixin media($args...) {
+    @if (length($args) == 0) {
+        @content;
+    }
+    @else if (length($args) > 0) {
+        @media #{unquote(parse(nth($args, 1)))} {
+            @include media(split($args, 2)...) {
+                @content;
+            }
+        }
+    }
+}

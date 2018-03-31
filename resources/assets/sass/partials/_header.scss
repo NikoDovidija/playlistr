@@ -1,0 +1,104 @@
+header {
+    background: $orange;
+    color: white;
+    padding: $container-padding;
+    height: $header-height;
+    text-align: center;
+    box-shadow: 0px 2px 2px $gray;
+
+    .grid {
+        align-items: flex-end;
+    }
+
+    .logo {
+        font-size: 30px;
+        font-weight: bold;
+        margin-left: 42px;
+        position: relative;
+
+        &:before {
+            content: "";
+            background: url("/images/pick.svg") no-repeat;
+            height: 50px;
+            width: 42px;
+            display: block;
+            position: absolute;
+            left: -42px;
+            z-index: 100;
+        }
+    }
+    .nav {
+        background: $orange;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        .nav-item {
+            position: relative;
+            padding: 8px 12px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+
+            @include media("screen", ">=md") {
+                display: inline-block;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    left: 0;
+                    bottom: 0;
+                    background-color: $white;
+                    visibility: hidden;
+                    transform: scale(0);
+                    transition: all 150ms;
+                }
+            }
+
+            &:hover {
+                &:after {
+                    visibility: visible;
+                    transform: scale(1);
+                }
+            }
+        }
+
+        &.collapse {
+            display: none;
+
+            &.active {
+                display: block;
+
+                @include media("screen", "<md") {
+                    position: fixed;
+                    top: $header-height;
+                    left: 0;
+                    right: 0;
+                }
+            }
+
+            @include media("screen", ">=md") {
+                display: block;
+            }
+        }
+
+        &-toggle {
+            border: 2px solid $white;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 4px;
+
+            @include media("screen", ">=md") {
+                display: none;
+            }
+        }
+    }
+}
