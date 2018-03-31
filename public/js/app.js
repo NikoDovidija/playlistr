@@ -13863,21 +13863,33 @@ module.exports = __webpack_require__(43);
 
 /***/ }),
 /* 12 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_player_Player_vue__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_player_Player_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_player_Player_vue__);
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
 
 __webpack_require__(13);
 
 window.Vue = __webpack_require__(36);
 
+
+
+Vue.component("player-component", __WEBPACK_IMPORTED_MODULE_0__components_player_Player_vue___default.a);
+
+// TODO make serverside rendering of components
+
+var app = new Vue({
+  el: "#app"
+});
+
+// will remove and make same logic as player
 __webpack_require__(51);
 __webpack_require__(67);
+
+app.$refs.player.setSong("Song 2");
 
 /***/ }),
 /* 13 */
@@ -47615,6 +47627,199 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-0a153156", module.exports)
+  }
+}
+
+/***/ }),
+/* 71 */,
+/* 72 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(40)
+/* script */
+var __vue_script__ = __webpack_require__(73)
+/* template */
+var __vue_template__ = __webpack_require__(74)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\player\\Player.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-24776c95", Component.options)
+  } else {
+    hotAPI.reload("data-v-24776c95", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 73 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            id: "Song-id-1",
+            isPlaying: false,
+            duration: 180,
+            playtime: 0,
+            playtimeRelative: 0
+        };
+    },
+
+    watch: {
+        "playtime": function playtime(val, old) {
+            console.log(val, old);
+        }
+    },
+    created: function created() {
+        var self = this;
+        setInterval(function () {
+            self.tickPlaytime();
+        }, 200);
+    },
+
+    methods: {
+        setSong: function setSong(id) {
+            console.log("id set: ", id);
+            this.id = id;
+        },
+        tickPlaytime: function tickPlaytime() {
+            this.playtime = this.playtime + 0.2;
+            this.playtimeRelative = this.playtime / this.duration;
+        }
+    }
+});
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "player", attrs: { id: "player" } }, [
+    _vm._v("\n    " + _vm._s(_vm.id) + "\n    "),
+    _c("div", { staticClass: "playtime" }, [
+      _c("div", { staticClass: "bar" }),
+      _vm._v(" "),
+      _c("div", {
+        staticClass: "bar current",
+        style: { width: _vm.playtimeRelative * 100 + "%" }
+      }),
+      _vm._v(" "),
+      _c("div", {
+        staticClass: "bar-cursor",
+        style: { right: (1 - _vm.playtimeRelative) * 100 + "%" }
+      })
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "controls" }, [
+      _c(
+        "span",
+        {
+          staticClass: "control",
+          class: { hide: _vm.isPlaying },
+          on: {
+            click: function($event) {
+              _vm.isPlaying = !_vm.isPlaying
+            }
+          }
+        },
+        [_c("i", { staticClass: "material-icons" }, [_vm._v("play_arrow")])]
+      ),
+      _vm._v(" "),
+      _c(
+        "span",
+        {
+          staticClass: "control",
+          class: { hide: !_vm.isPlaying },
+          on: {
+            click: function($event) {
+              _vm.isPlaying = !_vm.isPlaying
+            }
+          }
+        },
+        [_c("i", { staticClass: "material-icons" }, [_vm._v("pause")])]
+      ),
+      _vm._v(" "),
+      _vm._m(0)
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "control" }, [
+      _c("i", { staticClass: "material-icons" }, [_vm._v("skip_next")])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-24776c95", module.exports)
   }
 }
 

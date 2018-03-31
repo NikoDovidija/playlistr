@@ -1,13 +1,23 @@
-
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+ 
 
 require('./bootstrap');
 
 window.Vue = require('vue');
 
+import Player from "./components/player/Player.vue";
+
+Vue.component("player-component", Player);
+
+// TODO make serverside rendering of components
+
+const app = new Vue({
+    el: "#app",
+})
+
+// will remove and make same logic as player
 require("./partials/header");
 require("./partials/footer");
+
+
+
+app.$refs.player.setSong("Song 2");
