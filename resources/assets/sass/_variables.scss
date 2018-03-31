@@ -1,12 +1,22 @@
+// Colors
+$white: #fffafa;
+$black: #1b1b1b;
+$blue: #4484ce;
+$gray: #d9d9d9;
+$yellow: #f9cf00;
+$orange: #f19f4d;
 
-// Body
-$body-bg: #f5f8fa;
-// Color scheme
-$blue: "#4484ce";
-$gray: "#d9d9d9";
-$yellow: "#f9cf00";
-$orange: "#f19f4d";
 // Typography
-$font-family-sans-serif: "Raleway", sans-serif;
-$font-size-base: 0.9rem;
-$line-height-base: 1.6;
+$main-font-family: "Roboto", sans-serif;
+$main-font-size: 0.9rem;
+$main-line-height: 1.6;
+
+// Layout settings
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+$width-limit: $lg;
+$container-padding: 10px 20px;
+$header-height: 68px;
