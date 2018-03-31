@@ -14,18 +14,19 @@
     
     </head>
     <body>
+        <div id="app">
+            <header-component></header-component>
 
-        <header-component></header-component>
-
-
-        <div class="body-content">
-            <div class="width-limiter">
-                @yield("content")
+            <div class="body-content">
+                <div class="width-limiter">
+                    @yield("content")
+                </div>
             </div>
+
+            <player-component ref="player"></player-component>
+
+            <footer-component></footer-component>
         </div>
-
-        <footer-component></footer-component>
-
     <script src="{{ asset('js/app.js')}}"></script>
     </body>
 </html>
