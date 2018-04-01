@@ -227,7 +227,7 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 100px;
+  height: auto;
   padding: 10px 20px;
   z-index: 100;
 }
@@ -283,6 +283,12 @@ footer {
           transition-timing-function: linear;
   -webkit-transition-duration: 50ms;
           transition-duration: 50ms;
+}
+
+.playlist .details .artwork {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .grid {

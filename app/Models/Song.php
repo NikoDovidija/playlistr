@@ -8,7 +8,7 @@ class Song extends Model
 {
     protected $table = "songs";
     protected $primaryKey = "song_id";
-    protected $fillable = ["playlist_id", "name", "artist", "album", "duration", "playcount", "artwork"];
+    protected $fillable = ["playlist_id", "video_id", "name", "artist", "album", "duration", "playcount", "artwork"];
 
     public function playlist() {
         return $this->belongsTo("App\Models\Playlist", "playlist_id");

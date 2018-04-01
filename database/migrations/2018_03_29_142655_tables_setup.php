@@ -30,9 +30,10 @@ class TablesSetup extends Migration {
             $this->configure($table);    
             $table->increments("song_id");
             $table->integer("playlist_id");
-            $table->char("name", 255);
-            $table->char("artist", 255)->nullable();
-            $table->char("album", 255)->nullable();
+            $table->string("video_id");
+            $table->string("name");
+            $table->string("artist")->nullable();
+            $table->string("album", 255)->nullable();
             $table->string("artwork")->nullable();
             $table->integer("duration")->nullable();
             $table->integer("playcount")->default(0);
