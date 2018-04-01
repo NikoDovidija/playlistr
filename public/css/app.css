@@ -281,8 +281,8 @@ footer {
   transition-property: right;
   -webkit-transition-timing-function: linear;
           transition-timing-function: linear;
-  -webkit-transition-duration: 100ms;
-          transition-duration: 100ms;
+  -webkit-transition-duration: 50ms;
+          transition-duration: 50ms;
 }
 
 .grid {
