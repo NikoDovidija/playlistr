@@ -13967,7 +13967,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(13);
-module.exports = __webpack_require__(54);
+module.exports = __webpack_require__(52);
 
 
 /***/ }),
@@ -13978,6 +13978,12 @@ module.exports = __webpack_require__(54);
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_player_Player_vue__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_player_Player_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_player_Player_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_header_Header_vue__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_header_Header_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_header_Header_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_footer_Footer_vue__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_footer_Footer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_footer_Footer_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_playlist_Playlist_vue__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_playlist_Playlist_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_playlist_Playlist_vue__);
 
 
 __webpack_require__(14);
@@ -13986,7 +13992,13 @@ window.Vue = __webpack_require__(37);
 
 
 
+
+
+
+Vue.component("header-component", __WEBPACK_IMPORTED_MODULE_1__components_header_Header_vue___default.a);
+Vue.component("footer-component", __WEBPACK_IMPORTED_MODULE_2__components_footer_Footer_vue___default.a);
 Vue.component("player-component", __WEBPACK_IMPORTED_MODULE_0__components_player_Player_vue___default.a);
+Vue.component("playlist-component", __WEBPACK_IMPORTED_MODULE_3__components_playlist_Playlist_vue___default.a);
 
 // TODO make serverside rendering of components
 
@@ -13994,11 +14006,7 @@ var app = new Vue({
   el: "#app"
 });
 
-// will remove and make same logic as player
-__webpack_require__(43);
-__webpack_require__(50);
-
-app.$refs.player.setSong("Song 2");
+app.$refs.player.setSong("t8RFcWCWkcI");
 
 /***/ }),
 /* 14 */
@@ -47294,31 +47302,108 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             id: "Song-id-1",
             isPlaying: false,
+            pendingSong: false,
+            pendingPlay: false,
             duration: 180,
             playtime: 0,
-            playtimeRelative: 0
+            playtimeRelative: 0,
+            yt: {
+                player: null,
+                ready: false
+            }
         };
     },
-    created: function created() {},
+    created: function created() {
+        var self = this;
+
+        $(window).on("load", function () {
+            self.loadYtPlayer();
+        });
+    },
+    mounted: function mounted() {},
+
 
     methods: {
+        /* 
+        loads the video into Youtube player
+        */
         setSong: function setSong(id) {
-            console.log("id set: ", id);
-            this.id = id;
+            // if id is not passed keep the previous one
+            if (id != undefined) {
+                this.id = id;
+            }
+            // don't load the song if player isn't ready. Set it pending to set it when player is ready
+            if (!this.yt.ready) {
+                this.pendingSong = true;
+                return;
+            }
+            // if song doesn't have id dont do anything
+            if (this.id == undefined || this.id.length < 1) {
+                return;
+            }
+            // load video and stop it from autoplay
+            this.yt.player.loadVideoById(this.id);
+            this.yt.player.stopVideo();
         },
+
+
+        /* 
+        plays/resumes both players
+        */
         play: function play() {
+            // if player is not ready, set pendingPlay to start as soon as it's ready
+            if (!this.yt.ready) {
+                this.pendingPlay = true;
+                return;
+            }
+            // start playing video in Youtube player
+            this.yt.player.playVideo();
+            // sync player playtimes
+            this.yt.player.seekTo(this.playtime);
+            // set song duration to display proper playtime bar
+            this.setDuration();
             this.isPlaying = true;
+            // start counting playtime
             this.tickPlaytime();
         },
+
+
+        /* 
+        pauses both players
+        */
         pause: function pause() {
+            this.yt.player.pauseVideo();
             this.isPlaying = false;
         },
+
+
+        /* 
+        syncs local duration to Youtubes
+        */
+        setDuration: function setDuration() {
+            var self = this;
+            var durationTicker = setInterval(function () {
+                var duration = self.yt.player.getDuration();
+                console.log(duration);
+                if (duration != undefined && duration > 0) {
+                    self.duration = duration;
+                    clearInterval(durationTicker);
+                }
+            }, 100);
+        },
+
+
+        /* 
+        sets bar display
+        sets Youtube player playtime
+        */
         setPlaytime: function setPlaytime(event) {
             var bar = this.$refs.bar.getBoundingClientRect(),
                 start = bar.left,
@@ -47326,11 +47411,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 x = event.clientX - start;
             var relative = x / width;
             this.playtime = this.duration * relative;
+            this.playtimeRelative = this.playtime / this.duration;
+
+            if (this.isPlaying) {
+                this.yt.player.seekTo(this.playtime);
+            }
         },
+
+
+        /* 
+        stops and resets the player
+        */
         songCompleted: function songCompleted() {
             this.isPlaying = false;
             this.playtime = 0;
         },
+
+
+        /* 
+        updates playtime
+        updates playtime bar
+        */
         tickPlaytime: function tickPlaytime() {
             var self = this;
             if (!this.isPlaying) {
@@ -47338,12 +47439,51 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
             this.playtime = this.playtime + 0.2;
             this.playtimeRelative = this.playtime / this.duration;
+
             if (this.playtime >= this.duration) {
                 this.songCompleted();
             }
+
             setTimeout(function () {
                 self.tickPlaytime();
             }, 200);
+        },
+
+
+        /* 
+        after scripts are loaded, replace placeholder DOM with youtube iframe
+        call onYtPlayerReady when done 
+        */
+        loadYtPlayer: function loadYtPlayer() {
+            var self = this;
+            if (this.yt.ready) {
+                return;
+            }
+            this.yt.player = new YT.Player("ytplayer", {
+                events: {
+                    "onReady": function onReady() {
+                        self.onYtPlayerReady();
+                    }
+                }
+            });
+        },
+
+
+        /* 
+        load song to Youtube player if pending
+        start playing if play is pending
+        */
+        onYtPlayerReady: function onYtPlayerReady() {
+            console.log("player ready");
+            this.yt.ready = true;
+            if (this.pendingSong) {
+                this.pendingSong = false;
+                this.setSong();
+            }
+            if (this.pendingPlay) {
+                this.pendingPlay = false;
+                this.play();
+            }
         }
     }
 });
@@ -47357,7 +47497,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "player", attrs: { id: "player" } }, [
-    _vm._v("\n    " + _vm._s(_vm.id) + "\n    "),
+    _c("div", { staticClass: "hide", attrs: { id: "ytplayer" } }),
+    _vm._v(" "),
     _c("div", { staticClass: "playtime" }, [
       _c("div", {
         ref: "bar",
@@ -47423,30 +47564,14 @@ if (false) {
 
 /***/ }),
 /* 43 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_header_Header_vue__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_header_Header_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_header_Header_vue__);
-
-
-Vue.component("header-component", __WEBPACK_IMPORTED_MODULE_0__components_header_Header_vue___default.a);
-
-var header = new Vue({
-    el: 'header-component'
-});
-
-/***/ }),
-/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(45)
+var __vue_script__ = __webpack_require__(44)
 /* template */
-var __vue_template__ = __webpack_require__(49)
+var __vue_template__ = __webpack_require__(48)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -47485,12 +47610,12 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 45 */
+/* 44 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__header_Menu_vue__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__header_Menu_vue__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__header_Menu_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__header_Menu_vue__);
 //
 //
@@ -47516,15 +47641,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 46 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(47)
+var __vue_script__ = __webpack_require__(46)
 /* template */
-var __vue_template__ = __webpack_require__(48)
+var __vue_template__ = __webpack_require__(47)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -47563,7 +47688,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 47 */
+/* 46 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -47594,7 +47719,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 48 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -47643,7 +47768,7 @@ if (false) {
 }
 
 /***/ }),
-/* 49 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -47676,31 +47801,15 @@ if (false) {
 }
 
 /***/ }),
-/* 50 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_footer_Footer_vue__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_footer_Footer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_footer_Footer_vue__);
-
-
-Vue.component("footer-component", __WEBPACK_IMPORTED_MODULE_0__components_footer_Footer_vue___default.a);
-
-var footer = new Vue({
-    el: "footer-component"
-});
-
-/***/ }),
-/* 51 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(52)
+var __vue_script__ = __webpack_require__(50)
 /* template */
-var __vue_template__ = __webpack_require__(53)
+var __vue_template__ = __webpack_require__(51)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -47739,7 +47848,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 52 */
+/* 50 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -47772,7 +47881,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 53 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -47819,10 +47928,130 @@ if (false) {
 }
 
 /***/ }),
-/* 54 */
+/* 52 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(58)
+/* template */
+var __vue_template__ = __webpack_require__(59)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\playlist\\Playlist.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-400f5f16", Component.options)
+  } else {
+    hotAPI.reload("data-v-400f5f16", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 58 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ["playlists"],
+    data: function data() {
+        return {
+            playlists: []
+        };
+    }
+});
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "playlist-list" },
+    _vm._l(_vm.playlists, function(playlist) {
+      return _c("div", { staticClass: "playlist" }, [
+        _c("div", { staticClass: "details" }, [
+          _c("img", {
+            staticClass: "artwork",
+            attrs: { alt: "Artwork", src: playlist.artwork }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "name" }, [_vm._v(_vm._s(playlist.name))]),
+          _vm._v(" "),
+          _c("div", { staticClass: "description" }, [
+            _vm._v(_vm._s(playlist.description))
+          ])
+        ])
+      ])
+    })
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-400f5f16", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

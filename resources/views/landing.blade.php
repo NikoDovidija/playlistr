@@ -4,6 +4,6 @@
 
 @section("content")
 
-<div>This is main content</div>
+<playlist-component :playlists="{{ json_encode($playlists) }}"></playlist-component>
 
 @endsection

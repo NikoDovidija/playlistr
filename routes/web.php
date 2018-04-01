@@ -11,6 +11,11 @@
 |
 */
 
+use App\Http\Controllers\PlaylistController;
+
 Route::get('/', function () {
-    return view('landing');
+    return view('landing', [
+            "playlists" => app(PlaylistController::class)->index(),
+        ]
+    );
 });
