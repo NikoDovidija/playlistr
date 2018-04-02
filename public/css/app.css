@@ -98,9 +98,9 @@ header {
 }
 
 header .grid {
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header .logo {
@@ -112,8 +112,8 @@ header .logo {
 
 header .logo:before {
   content: "";
-  background: url("/images/pick.svg") no-repeat;
-  height: 50px;
+  background: url("/images/eighth-blue.svg") no-repeat;
+  height: 62px;
   width: 42px;
   display: block;
   position: absolute;

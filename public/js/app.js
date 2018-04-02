@@ -13967,7 +13967,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(13);
-module.exports = __webpack_require__(52);
+module.exports = __webpack_require__(55);
 
 
 /***/ }),
@@ -13982,7 +13982,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_header_Header_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_header_Header_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_footer_Footer_vue__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_footer_Footer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_footer_Footer_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_playlist_Playlist_vue__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_playlist_Playlist_vue__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_playlist_Playlist_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_playlist_Playlist_vue__);
 
 
@@ -47929,24 +47929,14 @@ if (false) {
 
 /***/ }),
 /* 52 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 53 */,
-/* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(58)
+var __vue_script__ = __webpack_require__(53)
 /* template */
-var __vue_template__ = __webpack_require__(59)
+var __vue_template__ = __webpack_require__(54)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -47985,7 +47975,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 58 */
+/* 53 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -48015,7 +48005,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 59 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -48052,6 +48042,12 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-400f5f16", module.exports)
   }
 }
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
