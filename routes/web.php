@@ -19,3 +19,9 @@ Route::get('/', function () {
         ]
     );
 });
+
+Route::get('/{id_playlist}', function ($id_playlist) {
+    return view("playlist", [
+        "playlist" => app(PlaylistController::class)->getPlaylist($id_playlist)->name,
+    ]);
+});

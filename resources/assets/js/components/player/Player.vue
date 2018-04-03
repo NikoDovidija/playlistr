@@ -2,7 +2,51 @@
     <div id="player" class="player">
 
         <div id="ytplayer" class="hide"></div>
+
+        <div class="navigation">
+            <div class="previous" v-on:click="goPrevious">
+                <span class="name">
+                    <i class="material-icons">chevron_left</i>
+                    {{previousSong().name}}
+                </span>
+            </div>
+            <div class="next" v-on:click="goNext">
+                <span class="name">
+                    {{nextSong().name}}
+                    <i class="material-icons">chevron_right</i>
+                </span>
+            </div>
+        </div>
+
+        <div class="controls">
+
+            <span class="control btn" 
+                    v-bind:class="{ hide: isPlaying }"
+                    v-on:click="play">
+                <i class="material-icons">play_arrow</i>
+            </span>
+            <span class="control btn" 
+                    v-bind:class="{ hide: !isPlaying }"
+                    v-on:click="pause">
+                <i class="material-icons">pause</i>
+            </span>
+            <span class="control btn">
+                <i class="material-icons">stop</i>
+            </span>
+        </div>
+
+        <div class="song-details">
+            <div class="credits">
+                {{currentSong.artist}} - {{currentSong.name}}  {{currentSong.album}}
+            </div>
+        </div>
+
         <div class="playtime">
+            <div class="playtime-display">
+                <span class="current">{{formattedPlaytime}}</span>
+                |
+                <span class="overall">{{formattedDuration}}</span>
+            </div>
             <div class="bar"
                 ref="bar"
                 @click="setPlaytime"></div>
@@ -13,22 +57,6 @@
                 v-bind:style="{ right: ((1 - playtimeRelative) * 100) + '%' }"
                 ></div>
         </div>
-        <div class="controls">
-
-            <span class="control" 
-                    v-bind:class="{ hide: isPlaying }"
-                    v-on:click="play">
-                <i class="material-icons">play_arrow</i>
-            </span>
-            <span class="control" 
-                    v-bind:class="{ hide: !isPlaying }"
-                    v-on:click="pause">
-                <i class="material-icons">pause</i>
-            </span>
-            <span class="control">
-                <i class="material-icons">skip_next</i>
-            </span>
-        </div>
     </div>
 </template>
 
@@ -38,12 +66,23 @@
         data () {
             return {
                 id: "Song-id-1",
+                song: 0,
+                playlist: {
+                    songs: [
+                        {
+                            name: "",
+                            artist: "",
+                            album: "",
+                        }
+                    ]
+                },
                 isPlaying: false,
                 pendingSong: false,
                 pendingPlay: false,
                 duration: 180,
                 playtime: 0,
                 playtimeRelative: 0,
+                ticker: null,
                 yt: {
                     player: null,
                     ready: false,
@@ -63,14 +102,29 @@
 
         },
 
+        computed: {
+            formattedPlaytime () {
+                return moment.duration(this.playtime, "seconds").format(this.playtime >= 3600 ? "hh:mm:ss" : "mm:ss", {trim: false});
+            },
+
+            formattedDuration () {
+                return moment.duration(this.duration, "seconds").format(this.duration >= 3600 ? "hh:mm:ss" : "mm:ss", {trim: false});
+            },
+
+            currentSong () {
+                return this.playlist.songs[this.song];
+            },
+
+        },
+
         methods: {
             /* 
             loads the video into Youtube player
             */
-            setSong (id) {
+            setSong (song) {
                 // if id is not passed keep the previous one
-                if (id != undefined) {
-                    this.id = id;
+                if (song != undefined) {
+                    this.id = song.video_id;
                 }
                 // don't load the song if player isn't ready. Set it pending to set it when player is ready
                 if (!this.yt.ready) {
@@ -84,6 +138,22 @@
                 // load video and stop it from autoplay
                 this.yt.player.loadVideoById(this.id);
                 this.yt.player.stopVideo();
+                // play song if its pending for play
+                if (this.pendingPlay) {
+                    this.play();
+                }
+            },
+
+            /*
+            sets the playlist and current song
+            */
+            setPlaylist (playlist, index) {
+                this.playlist = playlist;
+                if (index == undefined) {
+                    index = 0;
+                }
+                this.setSong(this.playlist.songs[index]);
+                this.song = index;
             },
 
             /* 
@@ -102,6 +172,7 @@
                 // set song duration to display proper playtime bar
                 this.setDuration();
                 this.isPlaying = true;
+                clearInterval(this.ticker);
                 // start counting playtime
                 this.tickPlaytime();
             },
@@ -115,13 +186,54 @@
             },
 
             /* 
+            returns the previous song
+            */
+            previousSong () {
+                // of overshoot to negative set index to last song
+                let index = this.song == 0 ? this.playlist.songs.length - 1 : this.song - 1;
+                return this.playlist.songs[index];
+            },
+
+            /* 
+            returns the next song
+            */
+            nextSong () {
+                // if overshoot over song array length, set index to 0
+                let index = this.song == this.playlist.songs.length - 1 ? 0 : this.song + 1;
+                return this.playlist.songs[index];
+            },
+
+            /* 
+            plays the previous song
+            */
+            goPrevious () {
+                let previous = this.previousSong();
+                this.song = this.playlist.songs.indexOf(previous);
+                //reset player
+                this.songCompleted();
+                // autoplay when song is set
+                this.pendingPlay = true;
+                this.setSong(previous);
+            },
+
+            /* 
+            plays the next song
+            */
+            goNext () {
+                let next = this.nextSong();
+                this.song = this.playlist.songs.indexOf(next);
+                this.songCompleted();
+                this.pendingPlay = true;
+                this.setSong(next);
+            },
+
+            /* 
             syncs local duration to Youtubes
             */
             setDuration () {
                 let self = this;
                 let durationTicker = setInterval(function () {
                     let duration = self.yt.player.getDuration();
-                    console.log(duration);
                     if (duration != undefined && duration > 0) {
                         self.duration = duration;
                         clearInterval(durationTicker);
@@ -134,14 +246,17 @@
             sets Youtube player playtime
             */
             setPlaytime (event) {
+                // get positions of progress bar and click
                 let bar = this.$refs.bar.getBoundingClientRect(),
                     start = bar.left,
                     width = bar.width,
                     x = event.clientX - start;
+                // calculate percentage where useh has clicked relative to progress bar
                 let relative = x / width;
                 this.playtime = this.duration * relative;
                 this.playtimeRelative = this.playtime / this.duration;
 
+                // set Youtube player to this time if it should be playing
                 if (this.isPlaying) {
                     this.yt.player.seekTo(this.playtime);
                 }
@@ -171,7 +286,7 @@
                     this.songCompleted();
                 }
 
-                setTimeout(function () {
+                this.ticker = setTimeout(function () {
                     self.tickPlaytime();
                 }, 200);
             },
@@ -197,7 +312,6 @@
             start playing if play is pending
             */
             onYtPlayerReady () {
-                console.log("player ready");
                 this.yt.ready = true;
                 if (this.pendingSong) {
                     this.pendingSong = false;

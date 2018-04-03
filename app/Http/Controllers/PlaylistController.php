@@ -13,15 +13,18 @@ class PlaylistController extends BaseController
         return Playlist::all();
     }
 
-    public function getById($id) {
+    public function getPlaylist($id) {
         $playlist = Playlist::find($id);
         $comments = $playlist->comments;
         foreach ($comments as $comment) {
             $responses = $comment->responses;
         }
         $songs = $playlist->songs;
+        return $playlist;
+    }
 
-        return response()->json($playlist);
+    public function getById($id) {
+        return response()->json($this->getPlaylist($id));
     }
 
 
