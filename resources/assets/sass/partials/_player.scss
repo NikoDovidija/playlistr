@@ -1,17 +1,47 @@
 #player {
     text-align: center;
     background: $blue;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: auto;//$player-height;
     padding: $container-padding;
-    z-index: 100;
+    color: $white;
+
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+
+        .previous, .next {
+            font-size: 18px;
+            position: relative;
+            cursor: pointer;
+
+            i {
+                position: relative;
+                bottom: -3px;
+            }
+            
+            &:after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                left: 0;
+                bottom: 0;
+                background-color: $white;
+            }
+        }
+    }
 
     .controls {
         color: $white;
         cursor: pointer;
+
+        .control {
+            background: $white;
+            border-radius: 100%;
+            color: $black;
+            width: 42px;
+            height: 42px;
+            font-size: 40px;
+        }
     }
 
     .playtime {
@@ -21,32 +51,38 @@
         margin: 10px auto;
         position: relative;
 
+        &-display {
+            position: absolute;
+            right: 0;
+            top: -10px;
+            text-align: right;
+        }
+
         .bar {
             position: absolute;
             border-radius: 4px;
             background: $gray;
             box-shadow: 0 0 2px $black;
             width: 100%;
-            height: 6px;
-            top: 9px;
+            height: 3px;
+            top: 10px;
             cursor: pointer;
 
             &.current {
-                top: 8px;
-                background: $orange;
-                box-shadow: 0 0 2px $yellow;
-                height: 8px;
+                top: 10px;
+                background: $color-comp-1;
+                height: 3px;
                 width: 76%;
             }
 
             &-cursor {
-                width: 14px;
-                height: 14px;
-                border-radius: 2px;
+                width: 8px;
+                height: 8px;
+                border-radius: 100%;
                 box-shadow: 0 0 1px $white;
                 background: $white;
                 position: absolute;
-                top: 5px;
+                top: 7px;
                 right: 24%;
                 cursor: pointer;
                 transition-property: right;

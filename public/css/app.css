@@ -18,8 +18,6 @@
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;
-  /* Preferred icon size */
   display: inline-block;
   line-height: 1;
   text-transform: none;
@@ -71,7 +69,6 @@ ul {
 }
 
 .body-content {
-  padding: 10px 20px;
   text-align: center;
 }
 
@@ -79,22 +76,36 @@ ul {
   height: 100%;
   width: 100%;
   max-width: 992px;
-  display: inline-block;
   text-align: left;
+  margin: 0 auto;
 }
 
 .hide {
-  display: none;
+  display: none !important;
+}
+
+.btn {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
 }
 
 header {
-  background: #f19f4d;
+  background: #E95620;
   color: white;
   padding: 10px 20px;
   height: 68px;
   text-align: center;
-  -webkit-box-shadow: 0px 2px 2px #d9d9d9;
-          box-shadow: 0px 2px 2px #d9d9d9;
+  -webkit-box-shadow: 0px 1px 2px #1b1b1b;
+          box-shadow: 0px 1px 2px #1b1b1b;
+  z-index: 1000;
 }
 
 header .grid {
@@ -122,7 +133,7 @@ header .logo:before {
 }
 
 header .nav {
-  background: #f19f4d;
+  background: #E95620;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -164,20 +175,24 @@ header .nav .nav-item:hover:after {
           transform: scale(1);
 }
 
-header .nav.collapse {
-  display: none;
-}
-
-header .nav.collapse.active {
-  display: block;
-}
-
 @media screen and (max-width: 767px) {
-  header .nav.collapse.active {
+  header .nav.collapse {
+    -webkit-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+    background: #F77849;
     position: fixed;
     top: 68px;
     left: 0;
     right: 0;
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+  }
+
+  header .nav.collapse.active {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
   }
 }
 
@@ -215,7 +230,6 @@ footer {
   text-align: center;
   position: relative;
   margin-top: auto;
-  margin-bottom: 100px;
   background: #d9d9d9;
   padding: 10px 20px;
 }
@@ -223,18 +237,55 @@ footer {
 #player {
   text-align: center;
   background: #4484ce;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: auto;
   padding: 10px 20px;
-  z-index: 100;
+  color: #fffafa;
+}
+
+#player .navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#player .navigation .previous,
+#player .navigation .next {
+  font-size: 18px;
+  position: relative;
+  cursor: pointer;
+}
+
+#player .navigation .previous i,
+#player .navigation .next i {
+  position: relative;
+  bottom: -3px;
+}
+
+#player .navigation .previous:after,
+#player .navigation .next:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  bottom: 0;
+  background-color: #fffafa;
 }
 
 #player .controls {
   color: #fffafa;
   cursor: pointer;
+}
+
+#player .controls .control {
+  background: #fffafa;
+  border-radius: 100%;
+  color: #1b1b1b;
+  width: 42px;
+  height: 42px;
+  font-size: 40px;
 }
 
 #player .playtime {
@@ -245,6 +296,13 @@ footer {
   position: relative;
 }
 
+#player .playtime-display {
+  position: absolute;
+  right: 0;
+  top: -10px;
+  text-align: right;
+}
+
 #player .playtime .bar {
   position: absolute;
   border-radius: 4px;
@@ -252,29 +310,27 @@ footer {
   -webkit-box-shadow: 0 0 2px #1b1b1b;
           box-shadow: 0 0 2px #1b1b1b;
   width: 100%;
-  height: 6px;
-  top: 9px;
+  height: 3px;
+  top: 10px;
   cursor: pointer;
 }
 
 #player .playtime .bar.current {
-  top: 8px;
-  background: #f19f4d;
-  -webkit-box-shadow: 0 0 2px #f9cf00;
-          box-shadow: 0 0 2px #f9cf00;
-  height: 8px;
+  top: 10px;
+  background: #56BF90;
+  height: 3px;
   width: 76%;
 }
 
 #player .playtime .bar-cursor {
-  width: 14px;
-  height: 14px;
-  border-radius: 2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
   -webkit-box-shadow: 0 0 1px #fffafa;
           box-shadow: 0 0 1px #fffafa;
   background: #fffafa;
   position: absolute;
-  top: 5px;
+  top: 7px;
   right: 24%;
   cursor: pointer;
   -webkit-transition-property: right;
@@ -285,10 +341,113 @@ footer {
           transition-duration: 50ms;
 }
 
-.playlist .details .artwork {
+.playlist-item .details .artwork {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.playlist .heading {
+  position: relative;
+  min-height: 500px;
+  background-position: center;
+  background-size: cover;
+}
+
+.playlist .heading .artwork {
+  width: 100%;
+  display: block;
+}
+
+.playlist .heading .details {
+  background: #E95620;
+  color: #fffafa;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  padding: 12px;
+  border-radius: 100px;
+  -webkit-box-shadow: 0 1px 4px #1b1b1b;
+          box-shadow: 0 1px 4px #1b1b1b;
+}
+
+.playlist .heading .details .play {
+  padding: 10px;
+  background: #fffafa;
+  color: #1b1b1b;
+  font-size: 42px;
+  border-radius: 100%;
+}
+
+.playlist .heading .details .item {
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  white-space: nowrap;
+}
+
+.playlist .heading .details .item:nth-child(3) {
+  border-left: 1px solid #FF9973;
+  border-right: 1px solid #FF9973;
+}
+
+.playlist .heading .details .item.song-list-container {
+  position: relative;
+}
+
+.playlist .heading .details .item.song-list-container .song-list.full {
+  border-radius: 10px;
+  margin-left: -20px;
+  background: #E95620;
+  position: absolute;
+  padding: 0 20px 20px;
+  top: 0;
+  max-height: 0;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  visibility: hidden;
+}
+
+.playlist .heading .details .item.song-list-container .song-list .song-name {
+  white-space: nowrap;
+}
+
+.playlist .heading .details .item.song-list-container:hover .song-list.short {
+  visibility: hidden;
+}
+
+.playlist .heading .details .item.song-list-container:hover .song-list.full {
+  max-height: 5000px;
+  visibility: visible;
+}
+
+.playlist-description {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 70%;
+  text-align: center;
+  padding: 16px;
+  color: #fffafa;
+  font-size: 18px;
+  background: rgba(33, 33, 33, 0.33);
 }
 
 .grid {

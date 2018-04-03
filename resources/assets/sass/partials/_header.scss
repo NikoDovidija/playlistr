@@ -1,10 +1,11 @@
 header {
-    background: $orange;
+    background: $color-primary;
     color: white;
     padding: $container-padding;
     height: $header-height;
     text-align: center;
-    box-shadow: 0px 2px 2px $gray;
+    box-shadow: 0px 1px 2px $black;
+    z-index: 1000;
 
     .grid {
         align-items: center;
@@ -28,7 +29,7 @@ header {
         }
     }
     .nav {
-        background: $orange;
+        background: $color-primary;
         list-style: none;
         margin: 0;
         padding: 0;
@@ -67,16 +68,19 @@ header {
         }
 
         &.collapse {
-            display: none;
+            @include media("screen", "<md") {
+                
+                transition: all 200ms ease-in-out;
+                background: $color-primary-2;
+                position: fixed;
+                top: $header-height;
+                left: 0;
+                right: 0;
+                transform: scaleY(0);
+                transform-origin: top;
 
-            &.active {
-                display: block;
-
-                @include media("screen", "<md") {
-                    position: fixed;
-                    top: $header-height;
-                    left: 0;
-                    right: 0;
+                &.active {
+                    transform: scaleY(1);
                 }
             }
 

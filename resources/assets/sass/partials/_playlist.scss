@@ -1,4 +1,4 @@
-.playlist {
+.playlist-item {
 
     .details {
 
@@ -6,5 +6,113 @@
             width: 100%;
             object-fit: cover;
         }
+    }
+}
+
+.playlist {
+
+    .heading {
+        position: relative;
+        min-height: 500px;
+        background-position: center;
+        background-size: cover;
+
+        
+        .artwork {
+            width: 100%;
+            display: block;
+        }
+
+        .details {
+            background: $color-primary;
+            color: $white;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-flow: row;
+            padding: 12px;
+            border-radius: 100px;
+            box-shadow: 0 1px 4px $black;
+
+            .play {
+                padding: 10px;
+                background: $white;
+                color: $black;
+                font-size: 42px;
+                border-radius: 100%;
+            }
+
+            .item {
+                padding: 0 20px;
+                display: flex;
+                justify-content: center;
+                flex-flow: column;
+                white-space: nowrap;
+
+                &:nth-child(3) {
+                    border-left: 1px solid $color-primary-1;
+                    border-right: 1px solid $color-primary-1;
+                }
+
+                &.song-list-container {
+                    // border-left: 1px solid $white;
+                    position: relative;
+
+                    .song-list {
+                        
+
+                        &.full {
+                            border-radius: 10px;
+                            margin-left: -20px;
+                            background: $color-primary;
+                            position: absolute;
+                            padding: 0 20px 20px;
+                            top: 0;
+                            max-height: 0;
+                            transition: all 200ms ease-in-out;
+                            visibility: hidden;
+                        }
+
+                        .song-name {
+                            white-space: nowrap;
+                        }
+    
+                    
+                    }
+
+                    &:hover {
+                        
+                        .song-list {
+
+                            &.short {
+                                visibility: hidden;
+                            }
+
+                            &.full {
+                                max-height: 5000px;
+                                visibility: visible;
+                            }
+                        }
+                    }
+                }
+
+                
+
+            }
+        }
+    }
+
+    &-description {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 70%;
+        text-align: center;
+        padding: 16px;
+        color: $white;
+        font-size: 18px;
+        background: rgba(33, 33, 33, .33);
     }
 }
