@@ -3,14 +3,39 @@
 
         <div id="ytplayer" class="hide"></div>
 
-        <div class="navigation">
+        <!-- <div class="navigation">
+            
+
+        </div> -->
+
+        <div class="controls">
+
             <div class="previous" v-on:click="goPrevious">
                 <span class="name">
                     <i class="material-icons">chevron_left</i>
                     {{previousSong().name}}
                 </span>
+                <img class="artwork" v-bind:src="previousSong().artwork" alt="">
             </div>
+
+            <div class="control-container">
+                <span class="control btn play" 
+                        v-bind:class="{ hide: isPlaying }"
+                        v-on:click="play">
+                    <i class="material-icons">play_arrow</i>
+                </span>
+                <span class="control btn pause" 
+                        v-bind:class="{ hide: !isPlaying }"
+                        v-on:click="pause">
+                    <i class="material-icons">pause</i>
+                </span>
+                <span class="control btn stop">
+                    <i class="material-icons">stop</i>
+                </span>
+            </div>
+
             <div class="next" v-on:click="goNext">
+                <img class="artwork" v-bind:src="nextSong().artwork" alt="">
                 <span class="name">
                     {{nextSong().name}}
                     <i class="material-icons">chevron_right</i>
@@ -18,22 +43,6 @@
             </div>
         </div>
 
-        <div class="controls">
-
-            <span class="control btn" 
-                    v-bind:class="{ hide: isPlaying }"
-                    v-on:click="play">
-                <i class="material-icons">play_arrow</i>
-            </span>
-            <span class="control btn" 
-                    v-bind:class="{ hide: !isPlaying }"
-                    v-on:click="pause">
-                <i class="material-icons">pause</i>
-            </span>
-            <span class="control btn">
-                <i class="material-icons">stop</i>
-            </span>
-        </div>
 
         <div class="song-details">
             <div class="credits">
@@ -47,15 +56,14 @@
                 |
                 <span class="overall">{{formattedDuration}}</span>
             </div>
+            <div class="bar-container" @click="setPlaytime">
             <div class="bar"
-                ref="bar"
-                @click="setPlaytime"></div>
+                ref="bar"></div>
             <div class="bar current" 
-                v-bind:style="{ width: (playtimeRelative * 100) + '%', }"
-                @click="setPlaytime"></div>
+                v-bind:style="{ width: (playtimeRelative * 100) + '%', }"></div>
             <div class="bar-cursor" 
-                v-bind:style="{ right: ((1 - playtimeRelative) * 100) + '%' }"
-                ></div>
+                v-bind:style="{ right: ((1 - playtimeRelative) * 100) + '%' }"></div>
+                </div>
         </div>
     </div>
 </template>
@@ -117,6 +125,10 @@
 
         },
 
+        events: {
+
+        },
+
         methods: {
             /* 
             loads the video into Youtube player
@@ -148,6 +160,7 @@
             sets the playlist and current song
             */
             setPlaylist (playlist, index) {
+                console.log("setting playlist");
                 this.playlist = playlist;
                 if (index == undefined) {
                     index = 0;
@@ -211,8 +224,10 @@
                 this.song = this.playlist.songs.indexOf(previous);
                 //reset player
                 this.songCompleted();
-                // autoplay when song is set
-                this.pendingPlay = true;
+                // autoplay if already playing
+                if (this.isPlaying) {
+                    this.pendingPlay = true;
+                }
                 this.setSong(previous);
             },
 
@@ -223,7 +238,9 @@
                 let next = this.nextSong();
                 this.song = this.playlist.songs.indexOf(next);
                 this.songCompleted();
-                this.pendingPlay = true;
+                if (this.isPlaying) {
+                    this.pendingPlay = true;
+                }
                 this.setSong(next);
             },
 

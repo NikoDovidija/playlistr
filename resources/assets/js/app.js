@@ -9,14 +9,14 @@ window.Vue = require('vue');
 import Player from "./components/player/Player.vue";
 import Header from './components/header/Header.vue'
 import Footer from './components/footer/Footer.vue';
-import Playlists from "./components/playlist/Playlists.vue";
+//import Playlists from "./components/playlist/Playlists.vue";
 import Playlist from "./components/playlist/Playlist.vue";
 
 
 Vue.component("header-component", Header);
 Vue.component("footer-component", Footer);
 Vue.component("player-component", Player);
-Vue.component("playlists-component", Playlists);
+//Vue.component("playlists-component", Playlists);
 Vue.component("playlist-component", Playlist);
 
 // TODO make serverside rendering of components
@@ -46,7 +46,7 @@ Vue.mixin({
                 }
             }
             console.log(data);
-            app.$refs.player.setPlaylist(data, 2);
+            app.$refs.player.setPlaylist(data, 0);
         },
 
         /* 

@@ -2,33 +2,46 @@
   <div class="playlist">
 
       <div class="heading" v-bind:style="{ backgroundImage: 'url(' + artwork + ')'  }">
+       <div>
         <div class="details">
-            <div class="play btn">
-                <i class="material-icons">play_arrow</i>
+            
+            <div class="details-column">
+                <div class="play btn" v-on:click="playPlaylist">
+                    <i class="material-icons">play_arrow</i>
+                </div>
+                <div class="item">
+                    <div class="name">{{name}}</div>
+                    <div class="creator">by Jost Gombac</div>
+                </div>
             </div>
-            <div class="item">
-                <div class="name">{{name}}</div>
-                <div class="creator">by Jost Gombac</div>
-            </div>
-            <div class="item">
-                <div class="duration">{{fullDuration}}</div>
-            </div>
-            <div class="item song-list-container">
-                <div class="song-list short">
-                    <div class="song-name" v-for="song in shortSongList">
-                        {{song.name}}
+            
+            <div class="details-column">
+                <div class="item">
+                    <div class="duration">{{fullDuration}}</div>
+                </div>
+                <div class="item song-list-container">
+                    <div class="song-list" v-bind:class="{short: songs.length > 3}">
+                        <div class="song-name" v-for="(song, index) in shortSongList">
+                            {{ index + 1 }}. {{ song.name }}
+                        </div>
+                    </div>
+                    <div v-if="songs.length > 3">
+                        <div class="song-list full">
+                            <div class="song-name" v-for="(song, index) in songs">
+                                {{ index + 1 }}. {{song.name}}
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="song-list full">
-                    <div class="song-name" v-for="song in songs">
-                        {{song.name}}
-                    </div>
-                </div>
+            </div>
 
-            </div>
         </div>
-
-        <div class="playlist-description">{{description}}</div>
+    </div>
+<div class="playlist-description">
+        <div class="width-limiter">
+        {{description}}
+        </div>
+        </div>
       </div>
 
 
@@ -48,6 +61,10 @@
                 created_at: "",
                 updated_at: "",
             }
+        },
+
+        mounted () {
+            //this.$parent.$refs.player.setPlaylist(this.$data, 0);
         },
 
         computed: {
@@ -73,6 +90,11 @@
         },
 
         methods: {
+
+            playPlaylist () {
+                console.log(this.$data);
+                this.$emit('setPlaylist', this.$data);
+            }
 
         }
     }
