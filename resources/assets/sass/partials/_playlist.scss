@@ -16,6 +16,10 @@
         min-height: 500px;
         background-position: center;
         background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
 
         
         .artwork {
@@ -26,15 +30,19 @@
         .details {
             background: $color-primary;
             color: $white;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
             display: flex;
-            flex-flow: row;
+            flex-flow: row wrap;
             padding: 12px;
             border-radius: 100px;
-            box-shadow: 0 1px 4px $black;
+            box-shadow: 0 1px 4px -1px $black;
+            max-width: 100%;
+
+            .details-column {
+                flex: 1;
+                display: flex;
+                flex-flow: row;
+                justify-content: center;
+            }
 
             .play {
                 padding: 10px;
@@ -50,6 +58,7 @@
                 justify-content: center;
                 flex-flow: column;
                 white-space: nowrap;
+                text-align: left;
 
                 &:nth-child(3) {
                     border-left: 1px solid $color-primary-1;
@@ -64,12 +73,15 @@
                         
 
                         &.full {
-                            border-radius: 10px;
+                            border-radius: 4px;
+                            border-top-right-radius: 50px;
                             margin-left: -20px;
                             background: $color-primary;
                             position: absolute;
-                            padding: 0 20px 20px;
-                            top: 0;
+                            padding: 20px;
+                            top: -12px;
+                            left: 20px;
+                            right: -12px;
                             max-height: 0;
                             transition: all 200ms ease-in-out;
                             visibility: hidden;
@@ -105,14 +117,15 @@
     }
 
     &-description {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 70%;
         text-align: center;
         padding: 16px;
+        width: 100%;
         color: $white;
         font-size: 18px;
         background: rgba(33, 33, 33, .33);
+
+        .width-limiter {
+            text-align: center;
+        }
     }
 }

@@ -18,13 +18,13 @@
             <header-component></header-component>
 
             <div class="body-content">
-                <div class="width-limiter">
+                <div class="width-limiter--">
                     @yield("content")
                 </div>
             </div>
 
             
-            <player-component ref="player"></player-component>
+            <player-component ref="player" @event="set-playlist"></player-component>
 
             <footer-component></footer-component>
         </div>

@@ -236,35 +236,45 @@ footer {
 
 #player {
   text-align: center;
-  background: #4484ce;
+  background: #1b1b1b;
   padding: 10px 20px;
   color: #fffafa;
 }
 
-#player .navigation {
+#player .song-details {
+  font-size: 20px;
+  margin: 6px auto;
+}
+
+#player .controls {
+  color: #fffafa;
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-#player .navigation .previous,
-#player .navigation .next {
-  font-size: 18px;
+#player .controls .previous,
+#player .controls .next {
+  font-size: 16px;
   position: relative;
   cursor: pointer;
 }
 
-#player .navigation .previous i,
-#player .navigation .next i {
+#player .controls .previous i,
+#player .controls .next i {
   position: relative;
   bottom: -3px;
 }
 
-#player .navigation .previous:after,
-#player .navigation .next:after {
+#player .controls .previous:after,
+#player .controls .next:after {
   content: "";
   position: absolute;
   width: 100%;
@@ -274,33 +284,82 @@ footer {
   background-color: #fffafa;
 }
 
-#player .controls {
-  color: #fffafa;
-  cursor: pointer;
+#player .controls .previous .artwork,
+#player .controls .next .artwork {
+  width: 100px;
+  height: 100px;
+  -webkit-box-shadow: 0 0 3px -1px #1b1b1b;
+          box-shadow: 0 0 3px -1px #1b1b1b;
+  position: absolute;
+  bottom: 0;
+  display: none;
+}
+
+@media screen and (min-width: 769px) {
+  #player .controls .previous .artwork,
+  #player .controls .next .artwork {
+    display: block;
+  }
+}
+
+#player .controls .previous .artwork {
+  left: 100%;
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+}
+
+#player .controls .next .artwork {
+  right: 100%;
+  -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
+}
+
+#player .controls .control-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #player .controls .control {
-  background: #fffafa;
+  background: rgba(255, 255, 255, 0.33);
   border-radius: 100%;
   color: #1b1b1b;
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   font-size: 40px;
+  margin: 0 4px;
+}
+
+#player .controls .control.stop {
+  border-radius: 2px;
+  width: 32px;
+  height: 32px;
+}
+
+#player .controls .control.pause {
+  font-size: 38px;
 }
 
 #player .playtime {
   width: 100%;
   max-width: 420px;
-  height: 24px;
-  margin: 10px auto;
+  margin: 0 auto;
   position: relative;
 }
 
 #player .playtime-display {
-  position: absolute;
-  right: 0;
-  top: -10px;
   text-align: right;
+}
+
+#player .playtime .bar-container {
+  width: 100%;
+  height: 100%;
+  height: 18px;
+  position: relative;
+  cursor: pointer;
 }
 
 #player .playtime .bar {
@@ -311,12 +370,15 @@ footer {
           box-shadow: 0 0 2px #1b1b1b;
   width: 100%;
   height: 3px;
-  top: 10px;
-  cursor: pointer;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 #player .playtime .bar.current {
-  top: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   background: #56BF90;
   height: 3px;
   width: 76%;
@@ -326,19 +388,12 @@ footer {
   width: 8px;
   height: 8px;
   border-radius: 100%;
-  -webkit-box-shadow: 0 0 1px #fffafa;
-          box-shadow: 0 0 1px #fffafa;
   background: #fffafa;
   position: absolute;
-  top: 7px;
+  top: 50%;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
   right: 24%;
-  cursor: pointer;
-  -webkit-transition-property: right;
-  transition-property: right;
-  -webkit-transition-timing-function: linear;
-          transition-timing-function: linear;
-  -webkit-transition-duration: 50ms;
-          transition-duration: 50ms;
 }
 
 .playlist-item .details .artwork {
@@ -352,6 +407,19 @@ footer {
   min-height: 500px;
   background-position: center;
   background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
 }
 
 .playlist .heading .artwork {
@@ -362,11 +430,24 @@ footer {
 .playlist .heading .details {
   background: #E95620;
   color: #fffafa;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  padding: 12px;
+  border-radius: 100px;
+  -webkit-box-shadow: 0 1px 4px -1px #1b1b1b;
+          box-shadow: 0 1px 4px -1px #1b1b1b;
+  max-width: 100%;
+}
+
+.playlist .heading .details .details-column {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -374,10 +455,9 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-flow: row;
           flex-flow: row;
-  padding: 12px;
-  border-radius: 100px;
-  -webkit-box-shadow: 0 1px 4px #1b1b1b;
-          box-shadow: 0 1px 4px #1b1b1b;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .playlist .heading .details .play {
@@ -401,6 +481,7 @@ footer {
       -ms-flex-flow: column;
           flex-flow: column;
   white-space: nowrap;
+  text-align: left;
 }
 
 .playlist .heading .details .item:nth-child(3) {
@@ -413,12 +494,15 @@ footer {
 }
 
 .playlist .heading .details .item.song-list-container .song-list.full {
-  border-radius: 10px;
+  border-radius: 4px;
+  border-top-right-radius: 50px;
   margin-left: -20px;
   background: #E95620;
   position: absolute;
-  padding: 0 20px 20px;
-  top: 0;
+  padding: 20px;
+  top: -12px;
+  left: 20px;
+  right: -12px;
   max-height: 0;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
@@ -439,15 +523,16 @@ footer {
 }
 
 .playlist-description {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 70%;
   text-align: center;
   padding: 16px;
+  width: 100%;
   color: #fffafa;
   font-size: 18px;
   background: rgba(33, 33, 33, 0.33);
+}
+
+.playlist-description .width-limiter {
+  text-align: center;
 }
 
 .grid {
