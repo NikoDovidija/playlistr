@@ -1,107 +1,16 @@
 header {
+    height: 220px;
+    padding: 12px 20px;
     background: $orange;
     color: white;
-    padding: $container-padding;
-    height: $header-height;
-    text-align: center;
-    box-shadow: $shadow-box;
-    z-index: 1000;
+    display: table;
 
-    .grid {
-        align-items: center;
+    .btn {
+        margin-left: 8px;
     }
 
     .logo {
-        font-size: 30px;
-        font-weight: bold;
-        margin-left: 42px;
-        position: relative;
-        text-decoration: underline;
-        color: $white;
+        font-size: 24px;
 
-        &:before {
-            content: "";
-            background: url("/images/eighth-blue.svg") no-repeat;
-            height: 62px;
-            width: 42px;
-            display: block;
-            position: absolute;
-            left: -42px;
-            z-index: 100;
-        }
-    }
-    .nav {
-        background: $orange;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-
-        .nav-item {
-            position: relative;
-            padding: 8px 12px;
-            text-align: center;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-
-            @include media("screen", ">=md") {
-                display: inline-block;
-
-                &:after {
-                    content: "";
-                    position: absolute;
-                    width: 100%;
-                    height: 2px;
-                    left: 0;
-                    bottom: 0;
-                    background-color: $white;
-                    visibility: hidden;
-                    transform: scale(0);
-                    transition: all 150ms;
-                }
-            }
-
-            &:hover {
-                &:after {
-                    visibility: visible;
-                    transform: scale(1);
-                }
-            }
-        }
-
-        &.collapse {
-            @include media("screen", "<md") {
-                
-                //transition: all 200ms ease-in-out;
-                background: $orange-dark;
-                position: absolute;
-                top: $header-height;
-                left: 0;
-                right: 0;
-                transform: scaleY(0);
-                transform-origin: top;
-
-                &.active {
-                    transform: scaleY(1);
-                }
-            }
-
-            @include media("screen", ">=md") {
-                display: block;
-            }
-        }
-
-        &-toggle {
-            border: 2px solid $white;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 32px;
-            height: 32px;
-            margin: 4px;
-
-            @include media("screen", ">=md") {
-                display: none;
-            }
-        }
     }
 }

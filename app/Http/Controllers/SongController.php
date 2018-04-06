@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Storage;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Illuminate\Http\Request;
 use App\Models\Playlist;
 use App\Models\Comment;
@@ -12,6 +14,13 @@ class SongController extends BaseController
 {
     public function index() {
         return Song::all();
+    }
+
+    public function getById($id) {
+        $file = Storage::get("Intervals - Fable.mp3");
+        $response = new BinaryFileResponse($file);
+        BinaryFileResponse::trustXSendFileTypeHeader();
+        return $response;
     }
 
 

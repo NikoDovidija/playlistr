@@ -1,14 +1,39 @@
 .grid {
+    position: relative;
     display: flex;
     justify-content: space-between;
-    align-content: center;
     align-items: center;
-    height: inherit;
 
     &-even {
         justify-content: space-evenly;
     }
 
-    .grid-item {}
+    &-top {
+        align-items: flex-start;
+    }
+
+    &-col {
+        flex-flow: column;
+    }
+
+    &-left {
+        align-items: left;
+    }
+
+    &-center {
+        justify-content: center;
+    }
+
+    &-square {
+        &:after {
+            content: '';
+            padding-bottom: 100%;
+        }
+    }
+
+    .grid-item {
+        display: flex;
+        align-items: center;
+    }
 
 }

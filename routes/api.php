@@ -12,6 +12,7 @@ Route::post("/create", "playlistController@create");
 
 Route::get("/songs", "songController@index");
 Route::post("/songs/add", "songController@create");
+Route::get("songs/{id}", "songController@getById");
 
 Route::get("/comments", "commentController@index");
 Route::post("/comments", "commentController@create");

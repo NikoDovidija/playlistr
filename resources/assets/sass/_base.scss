@@ -10,9 +10,10 @@ html, body, #app {
 body, #app {
     font-family: $main-font-family;
     font-size: $main-font-size;
-    background: $white;
+    background: $black;
     display: flex;
     flex-direction: column;
+    color: $white;
 }
 
 ul {
@@ -23,7 +24,7 @@ ul {
 
 .body-content {
     // padding: $container-padding;
-    text-align: center;
+    //text-align: center;
 }
 
 // !!container with this inside requires horizontal center alignment!!

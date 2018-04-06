@@ -1,102 +1,28 @@
-// Colors
-// $white: #fffafa;
-// $black: #1b1b1b;
-// $blue: #4484ce;
-// $gray: #d9d9d9;
-// $yellow: #f9cf00;
-// $orange: #f19f4d;
 
+$orange: #e64a19;
+$purple: rgb(204, 0, 102);
 
-$orange-dark : #e64a19;
-$orange : #ff5722;
-$orange-light : #ffccbc;
-$white : #ffffff;
-$purple : #7c4dff;
-$black : #212121;
-$gray: #757575;
-$silver: #bdbdbd;
+$white: rgb(250, 250, 250);
 
+$black-light: rgb(40, 40, 40);
+$black: rgb(33, 33, 33);
+$blacker: rgb(20, 20, 20);
+$blackest: rgb(8, 8, 8);
 
-$blue: rgba(1, 22, 39, 1);
-$white: rgba(249, 249, 249, 1);
-$orange: rgba(242, 128, 0, 1);
-$purple: rgba(89, 8, 165, 1);
-$black: rgba(15, 14, 0, 1);
+$trans-black: rgba(20, 20, 20, .33);
 
-
-$trans-black: rgba(33, 33, 33, .33);
-
-$trans-black-mid: rgba(33, 33, 33, .66);
-
-$shadow-box: 0 1px 2px -1px $trans-black-mid;
-
-$linear-orange-purple: linear-gradient(to right, $orange, $orange-dark, $purple);
+$gray: rgb(88, 88, 88);
+$gray-light: rgb(162, 162, 162);
 
 
 
-$color-primary: #E95620;    // Primary color
-$color-primary-1: #FF9973;
-$color-primary-2: #F77849;
-$color-primary-3: #BB3A0A;
-$color-primary-4: #932800;
-
-$color-comp: #16A162;	// Main Complement color
-$color-comp-1: #56BF90;
-$color-comp-2: #32AA74;
-$color-comp-3: #078149;
-$color-comp-4: #006537;
-
-
-$color-adj-1: #E99120;	// Adjacent color 1
-$color-adj-1-1: #FFC273;
-$color-adj-1-2: #F7AB49;
-$color-adj-1-3: #BB6E0A;
-$color-adj-1-4: #935300;
-
-$color-adj-2: #CF1C55;	// Adjacent color 2
-$color-adj-2-1: #E86991;
-$color-adj-2-2: #DB4172;
-$color-adj-2-3: #A6093B;
-$color-adj-2-4: #82002A;
-
-
-
-$color-tri-1: #1C6395;	// Triad color 1
-$color-tri-1-1: #588EB5;
-$color-tri-1-2: #36739E;
-$color-tri-1-3: #0D4C78;
-$color-tri-1-4: #05395E;
-
-$color-tri-2-0: #71D01D;	// Triad color 2
-$color-tri-2-1: #A5E969;
-$color-tri-2-2: #8ADC41;
-$color-tri-2-3: #53A709;
-$color-tri-2-4: #3E8300;
-
-
-
-$color-tet-1: #E99120;	// Tetrad color 1
-$color-tet-1-1: #FFC273;
-$color-tet-1-2: #F7AB49;
-$color-tet-1-3: #BB6E0A;
-$color-tet-1-4: #935300;
-
-$color-tet-2: #1C6395;	// Tetrad color 2
-$color-tet-2-1: #588EB5;
-$color-tet-2-2: #36739E;
-$color-tet-2-3: #0D4C78;
-$color-tet-2-4: #05395E;
-
-
-
-
-
-
+$linear-orange-purple: linear-gradient(to right, $orange, $purple);
+$shadow-box: 0 1px 4px -1px $black;
 
 
 // Typography
 $main-font-family: "Roboto", sans-serif;
-$main-font-size: 0.9rem;
+$main-font-size: 14px;
 $main-line-height: 1.6;
 
 // Layout settings

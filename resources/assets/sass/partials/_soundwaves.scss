@@ -1,0 +1,55 @@
+
+$min-height: 20px;
+$max-height: 100px;
+
+$min-time: 500;
+$max-time: 1500;
+
+$num-bars: 50;
+
+.soundwaves-container {
+    position: absolute;
+    bottom: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    height: 100px;
+}
+
+.soundwave {
+    width: 10px;
+    background: $black;
+    min-height: 10px;
+    display: inline-block;
+
+    @include media("screen", ">=md") {
+        width: 32px;
+    }
+}
+
+@function randomBetween($min, $max) {
+    $rand: random();
+    $randomNum: $min + floor($rand * (($max - $min) + 1));
+    @return $randomNum;
+}
+
+@for $i from 0 through $num-bars {
+    .soundwave:nth-child(#{$i}) {
+        height: #{random(100)}px;
+    }
+
+    .soundwave.active:nth-child(#{$i}) {
+        animation: grow#{$i} #{random(700) + 1500}ms alternate infinite;
+    }
+    
+    @keyframes grow#{$i} {
+        @for $j from 0 through 10 {
+            #{$j * 10}% {
+                height: #{random(100)}px;
+            }
+        }
+    }
+}
+
+

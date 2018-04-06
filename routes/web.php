@@ -12,6 +12,7 @@
 */
 
 use App\Http\Controllers\PlaylistController;
+use Illuminate\Support\Facades\Storage;
 
 Route::get('/', function () {
     return view('landing', [
@@ -22,6 +23,6 @@ Route::get('/', function () {
 
 Route::get('/{id_playlist}', function ($id_playlist) {
     return view("playlist", [
-        "playlist" => app(PlaylistController::class)->getPlaylist($id_playlist)->name,
+        "songUrl" => "/public".Storage::url("Intervals - Fable.mp3"),
     ]);
 });

@@ -1,17 +1,29 @@
+ 
+
 require('./bootstrap');
 require('moment-duration-format');
-window.ProgressBar = require("progressbar.js");
+const scroller = require('vue-scrollto');
+
 window.Vue = require('vue');
-window.Howler = require("howler");
+Vue.use(scroller);
 
-import Header from "./components/Header.vue";
-import Player from "./components/Player.vue";
-import Playlist from "./components/Playlist.vue";
+import Player from "./components/player/Player.vue";
+import Header from './components/header/Header.vue'
+import Footer from './components/footer/Footer.vue';
+import Playlists from "./components/playlist/Playlists.vue";
+import Playlist from "./components/playlist/Playlist.vue";
+import Comment from "./components/playlist/Comment.vue";
 
 
-Vue.component("c-header", Header);
-Vue.component("c-player", Player);
-Vue.component("c-playlist", Playlist);
+Vue.component("header-component", Header);
+Vue.component("footer-component", Footer);
+Vue.component("player-component", Player);
+Vue.component("playlists-component", Playlists);
+Vue.component("playlist-component", Playlist);
+Vue.component("comment-component", Comment);
+
+
+// TODO make serverside rendering of components
 
 // Global component setup
 Vue.mixin({
@@ -38,6 +50,7 @@ Vue.mixin({
                 }
             }
             console.log(data);
+            app.$refs.player.setPlaylist(data, 0);
         },
 
         /* 
@@ -58,3 +71,6 @@ Vue.mixin({
 const app = new Vue({
     el: "#app",
 });
+
+$(document).on('click', ".btn", function(e){ e.preventDefault(); }, false);
+

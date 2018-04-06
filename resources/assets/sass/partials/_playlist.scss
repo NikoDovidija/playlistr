@@ -1,203 +1,118 @@
-.playlists {
-    padding: 10px;
-
-    &-header {
-        background: $linear-orange-purple;
-        padding: 12px 20px;
-        border-radius: 20px 20px 0 0;
-        text-align: left;
-        color: $white;
-        font-size: 18px;
-    }
-
-    .playlist-item {
-        display: flex;
-        justify-content: space-between;
-        padding: 12px 20px;
-        background: $trans-black;
-        color: $white;
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-    }
-
+.playlist-container, .player {
+    max-width: $width-limit;
+    margin: 0 auto;
+    padding: 32px 42px;
 }
 
-.playlist {
-    position: relative;
+.playlist, .comments {
 
-    &-body {
-        display: flex;
-        padding: 10px;
-
-        .header {
-            font-size: 28px;
-            border-bottom: 1px solid $black;
-            margin-bottom: 10px;
-        }
-
-        .comments-container {
-            width: 66.666%;
-            padding: 10px;
-        }
-
-        .songs-container {
-            width: 33.333%;
-            text-align: left;
-            padding: 10px;
-
-            .song {
-                background: $blue;
-                color: $white;
-                padding: 10px 6px;
-                border-radius: 6px;
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 4px;
-            }
-        }
-
-        @include media("screen", "<md") {
-            flex-flow: column-reverse;
-
-            .comments-container, .songs-container {
-                width: 100%;
-            }
-        }
-    }
-
-    .heading {
+    >.heading {
+        margin-bottom: 20px;
         position: relative;
-        min-height: 500px;
-        background-position: center;
-        background-size: cover;
+        width: 100%;
         display: flex;
-        justify-content: space-evenly;
         align-items: center;
-        flex-flow: column;
-        box-shadow: $shadow-box;
 
-        
-        .artwork {
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: 0;
             width: 100%;
-            display: block;
+            height: 1px;
+            background: $gray-light;
         }
 
-        .details {
-            background: linear-gradient(to right, $orange, $orange-dark 50%, $purple 120%);
-            color: $white;
-            display: flex;
-            flex-flow: row;
-            padding: 12px;
-            border-radius: 100px;
-            box-shadow: 0 1px 4px -1px $black;
-            max-width: 100%;
-
-            @include media("screen", "<md") {
-                flex-flow: column;
-                border-radius: 20px;
-                padding: 12px 40px;
-            }
-
-            .name {
-                font-size: 18px;
-                white-space: normal;
-            }
-
-            .play-group {
-                display: flex;
-                align-items: center;
-
-       
-                @include media("screen", "<=md") {
-                    .item {
-                        align-items: left;
-                    }
-                }
-                @include media("screen", "<sm") {
-                    flex-flow: column-reverse;
-                    align-items: center;   
-                    .item {
-                        align-items: center;
-                    }
-                }
-            } 
-
-            .play {
-                width: 62px;
-                height: 62px;
-                padding: 10px;
-                background: $white;
-                color: $black;
-                font-size: 42px;
-                border-radius: 100%;
-            }
-
-            .item {
-                padding: 0 20px;
-                display: flex;
-                justify-content: center;
-                flex-flow: column;
-                white-space: nowrap;
-                text-align: left;
-
-                @include media("screen", "<md") {
-                    padding: 10px 20px;
-                    text-align: center;
-                    align-items: center;
+        .icon {
+            margin-right: 10px;
+        }
+    }
+}
 
 
-                }
 
-                
+.playlist {
+    width: 33.333%;
 
-                &.divider {
-                    border-left: 1px solid $orange-light;
-                    border-right: 1px solid $orange-light;
-                    @include media("screen", "<md") {
-                        border-left: none;
-                        border-right: none;
-                    }
-                }
+    .body {
+        width: 100%;
+    }
 
-                &.song-list-container {
-                    position: relative;
+    .song {
+        color: $gray-light;
+        padding: 10px;
+        width: 100%;
+        cursor: pointer;
 
-                    .song-list {
-                        max-width: 200px;
+        &:hover {
+            background: $blacker;
+        }
 
-                        .song-name {
-                            white-space: nowrap;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                        }
-                    }
+        .order {
+            margin-right: 28px;
+            position: relative;
 
-                    .more {
-                        text-align: center;
-                        cursor: pointer;
-                    }
-
-                }
-
-                
-
+            &:after {
+                content: '\00b7';
+                position: absolute;
+                left: 19px;
+                top: -4px;
+                font-weight: bold;
+                font-size: 22px;
+                opacity: .66;
             }
         }
     }
+}
 
-    &-description {
-        text-align: center;
-        padding: 16px;
-        width: 100%;
-        color: $white;
-        font-size: 18px;
-        background: rgba(33, 33, 33, .33);
 
-        .width-limiter {
-            text-align: center;
+
+.comments {
+    width: 66.666%;
+    padding-right: 32px;
+
+    .comment {
+        padding: 10px 10px 10px 1px;
+
+        .heading {
+            
+            .author {
+                font-size: 16px;
+            }
+
+            .time {
+                color: $gray-light;
+                margin-left: 28px; 
+                position: relative;
+
+                &:before {
+                    content: '\00b7';
+                    position: absolute;
+                    left: -17px;
+                    top: -4px;
+                    font-weight: bold;
+                    font-size: 22px;
+                    opacity: .66;
+                }
+            }
+        }
+
+        .body {
+            padding: 10px 0;
+            color: $gray-light;
+        }
+
+        .footing {
+            color: $gray-light;
+        }
+
+        &-reply {
+            margin-left: 33.333%;
+            width: 100%;
+
+            .body {
+                padding: 6px 0 ;
+            }
         }
     }
 }

@@ -3,4 +3,58 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    border: 1px solid $black;
+    padding: 6px;
+    font-size: 14px;
+
+    .icon {
+        font-weight: bold;
+    }
+
+    &-circle {
+        border-radius: 100%;
+        width: 28px;
+        height: 28px;
+    }
+
+    &-1 {
+        background: $black;
+        color: $white;
+
+        &:hover {
+            background: $blacker;
+        }
+    }
+
+    &-2 {
+        background: transparent;
+        color: $black;
+        
+        &:hover {
+            border-color: $trans-black;
+            background: $trans-black;
+            color: $white;
+        }
+    }
+
+    &-3 {
+        background: $blacker;
+        color: $white;
+        border: 6px solid $black-light;
+
+        &:hover {
+            background: $black;
+        }
+    }
+
+    &-text {
+        border-radius: 50px;
+        height: 28px;
+        padding: 6px 12px;
+
+        .icon {
+            position: relative;
+            right: -4px;
+        }
+    }
 }

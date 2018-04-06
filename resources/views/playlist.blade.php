@@ -1,9 +1,11 @@
 @extends("layouts/main")
 
-@section("title", $playlist)
+@section("title", "Playlistr")
 
 @section("content")
 
-<playlist-component api-get="{{ Request::path() }}"></playlist-component>
+
+<c-player :song-url="'{{$songUrl}}'"></c-player>
+<c-playlist api-get="{{ Request::path() }}"></c-playlist>
 
 @endsection

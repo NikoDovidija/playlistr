@@ -15,21 +15,15 @@
     </head>
     <body>
         <div id="app">
-            <header-component></header-component>
+            <c-header></c-header>
 
             <div class="body-content">
-                <div class="width-limiter--">
-                    @yield("content")
-                </div>
+                @yield("content")
             </div>
 
-            
-            <player-component ref="player"></player-component>
 
-            <footer-component></footer-component>
         </div>
 
-    <script src="https://youtube.com/iframe_api"></script>
     <script src="{{ asset('js/app.js')}}"></script>
     </body>
 </html>
