@@ -24,7 +24,7 @@
             </div>
 
             
-            <player-component ref="player" @event="set-playlist"></player-component>
+            <player-component ref="player"></player-component>
 
             <footer-component></footer-component>
         </div>
