@@ -1,10 +1,10 @@
 header {
-    background: $color-primary;
+    background: $orange;
     color: white;
     padding: $container-padding;
     height: $header-height;
     text-align: center;
-    box-shadow: 0px 1px 2px $black;
+    box-shadow: $shadow-box;
     z-index: 1000;
 
     .grid {
@@ -16,6 +16,8 @@ header {
         font-weight: bold;
         margin-left: 42px;
         position: relative;
+        text-decoration: underline;
+        color: $white;
 
         &:before {
             content: "";
@@ -29,7 +31,7 @@ header {
         }
     }
     .nav {
-        background: $color-primary;
+        background: $orange;
         list-style: none;
         margin: 0;
         padding: 0;
@@ -70,9 +72,9 @@ header {
         &.collapse {
             @include media("screen", "<md") {
                 
-                transition: all 200ms ease-in-out;
-                background: $color-primary-2;
-                position: fixed;
+                //transition: all 200ms ease-in-out;
+                background: $orange-dark;
+                position: absolute;
                 top: $header-height;
                 left: 0;
                 right: 0;
@@ -95,9 +97,6 @@ header {
             cursor: pointer;
             width: 32px;
             height: 32px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             margin: 4px;
 
             @include media("screen", ">=md") {

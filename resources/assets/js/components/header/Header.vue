@@ -2,7 +2,7 @@
     <header>
         <div class="width-limiter">
             <div class="grid">
-                <div class="logo grid-item">laylistR</div>
+                <a href="/" class="logo grid-item">laylistR</a>
                 <menu-component></menu-component>
             </div>
         </div>

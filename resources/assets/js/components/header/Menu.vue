@@ -1,6 +1,6 @@
 <template>
     <div>
-        <span class="nav-toggle" 
+        <span class="nav-toggle btn" 
                     v-bind:class="{ active: isActive}"
                     v-on:click="isActive = !isActive">
                 <i class="material-icons">menu</i>

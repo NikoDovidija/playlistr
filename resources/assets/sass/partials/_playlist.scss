@@ -1,15 +1,72 @@
-.playlist-item {
+.playlists {
+    padding: 10px;
 
-    .details {
+    &-header {
+        background: $linear-orange-purple;
+        padding: 12px 20px;
+        border-radius: 20px 20px 0 0;
+        text-align: left;
+        color: $white;
+        font-size: 18px;
+    }
 
-        .artwork {
-            width: 100%;
-            object-fit: cover;
+    .playlist-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 20px;
+        background: $trans-black;
+        color: $white;
+
+        a {
+            text-decoration: none;
+            color: inherit;
         }
     }
+
 }
 
 .playlist {
+    position: relative;
+
+    &-body {
+        display: flex;
+        padding: 10px;
+
+        .header {
+            font-size: 28px;
+            border-bottom: 1px solid $black;
+            margin-bottom: 10px;
+        }
+
+        .comments-container {
+            width: 66.666%;
+            padding: 10px;
+        }
+
+        .songs-container {
+            width: 33.333%;
+            text-align: left;
+            padding: 10px;
+
+            .song {
+                background: $blue;
+                color: $white;
+                padding: 10px 6px;
+                border-radius: 6px;
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 4px;
+            }
+        }
+
+        @include media("screen", "<md") {
+            flex-flow: column-reverse;
+
+            .comments-container, .songs-container {
+                width: 100%;
+            }
+        }
+    }
 
     .heading {
         position: relative;
@@ -17,9 +74,10 @@
         background-position: center;
         background-size: cover;
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
         flex-flow: column;
+        box-shadow: $shadow-box;
 
         
         .artwork {
@@ -28,23 +86,48 @@
         }
 
         .details {
-            background: $color-primary;
+            background: linear-gradient(to right, $orange, $orange-dark 50%, $purple 120%);
             color: $white;
             display: flex;
-            flex-flow: row wrap;
+            flex-flow: row;
             padding: 12px;
             border-radius: 100px;
             box-shadow: 0 1px 4px -1px $black;
             max-width: 100%;
 
-            .details-column {
-                flex: 1;
-                display: flex;
-                flex-flow: row;
-                justify-content: center;
+            @include media("screen", "<md") {
+                flex-flow: column;
+                border-radius: 20px;
+                padding: 12px 40px;
             }
 
+            .name {
+                font-size: 18px;
+                white-space: normal;
+            }
+
+            .play-group {
+                display: flex;
+                align-items: center;
+
+       
+                @include media("screen", "<=md") {
+                    .item {
+                        align-items: left;
+                    }
+                }
+                @include media("screen", "<sm") {
+                    flex-flow: column-reverse;
+                    align-items: center;   
+                    .item {
+                        align-items: center;
+                    }
+                }
+            } 
+
             .play {
+                width: 62px;
+                height: 62px;
                 padding: 10px;
                 background: $white;
                 color: $black;
@@ -60,54 +143,43 @@
                 white-space: nowrap;
                 text-align: left;
 
-                &:nth-child(3) {
-                    border-left: 1px solid $color-primary-1;
-                    border-right: 1px solid $color-primary-1;
+                @include media("screen", "<md") {
+                    padding: 10px 20px;
+                    text-align: center;
+                    align-items: center;
+
+
+                }
+
+                
+
+                &.divider {
+                    border-left: 1px solid $orange-light;
+                    border-right: 1px solid $orange-light;
+                    @include media("screen", "<md") {
+                        border-left: none;
+                        border-right: none;
+                    }
                 }
 
                 &.song-list-container {
-                    // border-left: 1px solid $white;
                     position: relative;
 
                     .song-list {
-                        
-
-                        &.full {
-                            border-radius: 4px;
-                            border-top-right-radius: 50px;
-                            margin-left: -20px;
-                            background: $color-primary;
-                            position: absolute;
-                            padding: 20px;
-                            top: -12px;
-                            left: 20px;
-                            right: -12px;
-                            max-height: 0;
-                            transition: all 200ms ease-in-out;
-                            visibility: hidden;
-                        }
+                        max-width: 200px;
 
                         .song-name {
                             white-space: nowrap;
-                        }
-    
-                    
-                    }
-
-                    &:hover {
-                        
-                        .song-list {
-
-                            &.short {
-                                visibility: hidden;
-                            }
-
-                            &.full {
-                                max-height: 5000px;
-                                visibility: visible;
-                            }
+                            overflow: hidden;
+                            text-overflow: ellipsis;
                         }
                     }
+
+                    .more {
+                        text-align: center;
+                        cursor: pointer;
+                    }
+
                 }
 
                 
