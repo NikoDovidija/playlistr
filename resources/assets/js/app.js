@@ -2,22 +2,26 @@
 
 require('./bootstrap');
 require('moment-duration-format');
-
+const scroller = require('vue-scrollto');
 
 window.Vue = require('vue');
+Vue.use(scroller);
 
 import Player from "./components/player/Player.vue";
 import Header from './components/header/Header.vue'
 import Footer from './components/footer/Footer.vue';
-//import Playlists from "./components/playlist/Playlists.vue";
+import Playlists from "./components/playlist/Playlists.vue";
 import Playlist from "./components/playlist/Playlist.vue";
+import Comment from "./components/playlist/Comment.vue";
 
 
 Vue.component("header-component", Header);
 Vue.component("footer-component", Footer);
 Vue.component("player-component", Player);
-//Vue.component("playlists-component", Playlists);
+Vue.component("playlists-component", Playlists);
 Vue.component("playlist-component", Playlist);
+Vue.component("comment-component", Comment);
+
 
 // TODO make serverside rendering of components
 
@@ -68,5 +72,5 @@ const app = new Vue({
     el: "#app",
 });
 
+$(document).on('click', ".btn", function(e){ e.preventDefault(); }, false);
 
-app.$refs.player.setSong("t8RFcWCWkcI");
