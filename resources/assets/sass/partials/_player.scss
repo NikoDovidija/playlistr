@@ -9,6 +9,7 @@
         padding: 40px;
         border-radius: 100%;
         border: 10px solid $orange;
+        box-shadow: 0 0 10px -1px $orange inset;
 
         .play-btn, .pause-btn {
             width: 48px;
@@ -49,6 +50,7 @@
       
         .song-progress {
             height: 3px;
+
             
             &-wrap {
                 width: 100%;
@@ -71,6 +73,7 @@
         background: $gray;
         border-radius: 100px;
         overflow: hidden;
+        box-shadow: 0 0 4px -1px $orange;
 
         &-wrap {
             cursor: pointer;

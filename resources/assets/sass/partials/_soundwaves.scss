@@ -18,14 +18,11 @@ $num-bars: 50;
 }
 
 .soundwave {
-    width: 10px;
+    width: 500px;
     background: $black;
     min-height: 10px;
     display: inline-block;
-
-    @include media("screen", ">=md") {
-        width: 32px;
-    }
+    box-shadow: 0 0 10px -1px $orange;
 }
 
 @function randomBetween($min, $max) {
@@ -34,7 +31,8 @@ $num-bars: 50;
     @return $randomNum;
 }
 
-@for $i from 0 through $num-bars {
+@for $i from 1 through $num-bars {
+
     .soundwave:nth-child(#{$i}) {
         height: #{random(100)}px;
     }

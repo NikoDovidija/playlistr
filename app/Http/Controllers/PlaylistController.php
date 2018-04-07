@@ -10,7 +10,7 @@ use App\Models\Comment;
 class PlaylistController extends BaseController
 {
     public function index() {
-        return Playlist::all();
+        return response()->json(["playlists" => Playlist::all()]);
     }
 
     public function getPlaylist($id) {

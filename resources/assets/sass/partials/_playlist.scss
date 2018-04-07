@@ -72,6 +72,7 @@
     padding-right: 32px;
 
     .comment {
+        width: 100%;
         padding: 10px 10px 10px 1px;
 
         .heading {
@@ -107,8 +108,7 @@
         }
 
         &-reply {
-            margin-left: 33.333%;
-            width: 100%;
+            margin-left: 25%;
 
             .body {
                 padding: 6px 0 ;
