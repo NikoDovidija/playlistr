@@ -46,17 +46,18 @@
             padding: 12px;
             font-size: 18px;
             position: relative;
+            text-shadow: 1px 1px 4px $blackest;
 
-            &:after {
-                content: "";
-                display: block;
-                position: absolute;
-                left: 12px;
-                width: 100%;
-                bottom: -3px;
-                height: 1px;
-                background: $gray-light;
-            }
+            // &:after {
+            //     content: "";
+            //     display: block;
+            //     position: absolute;
+            //     left: 12px;
+            //     width: 100%;
+            //     bottom: -3px;
+            //     height: 1px;
+            //     background: $gray-light;
+            // }
         }
 
         &-body {
@@ -92,17 +93,18 @@
         padding: 12px;
         font-size: 18px;
         position: relative;
+        text-shadow: 1px 1px 4px $blackest;
 
-        &:after {
-            content: "";
-            display: block;
-            position: absolute;
-            left: 12px;
-            width: 100%;
-            bottom: -3px;
-            height: 1px;
-            background: $gray-light;
-        }
+        // &:after {
+        //     content: "";
+        //     display: block;
+        //     position: absolute;
+        //     left: 12px;
+        //     width: 100%;
+        //     bottom: -3px;
+        //     height: 1px;
+        //     background: $gray-light;
+        // }
     }
 
     .body {
