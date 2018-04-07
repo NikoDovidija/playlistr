@@ -1,5 +1,42 @@
+.filter-container {
+    margin: 32px;
+    
+
+    .filter-item {
+        position: relative;
+        background-image: url('http://www.themonolith.com/wp-content/uploads/Intervals-A-Voice-Within-album-art.jpg');
+        background-size: 100%;
+        height: 120px;
+        width: 25%;
+        border-radius: 2px;
+        overflow: hidden;
+        box-shadow: 1px 1px 10px -1px $blackest;
+        font-size: 18px;
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: none;
+        }
+
+        .text {
+            position: relative;
+            z-index: 10;
+        }
+
+        .blur {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, $orange, $gray);
+            opacity: .6;
+        }
+    }
+}
+
+
 .list-container {
     margin: 32px;
+    width: 50%;
 
     .list {
         overflow: hidden;
@@ -45,4 +82,76 @@
         }
     }
 
+}
+
+.scroll-container {
+    overflow: hidden;
+    margin: 32px;
+
+    .heading {
+        padding: 12px;
+        font-size: 18px;
+        position: relative;
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 12px;
+            width: 100%;
+            bottom: -3px;
+            height: 1px;
+            background: $gray-light;
+        }
+    }
+
+    .body {
+        margin-top: 12px;
+        align-items: stretch;
+
+        .item {
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 1px 1px 10px -1px $blackest;
+            cursor: pointer;
+            flex: 1;
+            margin: 0 12px;
+            background: $black-light;
+
+            &:hover {
+                box-shadow: none;
+            }
+
+            .image-container {
+                width: 100%;
+                height: 200px;
+                position: relative;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                .blur {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(to top, $orange, $gray);
+                    opacity: .5;
+                }
+            }
+
+            .details {
+
+                .name, .description {
+                    padding: 12px;
+                }
+
+                .description {
+                    color: $gray-light;
+                }
+            }
+        }
+    }
 }

@@ -33995,6 +33995,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Playlist_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_Playlist_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_List_vue__ = __webpack_require__(188);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_List_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_List_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_ScrollList_vue__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_ScrollList_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_ScrollList_vue__);
 __webpack_require__(145);
 __webpack_require__(171);
 window.ProgressBar = __webpack_require__(139);
@@ -34006,10 +34008,12 @@ window.Howler = __webpack_require__(142);
 
 
 
+
 Vue.component("c-header", __WEBPACK_IMPORTED_MODULE_0__components_Header_vue___default.a);
 Vue.component("c-player", __WEBPACK_IMPORTED_MODULE_1__components_Player_vue___default.a);
 Vue.component("c-playlist", __WEBPACK_IMPORTED_MODULE_2__components_Playlist_vue___default.a);
 Vue.component("c-list", __WEBPACK_IMPORTED_MODULE_3__components_List_vue___default.a);
+Vue.component("c-scroll-list", __WEBPACK_IMPORTED_MODULE_4__components_ScrollList_vue___default.a);
 
 // Global component setup
 Vue.mixin({
@@ -71139,6 +71143,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ["songUrl"],
@@ -71706,6 +71713,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    props: ["heading"],
     data: function data() {
         return {
             playlists: []
@@ -71730,7 +71738,7 @@ var render = function() {
   return _c("div", { staticClass: "list-container" }, [
     _c("div", { staticClass: "list grid grid-col" }, [
       _c("div", { staticClass: "list-heading" }, [
-        _vm._v("\n            Most played today\n        ")
+        _vm._v("\n            " + _vm._s(_vm.heading) + "\n        ")
       ]),
       _vm._v(" "),
       _c(
@@ -71803,6 +71811,142 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     }
 });
+
+/***/ }),
+/* 192 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(6)
+/* script */
+var __vue_script__ = __webpack_require__(193)
+/* template */
+var __vue_template__ = __webpack_require__(194)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\ScrollList.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4b970a42", Component.options)
+  } else {
+    hotAPI.reload("data-v-4b970a42", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 193 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ["heading"],
+    data: function data() {
+        return {
+            playlists: []
+        };
+    },
+
+
+    computed: {
+        topThree: function topThree() {
+            return this.playlists.slice(0, 3);
+        }
+    }
+});
+
+/***/ }),
+/* 194 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "scroll-container" }, [
+    _c("div", { staticClass: "heading" }, [
+      _vm._v("\n        " + _vm._s(_vm.heading) + "\n    ")
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "body grid grid-wrap" },
+      _vm._l(_vm.topThree, function(playlist) {
+        return _c("div", { staticClass: "item" }, [
+          _c("div", { staticClass: "image-container" }, [
+            _c("div", { staticClass: "blur" }),
+            _vm._v(" "),
+            _c("img", { attrs: { src: playlist.artwork, alt: "" } })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "details" }, [
+            _c("div", { staticClass: "name" }, [_vm._v(_vm._s(playlist.name))]),
+            _vm._v(" "),
+            _c("div", { staticClass: "description" }, [
+              _vm._v(_vm._s(playlist.description))
+            ])
+          ])
+        ])
+      })
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-4b970a42", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

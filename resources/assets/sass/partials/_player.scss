@@ -7,9 +7,9 @@
 
     .controls {
         padding: 40px;
-        border-radius: 100%;
-        border: 10px solid $orange;
-        box-shadow: 0 0 10px -1px $orange inset;
+        // border-radius: 100%;
+        // border: 10px solid $orange;
+        // box-shadow: 0 0 10px -1px $orange inset;
 
         .play-btn, .pause-btn {
             width: 48px;
@@ -23,7 +23,6 @@
             font-size: 24px;
         }
     }
-
 
 
     .song-details {

@@ -2,7 +2,7 @@
     <div class="list-container">
         <div class="list grid grid-col">
             <div class="list-heading">
-                Most played today
+                {{heading}}
             </div>
             <div class="list-body grid grid-col">
                 <div class="item grid" v-for="playlist in playlists">
@@ -18,6 +18,7 @@
 
 <script>
     export default {
+        props: ["heading"],
         data () {
             return {
                 playlists: [],

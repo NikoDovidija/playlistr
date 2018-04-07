@@ -1,6 +1,7 @@
 <template>
     <div class="player-container">
         <div class="soundwaves-container">
+            <!-- <img src="http://www.lgam.info/local--files/wayne-eddy-s-photos-6/Artvo-Shark.jpg" alt=""> -->
             <span class="soundwave" v-bind:class="{active: isPlaying}" v-for="x in 50"></span>
         </div>
         <div class="player grid">
@@ -11,6 +12,8 @@
                 </div>
                 <i class="icon">volume_up</i>
             </div>
+
+
 
             <div class="controls grid grid-center grid-square">
                 <span class="btn btn-circle btn-3 skip-btn">
