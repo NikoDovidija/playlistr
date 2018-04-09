@@ -1,6 +1,10 @@
 .filter-container {
     margin: 32px;
     
+    @include media("screen", "<=sm") {
+        margin: 0;
+        box-shadow: 0 1px 4px -1px $blackest;
+    }
 
     .filter-item {
         position: relative;
@@ -18,6 +22,26 @@
             box-shadow: none;
         }
 
+        @include media("screen", "<=md") {
+            width: 30%;
+        }
+
+        @include media("screen", "<=sm") {
+            width: auto;
+            flex: 1;
+            height: auto;
+            padding: 10px;
+            font-size: 16px;
+            background-image: none;
+            background: $black-light;
+            box-shadow: none;
+
+            .blur {
+                display: none;
+            }
+            
+        }
+
         .text {
             position: relative;
             z-index: 10;
@@ -29,6 +53,17 @@
             height: 100%;
             background: linear-gradient(to top, $orange, $gray);
             opacity: .6;
+        }
+    }
+}
+
+.double-list-wrap {
+    @include media("screen", "<=md") {
+        flex-flow: column;
+
+        .list-container {
+            width: 100%;
+            margin: 20px 0;
         }
     }
 }
@@ -89,6 +124,15 @@
     overflow: hidden;
     margin: 32px;
 
+    @include media("screen", "<=md") {
+        margin: 10px 0;
+
+        .body {
+            flex-flow: column;
+
+        }
+    }
+
     .heading {
         padding: 12px;
         font-size: 18px;
@@ -119,6 +163,10 @@
             flex: 1;
             margin: 0 12px;
             background: $black-light;
+
+            @include media("screen", "<=md") {
+                margin: 12px;
+            }
 
             &:hover {
                 box-shadow: none;

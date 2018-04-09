@@ -19,7 +19,7 @@
     </div>
 </div>
 
-<div class="grid">
+<div class="grid double-list-wrap">
     <c-list api-get="" heading="Most played today"></c-list>
     <c-list api-get="" heading="Recently created"></c-list>
 </div>

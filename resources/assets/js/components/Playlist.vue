@@ -44,10 +44,8 @@
             <div class="body">
                 <div class="songs-container grid grid-col grid-left">
                     <div class="song grid grid-col grid-left" v-for="(song, index) in songs">
-                        <div>
                             <span class="order">{{index + 1}}</span>
                             <span>{{song.name}}</span> - <span>{{song.artist}}</span>
-                        </div>
                     </div>
                 </div>
             </div>
