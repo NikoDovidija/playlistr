@@ -1,8 +1,11 @@
 <template>
     <header>
+        <!-- <div class="soundwaves-bg">
+            <span class="soundwave"  v-for="x in 50"></span>
+        </div> -->
         <div class="grid grid-top">
             <a href="/" class="logo grid-item">
-                Playlistr
+                <div class="logo"></div>
             </a>
 
             <div class="grid-item">

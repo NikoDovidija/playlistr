@@ -71018,6 +71018,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
@@ -71039,12 +71042,10 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("header", [
     _c("div", { staticClass: "grid grid-top" }, [
-      _c("a", { staticClass: "logo grid-item", attrs: { href: "/" } }, [
-        _vm._v("\n            Playlistr\n        ")
-      ]),
+      _vm._m(0),
       _vm._v(" "),
       _c("div", { staticClass: "grid-item" }, [
-        _vm._m(0),
+        _vm._m(1),
         _vm._v(" "),
         _c("span", { staticClass: "btn btn-1 btn-text" }, [
           _vm.page == "playlist" ? _c("span", [_vm._v("Upload")]) : _vm._e(),
@@ -71058,6 +71059,14 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "logo grid-item", attrs: { href: "/" } }, [
+      _c("div", { staticClass: "logo" })
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

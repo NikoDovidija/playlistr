@@ -7,22 +7,37 @@ $max-time: 1500;
 
 $num-bars: 50;
 
-.soundwaves-container {
-    position: absolute;
-    bottom: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-end;
-    height: 100px;
+.player-container {
+    .soundwaves-container {
+        position: absolute;
+        bottom: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-end;
+        height: 100px;
+    }
+}
+
+header {
+    .soundwaves-bg {
+        left: 0;
+        top: 0;
+        position: absolute;
+        justify-content: center;
+        display: flex;
+        height: 100px;
+        width: 100%;
+        
+    }
 }
 
 .soundwave {
     width: 500px;
     background: $black;
-    min-height: 10px;
+    min-height: 50px;
     display: inline-block;
-    box-shadow: 0 0 10px -1px $orange;
+    //box-shadow: 0 0 10px -1px $orange;
 }
 
 @function randomBetween($min, $max) {
@@ -34,7 +49,7 @@ $num-bars: 50;
 @for $i from 1 through $num-bars {
 
     .soundwave:nth-child(#{$i}) {
-        height: #{random(100)}px;
+        height: #{random(150) + 50}px;
     }
 
     .soundwave.active:nth-child(#{$i}) {
@@ -44,7 +59,7 @@ $num-bars: 50;
     @keyframes grow#{$i} {
         @for $j from 0 through 10 {
             #{$j * 10}% {
-                height: #{random(100)}px;
+                height: #{random(150) + 50}px;
             }
         }
     }
