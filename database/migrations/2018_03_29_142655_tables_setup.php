@@ -10,9 +10,12 @@ class TablesSetup extends Migration {
         Schema::create("playlists", function (Blueprint $table) {
             $this->configure($table);
             $table->increments("playlist_id");
+            $table->string("creator");
             $table->char("name", 255)->default("My Playlist");
             $table->string("description")->nullable();
             $table->string("artwork")->nullable();
+            $table->integer("times_played")->default(0);
+            $table->integer("times_recommended")->default(0);
             $table->timestamps();
         });
 
@@ -22,6 +25,7 @@ class TablesSetup extends Migration {
             $table->integer("response_to");
             $table->char("author", 25);
             $table->string("text");
+            $table->integer("score")->default(0);
             $table->char("parent_type", 10);
             $table->timestamps();
         });

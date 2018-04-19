@@ -9,7 +9,7 @@ class Playlist extends Model
 {
     protected $table = "playlists";
     protected $primaryKey = "playlist_id";
-    protected $fillable = ["name", "description", "artwork"];
+    protected $fillable = ["creator", "name", "description", "artwork", "times_played", "times_recommended"];
 
 
 

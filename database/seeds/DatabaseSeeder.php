@@ -15,34 +15,46 @@ class DatabaseSeeder extends Seeder
         $playlists = [
             [
                 1, 
+                "Thomas 121",
                 "My Playlist 1", 
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 Ut enim ad minim veniam, quis nostrud exercitation.", 
-                "http://www.lgam.info/local--files/wayne-eddy-s-photos-6/Artvo-Shark.jpg"
+                "http://www.lgam.info/local--files/wayne-eddy-s-photos-6/Artvo-Shark.jpg",
+                12,
+                6,
             ],
             [
                 2, 
+                "Mike Myong",
                 "My Playlist 2", 
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt.", 
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiTIj0OzDPkaoeFaG-qvRTvLh9bW3ECk3L1ZqbSf-9miQu7zcb"
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiTIj0OzDPkaoeFaG-qvRTvLh9bW3ECk3L1ZqbSf-9miQu7zcb",
+                7,
+                1,
             ],
             [
                 3, 
+                "John Petrucci",
                 "My Playlist 3", 
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, 
                 consectetur adipiscing elit, sed do eiusmod tempor incididunt.", 
-                "https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster.png/0/images/fandangoblog/Garofalo-It-Final-crop-Silk.jpg"
+                "https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster.png/0/images/fandangoblog/Garofalo-It-Final-crop-Silk.jpg",
+                1,
+                0,
             ],
             [
                 4, 
+                "Tookras324",
                 "My Playlist 4", 
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, 
                 consectetur adipiscing elit, sed do eiusmod tempor incididunt.", 
-                "http://s3.weddbook.com/t4/2/6/1/2616913/flowerfishswan-watercolor-paintingoriginal-watercolor-artunique-artoriginal-watercolor-ooakartworkaquarelleflowerart-collectibes.jpg"
+                "http://s3.weddbook.com/t4/2/6/1/2616913/flowerfishswan-watercolor-paintingoriginal-watercolor-artunique-artoriginal-watercolor-ooakartworkaquarelleflowerart-collectibes.jpg",
+                0,
+                0,
             ],
         ];
     
