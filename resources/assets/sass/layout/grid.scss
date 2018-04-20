@@ -4,6 +4,12 @@
     justify-content: space-between;
     align-items: center;
 
+    &-full {
+        height: 100%;
+        width: 100%;
+        flex: 1 1 auto;
+    }
+
     &-even {
         justify-content: space-evenly;
     }
@@ -17,7 +23,11 @@
     }
 
     &-left {
-        align-items: left;
+        align-items: flex-start;
+    }
+
+    &-right {
+        justify-content: flex-end;
     }
 
     &-center {
@@ -26,6 +36,14 @@
 
     &-wrap {
         flex-wrap: wrap;
+    }
+
+    &-stretch {
+        align-items: stretch;
+    }
+
+    &-grow {
+        flex-grow: 1;
     }
 
     &-square {
@@ -40,4 +58,16 @@
         align-items: center;
     }
 
+}
+
+.blue {
+    background: blue;
+}
+
+.red {
+    background: red;
+}
+
+.gray {
+    background: gray;
 }
