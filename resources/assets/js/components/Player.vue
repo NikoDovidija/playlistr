@@ -1,11 +1,10 @@
 <template>
     <div class="player-container">
-        <div class="soundwaves-container">
-            <!-- <img src="http://www.lgam.info/local--files/wayne-eddy-s-photos-6/Artvo-Shark.jpg" alt=""> -->
-            <span class="soundwave" v-bind:class="{active: isPlaying}" v-for="x in 50"></span>
-        </div>
+        <!-- <div class="soundwaves-container">
+            <img src="http://www.lgam.info/local-files/wayne-eddy-s-photos-6/Artvo-Shark.jpg" alt="">
+           <span class="soundwave" v-bind:class="{active: isPlaying}" v-for="x in 50"></span>
+        </div> -->
         <div class="player grid">
-
             <div class="volume-container">
                 <div class="volume-wrap" v-on:click="setVolume">
                     <div id="volume" ref="volume" class="volume"></div>

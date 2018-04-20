@@ -7,18 +7,6 @@
             <a href="/" class="logo grid-item">
                 <div class="logo"></div>
             </a>
-
-            <div class="grid-item">
-                <span class="btn btn-2 btn-circle">
-                    <i class="icon">search</i>
-                </span>
-
-                <span class="btn btn-1 btn-text">
-                    <span v-if="page == 'playlist'">Upload</span>
-                    <span v-if="page == 'home'">Create</span>
-                    <i class="icon">add</i>
-                </span>
-            </div>
         </div>
     </header>
 </template>

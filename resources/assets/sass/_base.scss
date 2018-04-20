@@ -1,7 +1,6 @@
 * {
     box-sizing: border-box;
 }
-
 html, body, #app {
     height: 100%;
     margin: 0;
@@ -10,7 +9,7 @@ html, body, #app {
 body, #app {
     font-family: $main-font-family;
     font-size: $main-font-size;
-    background: $black;
+    background: white;
     display: flex;
     flex-direction: column;
     color: $white;
