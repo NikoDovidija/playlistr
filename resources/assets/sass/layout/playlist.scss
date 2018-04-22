@@ -1,0 +1,95 @@
+.song-list {
+    padding: 12px 20px;
+    text-align: center;
+
+    &-container {
+        width: 100%;
+        height: 50%;
+    }
+
+    &.swiper-container {
+        width: 100%;
+        height: 100%;
+
+
+        .swiper-slide {
+            color: $gray-light;
+            visibility: hidden;
+
+            &-visible {
+                visibility: visible;
+            }
+
+            &-prev,
+            &-next {
+                color: $black-light;
+            }
+
+            &-edge {
+                color: $gray;
+            }
+
+            &-active {
+                color: $black;
+            }
+        }
+
+        .fade {
+            position: absolute;
+            left: 0;
+            height: 10px;
+            width: 100%;
+            z-index: 10;
+
+            &-top {
+                top: 0;
+                background: linear-gradient(to top, transparent, $white);
+            }
+
+            &-bottom {
+                bottom: 0;
+                background: linear-gradient(to bottom, transparent, $white);
+            }
+        }
+    }
+
+    .song {
+        padding: 6px 12px;
+        cursor: pointer;
+
+        &-name {
+            &:after {
+                content: '-';
+                display: inline;
+                padding: 0 6px;
+            }
+        }
+
+
+        &-artist {
+            position: relative;
+        }
+
+        .song-options {
+            height: 100%;
+            position: absolute;
+            display: none;
+            left: 100%;
+            top: 0;
+
+            &:hover {
+                display: inline;
+            }
+
+            .icon.btn {
+                height: 100%;
+            }
+        }
+
+        &:hover {
+            .song-options {
+                display: inline;
+            }
+        }
+    }
+}

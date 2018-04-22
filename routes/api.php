@@ -18,4 +18,6 @@ Route::get("/comments", "commentController@index");
 Route::post("/comments", "commentController@create");
 Route::get("/comments/{id}", "commentController@getById");
 
+
+Route::get("/{id}/songs", "playlistController@getSongs");
 Route::get("/{id}", "playlistController@getById");

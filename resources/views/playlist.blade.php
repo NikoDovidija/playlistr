@@ -11,8 +11,10 @@
         <c-record></c-record>
     </div>
 
-    <div class="blue grid grid-full grid-right">
-        sadg
+    <div class="grid grid-full grid-right">
+        <div class="grid grid-center grid-full">
+            <c-scroll-list api-get="{{ Request::path().'/songs' }}"></c-scroll-list>
+        </div>
     </div>
 
     {{-- <div class="grid grid-col grid-left grid-stretch">

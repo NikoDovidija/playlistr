@@ -3,6 +3,8 @@ require('moment-duration-format');
 window.ProgressBar = require("progressbar.js");
 window.Vue = require('vue');
 window.Howler = require("howler");
+import Swiper from "swiper/dist/js/swiper.min.js";
+
 
 import Header from "./components/Header.vue";
 import Player from "./components/Player.vue";
@@ -43,6 +45,7 @@ Vue.mixin({
                     }
                 }
             }
+            this.dataLoaded();
             console.log(data);
         },
 
@@ -57,6 +60,10 @@ Vue.mixin({
             .catch(e => {
                 console.error(e);
             });
+        },
+
+        dataLoaded () {
+
         }
     }
 });
