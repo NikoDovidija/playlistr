@@ -1,27 +1,20 @@
 .player {
-    padding: 32px 20px;
+    padding: 12px 20px;
+    
     &-container {
         position: relative;
     }
-.player-container{
-    background-color: white;
-}
+
     .controls {
-        padding: 40px;
-        // border-radius: 100%;
-        // border: 10px solid $orange;
-        // box-shadow: 0 0 10px -1px $orange inset;
 
         .play-btn, .pause-btn {
-            width: 48px;
-            height: 48px;
-            font-size: 32px;
+
+            //font-size: 32px;
         }
     
         .skip-btn {
-            width: 38px;
-            height: 38px;
-            font-size: 24px;
+
+            //font-size: 24px;
         }
     }
 
@@ -41,17 +34,18 @@
     }
 
     .playtime {
-        width: 60%;
+        width: 100%;
     }
 
-    .progress-container {
+    .progress-container,
+    .volume-container {
         width: 100%;
         text-align: right;
       
-        .song-progress {
+        .song-progress,
+        .volume-progress {
             height: 3px;
-
-            
+          
             &-wrap {
                 width: 100%;
                 height: 12px;
@@ -69,8 +63,9 @@
         }
     }
 
-    .volume, .song-progress {
-        background: $gray;
+    .volume-progress,
+    .song-progress {
+        background: $gray-light;
         border-radius: 100px;
         overflow: hidden;
         box-shadow: 0 0 4px -1px $orange;
@@ -80,24 +75,4 @@
         }
     }
 
-    .volume-container {
-        height: 100px;
-        width: 12px;
-
-        .volume-wrap {
-            height: 100%;
-            padding: 0 4px;
-
-            * {
-                width: 100%;
-                height: 100%;
-            }
-        }
-
-        .icon {
-            transform: rotate(-90deg);
-            margin-top: 6px;
-            color: $gray-light;
-        }
-    }
 }

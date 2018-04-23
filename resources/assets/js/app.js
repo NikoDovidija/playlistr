@@ -7,6 +7,7 @@ import Swiper from "swiper/dist/js/swiper.min.js";
 
 
 import Header from "./components/Header.vue";
+import TopNav from "./components/TopNavigation.vue";
 import Player from "./components/Player.vue";
 import Record from "./components/RecordPlayer.vue";
 import Playlist from "./components/Playlist.vue";
@@ -15,6 +16,7 @@ import List from "./components/List.vue";
 import ScrollList from "./components/ScrollList.vue";
 
 Vue.component("c-header", Header);
+Vue.component("c-top-nav", TopNav);
 Vue.component("c-player", Player);
 Vue.component("c-record", Record);
 Vue.component("c-playlist", Playlist);

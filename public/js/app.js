@@ -4890,6 +4890,115 @@ module.exports = {
 /* 2 */
 /***/ (function(module, exports) {
 
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file.
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+module.exports = function normalizeComponent (
+  rawScriptExports,
+  compiledTemplate,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier /* server only */
+) {
+  var esModule
+  var scriptExports = rawScriptExports = rawScriptExports || {}
+
+  // ES6 modules interop
+  var type = typeof rawScriptExports.default
+  if (type === 'object' || type === 'function') {
+    esModule = rawScriptExports
+    scriptExports = rawScriptExports.default
+  }
+
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (compiledTemplate) {
+    options.render = compiledTemplate.render
+    options.staticRenderFns = compiledTemplate.staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = injectStyles
+  }
+
+  if (hook) {
+    var functional = options.functional
+    var existing = functional
+      ? options.render
+      : options.beforeCreate
+
+    if (!functional) {
+      // inject component registration as beforeCreate hook
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    } else {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return existing(h, context)
+      }
+    }
+  }
+
+  return {
+    esModule: esModule,
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
 var g;
 
 // This works in non-strict mode
@@ -4914,7 +5023,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports) {
 
 // Utility functions
@@ -5057,122 +5166,13 @@ module.exports = {
 
 
 /***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-/* globals __VUE_SSR_CONTEXT__ */
-
-// IMPORTANT: Do NOT use ES2015 features in this file.
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
-
-module.exports = function normalizeComponent (
-  rawScriptExports,
-  compiledTemplate,
-  functionalTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier /* server only */
-) {
-  var esModule
-  var scriptExports = rawScriptExports = rawScriptExports || {}
-
-  // ES6 modules interop
-  var type = typeof rawScriptExports.default
-  if (type === 'object' || type === 'function') {
-    esModule = rawScriptExports
-    scriptExports = rawScriptExports.default
-  }
-
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (compiledTemplate) {
-    options.render = compiledTemplate.render
-    options.staticRenderFns = compiledTemplate.staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = injectStyles
-  }
-
-  if (hook) {
-    var functional = options.functional
-    var existing = functional
-      ? options.render
-      : options.beforeCreate
-
-    if (!functional) {
-      // inject component registration as beforeCreate hook
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    } else {
-      // for template-only hot-reload because in that case the render fn doesn't
-      // go through the normalizer
-      options._injectStyles = hook
-      // register for functioal component in vue file
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return existing(h, context)
-      }
-    }
-  }
-
-  return {
-    esModule: esModule,
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
-/***/ }),
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Base object for different progress bar shapes
 
 var Path = __webpack_require__(140);
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 
 var DESTROYED_ERROR = 'Object is destroyed';
 
@@ -8139,7 +8139,7 @@ Popper.Defaults = Defaults;
 /* harmony default export */ __webpack_exports__["default"] = (Popper);
 //# sourceMappingURL=popper.js.map
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(3)))
 
 /***/ }),
 /* 9 */
@@ -30834,7 +30834,7 @@ module.exports = {
     Shape: __webpack_require__(5),
 
     // Internal utils, undocumented.
-    utils: __webpack_require__(3)
+    utils: __webpack_require__(4)
 };
 
 
@@ -30845,7 +30845,7 @@ module.exports = {
 // Lower level API to animate any kind of svg path
 
 var Tweenable = __webpack_require__(170);
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 
 var EASING_ALIASES = {
     easeIn: 'easeInCubic',
@@ -31023,7 +31023,7 @@ module.exports = Path;
 // Circle shaped progress bar
 
 var Shape = __webpack_require__(5);
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 
 var Circle = function Circle(container, options) {
     // Use two arcs to form a circle
@@ -33971,7 +33971,7 @@ module.exports = Circle;
   };
 })();
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
 /* 143 */
@@ -34003,7 +34003,7 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(145);
-module.exports = __webpack_require__(194);
+module.exports = __webpack_require__(197);
 
 
 /***/ }),
@@ -34016,16 +34016,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_swiper_dist_js_swiper_min_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_swiper_dist_js_swiper_min_js__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Header_vue__ = __webpack_require__(176);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Header_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Header_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Player_vue__ = __webpack_require__(179);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Player_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_Player_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_RecordPlayer_vue__ = __webpack_require__(182);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_RecordPlayer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_RecordPlayer_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Playlist_vue__ = __webpack_require__(185);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Playlist_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_Playlist_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_List_vue__ = __webpack_require__(188);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_List_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_List_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_ScrollList_vue__ = __webpack_require__(191);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_ScrollList_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_ScrollList_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_TopNavigation_vue__ = __webpack_require__(179);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_TopNavigation_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_TopNavigation_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Player_vue__ = __webpack_require__(182);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Player_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_Player_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_RecordPlayer_vue__ = __webpack_require__(185);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_RecordPlayer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_RecordPlayer_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Playlist_vue__ = __webpack_require__(188);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Playlist_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_Playlist_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_List_vue__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_List_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_List_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_ScrollList_vue__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_ScrollList_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__components_ScrollList_vue__);
 __webpack_require__(146);
 __webpack_require__(172);
 window.ProgressBar = __webpack_require__(139);
@@ -34041,12 +34043,14 @@ window.Howler = __webpack_require__(142);
 
 
 
+
 Vue.component("c-header", __WEBPACK_IMPORTED_MODULE_1__components_Header_vue___default.a);
-Vue.component("c-player", __WEBPACK_IMPORTED_MODULE_2__components_Player_vue___default.a);
-Vue.component("c-record", __WEBPACK_IMPORTED_MODULE_3__components_RecordPlayer_vue___default.a);
-Vue.component("c-playlist", __WEBPACK_IMPORTED_MODULE_4__components_Playlist_vue___default.a);
-Vue.component("c-list", __WEBPACK_IMPORTED_MODULE_5__components_List_vue___default.a);
-Vue.component("c-scroll-list", __WEBPACK_IMPORTED_MODULE_6__components_ScrollList_vue___default.a);
+Vue.component("c-top-nav", __WEBPACK_IMPORTED_MODULE_2__components_TopNavigation_vue___default.a);
+Vue.component("c-player", __WEBPACK_IMPORTED_MODULE_3__components_Player_vue___default.a);
+Vue.component("c-record", __WEBPACK_IMPORTED_MODULE_4__components_RecordPlayer_vue___default.a);
+Vue.component("c-playlist", __WEBPACK_IMPORTED_MODULE_5__components_Playlist_vue___default.a);
+Vue.component("c-list", __WEBPACK_IMPORTED_MODULE_6__components_List_vue___default.a);
+Vue.component("c-scroll-list", __WEBPACK_IMPORTED_MODULE_7__components_ScrollList_vue___default.a);
 
 // Global component setup
 Vue.mixin({
@@ -51266,7 +51270,7 @@ window.Swiper = __webpack_require__(143);
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(7)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(7)(module)))
 
 /***/ }),
 /* 148 */
@@ -56331,7 +56335,7 @@ webpackContext.id = 168;
 // Line shaped progress bar
 
 var Shape = __webpack_require__(5);
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 
 var Line = function Line(container, options) {
     this._pathTemplate = 'M 0,{center} L 100,{center}';
@@ -58024,7 +58028,7 @@ var Tweenable = (function () {
 
 var Shape = __webpack_require__(5);
 var Circle = __webpack_require__(141);
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 
 var SemiCircle = function SemiCircle(container, options) {
     // Use one arc to form a SemiCircle
@@ -70716,7 +70720,7 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(174).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(174).setImmediate))
 
 /***/ }),
 /* 174 */
@@ -70783,7 +70787,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
 /* 175 */
@@ -70976,14 +70980,14 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(11)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(11)))
 
 /***/ }),
 /* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(4)
+var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = __webpack_require__(177)
 /* template */
@@ -71088,11 +71092,128 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(4)
+var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = __webpack_require__(180)
 /* template */
 var __vue_template__ = __webpack_require__(181)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\TopNavigation.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4a5dc6e2", Component.options)
+  } else {
+    hotAPI.reload("data-v-4a5dc6e2", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 180 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {}
+});
+
+/***/ }),
+/* 181 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "top-navigation" }, [
+      _c("div", { staticClass: "grid grid-col" }, [
+        _c("span", { staticClass: "plus-btn" }, [
+          _c("i", { staticClass: "icon btn" }, [_vm._v("add")])
+        ]),
+        _vm._v(" "),
+        _c("span", { staticClass: "comment-btn" }, [
+          _c("i", { staticClass: "icon btn" }, [_vm._v("mode_comment")])
+        ]),
+        _vm._v(" "),
+        _c("span", { staticClass: "playlist-btn hide" }, [
+          _c("i", { staticClass: "icon btn" }, [_vm._v("playlist_play")])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-4a5dc6e2", module.exports)
+  }
+}
+
+/***/ }),
+/* 182 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(183)
+/* template */
+var __vue_template__ = __webpack_require__(184)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -71131,19 +71252,11 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 180 */
+/* 183 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -71223,14 +71336,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         initializeProgressBars: function initializeProgressBars() {
             this.progressBar = new ProgressBar.Line("#song-progress", {
-                color: "#e64a19"
+                color: "#212121"
             });
             this.volumeBar = new ProgressBar.Line("#volume", {
-                color: "#e64a19",
-                svgStyle: {
-                    transform: "rotate(90deg)",
-                    width: "100px"
-                }
+                color: "#212121"
             });
         },
         initializePlayer: function initializePlayer() {
@@ -71274,10 +71383,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         setVolume: function setVolume(event) {
             var bar = this.$refs.volume.getBoundingClientRect(),
-                start = bar.bottom,
-                height = bar.height,
-                y = event.clientY - start;
-            var relative = y / height;
+                start = bar.left,
+                width = bar.width,
+                x = event.clientX - start;
+            var relative = x / width;
             this.player.volume(Math.abs(relative));
             this.volumeBar.set(relative);
         }
@@ -71285,7 +71394,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 181 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -71293,52 +71402,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "player-container" }, [
-    _c("div", { staticClass: "player grid" }, [
-      _c("div", { staticClass: "volume-container" }, [
-        _c(
-          "div",
-          { staticClass: "volume-wrap", on: { click: _vm.setVolume } },
-          [
-            _c("div", {
-              ref: "volume",
-              staticClass: "volume",
-              attrs: { id: "volume" }
-            })
-          ]
-        ),
-        _vm._v(" "),
-        _c("i", { staticClass: "icon" }, [_vm._v("volume_up")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "controls grid grid-center grid-square" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c(
-          "span",
-          {
-            staticClass: "btn btn-circle btn-3 play-btn",
-            class: { hide: _vm.isPlaying },
-            on: { click: _vm.play }
-          },
-          [_c("i", { staticClass: "icon" }, [_vm._v("play_arrow")])]
-        ),
-        _vm._v(" "),
-        _c(
-          "span",
-          {
-            staticClass: "btn btn-circle btn-3 pause-btn",
-            class: { hide: !_vm.isPlaying },
-            on: { click: _vm.pause }
-          },
-          [_c("i", { staticClass: "icon" }, [_vm._v("pause")])]
-        ),
-        _vm._v(" "),
-        _vm._m(1)
-      ]),
-      _vm._v(" "),
+    _c("div", { staticClass: "player grid grid-col" }, [
       _c("div", { staticClass: "grid grid-col grid-left playtime" }, [
-        _vm._m(2),
-        _vm._v(" "),
         _c("div", { staticClass: "progress-container grid" }, [
           _c(
             "div",
@@ -71359,6 +71424,53 @@ var render = function() {
             _c("span", [_vm._v(_vm._s(_vm.progress))])
           ])
         ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "grid" }, [
+        _c("div", { staticClass: "volume-container grid" }, [
+          _c("i", { staticClass: "icon" }, [_vm._v("volume_up")]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "volume-progress-wrap",
+              on: { click: _vm.setVolume }
+            },
+            [
+              _c("div", {
+                ref: "volume",
+                staticClass: "volume-progress",
+                attrs: { id: "volume" }
+              })
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "controls grid grid-full grid-center" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "span",
+            {
+              staticClass: "btn play-btn",
+              class: { hide: _vm.isPlaying },
+              on: { click: _vm.play }
+            },
+            [_c("i", { staticClass: "icon btn" }, [_vm._v("play_arrow")])]
+          ),
+          _vm._v(" "),
+          _c(
+            "span",
+            {
+              staticClass: "btn pause-btn",
+              class: { hide: !_vm.isPlaying },
+              on: { click: _vm.pause }
+            },
+            [_c("i", { staticClass: "icon btn" }, [_vm._v("pause")])]
+          ),
+          _vm._v(" "),
+          _vm._m(1)
+        ])
       ])
     ])
   ])
@@ -71368,28 +71480,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "btn btn-circle btn-3 skip-btn" }, [
-      _c("i", { staticClass: "icon" }, [_vm._v("skip_previous")])
+    return _c("span", { staticClass: "btn skip-btn" }, [
+      _c("i", { staticClass: "icon btn" }, [_vm._v("skip_previous")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "btn btn-circle btn-3 skip-btn" }, [
-      _c("i", { staticClass: "icon" }, [_vm._v("skip_next")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "song-details" }, [
-      _c("span", { staticClass: "name" }, [_vm._v("Fable")]),
-      _vm._v(" - "),
-      _c("span", { staticClass: "artist" }, [_vm._v("Intervals")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "album" }, [_vm._v("The Shape of Colour")])
+    return _c("span", { staticClass: "btn skip-btn" }, [
+      _c("i", { staticClass: "icon btn" }, [_vm._v("skip_next")])
     ])
   }
 ]
@@ -71403,15 +71503,15 @@ if (false) {
 }
 
 /***/ }),
-/* 182 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(4)
+var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(183)
+var __vue_script__ = __webpack_require__(186)
 /* template */
-var __vue_template__ = __webpack_require__(184)
+var __vue_template__ = __webpack_require__(187)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -71450,7 +71550,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 183 */
+/* 186 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -71526,7 +71626,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 184 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -71609,15 +71709,15 @@ if (false) {
 }
 
 /***/ }),
-/* 185 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(4)
+var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(186)
+var __vue_script__ = __webpack_require__(189)
 /* template */
-var __vue_template__ = __webpack_require__(187)
+var __vue_template__ = __webpack_require__(190)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -71656,7 +71756,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 186 */
+/* 189 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -71752,7 +71852,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 187 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -71865,15 +71965,15 @@ if (false) {
 }
 
 /***/ }),
-/* 188 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(4)
+var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(189)
+var __vue_script__ = __webpack_require__(192)
 /* template */
-var __vue_template__ = __webpack_require__(190)
+var __vue_template__ = __webpack_require__(193)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -71912,7 +72012,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 189 */
+/* 192 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -71952,7 +72052,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 190 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -71998,15 +72098,15 @@ if (false) {
 }
 
 /***/ }),
-/* 191 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(4)
+var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(192)
+var __vue_script__ = __webpack_require__(195)
 /* template */
-var __vue_template__ = __webpack_require__(193)
+var __vue_template__ = __webpack_require__(196)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -72045,7 +72145,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 192 */
+/* 195 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -72132,7 +72232,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 193 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -72188,7 +72288,7 @@ if (false) {
 }
 
 /***/ }),
-/* 194 */
+/* 197 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
