@@ -5,13 +5,28 @@
         margin: 0 auto;
         height: auto;
         transition: .5s ease;
+        &:hover{
+            opacity: 0.3;
+        }
+        &:hover + .playButton{
+            opacity: 1;
+        }
     }
-    img:hover{
-        opacity: 0.3;
-    }
+
+
 }
-    
+.playButton{
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}   
 .swiper-slide {
+    height:340px !important;
     flex-flow:column;
     text-align: center;
     display: -webkit-box;

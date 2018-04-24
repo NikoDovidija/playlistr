@@ -34003,7 +34003,7 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(145);
-module.exports = __webpack_require__(197);
+module.exports = __webpack_require__(203);
 
 
 /***/ }),
@@ -34028,9 +34028,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_List_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_List_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_ScrollList_vue__ = __webpack_require__(194);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_ScrollList_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__components_ScrollList_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_PlaylistSlider_vue__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_PlaylistSlider_vue__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_PlaylistSlider_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_PlaylistSlider_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_SliderSlide_vue__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_SliderSlide_vue__ = __webpack_require__(200);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_SliderSlide_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_SliderSlide_vue__);
 __webpack_require__(146);
 __webpack_require__(172);
@@ -72306,24 +72306,14 @@ if (false) {
 
 /***/ }),
 /* 197 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 198 */,
-/* 199 */,
-/* 200 */,
-/* 201 */,
-/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(203)
+var __vue_script__ = __webpack_require__(198)
 /* template */
-var __vue_template__ = __webpack_require__(204)
+var __vue_template__ = __webpack_require__(199)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -72362,7 +72352,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 203 */
+/* 198 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -72440,7 +72430,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 204 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -72479,15 +72469,15 @@ if (false) {
 }
 
 /***/ }),
-/* 205 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(206)
+var __vue_script__ = __webpack_require__(201)
 /* template */
-var __vue_template__ = __webpack_require__(207)
+var __vue_template__ = __webpack_require__(202)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -72526,11 +72516,32 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 206 */
+/* 201 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -72566,7 +72577,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 207 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -72581,29 +72592,56 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "swiper-slide grid" }, [
-      _c("div", { staticClass: "imageHolder item grid" }, [
+      _c("div", { staticClass: "imageHolder grid-item" }, [
         _c("img", {
           attrs: { src: "/images/intervalsalbum.jpg", alt: "slideImage" }
         }),
         _vm._v(" "),
-        _c("div", { staticClass: "playButton" })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "titleHolder item grid" }, [
-        _c("div", { staticClass: "playlistTitle" }, [
-          _vm._v("\n                Progressive metal playlist\n            ")
+        _c("div", { staticClass: "playButton" }, [
+          _c("span", { staticClass: "grid grid-item grid-center" }, [
+            _c("i", { staticClass: "icon btn bt2" }, [_vm._v("play_arrow")])
+          ])
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "authorHolder item grid" }, [
+      _c("div", { staticClass: "titleHolder grid-item" }, [
+        _c("div", { staticClass: "playlistTitle" }, [
+          _c("p", [_c("b", [_vm._v("Progressive metal playlist")])])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "authorHolder grid-item" }, [
         _c("div", { staticClass: "authorTitle" }, [
           _vm._v("\n                by John Pretruccio\n            ")
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "socialHolder item grid" }, [
-        _c("div", { staticClass: "SocialIcons" }, [
-          _vm._v("\n                ..\n            ")
+      _c("div", { staticClass: "socialHolder grid-item" }, [
+        _c("div", { staticClass: "grid" }, [
+          _c("div", { staticClass: "grid-item grid-left grid-even" }, [
+            _c("span", { staticClass: "grid grid-item iconsHolder" }, [
+              _c("i", { staticClass: "icon btn bt2" }, [
+                _vm._v("play_circle_outline")
+              ]),
+              _vm._v("\n                        512\n                    ")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "grid-item grid-center grid-even" }, [
+            _c("span", { staticClass: "grid grid-item iconsHolder" }, [
+              _c("i", { staticClass: "icon btn bt2" }, [
+                _vm._v("sentiment_very_satisfied")
+              ]),
+              _vm._v("\n                        62\n                    ")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "grid-item grid-right grid-even" }, [
+            _c("span", { staticClass: "grid grid-item iconsHolder" }, [
+              _c("i", { staticClass: "icon btn bt2" }, [_vm._v("share")]),
+              _vm._v("\n                        28\n                    ")
+            ])
+          ])
         ])
       ])
     ])
@@ -72617,6 +72655,12 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-50a0f62e", module.exports)
   }
 }
+
+/***/ }),
+/* 203 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
