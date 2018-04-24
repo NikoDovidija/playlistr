@@ -14,6 +14,8 @@ import Playlist from "./components/Playlist.vue";
 
 import List from "./components/List.vue";
 import ScrollList from "./components/ScrollList.vue";
+import PlaylistSlider from "./components/PlaylistSlider.vue";
+import SliderSlide from "./components/SliderSlide.vue";
 
 Vue.component("c-header", Header);
 Vue.component("c-top-nav", TopNav);
@@ -22,7 +24,8 @@ Vue.component("c-record", Record);
 Vue.component("c-playlist", Playlist);
 Vue.component("c-list", List);
 Vue.component("c-scroll-list", ScrollList);
-
+Vue.component("c-playlist-slider",PlaylistSlider);
+Vue.component("c-slider-slide",SliderSlide);
 // Global component setup
 Vue.mixin({
     props: ["apiGet"],
