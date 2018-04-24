@@ -1,5 +1,5 @@
 <template>
-    <div class="sliderSlide grid">
+    <div class="swiper-slide grid">
             <div class="imageHolder item grid">
                 <img src="/images/intervalsalbum.jpg" alt="slideImage"/>
                 <div class="playButton"></div>

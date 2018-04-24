@@ -8,6 +8,7 @@
       <c-slider-slide></c-slider-slide>
       <c-slider-slide></c-slider-slide>
       <c-slider-slide></c-slider-slide>
+
     </div>
      <div class="swiper-pagination"></div>
 </div>
@@ -20,6 +21,7 @@
         data () {
             return {
                 swiper: null,
+                numberslides:null
             }
         },
         mounted(){
@@ -27,19 +29,27 @@
         },
         methods: {
               initSwiper () {
+                var ww_temp = $(window).width()
                 let self = this;
+                if (ww_temp>1000) self.numberslides = 5;
+                if (ww_temp>468 && ww_temp<=1000) self.numberslides = 3;
+                if (ww_temp<=468) self.numberslides = 1;        
                 this.swiper = new Swiper(".swiper-container", {
-                    slidesPerView: 3,
-                    loop: true,
-                    spaceBetween: 15,
+                    slidesPerView: self.numberslides,
                     initialSlide: 2,
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true,
-                    },
-                });
-
+                    loop:true,
+                    centeredSlides: true,
+                    });  
+                $(window).on("resize", function () {
+                    var ww = $(window).width()
+                    if (ww>1000) self.swiper.params.slidesPerView = 5;
+                    if (ww>724 && ww<=1000) self.swiper.params.slidesPerView = 3;
+                    if (ww>468 && ww<=724) self.swiper.params.slidesPerView = 2;
+                    if (ww<=468) self.swiper.params.slidesPerView = 1;
+                    self.swiper.update();
+                });    
         }
+        
         },  
     }
 </script>

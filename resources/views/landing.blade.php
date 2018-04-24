@@ -12,7 +12,7 @@
 <div class="grid grid-full">
 <div class="grid-item grid-wide grid-center">
 <c-playlist-slider></c-playlist-slider>
-</div>
+
 </div>
 </div>
 @endsection

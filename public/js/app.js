@@ -72382,13 +72382,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: [],
     data: function data() {
         return {
-            swiper: null
+            swiper: null,
+            numberslides: null
         };
     },
     mounted: function mounted() {
@@ -72397,16 +72399,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         initSwiper: function initSwiper() {
+            var ww_temp = $(window).width();
             var self = this;
+            if (ww_temp > 1000) self.numberslides = 5;
+            if (ww_temp > 468 && ww_temp <= 1000) self.numberslides = 3;
+            if (ww_temp <= 468) self.numberslides = 1;
             this.swiper = new Swiper(".swiper-container", {
-                slidesPerView: 3,
-                loop: true,
-                spaceBetween: 15,
+                slidesPerView: self.numberslides,
                 initialSlide: 2,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true
-                }
+                loop: true,
+                centeredSlides: true
+            });
+            $(window).on("resize", function () {
+                var ww = $(window).width();
+                if (ww > 1000) self.swiper.params.slidesPerView = 5;
+                if (ww > 724 && ww <= 1000) self.swiper.params.slidesPerView = 3;
+                if (ww > 468 && ww <= 724) self.swiper.params.slidesPerView = 2;
+                if (ww <= 468) self.swiper.params.slidesPerView = 1;
+                self.swiper.update();
             });
         }
     }
@@ -72553,7 +72563,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "sliderSlide grid" }, [
+    return _c("div", { staticClass: "swiper-slide grid" }, [
       _c("div", { staticClass: "imageHolder item grid" }, [
         _c("img", {
           attrs: { src: "/images/intervalsalbum.jpg", alt: "slideImage" }
