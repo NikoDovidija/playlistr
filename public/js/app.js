@@ -34102,6 +34102,10 @@ var app = new Vue({
     el: "#app"
 });
 
+$(".m-drawer-btn").on("click", function () {
+    $(".m-drawer").toggleClass("active");
+});
+
 /***/ }),
 /* 146 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -71160,7 +71164,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {}
+    data: function data() {
+        return {};
+    }
 });
 
 /***/ }),
@@ -71257,6 +71263,10 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
 //
 //
 //
@@ -71401,8 +71411,10 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "player-container" }, [
-    _c("div", { staticClass: "player grid grid-col" }, [
+  return _c("div", { staticClass: "player-container grid grid-half" }, [
+    _c("div", { staticClass: "player grid grid-wide grid-col" }, [
+      _vm._m(0),
+      _vm._v(" "),
       _c("div", { staticClass: "grid grid-col grid-left playtime" }, [
         _c("div", { staticClass: "progress-container grid" }, [
           _c(
@@ -71447,7 +71459,7 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "controls grid grid-full grid-center" }, [
-          _vm._m(0),
+          _vm._m(1),
           _vm._v(" "),
           _c(
             "span",
@@ -71469,13 +71481,27 @@ var render = function() {
             [_c("i", { staticClass: "icon btn" }, [_vm._v("pause")])]
           ),
           _vm._v(" "),
-          _vm._m(1)
+          _vm._m(2)
         ])
       ])
     ])
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "song-playing sm-only grid grid-wide grid-center" },
+      [
+        _c("span", [_vm._v("Ka$cade")]),
+        _vm._v(" - "),
+        _c("span", [_vm._v("Animals As Leaders")])
+      ]
+    )
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -71673,27 +71699,7 @@ var staticRenderFns = [
                 attrs: { src: "/public/images/record-handle.svg", alt: "" }
               })
             ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "playlist-social grid grid-full grid-center" },
-            [
-              _c("span", { staticClass: "grid" }, [
-                _c("i", { staticClass: "icon btn" }, [
-                  _vm._v("favorite_border")
-                ]),
-                _vm._v(" "),
-                _c("span", [_vm._v("312")])
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "grid" }, [
-                _c("i", { staticClass: "icon btn" }, [_vm._v("share")]),
-                _vm._v(" "),
-                _c("span", [_vm._v("56")])
-              ])
-            ]
-          )
+          ])
         ])
       ]
     )
@@ -72204,7 +72210,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 direction: "vertical",
                 initialSlide: self.currentSong,
                 centeredSlides: true,
-                slidesPerView: 7,
+                slidesPerView: 9,
                 spaceBetween: 0,
                 grabCursor: true,
                 watchSlidesVisibility: true,
@@ -72239,34 +72245,38 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "song-list-container" }, [
-    _c("div", { staticClass: "song-list swiper-container" }, [
-      _c("div", { staticClass: "fade fade-top" }),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "swiper-wrapper" },
-        _vm._l(_vm.songs, function(song, index) {
-          return _c("div", { staticClass: "song swiper-slide" }, [
-            _c("span", { staticClass: "song-name" }, [
-              _vm._v(_vm._s(song.name))
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "song-artist" }, [
-              _vm._v(
-                "\n                    " +
-                  _vm._s(song.artist) +
-                  "\n                    "
-              ),
-              _vm._m(0, true)
+  return _c(
+    "div",
+    { staticClass: "song-list-container grid grid-full grid-center" },
+    [
+      _c("div", { staticClass: "song-list swiper-container" }, [
+        _c("div", { staticClass: "fade fade-top" }),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "swiper-wrapper" },
+          _vm._l(_vm.songs, function(song, index) {
+            return _c("div", { staticClass: "song swiper-slide" }, [
+              _c("span", { staticClass: "song-name" }, [
+                _vm._v(_vm._s(song.name))
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "song-artist" }, [
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(song.artist) +
+                    "\n                    "
+                ),
+                _vm._m(0, true)
+              ])
             ])
-          ])
-        })
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "fade fade-bottom" })
-    ])
-  ])
+          })
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "fade fade-bottom" })
+      ])
+    ]
+  )
 }
 var staticRenderFns = [
   function() {

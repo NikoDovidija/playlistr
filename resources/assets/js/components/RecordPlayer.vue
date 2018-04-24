@@ -36,7 +36,7 @@
                     </div>
                 </div>
 
-                <div class="playlist-social grid grid-full grid-center">
+                <!-- <div class="playlist-social grid grid-full grid-center">
                     <span class="grid">
                         <i class="icon btn">favorite_border</i>
                         <span>312</span>
@@ -45,7 +45,7 @@
                         <i class="icon btn">share</i>
                         <span>56</span>
                     </span>
-                </div>
+                </div> -->
             </div>
 
 

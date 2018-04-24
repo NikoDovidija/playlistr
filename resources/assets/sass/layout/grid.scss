@@ -10,6 +10,18 @@
         flex: 1 1 auto;
     }
 
+    &-wide {
+        width: 100%;
+    }
+
+    &-half {
+        width: 50%;
+
+        @include media("screen", "<=sm") {
+            width: 100%;
+        }
+    }
+
     &-even {
         justify-content: space-evenly;
     }

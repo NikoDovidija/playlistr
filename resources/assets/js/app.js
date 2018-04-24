@@ -73,3 +73,7 @@ Vue.mixin({
 const app = new Vue({
     el: "#app",
 });
+
+$(".m-drawer-btn").on("click", function () {
+    $(".m-drawer").toggleClass("active");
+});

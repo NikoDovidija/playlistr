@@ -1,6 +1,10 @@
 <template>
-    <div class="player-container">
-        <div class="player grid grid-col">
+    <div class="player-container grid grid-half">
+        <div class="player grid grid-wide grid-col">
+
+            <div class="song-playing sm-only grid grid-wide grid-center">
+                <span>Ka$cade</span> - <span>Animals As Leaders</span>
+            </div>
 
             <div class="grid grid-col grid-left playtime">
                 <div class="progress-container grid">

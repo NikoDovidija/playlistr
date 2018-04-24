@@ -1,5 +1,5 @@
 <template>
-    <div class="song-list-container">
+    <div class="song-list-container grid grid-full grid-center">
 
         <div class="song-list swiper-container">
             <div class="fade fade-top"></div>
@@ -58,7 +58,7 @@
                     direction: "vertical",
                     initialSlide: self.currentSong,
                     centeredSlides: true,
-                    slidesPerView: 7,
+                    slidesPerView: 9,
                     spaceBetween: 0,
                     grabCursor: true,
                     watchSlidesVisibility: true,
