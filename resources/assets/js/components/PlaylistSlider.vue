@@ -39,17 +39,33 @@
                     slidesPerView: self.numberslides,
                     initialSlide: 2,
                     centeredSlides: true,
+                    breakpoints: {
+                        // when window width is <= 320px
+                        5200: {
+                        slidesPerView: 5,
+                        spaceBetween: 25
+                        },
+                        1500: {
+                        slidesPerView: 4,
+                        spaceBetween: 25
+                        },
+                        1000: {
+                        slidesPerView: 3,
+                        spaceBetween: 10
+                        },
+                        // when window width is <= 480px
+                        724: {
+                        slidesPerView: 2,
+                        spaceBetween: 15
+                        },
+                        // when window width is <= 640px
+                        468: {
+                        slidesPerView: 1,
+                        spaceBetween: 15
+                        }
+                    }
                     });  
- 
-                this.swiper.update();   
-                $(window).on("resize", function () {
-                    var ww = $(window).width();
-                    if (ww>1000) self.swiper.params.slidesPerView = 5;
-                    if (ww>724 && ww<=1000) self.swiper.params.slidesPerView = 3;
-                    if (ww>468 && ww<=724) self.swiper.params.slidesPerView = 2;
-                    if (ww<=468) self.swiper.params.slidesPerView = 1;
-                    self.swiper.update();
-                });    
+        
         }
         
         },  
