@@ -50,7 +50,7 @@ Vue.mixin({
                     }
                 }
             }
-            this.dataLoaded();
+            //this.dataLoaded();
             console.log(data);
         },
 

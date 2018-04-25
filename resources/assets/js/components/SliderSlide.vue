@@ -55,6 +55,7 @@
         methods: {
             detachAll() {
                 let playlists = $(".playlist-item").detach();
+                
                 console.log(playlists);
             }
         }

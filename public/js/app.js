@@ -34084,7 +34084,7 @@ Vue.mixin({
                     }
                 }
             }
-            this.dataLoaded();
+            //this.dataLoaded();
             console.log(data);
         },
 
@@ -72372,6 +72372,43 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -72379,56 +72416,68 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             swiper: null,
-            numberslides: null
+            numberslides: null,
+            playlists: []
         };
     },
     mounted: function mounted() {
         this.initSwiper();
     },
 
+
+    computed: {},
+
+    updated: function updated() {
+        this.$nextTick(function () {
+            if (this.swiper != null) {
+                this.swiper.update();
+            }
+        });
+    },
+
+
     methods: {
         initSwiper: function initSwiper() {
             var ww_temp = $(window).width();
             var self = this;
-            if (ww_temp > 1000) this.numberslides = 5;
-            if (ww_temp > 724 && ww_temp <= 1000) this.numberslides = 3;
-            if (ww_temp > 468 && ww_temp <= 724) this.numberslides = 2;
-            if (ww_temp <= 468) this.numberslides = 1;
             this.swiper = new Swiper(".swiper-container", {
-                //slidesPerView: self.numberslides,
-                //initialSlide: 2,
                 direction: "vertical",
                 centeredSlides: true,
                 grabCursor: true,
                 watchSlidesVisibility: true,
                 mousewheelControl: true,
                 freeModeSticky: true
-                // breakpoints: {
-                //     // when window width is <= 320px
-                //     5200: {
-                //     slidesPerView: 5,
-                //     spaceBetween: 25
-                //     },
-                //     1500: {
-                //     slidesPerView: 4,
-                //     spaceBetween: 25
-                //     },
-                //     1000: {
-                //     slidesPerView: 3,
-                //     spaceBetween: 10
-                //     },
-                //     // when window width is <= 480px
-                //     724: {
-                //     slidesPerView: 2,
-                //     spaceBetween: 15
-                //     },
-                //     // when window width is <= 640px
-                //     468: {
-                //     slidesPerView: 1,
-                //     spaceBetween: 15
-                //     }
-                //}
             });
+
+            $(window).on("resize", function () {
+                var currentPlaylists = self.playlists;
+                self.playlists = [];
+                self.playlists = currentPlaylists;
+            });
+        },
+        slides: function slides() {
+            var numItems = 1;
+            var width = $(window).width();
+            if (width > 468) numItems = 2;
+            if (width > 720) numItems = 3;
+            if (width > 1000) numItems = 4;
+            if (width > 1200) numItems = 5;
+
+            var slides = [];
+            var i = 0;
+            var currentSlide = [];
+            for (var x = 0; x < this.playlists.length; x++) {
+                currentSlide.push(this.playlists[x]);
+                i++;
+                if (i >= numItems) {
+                    slides.push(currentSlide);
+                    currentSlide = [];
+                    i = 0;
+                }
+            }
+
+            slides.push(currentSlide);
+            return slides;
         }
     }
 });
@@ -72445,22 +72494,101 @@ var render = function() {
     _c(
       "div",
       { staticClass: "swiper-wrapper" },
-      [
-        _c("c-slider-slide"),
-        _vm._v(" "),
-        _c("c-slider-slide"),
-        _vm._v(" "),
-        _c("c-slider-slide"),
-        _vm._v(" "),
-        _c("c-slider-slide"),
-        _vm._v(" "),
-        _c("c-slider-slide")
-      ],
-      1
+      _vm._l(_vm.slides(), function(slide) {
+        return _c(
+          "div",
+          { staticClass: "swiper-slide grid grid-full" },
+          _vm._l(slide, function(playlist) {
+            return _c("div", { staticClass: "playlist-item grid grid-col" }, [
+              _vm._m(0, true),
+              _vm._v(" "),
+              _vm._m(1, true),
+              _vm._v(" "),
+              _vm._m(2, true),
+              _vm._v(" "),
+              _vm._m(3, true)
+            ])
+          })
+        )
+      })
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "imageHolder grid grid-col" }, [
+      _c("img", {
+        attrs: { src: "/images/intervalsalbum.jpg", alt: "slideImage" }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "playButton" }, [
+        _c("span", { staticClass: "grid grid-item grid-center" }, [
+          _c("i", { staticClass: "icon-play3 btn bt2" })
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "titleHolder grid grid-col" }, [
+      _c("div", { staticClass: "playlistTitle" }, [
+        _c("p", [_c("b", [_vm._v("Progressive metal playlist")])])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "authorHolder grid grid-col" }, [
+      _c("div", { staticClass: "authorTitle" }, [
+        _vm._v(
+          "\n                        by John Pretruccio\n                    "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "socialHolder grid grid-col" }, [
+      _c("div", { staticClass: "grid" }, [
+        _c("div", { staticClass: "grid grid-item grid-left grid-even" }, [
+          _c("span", { staticClass: "grid grid-item iconsHolder" }, [
+            _c("i", { staticClass: "icon-play3 btn bt2" }),
+            _vm._v(
+              "\n                                512\n                            "
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "grid grid-item grid-center grid-even" }, [
+          _c("span", { staticClass: "grid grid-item iconsHolder" }, [
+            _c("i", { staticClass: "icon-favorite btn bt2" }),
+            _vm._v(
+              "\n                                62\n                            "
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "grid grid-item grid-right grid-even" }, [
+          _c("span", { staticClass: "grid grid-item iconsHolder" }, [
+            _c("i", { staticClass: "icon-share2 btn bt2" }),
+            _vm._v(
+              "\n                                28\n                            "
+            )
+          ])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -72580,6 +72708,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         detachAll: function detachAll() {
             var playlists = $(".playlist-item").detach();
+
             console.log(playlists);
         }
     }
