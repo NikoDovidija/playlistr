@@ -4,13 +4,12 @@
     <div class="swiper-wrapper">
         <!-- Slides -->
       <c-slider-slide></c-slider-slide>
+      
       <c-slider-slide></c-slider-slide>
       <c-slider-slide></c-slider-slide>
       <c-slider-slide></c-slider-slide>
       <c-slider-slide></c-slider-slide>
-
     </div>
-     <div class="swiper-pagination"></div>
 </div>
 </template>
 
@@ -38,6 +37,7 @@
                 this.swiper = new Swiper(".swiper-container", {
                     slidesPerView: self.numberslides,
                     initialSlide: 2,
+                    direction: "vertical",
                     centeredSlides: true,
                     breakpoints: {
                         // when window width is <= 320px

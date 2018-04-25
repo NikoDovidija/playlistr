@@ -1,6 +1,7 @@
 <template>
-    <div class="swiper-slide grid">
-            <div class="imageHolder grid-item">
+    <div class="swiper-slide grid grid-full">
+        <div v-for='x in 3' >
+            <div class="imageHolder grid grid-col">
                 <img src="/images/intervalsalbum.jpg" alt="slideImage"/>
                 <div class="playButton">
                           <span class="grid grid-item grid-center">
@@ -8,31 +9,31 @@
                         </span>
                 </div>
             </div>
-            <div class="titleHolder grid-item">
+            <div class="titleHolder grid grid-col">
                 <div class="playlistTitle">
                     <p><b>Progressive metal playlist</b></p>
                 </div>      
             </div>
-             <div class="authorHolder grid-item">
+             <div class="authorHolder grid grid-col">
                 <div class="authorTitle">
                     by John Pretruccio
                 </div>  
             </div>
-            <div class="socialHolder grid-item">
+            <div class="socialHolder grid grid-col">
                  <div class="grid">
-                    <div class="grid-item grid-left grid-even">
+                    <div class="grid grid-item grid-left grid-even">
                         <span class="grid grid-item iconsHolder">
                             <i class="icon btn bt2">play_circle_outline</i>
                             512
                         </span>
                     </div>
-                     <div class="grid-item grid-center grid-even">
+                     <div class="grid grid-item grid-center grid-even">
                         <span class="grid grid-item iconsHolder">
                             <i class="icon btn bt2">sentiment_very_satisfied</i>
                             62
                         </span>
                     </div>
-                     <div class="grid-item grid-right grid-even">
+                     <div class="grid grid-item grid-right grid-even">
                             <span class="grid grid-item iconsHolder">
                             <i class="icon btn bt2">share</i>
                             28
@@ -40,6 +41,7 @@
                     </div>
                 </div>  
             </div>
+        </div>
     </div>
 </template>
 

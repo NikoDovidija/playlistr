@@ -653,483 +653,538 @@ header .soundwaves-bg {
 }
 
 .soundwave:nth-child(1) {
-  height: 112px;
+  height: 124px;
 }
 
 .soundwave.active:nth-child(1) {
-  -webkit-animation: grow1 2123ms alternate infinite;
-          animation: grow1 2123ms alternate infinite;
+  -webkit-animation: grow1 1831ms alternate infinite;
+          animation: grow1 1831ms alternate infinite;
 }
 
 @-webkit-keyframes grow1 {
   0% {
-    height: 190px;
+    height: 55px;
   }
 
   10% {
-    height: 68px;
-  }
-
-  20% {
-    height: 114px;
-  }
-
-  30% {
-    height: 124px;
-  }
-
-  40% {
-    height: 197px;
-  }
-
-  50% {
     height: 74px;
   }
 
-  60% {
-    height: 153px;
-  }
-
-  70% {
-    height: 133px;
-  }
-
-  80% {
-    height: 111px;
-  }
-
-  90% {
+  20% {
     height: 181px;
   }
 
+  30% {
+    height: 139px;
+  }
+
+  40% {
+    height: 145px;
+  }
+
+  50% {
+    height: 79px;
+  }
+
+  60% {
+    height: 67px;
+  }
+
+  70% {
+    height: 169px;
+  }
+
+  80% {
+    height: 93px;
+  }
+
+  90% {
+    height: 185px;
+  }
+
   100% {
-    height: 76px;
+    height: 136px;
   }
 }
 
 @keyframes grow1 {
   0% {
-    height: 190px;
+    height: 55px;
   }
 
   10% {
-    height: 68px;
-  }
-
-  20% {
-    height: 114px;
-  }
-
-  30% {
-    height: 124px;
-  }
-
-  40% {
-    height: 197px;
-  }
-
-  50% {
     height: 74px;
   }
 
-  60% {
-    height: 153px;
-  }
-
-  70% {
-    height: 133px;
-  }
-
-  80% {
-    height: 111px;
-  }
-
-  90% {
+  20% {
     height: 181px;
   }
 
+  30% {
+    height: 139px;
+  }
+
+  40% {
+    height: 145px;
+  }
+
+  50% {
+    height: 79px;
+  }
+
+  60% {
+    height: 67px;
+  }
+
+  70% {
+    height: 169px;
+  }
+
+  80% {
+    height: 93px;
+  }
+
+  90% {
+    height: 185px;
+  }
+
   100% {
-    height: 76px;
+    height: 136px;
   }
 }
 
 .soundwave:nth-child(2) {
-  height: 86px;
+  height: 155px;
 }
 
 .soundwave.active:nth-child(2) {
-  -webkit-animation: grow2 2186ms alternate infinite;
-          animation: grow2 2186ms alternate infinite;
+  -webkit-animation: grow2 1776ms alternate infinite;
+          animation: grow2 1776ms alternate infinite;
 }
 
 @-webkit-keyframes grow2 {
   0% {
-    height: 149px;
+    height: 121px;
   }
 
   10% {
-    height: 110px;
+    height: 139px;
   }
 
   20% {
-    height: 98px;
+    height: 119px;
   }
 
   30% {
-    height: 104px;
+    height: 112px;
   }
 
   40% {
-    height: 88px;
+    height: 149px;
   }
 
   50% {
-    height: 173px;
+    height: 156px;
   }
 
   60% {
-    height: 87px;
+    height: 193px;
   }
 
   70% {
-    height: 97px;
+    height: 141px;
   }
 
   80% {
-    height: 128px;
+    height: 68px;
   }
 
   90% {
-    height: 122px;
+    height: 186px;
   }
 
   100% {
-    height: 52px;
+    height: 74px;
   }
 }
 
 @keyframes grow2 {
   0% {
-    height: 149px;
+    height: 121px;
   }
 
   10% {
-    height: 110px;
+    height: 139px;
   }
 
   20% {
-    height: 98px;
+    height: 119px;
   }
 
   30% {
-    height: 104px;
+    height: 112px;
   }
 
   40% {
-    height: 88px;
+    height: 149px;
   }
 
   50% {
-    height: 173px;
+    height: 156px;
   }
 
   60% {
-    height: 87px;
+    height: 193px;
   }
 
   70% {
-    height: 97px;
+    height: 141px;
   }
 
   80% {
-    height: 128px;
+    height: 68px;
   }
 
   90% {
-    height: 122px;
+    height: 186px;
   }
 
   100% {
-    height: 52px;
+    height: 74px;
   }
 }
 
 .soundwave:nth-child(3) {
-  height: 87px;
+  height: 115px;
 }
 
 .soundwave.active:nth-child(3) {
-  -webkit-animation: grow3 1574ms alternate infinite;
-          animation: grow3 1574ms alternate infinite;
+  -webkit-animation: grow3 2093ms alternate infinite;
+          animation: grow3 2093ms alternate infinite;
 }
 
 @-webkit-keyframes grow3 {
   0% {
-    height: 105px;
-  }
-
-  10% {
-    height: 59px;
-  }
-
-  20% {
-    height: 160px;
-  }
-
-  30% {
-    height: 126px;
-  }
-
-  40% {
-    height: 166px;
-  }
-
-  50% {
-    height: 130px;
-  }
-
-  60% {
-    height: 121px;
-  }
-
-  70% {
     height: 74px;
   }
 
+  10% {
+    height: 65px;
+  }
+
+  20% {
+    height: 111px;
+  }
+
+  30% {
+    height: 88px;
+  }
+
+  40% {
+    height: 185px;
+  }
+
+  50% {
+    height: 192px;
+  }
+
+  60% {
+    height: 116px;
+  }
+
+  70% {
+    height: 158px;
+  }
+
   80% {
-    height: 133px;
+    height: 194px;
   }
 
   90% {
-    height: 129px;
+    height: 113px;
   }
 
   100% {
-    height: 63px;
+    height: 80px;
   }
 }
 
 @keyframes grow3 {
   0% {
-    height: 105px;
-  }
-
-  10% {
-    height: 59px;
-  }
-
-  20% {
-    height: 160px;
-  }
-
-  30% {
-    height: 126px;
-  }
-
-  40% {
-    height: 166px;
-  }
-
-  50% {
-    height: 130px;
-  }
-
-  60% {
-    height: 121px;
-  }
-
-  70% {
     height: 74px;
   }
 
+  10% {
+    height: 65px;
+  }
+
+  20% {
+    height: 111px;
+  }
+
+  30% {
+    height: 88px;
+  }
+
+  40% {
+    height: 185px;
+  }
+
+  50% {
+    height: 192px;
+  }
+
+  60% {
+    height: 116px;
+  }
+
+  70% {
+    height: 158px;
+  }
+
   80% {
-    height: 133px;
+    height: 194px;
   }
 
   90% {
-    height: 129px;
+    height: 113px;
   }
 
   100% {
-    height: 63px;
+    height: 80px;
   }
 }
 
 .soundwave:nth-child(4) {
-  height: 86px;
+  height: 100px;
 }
 
 .soundwave.active:nth-child(4) {
-  -webkit-animation: grow4 1782ms alternate infinite;
-          animation: grow4 1782ms alternate infinite;
+  -webkit-animation: grow4 1706ms alternate infinite;
+          animation: grow4 1706ms alternate infinite;
 }
 
 @-webkit-keyframes grow4 {
   0% {
-    height: 163px;
+    height: 132px;
   }
 
   10% {
-    height: 90px;
+    height: 117px;
   }
 
   20% {
-    height: 180px;
+    height: 55px;
   }
 
   30% {
-    height: 160px;
+    height: 127px;
   }
 
   40% {
-    height: 158px;
+    height: 130px;
   }
 
   50% {
-    height: 142px;
+    height: 55px;
   }
 
   60% {
-    height: 142px;
+    height: 172px;
   }
 
   70% {
-    height: 90px;
+    height: 112px;
   }
 
   80% {
-    height: 54px;
+    height: 194px;
   }
 
   90% {
-    height: 77px;
+    height: 123px;
   }
 
   100% {
-    height: 58px;
+    height: 78px;
   }
 }
 
 @keyframes grow4 {
   0% {
-    height: 163px;
+    height: 132px;
   }
 
   10% {
-    height: 90px;
+    height: 117px;
   }
 
   20% {
-    height: 180px;
+    height: 55px;
   }
 
   30% {
-    height: 160px;
+    height: 127px;
   }
 
   40% {
-    height: 158px;
+    height: 130px;
   }
 
   50% {
-    height: 142px;
+    height: 55px;
   }
 
   60% {
-    height: 142px;
+    height: 172px;
   }
 
   70% {
-    height: 90px;
+    height: 112px;
   }
 
   80% {
-    height: 54px;
+    height: 194px;
   }
 
   90% {
-    height: 77px;
+    height: 123px;
   }
 
   100% {
-    height: 58px;
+    height: 78px;
   }
 }
 
 .soundwave:nth-child(5) {
-  height: 153px;
+  height: 111px;
 }
 
 .soundwave.active:nth-child(5) {
-  -webkit-animation: grow5 1939ms alternate infinite;
-          animation: grow5 1939ms alternate infinite;
+  -webkit-animation: grow5 1638ms alternate infinite;
+          animation: grow5 1638ms alternate infinite;
 }
 
 @-webkit-keyframes grow5 {
   0% {
-    height: 113px;
+    height: 175px;
   }
 
   10% {
-    height: 151px;
+    height: 155px;
   }
 
   20% {
-    height: 197px;
+    height: 147px;
   }
 
   30% {
-    height: 79px;
+    height: 68px;
   }
 
   40% {
-    height: 87px;
+    height: 98px;
   }
 
   50% {
-    height: 172px;
-  }
-
-  60% {
-    height: 135px;
-  }
-
-  70% {
-    height: 106px;
-  }
-
-  80% {
-    height: 183px;
-  }
-
-  90% {
     height: 101px;
   }
 
+  60% {
+    height: 83px;
+  }
+
+  70% {
+    height: 53px;
+  }
+
+  80% {
+    height: 130px;
+  }
+
+  90% {
+    height: 54px;
+  }
+
   100% {
-    height: 136px;
+    height: 194px;
   }
 }
 
 @keyframes grow5 {
   0% {
-    height: 113px;
+    height: 175px;
   }
 
   10% {
-    height: 151px;
+    height: 155px;
   }
 
   20% {
-    height: 197px;
+    height: 147px;
   }
 
   30% {
-    height: 79px;
+    height: 68px;
   }
 
   40% {
-    height: 87px;
+    height: 98px;
+  }
+
+  50% {
+    height: 101px;
+  }
+
+  60% {
+    height: 83px;
+  }
+
+  70% {
+    height: 53px;
+  }
+
+  80% {
+    height: 130px;
+  }
+
+  90% {
+    height: 54px;
+  }
+
+  100% {
+    height: 194px;
+  }
+}
+
+.soundwave:nth-child(6) {
+  height: 140px;
+}
+
+.soundwave.active:nth-child(6) {
+  -webkit-animation: grow6 1830ms alternate infinite;
+          animation: grow6 1830ms alternate infinite;
+}
+
+@-webkit-keyframes grow6 {
+  0% {
+    height: 133px;
+  }
+
+  10% {
+    height: 83px;
+  }
+
+  20% {
+    height: 158px;
+  }
+
+  30% {
+    height: 132px;
+  }
+
+  40% {
+    height: 74px;
   }
 
   50% {
@@ -1137,419 +1192,419 @@ header .soundwaves-bg {
   }
 
   60% {
-    height: 135px;
+    height: 150px;
   }
 
   70% {
-    height: 106px;
+    height: 152px;
   }
 
   80% {
-    height: 183px;
+    height: 150px;
   }
 
   90% {
-    height: 101px;
+    height: 155px;
   }
 
   100% {
-    height: 136px;
-  }
-}
-
-.soundwave:nth-child(6) {
-  height: 137px;
-}
-
-.soundwave.active:nth-child(6) {
-  -webkit-animation: grow6 1715ms alternate infinite;
-          animation: grow6 1715ms alternate infinite;
-}
-
-@-webkit-keyframes grow6 {
-  0% {
-    height: 126px;
-  }
-
-  10% {
-    height: 78px;
-  }
-
-  20% {
-    height: 109px;
-  }
-
-  30% {
-    height: 114px;
-  }
-
-  40% {
-    height: 127px;
-  }
-
-  50% {
-    height: 99px;
-  }
-
-  60% {
-    height: 120px;
-  }
-
-  70% {
-    height: 185px;
-  }
-
-  80% {
-    height: 200px;
-  }
-
-  90% {
-    height: 95px;
-  }
-
-  100% {
-    height: 179px;
+    height: 197px;
   }
 }
 
 @keyframes grow6 {
   0% {
-    height: 126px;
+    height: 133px;
   }
 
   10% {
-    height: 78px;
+    height: 83px;
   }
 
   20% {
-    height: 109px;
+    height: 158px;
   }
 
   30% {
-    height: 114px;
+    height: 132px;
   }
 
   40% {
-    height: 127px;
+    height: 74px;
   }
 
   50% {
-    height: 99px;
+    height: 172px;
   }
 
   60% {
-    height: 120px;
+    height: 150px;
   }
 
   70% {
-    height: 185px;
+    height: 152px;
   }
 
   80% {
-    height: 200px;
+    height: 150px;
   }
 
   90% {
-    height: 95px;
+    height: 155px;
   }
 
   100% {
-    height: 179px;
+    height: 197px;
   }
 }
 
 .soundwave:nth-child(7) {
-  height: 119px;
+  height: 194px;
 }
 
 .soundwave.active:nth-child(7) {
-  -webkit-animation: grow7 1556ms alternate infinite;
-          animation: grow7 1556ms alternate infinite;
+  -webkit-animation: grow7 2098ms alternate infinite;
+          animation: grow7 2098ms alternate infinite;
 }
 
 @-webkit-keyframes grow7 {
   0% {
-    height: 65px;
+    height: 51px;
   }
 
   10% {
-    height: 141px;
+    height: 106px;
   }
 
   20% {
-    height: 153px;
+    height: 156px;
   }
 
   30% {
-    height: 102px;
+    height: 193px;
   }
 
   40% {
-    height: 82px;
+    height: 155px;
   }
 
   50% {
-    height: 125px;
+    height: 155px;
   }
 
   60% {
-    height: 160px;
+    height: 102px;
   }
 
   70% {
-    height: 128px;
+    height: 148px;
   }
 
   80% {
-    height: 186px;
+    height: 104px;
   }
 
   90% {
-    height: 128px;
+    height: 125px;
   }
 
   100% {
-    height: 70px;
+    height: 110px;
   }
 }
 
 @keyframes grow7 {
   0% {
-    height: 65px;
+    height: 51px;
   }
 
   10% {
-    height: 141px;
+    height: 106px;
   }
 
   20% {
-    height: 153px;
+    height: 156px;
   }
 
   30% {
-    height: 102px;
+    height: 193px;
   }
 
   40% {
-    height: 82px;
+    height: 155px;
   }
 
   50% {
-    height: 125px;
+    height: 155px;
   }
 
   60% {
-    height: 160px;
+    height: 102px;
   }
 
   70% {
-    height: 128px;
+    height: 148px;
   }
 
   80% {
-    height: 186px;
+    height: 104px;
   }
 
   90% {
-    height: 128px;
+    height: 125px;
   }
 
   100% {
-    height: 70px;
+    height: 110px;
   }
 }
 
 .soundwave:nth-child(8) {
-  height: 115px;
+  height: 133px;
 }
 
 .soundwave.active:nth-child(8) {
-  -webkit-animation: grow8 1614ms alternate infinite;
-          animation: grow8 1614ms alternate infinite;
+  -webkit-animation: grow8 1698ms alternate infinite;
+          animation: grow8 1698ms alternate infinite;
 }
 
 @-webkit-keyframes grow8 {
   0% {
-    height: 194px;
+    height: 181px;
   }
 
   10% {
-    height: 167px;
+    height: 150px;
   }
 
   20% {
-    height: 113px;
+    height: 81px;
   }
 
   30% {
-    height: 147px;
+    height: 196px;
   }
 
   40% {
-    height: 58px;
+    height: 98px;
   }
 
   50% {
-    height: 193px;
+    height: 60px;
   }
 
   60% {
-    height: 109px;
+    height: 155px;
   }
 
   70% {
-    height: 89px;
+    height: 140px;
   }
 
   80% {
-    height: 69px;
+    height: 64px;
   }
 
   90% {
-    height: 58px;
+    height: 177px;
   }
 
   100% {
-    height: 124px;
+    height: 137px;
   }
 }
 
 @keyframes grow8 {
   0% {
-    height: 194px;
+    height: 181px;
   }
 
   10% {
-    height: 167px;
+    height: 150px;
   }
 
   20% {
-    height: 113px;
+    height: 81px;
   }
 
   30% {
-    height: 147px;
+    height: 196px;
   }
 
   40% {
-    height: 58px;
+    height: 98px;
   }
 
   50% {
-    height: 193px;
+    height: 60px;
   }
 
   60% {
-    height: 109px;
+    height: 155px;
   }
 
   70% {
-    height: 89px;
+    height: 140px;
   }
 
   80% {
-    height: 69px;
+    height: 64px;
   }
 
   90% {
-    height: 58px;
+    height: 177px;
   }
 
   100% {
-    height: 124px;
+    height: 137px;
   }
 }
 
 .soundwave:nth-child(9) {
-  height: 197px;
+  height: 169px;
 }
 
 .soundwave.active:nth-child(9) {
-  -webkit-animation: grow9 1591ms alternate infinite;
-          animation: grow9 1591ms alternate infinite;
+  -webkit-animation: grow9 1940ms alternate infinite;
+          animation: grow9 1940ms alternate infinite;
 }
 
 @-webkit-keyframes grow9 {
   0% {
-    height: 179px;
+    height: 154px;
   }
 
   10% {
-    height: 148px;
+    height: 90px;
   }
 
   20% {
-    height: 193px;
+    height: 66px;
   }
 
   30% {
-    height: 103px;
+    height: 121px;
   }
 
   40% {
-    height: 103px;
+    height: 85px;
   }
 
   50% {
-    height: 145px;
+    height: 144px;
   }
 
   60% {
-    height: 166px;
+    height: 52px;
   }
 
   70% {
-    height: 185px;
+    height: 107px;
   }
 
   80% {
-    height: 70px;
+    height: 114px;
   }
 
   90% {
-    height: 109px;
+    height: 111px;
   }
 
   100% {
-    height: 158px;
+    height: 148px;
   }
 }
 
 @keyframes grow9 {
   0% {
-    height: 179px;
+    height: 154px;
   }
 
   10% {
-    height: 148px;
+    height: 90px;
   }
 
   20% {
-    height: 193px;
+    height: 66px;
   }
 
   30% {
-    height: 103px;
+    height: 121px;
   }
 
   40% {
-    height: 103px;
+    height: 85px;
   }
 
   50% {
-    height: 145px;
+    height: 144px;
   }
 
   60% {
-    height: 166px;
+    height: 52px;
   }
 
   70% {
-    height: 185px;
+    height: 107px;
   }
 
   80% {
-    height: 70px;
+    height: 114px;
+  }
+
+  90% {
+    height: 111px;
+  }
+
+  100% {
+    height: 148px;
+  }
+}
+
+.soundwave:nth-child(10) {
+  height: 71px;
+}
+
+.soundwave.active:nth-child(10) {
+  -webkit-animation: grow10 1814ms alternate infinite;
+          animation: grow10 1814ms alternate infinite;
+}
+
+@-webkit-keyframes grow10 {
+  0% {
+    height: 53px;
+  }
+
+  10% {
+    height: 55px;
+  }
+
+  20% {
+    height: 171px;
+  }
+
+  30% {
+    height: 194px;
+  }
+
+  40% {
+    height: 112px;
+  }
+
+  50% {
+    height: 106px;
+  }
+
+  60% {
+    height: 92px;
+  }
+
+  70% {
+    height: 51px;
+  }
+
+  80% {
+    height: 156px;
   }
 
   90% {
@@ -1557,573 +1612,3199 @@ header .soundwaves-bg {
   }
 
   100% {
-    height: 158px;
-  }
-}
-
-.soundwave:nth-child(10) {
-  height: 132px;
-}
-
-.soundwave.active:nth-child(10) {
-  -webkit-animation: grow10 1869ms alternate infinite;
-          animation: grow10 1869ms alternate infinite;
-}
-
-@-webkit-keyframes grow10 {
-  0% {
-    height: 97px;
-  }
-
-  10% {
-    height: 172px;
-  }
-
-  20% {
-    height: 80px;
-  }
-
-  30% {
-    height: 145px;
-  }
-
-  40% {
-    height: 155px;
-  }
-
-  50% {
-    height: 154px;
-  }
-
-  60% {
-    height: 154px;
-  }
-
-  70% {
-    height: 151px;
-  }
-
-  80% {
-    height: 91px;
-  }
-
-  90% {
-    height: 112px;
-  }
-
-  100% {
-    height: 120px;
+    height: 76px;
   }
 }
 
 @keyframes grow10 {
   0% {
-    height: 97px;
+    height: 53px;
   }
 
   10% {
-    height: 172px;
+    height: 55px;
   }
 
   20% {
-    height: 80px;
+    height: 171px;
   }
 
   30% {
-    height: 145px;
+    height: 194px;
   }
 
   40% {
-    height: 155px;
-  }
-
-  50% {
-    height: 154px;
-  }
-
-  60% {
-    height: 154px;
-  }
-
-  70% {
-    height: 151px;
-  }
-
-  80% {
-    height: 91px;
-  }
-
-  90% {
     height: 112px;
   }
 
+  50% {
+    height: 106px;
+  }
+
+  60% {
+    height: 92px;
+  }
+
+  70% {
+    height: 51px;
+  }
+
+  80% {
+    height: 156px;
+  }
+
+  90% {
+    height: 109px;
+  }
+
   100% {
-    height: 120px;
+    height: 76px;
   }
 }
 
 .soundwave:nth-child(11) {
-  height: 52px;
+  height: 149px;
 }
 
 .soundwave.active:nth-child(11) {
-  -webkit-animation: grow11 1798ms alternate infinite;
-          animation: grow11 1798ms alternate infinite;
+  -webkit-animation: grow11 1910ms alternate infinite;
+          animation: grow11 1910ms alternate infinite;
 }
 
 @-webkit-keyframes grow11 {
   0% {
-    height: 79px;
+    height: 199px;
   }
 
   10% {
-    height: 126px;
+    height: 157px;
   }
 
   20% {
-    height: 158px;
+    height: 197px;
   }
 
   30% {
-    height: 165px;
+    height: 92px;
   }
 
   40% {
-    height: 161px;
+    height: 96px;
   }
 
   50% {
-    height: 98px;
+    height: 92px;
   }
 
   60% {
-    height: 190px;
+    height: 193px;
   }
 
   70% {
-    height: 83px;
+    height: 85px;
   }
 
   80% {
-    height: 183px;
+    height: 198px;
   }
 
   90% {
-    height: 170px;
+    height: 63px;
   }
 
   100% {
-    height: 74px;
+    height: 162px;
   }
 }
 
 @keyframes grow11 {
   0% {
-    height: 79px;
+    height: 199px;
   }
 
   10% {
-    height: 126px;
+    height: 157px;
   }
 
   20% {
-    height: 158px;
+    height: 197px;
   }
 
   30% {
-    height: 165px;
+    height: 92px;
   }
 
   40% {
-    height: 161px;
+    height: 96px;
   }
 
   50% {
-    height: 98px;
+    height: 92px;
   }
 
   60% {
-    height: 190px;
+    height: 193px;
   }
 
   70% {
-    height: 83px;
+    height: 85px;
   }
 
   80% {
-    height: 183px;
+    height: 198px;
   }
 
   90% {
-    height: 170px;
+    height: 63px;
   }
 
   100% {
-    height: 74px;
+    height: 162px;
   }
 }
 
 .soundwave:nth-child(12) {
-  height: 62px;
+  height: 98px;
 }
 
 .soundwave.active:nth-child(12) {
-  -webkit-animation: grow12 1739ms alternate infinite;
-          animation: grow12 1739ms alternate infinite;
+  -webkit-animation: grow12 2178ms alternate infinite;
+          animation: grow12 2178ms alternate infinite;
 }
 
 @-webkit-keyframes grow12 {
   0% {
-    height: 176px;
+    height: 192px;
   }
 
   10% {
-    height: 56px;
+    height: 98px;
   }
 
   20% {
-    height: 193px;
+    height: 138px;
   }
 
   30% {
-    height: 168px;
+    height: 179px;
   }
 
   40% {
-    height: 66px;
+    height: 142px;
   }
 
   50% {
-    height: 126px;
+    height: 169px;
   }
 
   60% {
-    height: 171px;
+    height: 196px;
   }
 
   70% {
-    height: 73px;
+    height: 119px;
   }
 
   80% {
-    height: 61px;
+    height: 150px;
   }
 
   90% {
-    height: 127px;
+    height: 176px;
   }
 
   100% {
-    height: 120px;
+    height: 180px;
   }
 }
 
 @keyframes grow12 {
   0% {
-    height: 176px;
+    height: 192px;
   }
 
   10% {
-    height: 56px;
+    height: 98px;
   }
 
   20% {
-    height: 193px;
+    height: 138px;
   }
 
   30% {
-    height: 168px;
+    height: 179px;
   }
 
   40% {
-    height: 66px;
+    height: 142px;
   }
 
   50% {
-    height: 126px;
+    height: 169px;
   }
 
   60% {
-    height: 171px;
+    height: 196px;
   }
 
   70% {
-    height: 73px;
+    height: 119px;
   }
 
   80% {
-    height: 61px;
+    height: 150px;
   }
 
   90% {
-    height: 127px;
+    height: 176px;
   }
 
   100% {
-    height: 120px;
+    height: 180px;
   }
 }
 
 .soundwave:nth-child(13) {
-  height: 144px;
+  height: 83px;
 }
 
 .soundwave.active:nth-child(13) {
-  -webkit-animation: grow13 1923ms alternate infinite;
-          animation: grow13 1923ms alternate infinite;
+  -webkit-animation: grow13 1807ms alternate infinite;
+          animation: grow13 1807ms alternate infinite;
 }
 
 @-webkit-keyframes grow13 {
   0% {
-    height: 175px;
+    height: 189px;
   }
 
   10% {
-    height: 62px;
+    height: 52px;
   }
 
   20% {
-    height: 150px;
+    height: 155px;
   }
 
   30% {
-    height: 167px;
+    height: 111px;
   }
 
   40% {
-    height: 114px;
+    height: 59px;
   }
 
   50% {
-    height: 161px;
+    height: 91px;
   }
 
   60% {
-    height: 142px;
+    height: 172px;
   }
 
   70% {
-    height: 107px;
+    height: 166px;
   }
 
   80% {
-    height: 183px;
+    height: 89px;
   }
 
   90% {
-    height: 143px;
+    height: 58px;
   }
 
   100% {
-    height: 65px;
+    height: 107px;
   }
 }
 
 @keyframes grow13 {
   0% {
-    height: 175px;
+    height: 189px;
   }
 
   10% {
-    height: 62px;
+    height: 52px;
   }
 
   20% {
-    height: 150px;
+    height: 155px;
   }
 
   30% {
-    height: 167px;
+    height: 111px;
   }
 
   40% {
-    height: 114px;
+    height: 59px;
   }
 
   50% {
-    height: 161px;
+    height: 91px;
   }
 
   60% {
-    height: 142px;
+    height: 172px;
   }
 
   70% {
-    height: 107px;
+    height: 166px;
   }
 
   80% {
-    height: 183px;
+    height: 89px;
   }
 
   90% {
-    height: 143px;
+    height: 58px;
   }
 
   100% {
-    height: 65px;
+    height: 107px;
   }
 }
 
 .soundwave:nth-child(14) {
-  height: 182px;
+  height: 138px;
 }
 
 .soundwave.active:nth-child(14) {
-  -webkit-animation: grow14 1831ms alternate infinite;
-          animation: grow14 1831ms alternate infinite;
+  -webkit-animation: grow14 1652ms alternate infinite;
+          animation: grow14 1652ms alternate infinite;
 }
 
 @-webkit-keyframes grow14 {
   0% {
-    height: 67px;
+    height: 117px;
   }
 
   10% {
-    height: 104px;
+    height: 57px;
   }
 
   20% {
-    height: 60px;
+    height: 171px;
   }
 
   30% {
-    height: 108px;
+    height: 182px;
   }
 
   40% {
-    height: 190px;
+    height: 115px;
   }
 
   50% {
-    height: 93px;
+    height: 92px;
   }
 
   60% {
-    height: 150px;
+    height: 112px;
   }
 
   70% {
-    height: 130px;
+    height: 193px;
   }
 
   80% {
-    height: 176px;
+    height: 182px;
   }
 
   90% {
-    height: 76px;
+    height: 87px;
   }
 
   100% {
-    height: 116px;
+    height: 124px;
   }
 }
 
 @keyframes grow14 {
   0% {
-    height: 67px;
+    height: 117px;
   }
 
   10% {
-    height: 104px;
+    height: 57px;
   }
 
   20% {
-    height: 60px;
+    height: 171px;
   }
 
   30% {
-    height: 108px;
+    height: 182px;
   }
 
   40% {
-    height: 190px;
+    height: 115px;
   }
 
   50% {
-    height: 93px;
+    height: 92px;
   }
 
   60% {
-    height: 150px;
+    height: 112px;
   }
 
   70% {
-    height: 130px;
+    height: 193px;
   }
 
   80% {
-    height: 176px;
+    height: 182px;
   }
 
   90% {
-    height: 76px;
+    height: 87px;
   }
 
   100% {
-    height: 116px;
+    height: 124px;
   }
 }
 
 .soundwave:nth-child(15) {
-  height: 149px;
+  height: 88px;
 }
 
 .soundwave.active:nth-child(15) {
-  -webkit-animation: grow15 1760ms alternate infinite;
-          animation: grow15 1760ms alternate infinite;
+  -webkit-animation: grow15 1679ms alternate infinite;
+          animation: grow15 1679ms alternate infinite;
 }
 
 @-webkit-keyframes grow15 {
   0% {
-    height: 167px;
+    height: 56px;
   }
 
   10% {
-    height: 128px;
+    height: 155px;
   }
 
   20% {
-    height: 152px;
+    height: 148px;
   }
 
   30% {
-    height: 177px;
+    height: 110px;
   }
 
   40% {
-    height: 154px;
+    height: 100px;
   }
 
   50% {
-    height: 178px;
+    height: 164px;
   }
 
   60% {
-    height: 72px;
+    height: 65px;
   }
 
   70% {
-    height: 195px;
+    height: 199px;
   }
 
   80% {
-    height: 123px;
+    height: 57px;
   }
 
   90% {
-    height: 149px;
+    height: 105px;
   }
 
   100% {
-    height: 90px;
+    height: 140px;
   }
 }
 
 @keyframes grow15 {
   0% {
-    height: 167px;
+    height: 56px;
+  }
+
+  10% {
+    height: 155px;
+  }
+
+  20% {
+    height: 148px;
+  }
+
+  30% {
+    height: 110px;
+  }
+
+  40% {
+    height: 100px;
+  }
+
+  50% {
+    height: 164px;
+  }
+
+  60% {
+    height: 65px;
+  }
+
+  70% {
+    height: 199px;
+  }
+
+  80% {
+    height: 57px;
+  }
+
+  90% {
+    height: 105px;
+  }
+
+  100% {
+    height: 140px;
+  }
+}
+
+.soundwave:nth-child(16) {
+  height: 102px;
+}
+
+.soundwave.active:nth-child(16) {
+  -webkit-animation: grow16 1980ms alternate infinite;
+          animation: grow16 1980ms alternate infinite;
+}
+
+@-webkit-keyframes grow16 {
+  0% {
+    height: 112px;
+  }
+
+  10% {
+    height: 163px;
+  }
+
+  20% {
+    height: 163px;
+  }
+
+  30% {
+    height: 69px;
+  }
+
+  40% {
+    height: 59px;
+  }
+
+  50% {
+    height: 82px;
+  }
+
+  60% {
+    height: 193px;
+  }
+
+  70% {
+    height: 88px;
+  }
+
+  80% {
+    height: 130px;
+  }
+
+  90% {
+    height: 151px;
+  }
+
+  100% {
+    height: 139px;
+  }
+}
+
+@keyframes grow16 {
+  0% {
+    height: 112px;
+  }
+
+  10% {
+    height: 163px;
+  }
+
+  20% {
+    height: 163px;
+  }
+
+  30% {
+    height: 69px;
+  }
+
+  40% {
+    height: 59px;
+  }
+
+  50% {
+    height: 82px;
+  }
+
+  60% {
+    height: 193px;
+  }
+
+  70% {
+    height: 88px;
+  }
+
+  80% {
+    height: 130px;
+  }
+
+  90% {
+    height: 151px;
+  }
+
+  100% {
+    height: 139px;
+  }
+}
+
+.soundwave:nth-child(17) {
+  height: 119px;
+}
+
+.soundwave.active:nth-child(17) {
+  -webkit-animation: grow17 1543ms alternate infinite;
+          animation: grow17 1543ms alternate infinite;
+}
+
+@-webkit-keyframes grow17 {
+  0% {
+    height: 190px;
+  }
+
+  10% {
+    height: 193px;
+  }
+
+  20% {
+    height: 77px;
+  }
+
+  30% {
+    height: 199px;
+  }
+
+  40% {
+    height: 87px;
+  }
+
+  50% {
+    height: 96px;
+  }
+
+  60% {
+    height: 78px;
+  }
+
+  70% {
+    height: 177px;
+  }
+
+  80% {
+    height: 62px;
+  }
+
+  90% {
+    height: 92px;
+  }
+
+  100% {
+    height: 181px;
+  }
+}
+
+@keyframes grow17 {
+  0% {
+    height: 190px;
+  }
+
+  10% {
+    height: 193px;
+  }
+
+  20% {
+    height: 77px;
+  }
+
+  30% {
+    height: 199px;
+  }
+
+  40% {
+    height: 87px;
+  }
+
+  50% {
+    height: 96px;
+  }
+
+  60% {
+    height: 78px;
+  }
+
+  70% {
+    height: 177px;
+  }
+
+  80% {
+    height: 62px;
+  }
+
+  90% {
+    height: 92px;
+  }
+
+  100% {
+    height: 181px;
+  }
+}
+
+.soundwave:nth-child(18) {
+  height: 171px;
+}
+
+.soundwave.active:nth-child(18) {
+  -webkit-animation: grow18 2064ms alternate infinite;
+          animation: grow18 2064ms alternate infinite;
+}
+
+@-webkit-keyframes grow18 {
+  0% {
+    height: 171px;
+  }
+
+  10% {
+    height: 115px;
+  }
+
+  20% {
+    height: 133px;
+  }
+
+  30% {
+    height: 99px;
+  }
+
+  40% {
+    height: 152px;
+  }
+
+  50% {
+    height: 101px;
+  }
+
+  60% {
+    height: 118px;
+  }
+
+  70% {
+    height: 95px;
+  }
+
+  80% {
+    height: 84px;
+  }
+
+  90% {
+    height: 131px;
+  }
+
+  100% {
+    height: 60px;
+  }
+}
+
+@keyframes grow18 {
+  0% {
+    height: 171px;
+  }
+
+  10% {
+    height: 115px;
+  }
+
+  20% {
+    height: 133px;
+  }
+
+  30% {
+    height: 99px;
+  }
+
+  40% {
+    height: 152px;
+  }
+
+  50% {
+    height: 101px;
+  }
+
+  60% {
+    height: 118px;
+  }
+
+  70% {
+    height: 95px;
+  }
+
+  80% {
+    height: 84px;
+  }
+
+  90% {
+    height: 131px;
+  }
+
+  100% {
+    height: 60px;
+  }
+}
+
+.soundwave:nth-child(19) {
+  height: 119px;
+}
+
+.soundwave.active:nth-child(19) {
+  -webkit-animation: grow19 2105ms alternate infinite;
+          animation: grow19 2105ms alternate infinite;
+}
+
+@-webkit-keyframes grow19 {
+  0% {
+    height: 179px;
+  }
+
+  10% {
+    height: 108px;
+  }
+
+  20% {
+    height: 64px;
+  }
+
+  30% {
+    height: 87px;
+  }
+
+  40% {
+    height: 181px;
+  }
+
+  50% {
+    height: 181px;
+  }
+
+  60% {
+    height: 160px;
+  }
+
+  70% {
+    height: 154px;
+  }
+
+  80% {
+    height: 54px;
+  }
+
+  90% {
+    height: 106px;
+  }
+
+  100% {
+    height: 112px;
+  }
+}
+
+@keyframes grow19 {
+  0% {
+    height: 179px;
+  }
+
+  10% {
+    height: 108px;
+  }
+
+  20% {
+    height: 64px;
+  }
+
+  30% {
+    height: 87px;
+  }
+
+  40% {
+    height: 181px;
+  }
+
+  50% {
+    height: 181px;
+  }
+
+  60% {
+    height: 160px;
+  }
+
+  70% {
+    height: 154px;
+  }
+
+  80% {
+    height: 54px;
+  }
+
+  90% {
+    height: 106px;
+  }
+
+  100% {
+    height: 112px;
+  }
+}
+
+.soundwave:nth-child(20) {
+  height: 65px;
+}
+
+.soundwave.active:nth-child(20) {
+  -webkit-animation: grow20 2107ms alternate infinite;
+          animation: grow20 2107ms alternate infinite;
+}
+
+@-webkit-keyframes grow20 {
+  0% {
+    height: 159px;
+  }
+
+  10% {
+    height: 172px;
+  }
+
+  20% {
+    height: 90px;
+  }
+
+  30% {
+    height: 174px;
+  }
+
+  40% {
+    height: 73px;
+  }
+
+  50% {
+    height: 180px;
+  }
+
+  60% {
+    height: 181px;
+  }
+
+  70% {
+    height: 147px;
+  }
+
+  80% {
+    height: 96px;
+  }
+
+  90% {
+    height: 164px;
+  }
+
+  100% {
+    height: 51px;
+  }
+}
+
+@keyframes grow20 {
+  0% {
+    height: 159px;
+  }
+
+  10% {
+    height: 172px;
+  }
+
+  20% {
+    height: 90px;
+  }
+
+  30% {
+    height: 174px;
+  }
+
+  40% {
+    height: 73px;
+  }
+
+  50% {
+    height: 180px;
+  }
+
+  60% {
+    height: 181px;
+  }
+
+  70% {
+    height: 147px;
+  }
+
+  80% {
+    height: 96px;
+  }
+
+  90% {
+    height: 164px;
+  }
+
+  100% {
+    height: 51px;
+  }
+}
+
+.soundwave:nth-child(21) {
+  height: 66px;
+}
+
+.soundwave.active:nth-child(21) {
+  -webkit-animation: grow21 1538ms alternate infinite;
+          animation: grow21 1538ms alternate infinite;
+}
+
+@-webkit-keyframes grow21 {
+  0% {
+    height: 175px;
+  }
+
+  10% {
+    height: 132px;
+  }
+
+  20% {
+    height: 67px;
+  }
+
+  30% {
+    height: 80px;
+  }
+
+  40% {
+    height: 64px;
+  }
+
+  50% {
+    height: 198px;
+  }
+
+  60% {
+    height: 98px;
+  }
+
+  70% {
+    height: 71px;
+  }
+
+  80% {
+    height: 168px;
+  }
+
+  90% {
+    height: 184px;
+  }
+
+  100% {
+    height: 131px;
+  }
+}
+
+@keyframes grow21 {
+  0% {
+    height: 175px;
+  }
+
+  10% {
+    height: 132px;
+  }
+
+  20% {
+    height: 67px;
+  }
+
+  30% {
+    height: 80px;
+  }
+
+  40% {
+    height: 64px;
+  }
+
+  50% {
+    height: 198px;
+  }
+
+  60% {
+    height: 98px;
+  }
+
+  70% {
+    height: 71px;
+  }
+
+  80% {
+    height: 168px;
+  }
+
+  90% {
+    height: 184px;
+  }
+
+  100% {
+    height: 131px;
+  }
+}
+
+.soundwave:nth-child(22) {
+  height: 185px;
+}
+
+.soundwave.active:nth-child(22) {
+  -webkit-animation: grow22 1681ms alternate infinite;
+          animation: grow22 1681ms alternate infinite;
+}
+
+@-webkit-keyframes grow22 {
+  0% {
+    height: 87px;
+  }
+
+  10% {
+    height: 119px;
+  }
+
+  20% {
+    height: 172px;
+  }
+
+  30% {
+    height: 69px;
+  }
+
+  40% {
+    height: 184px;
+  }
+
+  50% {
+    height: 70px;
+  }
+
+  60% {
+    height: 113px;
+  }
+
+  70% {
+    height: 71px;
+  }
+
+  80% {
+    height: 82px;
+  }
+
+  90% {
+    height: 179px;
+  }
+
+  100% {
+    height: 193px;
+  }
+}
+
+@keyframes grow22 {
+  0% {
+    height: 87px;
+  }
+
+  10% {
+    height: 119px;
+  }
+
+  20% {
+    height: 172px;
+  }
+
+  30% {
+    height: 69px;
+  }
+
+  40% {
+    height: 184px;
+  }
+
+  50% {
+    height: 70px;
+  }
+
+  60% {
+    height: 113px;
+  }
+
+  70% {
+    height: 71px;
+  }
+
+  80% {
+    height: 82px;
+  }
+
+  90% {
+    height: 179px;
+  }
+
+  100% {
+    height: 193px;
+  }
+}
+
+.soundwave:nth-child(23) {
+  height: 132px;
+}
+
+.soundwave.active:nth-child(23) {
+  -webkit-animation: grow23 2055ms alternate infinite;
+          animation: grow23 2055ms alternate infinite;
+}
+
+@-webkit-keyframes grow23 {
+  0% {
+    height: 112px;
+  }
+
+  10% {
+    height: 127px;
+  }
+
+  20% {
+    height: 133px;
+  }
+
+  30% {
+    height: 124px;
+  }
+
+  40% {
+    height: 177px;
+  }
+
+  50% {
+    height: 138px;
+  }
+
+  60% {
+    height: 121px;
+  }
+
+  70% {
+    height: 108px;
+  }
+
+  80% {
+    height: 108px;
+  }
+
+  90% {
+    height: 161px;
+  }
+
+  100% {
+    height: 193px;
+  }
+}
+
+@keyframes grow23 {
+  0% {
+    height: 112px;
+  }
+
+  10% {
+    height: 127px;
+  }
+
+  20% {
+    height: 133px;
+  }
+
+  30% {
+    height: 124px;
+  }
+
+  40% {
+    height: 177px;
+  }
+
+  50% {
+    height: 138px;
+  }
+
+  60% {
+    height: 121px;
+  }
+
+  70% {
+    height: 108px;
+  }
+
+  80% {
+    height: 108px;
+  }
+
+  90% {
+    height: 161px;
+  }
+
+  100% {
+    height: 193px;
+  }
+}
+
+.soundwave:nth-child(24) {
+  height: 179px;
+}
+
+.soundwave.active:nth-child(24) {
+  -webkit-animation: grow24 2194ms alternate infinite;
+          animation: grow24 2194ms alternate infinite;
+}
+
+@-webkit-keyframes grow24 {
+  0% {
+    height: 138px;
+  }
+
+  10% {
+    height: 159px;
+  }
+
+  20% {
+    height: 180px;
+  }
+
+  30% {
+    height: 154px;
+  }
+
+  40% {
+    height: 121px;
+  }
+
+  50% {
+    height: 74px;
+  }
+
+  60% {
+    height: 171px;
+  }
+
+  70% {
+    height: 183px;
+  }
+
+  80% {
+    height: 132px;
+  }
+
+  90% {
+    height: 148px;
+  }
+
+  100% {
+    height: 93px;
+  }
+}
+
+@keyframes grow24 {
+  0% {
+    height: 138px;
+  }
+
+  10% {
+    height: 159px;
+  }
+
+  20% {
+    height: 180px;
+  }
+
+  30% {
+    height: 154px;
+  }
+
+  40% {
+    height: 121px;
+  }
+
+  50% {
+    height: 74px;
+  }
+
+  60% {
+    height: 171px;
+  }
+
+  70% {
+    height: 183px;
+  }
+
+  80% {
+    height: 132px;
+  }
+
+  90% {
+    height: 148px;
+  }
+
+  100% {
+    height: 93px;
+  }
+}
+
+.soundwave:nth-child(25) {
+  height: 140px;
+}
+
+.soundwave.active:nth-child(25) {
+  -webkit-animation: grow25 1644ms alternate infinite;
+          animation: grow25 1644ms alternate infinite;
+}
+
+@-webkit-keyframes grow25 {
+  0% {
+    height: 59px;
+  }
+
+  10% {
+    height: 171px;
+  }
+
+  20% {
+    height: 101px;
+  }
+
+  30% {
+    height: 197px;
+  }
+
+  40% {
+    height: 155px;
+  }
+
+  50% {
+    height: 136px;
+  }
+
+  60% {
+    height: 166px;
+  }
+
+  70% {
+    height: 159px;
+  }
+
+  80% {
+    height: 53px;
+  }
+
+  90% {
+    height: 133px;
+  }
+
+  100% {
+    height: 196px;
+  }
+}
+
+@keyframes grow25 {
+  0% {
+    height: 59px;
+  }
+
+  10% {
+    height: 171px;
+  }
+
+  20% {
+    height: 101px;
+  }
+
+  30% {
+    height: 197px;
+  }
+
+  40% {
+    height: 155px;
+  }
+
+  50% {
+    height: 136px;
+  }
+
+  60% {
+    height: 166px;
+  }
+
+  70% {
+    height: 159px;
+  }
+
+  80% {
+    height: 53px;
+  }
+
+  90% {
+    height: 133px;
+  }
+
+  100% {
+    height: 196px;
+  }
+}
+
+.soundwave:nth-child(26) {
+  height: 118px;
+}
+
+.soundwave.active:nth-child(26) {
+  -webkit-animation: grow26 1767ms alternate infinite;
+          animation: grow26 1767ms alternate infinite;
+}
+
+@-webkit-keyframes grow26 {
+  0% {
+    height: 129px;
+  }
+
+  10% {
+    height: 133px;
+  }
+
+  20% {
+    height: 154px;
+  }
+
+  30% {
+    height: 78px;
+  }
+
+  40% {
+    height: 128px;
+  }
+
+  50% {
+    height: 63px;
+  }
+
+  60% {
+    height: 62px;
+  }
+
+  70% {
+    height: 58px;
+  }
+
+  80% {
+    height: 196px;
+  }
+
+  90% {
+    height: 62px;
+  }
+
+  100% {
+    height: 61px;
+  }
+}
+
+@keyframes grow26 {
+  0% {
+    height: 129px;
+  }
+
+  10% {
+    height: 133px;
+  }
+
+  20% {
+    height: 154px;
+  }
+
+  30% {
+    height: 78px;
+  }
+
+  40% {
+    height: 128px;
+  }
+
+  50% {
+    height: 63px;
+  }
+
+  60% {
+    height: 62px;
+  }
+
+  70% {
+    height: 58px;
+  }
+
+  80% {
+    height: 196px;
+  }
+
+  90% {
+    height: 62px;
+  }
+
+  100% {
+    height: 61px;
+  }
+}
+
+.soundwave:nth-child(27) {
+  height: 109px;
+}
+
+.soundwave.active:nth-child(27) {
+  -webkit-animation: grow27 1921ms alternate infinite;
+          animation: grow27 1921ms alternate infinite;
+}
+
+@-webkit-keyframes grow27 {
+  0% {
+    height: 114px;
+  }
+
+  10% {
+    height: 193px;
+  }
+
+  20% {
+    height: 172px;
+  }
+
+  30% {
+    height: 200px;
+  }
+
+  40% {
+    height: 98px;
+  }
+
+  50% {
+    height: 53px;
+  }
+
+  60% {
+    height: 55px;
+  }
+
+  70% {
+    height: 79px;
+  }
+
+  80% {
+    height: 112px;
+  }
+
+  90% {
+    height: 198px;
+  }
+
+  100% {
+    height: 159px;
+  }
+}
+
+@keyframes grow27 {
+  0% {
+    height: 114px;
+  }
+
+  10% {
+    height: 193px;
+  }
+
+  20% {
+    height: 172px;
+  }
+
+  30% {
+    height: 200px;
+  }
+
+  40% {
+    height: 98px;
+  }
+
+  50% {
+    height: 53px;
+  }
+
+  60% {
+    height: 55px;
+  }
+
+  70% {
+    height: 79px;
+  }
+
+  80% {
+    height: 112px;
+  }
+
+  90% {
+    height: 198px;
+  }
+
+  100% {
+    height: 159px;
+  }
+}
+
+.soundwave:nth-child(28) {
+  height: 157px;
+}
+
+.soundwave.active:nth-child(28) {
+  -webkit-animation: grow28 1925ms alternate infinite;
+          animation: grow28 1925ms alternate infinite;
+}
+
+@-webkit-keyframes grow28 {
+  0% {
+    height: 105px;
+  }
+
+  10% {
+    height: 74px;
+  }
+
+  20% {
+    height: 125px;
+  }
+
+  30% {
+    height: 78px;
+  }
+
+  40% {
+    height: 146px;
+  }
+
+  50% {
+    height: 158px;
+  }
+
+  60% {
+    height: 127px;
+  }
+
+  70% {
+    height: 168px;
+  }
+
+  80% {
+    height: 84px;
+  }
+
+  90% {
+    height: 109px;
+  }
+
+  100% {
+    height: 146px;
+  }
+}
+
+@keyframes grow28 {
+  0% {
+    height: 105px;
+  }
+
+  10% {
+    height: 74px;
+  }
+
+  20% {
+    height: 125px;
+  }
+
+  30% {
+    height: 78px;
+  }
+
+  40% {
+    height: 146px;
+  }
+
+  50% {
+    height: 158px;
+  }
+
+  60% {
+    height: 127px;
+  }
+
+  70% {
+    height: 168px;
+  }
+
+  80% {
+    height: 84px;
+  }
+
+  90% {
+    height: 109px;
+  }
+
+  100% {
+    height: 146px;
+  }
+}
+
+.soundwave:nth-child(29) {
+  height: 180px;
+}
+
+.soundwave.active:nth-child(29) {
+  -webkit-animation: grow29 1821ms alternate infinite;
+          animation: grow29 1821ms alternate infinite;
+}
+
+@-webkit-keyframes grow29 {
+  0% {
+    height: 81px;
+  }
+
+  10% {
+    height: 138px;
+  }
+
+  20% {
+    height: 189px;
+  }
+
+  30% {
+    height: 102px;
+  }
+
+  40% {
+    height: 107px;
+  }
+
+  50% {
+    height: 129px;
+  }
+
+  60% {
+    height: 115px;
+  }
+
+  70% {
+    height: 144px;
+  }
+
+  80% {
+    height: 189px;
+  }
+
+  90% {
+    height: 179px;
+  }
+
+  100% {
+    height: 87px;
+  }
+}
+
+@keyframes grow29 {
+  0% {
+    height: 81px;
+  }
+
+  10% {
+    height: 138px;
+  }
+
+  20% {
+    height: 189px;
+  }
+
+  30% {
+    height: 102px;
+  }
+
+  40% {
+    height: 107px;
+  }
+
+  50% {
+    height: 129px;
+  }
+
+  60% {
+    height: 115px;
+  }
+
+  70% {
+    height: 144px;
+  }
+
+  80% {
+    height: 189px;
+  }
+
+  90% {
+    height: 179px;
+  }
+
+  100% {
+    height: 87px;
+  }
+}
+
+.soundwave:nth-child(30) {
+  height: 110px;
+}
+
+.soundwave.active:nth-child(30) {
+  -webkit-animation: grow30 1616ms alternate infinite;
+          animation: grow30 1616ms alternate infinite;
+}
+
+@-webkit-keyframes grow30 {
+  0% {
+    height: 125px;
+  }
+
+  10% {
+    height: 136px;
+  }
+
+  20% {
+    height: 197px;
+  }
+
+  30% {
+    height: 72px;
+  }
+
+  40% {
+    height: 123px;
+  }
+
+  50% {
+    height: 75px;
+  }
+
+  60% {
+    height: 122px;
+  }
+
+  70% {
+    height: 159px;
+  }
+
+  80% {
+    height: 171px;
+  }
+
+  90% {
+    height: 175px;
+  }
+
+  100% {
+    height: 117px;
+  }
+}
+
+@keyframes grow30 {
+  0% {
+    height: 125px;
+  }
+
+  10% {
+    height: 136px;
+  }
+
+  20% {
+    height: 197px;
+  }
+
+  30% {
+    height: 72px;
+  }
+
+  40% {
+    height: 123px;
+  }
+
+  50% {
+    height: 75px;
+  }
+
+  60% {
+    height: 122px;
+  }
+
+  70% {
+    height: 159px;
+  }
+
+  80% {
+    height: 171px;
+  }
+
+  90% {
+    height: 175px;
+  }
+
+  100% {
+    height: 117px;
+  }
+}
+
+.soundwave:nth-child(31) {
+  height: 123px;
+}
+
+.soundwave.active:nth-child(31) {
+  -webkit-animation: grow31 2076ms alternate infinite;
+          animation: grow31 2076ms alternate infinite;
+}
+
+@-webkit-keyframes grow31 {
+  0% {
+    height: 122px;
+  }
+
+  10% {
+    height: 126px;
+  }
+
+  20% {
+    height: 112px;
+  }
+
+  30% {
+    height: 52px;
+  }
+
+  40% {
+    height: 163px;
+  }
+
+  50% {
+    height: 117px;
+  }
+
+  60% {
+    height: 106px;
+  }
+
+  70% {
+    height: 68px;
+  }
+
+  80% {
+    height: 94px;
+  }
+
+  90% {
+    height: 130px;
+  }
+
+  100% {
+    height: 195px;
+  }
+}
+
+@keyframes grow31 {
+  0% {
+    height: 122px;
+  }
+
+  10% {
+    height: 126px;
+  }
+
+  20% {
+    height: 112px;
+  }
+
+  30% {
+    height: 52px;
+  }
+
+  40% {
+    height: 163px;
+  }
+
+  50% {
+    height: 117px;
+  }
+
+  60% {
+    height: 106px;
+  }
+
+  70% {
+    height: 68px;
+  }
+
+  80% {
+    height: 94px;
+  }
+
+  90% {
+    height: 130px;
+  }
+
+  100% {
+    height: 195px;
+  }
+}
+
+.soundwave:nth-child(32) {
+  height: 70px;
+}
+
+.soundwave.active:nth-child(32) {
+  -webkit-animation: grow32 1938ms alternate infinite;
+          animation: grow32 1938ms alternate infinite;
+}
+
+@-webkit-keyframes grow32 {
+  0% {
+    height: 91px;
+  }
+
+  10% {
+    height: 78px;
+  }
+
+  20% {
+    height: 188px;
+  }
+
+  30% {
+    height: 120px;
+  }
+
+  40% {
+    height: 175px;
+  }
+
+  50% {
+    height: 107px;
+  }
+
+  60% {
+    height: 123px;
+  }
+
+  70% {
+    height: 190px;
+  }
+
+  80% {
+    height: 138px;
+  }
+
+  90% {
+    height: 93px;
+  }
+
+  100% {
+    height: 128px;
+  }
+}
+
+@keyframes grow32 {
+  0% {
+    height: 91px;
+  }
+
+  10% {
+    height: 78px;
+  }
+
+  20% {
+    height: 188px;
+  }
+
+  30% {
+    height: 120px;
+  }
+
+  40% {
+    height: 175px;
+  }
+
+  50% {
+    height: 107px;
+  }
+
+  60% {
+    height: 123px;
+  }
+
+  70% {
+    height: 190px;
+  }
+
+  80% {
+    height: 138px;
+  }
+
+  90% {
+    height: 93px;
+  }
+
+  100% {
+    height: 128px;
+  }
+}
+
+.soundwave:nth-child(33) {
+  height: 152px;
+}
+
+.soundwave.active:nth-child(33) {
+  -webkit-animation: grow33 2001ms alternate infinite;
+          animation: grow33 2001ms alternate infinite;
+}
+
+@-webkit-keyframes grow33 {
+  0% {
+    height: 156px;
+  }
+
+  10% {
+    height: 61px;
+  }
+
+  20% {
+    height: 148px;
+  }
+
+  30% {
+    height: 141px;
+  }
+
+  40% {
+    height: 115px;
+  }
+
+  50% {
+    height: 195px;
+  }
+
+  60% {
+    height: 63px;
+  }
+
+  70% {
+    height: 90px;
+  }
+
+  80% {
+    height: 174px;
+  }
+
+  90% {
+    height: 194px;
+  }
+
+  100% {
+    height: 191px;
+  }
+}
+
+@keyframes grow33 {
+  0% {
+    height: 156px;
+  }
+
+  10% {
+    height: 61px;
+  }
+
+  20% {
+    height: 148px;
+  }
+
+  30% {
+    height: 141px;
+  }
+
+  40% {
+    height: 115px;
+  }
+
+  50% {
+    height: 195px;
+  }
+
+  60% {
+    height: 63px;
+  }
+
+  70% {
+    height: 90px;
+  }
+
+  80% {
+    height: 174px;
+  }
+
+  90% {
+    height: 194px;
+  }
+
+  100% {
+    height: 191px;
+  }
+}
+
+.soundwave:nth-child(34) {
+  height: 185px;
+}
+
+.soundwave.active:nth-child(34) {
+  -webkit-animation: grow34 1920ms alternate infinite;
+          animation: grow34 1920ms alternate infinite;
+}
+
+@-webkit-keyframes grow34 {
+  0% {
+    height: 157px;
+  }
+
+  10% {
+    height: 91px;
+  }
+
+  20% {
+    height: 87px;
+  }
+
+  30% {
+    height: 59px;
+  }
+
+  40% {
+    height: 109px;
+  }
+
+  50% {
+    height: 196px;
+  }
+
+  60% {
+    height: 64px;
+  }
+
+  70% {
+    height: 52px;
+  }
+
+  80% {
+    height: 199px;
+  }
+
+  90% {
+    height: 104px;
+  }
+
+  100% {
+    height: 138px;
+  }
+}
+
+@keyframes grow34 {
+  0% {
+    height: 157px;
+  }
+
+  10% {
+    height: 91px;
+  }
+
+  20% {
+    height: 87px;
+  }
+
+  30% {
+    height: 59px;
+  }
+
+  40% {
+    height: 109px;
+  }
+
+  50% {
+    height: 196px;
+  }
+
+  60% {
+    height: 64px;
+  }
+
+  70% {
+    height: 52px;
+  }
+
+  80% {
+    height: 199px;
+  }
+
+  90% {
+    height: 104px;
+  }
+
+  100% {
+    height: 138px;
+  }
+}
+
+.soundwave:nth-child(35) {
+  height: 105px;
+}
+
+.soundwave.active:nth-child(35) {
+  -webkit-animation: grow35 1753ms alternate infinite;
+          animation: grow35 1753ms alternate infinite;
+}
+
+@-webkit-keyframes grow35 {
+  0% {
+    height: 155px;
+  }
+
+  10% {
+    height: 197px;
+  }
+
+  20% {
+    height: 61px;
+  }
+
+  30% {
+    height: 142px;
+  }
+
+  40% {
+    height: 199px;
+  }
+
+  50% {
+    height: 58px;
+  }
+
+  60% {
+    height: 153px;
+  }
+
+  70% {
+    height: 63px;
+  }
+
+  80% {
+    height: 200px;
+  }
+
+  90% {
+    height: 150px;
+  }
+
+  100% {
+    height: 130px;
+  }
+}
+
+@keyframes grow35 {
+  0% {
+    height: 155px;
+  }
+
+  10% {
+    height: 197px;
+  }
+
+  20% {
+    height: 61px;
+  }
+
+  30% {
+    height: 142px;
+  }
+
+  40% {
+    height: 199px;
+  }
+
+  50% {
+    height: 58px;
+  }
+
+  60% {
+    height: 153px;
+  }
+
+  70% {
+    height: 63px;
+  }
+
+  80% {
+    height: 200px;
+  }
+
+  90% {
+    height: 150px;
+  }
+
+  100% {
+    height: 130px;
+  }
+}
+
+.soundwave:nth-child(36) {
+  height: 185px;
+}
+
+.soundwave.active:nth-child(36) {
+  -webkit-animation: grow36 2169ms alternate infinite;
+          animation: grow36 2169ms alternate infinite;
+}
+
+@-webkit-keyframes grow36 {
+  0% {
+    height: 125px;
+  }
+
+  10% {
+    height: 99px;
+  }
+
+  20% {
+    height: 110px;
+  }
+
+  30% {
+    height: 146px;
+  }
+
+  40% {
+    height: 157px;
+  }
+
+  50% {
+    height: 69px;
+  }
+
+  60% {
+    height: 102px;
+  }
+
+  70% {
+    height: 80px;
+  }
+
+  80% {
+    height: 154px;
+  }
+
+  90% {
+    height: 94px;
+  }
+
+  100% {
+    height: 182px;
+  }
+}
+
+@keyframes grow36 {
+  0% {
+    height: 125px;
+  }
+
+  10% {
+    height: 99px;
+  }
+
+  20% {
+    height: 110px;
+  }
+
+  30% {
+    height: 146px;
+  }
+
+  40% {
+    height: 157px;
+  }
+
+  50% {
+    height: 69px;
+  }
+
+  60% {
+    height: 102px;
+  }
+
+  70% {
+    height: 80px;
+  }
+
+  80% {
+    height: 154px;
+  }
+
+  90% {
+    height: 94px;
+  }
+
+  100% {
+    height: 182px;
+  }
+}
+
+.soundwave:nth-child(37) {
+  height: 121px;
+}
+
+.soundwave.active:nth-child(37) {
+  -webkit-animation: grow37 1696ms alternate infinite;
+          animation: grow37 1696ms alternate infinite;
+}
+
+@-webkit-keyframes grow37 {
+  0% {
+    height: 170px;
+  }
+
+  10% {
+    height: 115px;
+  }
+
+  20% {
+    height: 130px;
+  }
+
+  30% {
+    height: 122px;
+  }
+
+  40% {
+    height: 159px;
+  }
+
+  50% {
+    height: 191px;
+  }
+
+  60% {
+    height: 63px;
+  }
+
+  70% {
+    height: 146px;
+  }
+
+  80% {
+    height: 131px;
+  }
+
+  90% {
+    height: 165px;
+  }
+
+  100% {
+    height: 135px;
+  }
+}
+
+@keyframes grow37 {
+  0% {
+    height: 170px;
+  }
+
+  10% {
+    height: 115px;
+  }
+
+  20% {
+    height: 130px;
+  }
+
+  30% {
+    height: 122px;
+  }
+
+  40% {
+    height: 159px;
+  }
+
+  50% {
+    height: 191px;
+  }
+
+  60% {
+    height: 63px;
+  }
+
+  70% {
+    height: 146px;
+  }
+
+  80% {
+    height: 131px;
+  }
+
+  90% {
+    height: 165px;
+  }
+
+  100% {
+    height: 135px;
+  }
+}
+
+.soundwave:nth-child(38) {
+  height: 74px;
+}
+
+.soundwave.active:nth-child(38) {
+  -webkit-animation: grow38 2042ms alternate infinite;
+          animation: grow38 2042ms alternate infinite;
+}
+
+@-webkit-keyframes grow38 {
+  0% {
+    height: 51px;
+  }
+
+  10% {
+    height: 161px;
+  }
+
+  20% {
+    height: 96px;
+  }
+
+  30% {
+    height: 89px;
+  }
+
+  40% {
+    height: 157px;
+  }
+
+  50% {
+    height: 175px;
+  }
+
+  60% {
+    height: 96px;
+  }
+
+  70% {
+    height: 173px;
+  }
+
+  80% {
+    height: 189px;
+  }
+
+  90% {
+    height: 160px;
+  }
+
+  100% {
+    height: 80px;
+  }
+}
+
+@keyframes grow38 {
+  0% {
+    height: 51px;
+  }
+
+  10% {
+    height: 161px;
+  }
+
+  20% {
+    height: 96px;
+  }
+
+  30% {
+    height: 89px;
+  }
+
+  40% {
+    height: 157px;
+  }
+
+  50% {
+    height: 175px;
+  }
+
+  60% {
+    height: 96px;
+  }
+
+  70% {
+    height: 173px;
+  }
+
+  80% {
+    height: 189px;
+  }
+
+  90% {
+    height: 160px;
+  }
+
+  100% {
+    height: 80px;
+  }
+}
+
+.soundwave:nth-child(39) {
+  height: 198px;
+}
+
+.soundwave.active:nth-child(39) {
+  -webkit-animation: grow39 2105ms alternate infinite;
+          animation: grow39 2105ms alternate infinite;
+}
+
+@-webkit-keyframes grow39 {
+  0% {
+    height: 182px;
+  }
+
+  10% {
+    height: 186px;
+  }
+
+  20% {
+    height: 199px;
+  }
+
+  30% {
+    height: 163px;
+  }
+
+  40% {
+    height: 98px;
+  }
+
+  50% {
+    height: 178px;
+  }
+
+  60% {
+    height: 160px;
+  }
+
+  70% {
+    height: 151px;
+  }
+
+  80% {
+    height: 89px;
+  }
+
+  90% {
+    height: 145px;
+  }
+
+  100% {
+    height: 143px;
+  }
+}
+
+@keyframes grow39 {
+  0% {
+    height: 182px;
+  }
+
+  10% {
+    height: 186px;
+  }
+
+  20% {
+    height: 199px;
+  }
+
+  30% {
+    height: 163px;
+  }
+
+  40% {
+    height: 98px;
+  }
+
+  50% {
+    height: 178px;
+  }
+
+  60% {
+    height: 160px;
+  }
+
+  70% {
+    height: 151px;
+  }
+
+  80% {
+    height: 89px;
+  }
+
+  90% {
+    height: 145px;
+  }
+
+  100% {
+    height: 143px;
+  }
+}
+
+.soundwave:nth-child(40) {
+  height: 123px;
+}
+
+.soundwave.active:nth-child(40) {
+  -webkit-animation: grow40 1674ms alternate infinite;
+          animation: grow40 1674ms alternate infinite;
+}
+
+@-webkit-keyframes grow40 {
+  0% {
+    height: 120px;
+  }
+
+  10% {
+    height: 190px;
+  }
+
+  20% {
+    height: 164px;
+  }
+
+  30% {
+    height: 162px;
+  }
+
+  40% {
+    height: 122px;
+  }
+
+  50% {
+    height: 62px;
+  }
+
+  60% {
+    height: 200px;
+  }
+
+  70% {
+    height: 125px;
+  }
+
+  80% {
+    height: 85px;
+  }
+
+  90% {
+    height: 159px;
+  }
+
+  100% {
+    height: 175px;
+  }
+}
+
+@keyframes grow40 {
+  0% {
+    height: 120px;
+  }
+
+  10% {
+    height: 190px;
+  }
+
+  20% {
+    height: 164px;
+  }
+
+  30% {
+    height: 162px;
+  }
+
+  40% {
+    height: 122px;
+  }
+
+  50% {
+    height: 62px;
+  }
+
+  60% {
+    height: 200px;
+  }
+
+  70% {
+    height: 125px;
+  }
+
+  80% {
+    height: 85px;
+  }
+
+  90% {
+    height: 159px;
+  }
+
+  100% {
+    height: 175px;
+  }
+}
+
+.soundwave:nth-child(41) {
+  height: 185px;
+}
+
+.soundwave.active:nth-child(41) {
+  -webkit-animation: grow41 1763ms alternate infinite;
+          animation: grow41 1763ms alternate infinite;
+}
+
+@-webkit-keyframes grow41 {
+  0% {
+    height: 107px;
+  }
+
+  10% {
+    height: 194px;
+  }
+
+  20% {
+    height: 84px;
+  }
+
+  30% {
+    height: 178px;
+  }
+
+  40% {
+    height: 98px;
+  }
+
+  50% {
+    height: 127px;
+  }
+
+  60% {
+    height: 187px;
+  }
+
+  70% {
+    height: 180px;
+  }
+
+  80% {
+    height: 121px;
+  }
+
+  90% {
+    height: 105px;
+  }
+
+  100% {
+    height: 139px;
+  }
+}
+
+@keyframes grow41 {
+  0% {
+    height: 107px;
+  }
+
+  10% {
+    height: 194px;
+  }
+
+  20% {
+    height: 84px;
+  }
+
+  30% {
+    height: 178px;
+  }
+
+  40% {
+    height: 98px;
+  }
+
+  50% {
+    height: 127px;
+  }
+
+  60% {
+    height: 187px;
+  }
+
+  70% {
+    height: 180px;
+  }
+
+  80% {
+    height: 121px;
+  }
+
+  90% {
+    height: 105px;
+  }
+
+  100% {
+    height: 139px;
+  }
+}
+
+.soundwave:nth-child(42) {
+  height: 149px;
+}
+
+.soundwave.active:nth-child(42) {
+  -webkit-animation: grow42 1826ms alternate infinite;
+          animation: grow42 1826ms alternate infinite;
+}
+
+@-webkit-keyframes grow42 {
+  0% {
+    height: 82px;
   }
 
   10% {
@@ -2131,7 +4812,411 @@ header .soundwaves-bg {
   }
 
   20% {
-    height: 152px;
+    height: 73px;
+  }
+
+  30% {
+    height: 91px;
+  }
+
+  40% {
+    height: 126px;
+  }
+
+  50% {
+    height: 188px;
+  }
+
+  60% {
+    height: 137px;
+  }
+
+  70% {
+    height: 179px;
+  }
+
+  80% {
+    height: 94px;
+  }
+
+  90% {
+    height: 142px;
+  }
+
+  100% {
+    height: 134px;
+  }
+}
+
+@keyframes grow42 {
+  0% {
+    height: 82px;
+  }
+
+  10% {
+    height: 128px;
+  }
+
+  20% {
+    height: 73px;
+  }
+
+  30% {
+    height: 91px;
+  }
+
+  40% {
+    height: 126px;
+  }
+
+  50% {
+    height: 188px;
+  }
+
+  60% {
+    height: 137px;
+  }
+
+  70% {
+    height: 179px;
+  }
+
+  80% {
+    height: 94px;
+  }
+
+  90% {
+    height: 142px;
+  }
+
+  100% {
+    height: 134px;
+  }
+}
+
+.soundwave:nth-child(43) {
+  height: 182px;
+}
+
+.soundwave.active:nth-child(43) {
+  -webkit-animation: grow43 1806ms alternate infinite;
+          animation: grow43 1806ms alternate infinite;
+}
+
+@-webkit-keyframes grow43 {
+  0% {
+    height: 127px;
+  }
+
+  10% {
+    height: 92px;
+  }
+
+  20% {
+    height: 65px;
+  }
+
+  30% {
+    height: 186px;
+  }
+
+  40% {
+    height: 122px;
+  }
+
+  50% {
+    height: 149px;
+  }
+
+  60% {
+    height: 197px;
+  }
+
+  70% {
+    height: 66px;
+  }
+
+  80% {
+    height: 62px;
+  }
+
+  90% {
+    height: 93px;
+  }
+
+  100% {
+    height: 107px;
+  }
+}
+
+@keyframes grow43 {
+  0% {
+    height: 127px;
+  }
+
+  10% {
+    height: 92px;
+  }
+
+  20% {
+    height: 65px;
+  }
+
+  30% {
+    height: 186px;
+  }
+
+  40% {
+    height: 122px;
+  }
+
+  50% {
+    height: 149px;
+  }
+
+  60% {
+    height: 197px;
+  }
+
+  70% {
+    height: 66px;
+  }
+
+  80% {
+    height: 62px;
+  }
+
+  90% {
+    height: 93px;
+  }
+
+  100% {
+    height: 107px;
+  }
+}
+
+.soundwave:nth-child(44) {
+  height: 73px;
+}
+
+.soundwave.active:nth-child(44) {
+  -webkit-animation: grow44 1812ms alternate infinite;
+          animation: grow44 1812ms alternate infinite;
+}
+
+@-webkit-keyframes grow44 {
+  0% {
+    height: 191px;
+  }
+
+  10% {
+    height: 88px;
+  }
+
+  20% {
+    height: 178px;
+  }
+
+  30% {
+    height: 105px;
+  }
+
+  40% {
+    height: 52px;
+  }
+
+  50% {
+    height: 158px;
+  }
+
+  60% {
+    height: 124px;
+  }
+
+  70% {
+    height: 73px;
+  }
+
+  80% {
+    height: 147px;
+  }
+
+  90% {
+    height: 53px;
+  }
+
+  100% {
+    height: 71px;
+  }
+}
+
+@keyframes grow44 {
+  0% {
+    height: 191px;
+  }
+
+  10% {
+    height: 88px;
+  }
+
+  20% {
+    height: 178px;
+  }
+
+  30% {
+    height: 105px;
+  }
+
+  40% {
+    height: 52px;
+  }
+
+  50% {
+    height: 158px;
+  }
+
+  60% {
+    height: 124px;
+  }
+
+  70% {
+    height: 73px;
+  }
+
+  80% {
+    height: 147px;
+  }
+
+  90% {
+    height: 53px;
+  }
+
+  100% {
+    height: 71px;
+  }
+}
+
+.soundwave:nth-child(45) {
+  height: 126px;
+}
+
+.soundwave.active:nth-child(45) {
+  -webkit-animation: grow45 2015ms alternate infinite;
+          animation: grow45 2015ms alternate infinite;
+}
+
+@-webkit-keyframes grow45 {
+  0% {
+    height: 99px;
+  }
+
+  10% {
+    height: 143px;
+  }
+
+  20% {
+    height: 177px;
+  }
+
+  30% {
+    height: 187px;
+  }
+
+  40% {
+    height: 184px;
+  }
+
+  50% {
+    height: 113px;
+  }
+
+  60% {
+    height: 76px;
+  }
+
+  70% {
+    height: 173px;
+  }
+
+  80% {
+    height: 112px;
+  }
+
+  90% {
+    height: 83px;
+  }
+
+  100% {
+    height: 89px;
+  }
+}
+
+@keyframes grow45 {
+  0% {
+    height: 99px;
+  }
+
+  10% {
+    height: 143px;
+  }
+
+  20% {
+    height: 177px;
+  }
+
+  30% {
+    height: 187px;
+  }
+
+  40% {
+    height: 184px;
+  }
+
+  50% {
+    height: 113px;
+  }
+
+  60% {
+    height: 76px;
+  }
+
+  70% {
+    height: 173px;
+  }
+
+  80% {
+    height: 112px;
+  }
+
+  90% {
+    height: 83px;
+  }
+
+  100% {
+    height: 89px;
+  }
+}
+
+.soundwave:nth-child(46) {
+  height: 143px;
+}
+
+.soundwave.active:nth-child(46) {
+  -webkit-animation: grow46 1976ms alternate infinite;
+          animation: grow46 1976ms alternate infinite;
+}
+
+@-webkit-keyframes grow46 {
+  0% {
+    height: 127px;
+  }
+
+  10% {
+    height: 59px;
+  }
+
+  20% {
+    height: 131px;
   }
 
   30% {
@@ -2139,3566 +5224,481 @@ header .soundwaves-bg {
   }
 
   40% {
-    height: 154px;
-  }
-
-  50% {
-    height: 178px;
-  }
-
-  60% {
-    height: 72px;
-  }
-
-  70% {
-    height: 195px;
-  }
-
-  80% {
-    height: 123px;
-  }
-
-  90% {
-    height: 149px;
-  }
-
-  100% {
-    height: 90px;
-  }
-}
-
-.soundwave:nth-child(16) {
-  height: 170px;
-}
-
-.soundwave.active:nth-child(16) {
-  -webkit-animation: grow16 1870ms alternate infinite;
-          animation: grow16 1870ms alternate infinite;
-}
-
-@-webkit-keyframes grow16 {
-  0% {
-    height: 75px;
-  }
-
-  10% {
-    height: 190px;
-  }
-
-  20% {
-    height: 103px;
-  }
-
-  30% {
-    height: 116px;
-  }
-
-  40% {
-    height: 122px;
-  }
-
-  50% {
-    height: 62px;
-  }
-
-  60% {
-    height: 167px;
-  }
-
-  70% {
-    height: 108px;
-  }
-
-  80% {
-    height: 180px;
-  }
-
-  90% {
-    height: 70px;
-  }
-
-  100% {
-    height: 143px;
-  }
-}
-
-@keyframes grow16 {
-  0% {
-    height: 75px;
-  }
-
-  10% {
-    height: 190px;
-  }
-
-  20% {
-    height: 103px;
-  }
-
-  30% {
-    height: 116px;
-  }
-
-  40% {
-    height: 122px;
-  }
-
-  50% {
-    height: 62px;
-  }
-
-  60% {
-    height: 167px;
-  }
-
-  70% {
-    height: 108px;
-  }
-
-  80% {
-    height: 180px;
-  }
-
-  90% {
-    height: 70px;
-  }
-
-  100% {
-    height: 143px;
-  }
-}
-
-.soundwave:nth-child(17) {
-  height: 157px;
-}
-
-.soundwave.active:nth-child(17) {
-  -webkit-animation: grow17 1540ms alternate infinite;
-          animation: grow17 1540ms alternate infinite;
-}
-
-@-webkit-keyframes grow17 {
-  0% {
-    height: 162px;
-  }
-
-  10% {
-    height: 123px;
-  }
-
-  20% {
-    height: 192px;
-  }
-
-  30% {
-    height: 80px;
-  }
-
-  40% {
-    height: 171px;
-  }
-
-  50% {
-    height: 133px;
-  }
-
-  60% {
-    height: 85px;
-  }
-
-  70% {
-    height: 183px;
-  }
-
-  80% {
-    height: 192px;
-  }
-
-  90% {
-    height: 90px;
-  }
-
-  100% {
-    height: 199px;
-  }
-}
-
-@keyframes grow17 {
-  0% {
-    height: 162px;
-  }
-
-  10% {
-    height: 123px;
-  }
-
-  20% {
-    height: 192px;
-  }
-
-  30% {
-    height: 80px;
-  }
-
-  40% {
-    height: 171px;
-  }
-
-  50% {
-    height: 133px;
-  }
-
-  60% {
-    height: 85px;
-  }
-
-  70% {
-    height: 183px;
-  }
-
-  80% {
-    height: 192px;
-  }
-
-  90% {
-    height: 90px;
-  }
-
-  100% {
-    height: 199px;
-  }
-}
-
-.soundwave:nth-child(18) {
-  height: 95px;
-}
-
-.soundwave.active:nth-child(18) {
-  -webkit-animation: grow18 2181ms alternate infinite;
-          animation: grow18 2181ms alternate infinite;
-}
-
-@-webkit-keyframes grow18 {
-  0% {
-    height: 144px;
-  }
-
-  10% {
-    height: 142px;
-  }
-
-  20% {
-    height: 148px;
-  }
-
-  30% {
-    height: 56px;
-  }
-
-  40% {
-    height: 185px;
-  }
-
-  50% {
-    height: 51px;
-  }
-
-  60% {
-    height: 117px;
-  }
-
-  70% {
-    height: 106px;
-  }
-
-  80% {
-    height: 91px;
-  }
-
-  90% {
-    height: 199px;
-  }
-
-  100% {
-    height: 55px;
-  }
-}
-
-@keyframes grow18 {
-  0% {
-    height: 144px;
-  }
-
-  10% {
-    height: 142px;
-  }
-
-  20% {
-    height: 148px;
-  }
-
-  30% {
-    height: 56px;
-  }
-
-  40% {
-    height: 185px;
-  }
-
-  50% {
-    height: 51px;
-  }
-
-  60% {
-    height: 117px;
-  }
-
-  70% {
-    height: 106px;
-  }
-
-  80% {
-    height: 91px;
-  }
-
-  90% {
-    height: 199px;
-  }
-
-  100% {
-    height: 55px;
-  }
-}
-
-.soundwave:nth-child(19) {
-  height: 84px;
-}
-
-.soundwave.active:nth-child(19) {
-  -webkit-animation: grow19 1674ms alternate infinite;
-          animation: grow19 1674ms alternate infinite;
-}
-
-@-webkit-keyframes grow19 {
-  0% {
-    height: 133px;
-  }
-
-  10% {
-    height: 53px;
-  }
-
-  20% {
-    height: 115px;
-  }
-
-  30% {
-    height: 198px;
-  }
-
-  40% {
-    height: 67px;
-  }
-
-  50% {
-    height: 70px;
-  }
-
-  60% {
-    height: 93px;
-  }
-
-  70% {
-    height: 87px;
-  }
-
-  80% {
-    height: 98px;
-  }
-
-  90% {
-    height: 108px;
-  }
-
-  100% {
-    height: 81px;
-  }
-}
-
-@keyframes grow19 {
-  0% {
-    height: 133px;
-  }
-
-  10% {
-    height: 53px;
-  }
-
-  20% {
-    height: 115px;
-  }
-
-  30% {
-    height: 198px;
-  }
-
-  40% {
-    height: 67px;
-  }
-
-  50% {
-    height: 70px;
-  }
-
-  60% {
-    height: 93px;
-  }
-
-  70% {
-    height: 87px;
-  }
-
-  80% {
-    height: 98px;
-  }
-
-  90% {
-    height: 108px;
-  }
-
-  100% {
-    height: 81px;
-  }
-}
-
-.soundwave:nth-child(20) {
-  height: 187px;
-}
-
-.soundwave.active:nth-child(20) {
-  -webkit-animation: grow20 1947ms alternate infinite;
-          animation: grow20 1947ms alternate infinite;
-}
-
-@-webkit-keyframes grow20 {
-  0% {
-    height: 133px;
-  }
-
-  10% {
-    height: 137px;
-  }
-
-  20% {
-    height: 80px;
-  }
-
-  30% {
-    height: 132px;
-  }
-
-  40% {
-    height: 88px;
-  }
-
-  50% {
-    height: 173px;
-  }
-
-  60% {
-    height: 129px;
-  }
-
-  70% {
-    height: 170px;
-  }
-
-  80% {
-    height: 158px;
-  }
-
-  90% {
-    height: 171px;
-  }
-
-  100% {
-    height: 130px;
-  }
-}
-
-@keyframes grow20 {
-  0% {
-    height: 133px;
-  }
-
-  10% {
-    height: 137px;
-  }
-
-  20% {
-    height: 80px;
-  }
-
-  30% {
-    height: 132px;
-  }
-
-  40% {
-    height: 88px;
-  }
-
-  50% {
-    height: 173px;
-  }
-
-  60% {
-    height: 129px;
-  }
-
-  70% {
-    height: 170px;
-  }
-
-  80% {
-    height: 158px;
-  }
-
-  90% {
-    height: 171px;
-  }
-
-  100% {
-    height: 130px;
-  }
-}
-
-.soundwave:nth-child(21) {
-  height: 146px;
-}
-
-.soundwave.active:nth-child(21) {
-  -webkit-animation: grow21 2026ms alternate infinite;
-          animation: grow21 2026ms alternate infinite;
-}
-
-@-webkit-keyframes grow21 {
-  0% {
-    height: 87px;
-  }
-
-  10% {
-    height: 72px;
-  }
-
-  20% {
-    height: 88px;
-  }
-
-  30% {
-    height: 160px;
-  }
-
-  40% {
-    height: 159px;
-  }
-
-  50% {
-    height: 53px;
-  }
-
-  60% {
-    height: 172px;
-  }
-
-  70% {
-    height: 106px;
-  }
-
-  80% {
-    height: 53px;
-  }
-
-  90% {
-    height: 165px;
-  }
-
-  100% {
-    height: 153px;
-  }
-}
-
-@keyframes grow21 {
-  0% {
-    height: 87px;
-  }
-
-  10% {
-    height: 72px;
-  }
-
-  20% {
-    height: 88px;
-  }
-
-  30% {
-    height: 160px;
-  }
-
-  40% {
-    height: 159px;
-  }
-
-  50% {
-    height: 53px;
-  }
-
-  60% {
-    height: 172px;
-  }
-
-  70% {
-    height: 106px;
-  }
-
-  80% {
-    height: 53px;
-  }
-
-  90% {
-    height: 165px;
-  }
-
-  100% {
-    height: 153px;
-  }
-}
-
-.soundwave:nth-child(22) {
-  height: 149px;
-}
-
-.soundwave.active:nth-child(22) {
-  -webkit-animation: grow22 1884ms alternate infinite;
-          animation: grow22 1884ms alternate infinite;
-}
-
-@-webkit-keyframes grow22 {
-  0% {
-    height: 160px;
-  }
-
-  10% {
-    height: 186px;
-  }
-
-  20% {
-    height: 186px;
-  }
-
-  30% {
     height: 55px;
   }
 
-  40% {
-    height: 68px;
-  }
-
   50% {
-    height: 128px;
-  }
-
-  60% {
-    height: 191px;
-  }
-
-  70% {
-    height: 99px;
-  }
-
-  80% {
-    height: 100px;
-  }
-
-  90% {
-    height: 67px;
-  }
-
-  100% {
-    height: 112px;
-  }
-}
-
-@keyframes grow22 {
-  0% {
-    height: 160px;
-  }
-
-  10% {
-    height: 186px;
-  }
-
-  20% {
-    height: 186px;
-  }
-
-  30% {
-    height: 55px;
-  }
-
-  40% {
-    height: 68px;
-  }
-
-  50% {
-    height: 128px;
-  }
-
-  60% {
-    height: 191px;
-  }
-
-  70% {
-    height: 99px;
-  }
-
-  80% {
-    height: 100px;
-  }
-
-  90% {
-    height: 67px;
-  }
-
-  100% {
-    height: 112px;
-  }
-}
-
-.soundwave:nth-child(23) {
-  height: 66px;
-}
-
-.soundwave.active:nth-child(23) {
-  -webkit-animation: grow23 1809ms alternate infinite;
-          animation: grow23 1809ms alternate infinite;
-}
-
-@-webkit-keyframes grow23 {
-  0% {
-    height: 103px;
-  }
-
-  10% {
-    height: 129px;
-  }
-
-  20% {
-    height: 156px;
-  }
-
-  30% {
-    height: 105px;
-  }
-
-  40% {
-    height: 112px;
-  }
-
-  50% {
-    height: 150px;
-  }
-
-  60% {
-    height: 113px;
-  }
-
-  70% {
     height: 53px;
   }
 
-  80% {
-    height: 60px;
-  }
-
-  90% {
-    height: 118px;
-  }
-
-  100% {
-    height: 138px;
-  }
-}
-
-@keyframes grow23 {
-  0% {
-    height: 103px;
-  }
-
-  10% {
-    height: 129px;
-  }
-
-  20% {
-    height: 156px;
-  }
-
-  30% {
-    height: 105px;
-  }
-
-  40% {
-    height: 112px;
-  }
-
-  50% {
-    height: 150px;
-  }
-
   60% {
-    height: 113px;
-  }
-
-  70% {
-    height: 53px;
-  }
-
-  80% {
-    height: 60px;
-  }
-
-  90% {
-    height: 118px;
-  }
-
-  100% {
-    height: 138px;
-  }
-}
-
-.soundwave:nth-child(24) {
-  height: 169px;
-}
-
-.soundwave.active:nth-child(24) {
-  -webkit-animation: grow24 1629ms alternate infinite;
-          animation: grow24 1629ms alternate infinite;
-}
-
-@-webkit-keyframes grow24 {
-  0% {
-    height: 134px;
-  }
-
-  10% {
-    height: 137px;
-  }
-
-  20% {
-    height: 60px;
-  }
-
-  30% {
-    height: 168px;
-  }
-
-  40% {
-    height: 123px;
-  }
-
-  50% {
-    height: 157px;
-  }
-
-  60% {
-    height: 84px;
-  }
-
-  70% {
-    height: 54px;
-  }
-
-  80% {
-    height: 78px;
-  }
-
-  90% {
-    height: 111px;
-  }
-
-  100% {
-    height: 108px;
-  }
-}
-
-@keyframes grow24 {
-  0% {
-    height: 134px;
-  }
-
-  10% {
-    height: 137px;
-  }
-
-  20% {
-    height: 60px;
-  }
-
-  30% {
-    height: 168px;
-  }
-
-  40% {
-    height: 123px;
-  }
-
-  50% {
-    height: 157px;
-  }
-
-  60% {
-    height: 84px;
-  }
-
-  70% {
-    height: 54px;
-  }
-
-  80% {
-    height: 78px;
-  }
-
-  90% {
-    height: 111px;
-  }
-
-  100% {
-    height: 108px;
-  }
-}
-
-.soundwave:nth-child(25) {
-  height: 165px;
-}
-
-.soundwave.active:nth-child(25) {
-  -webkit-animation: grow25 1987ms alternate infinite;
-          animation: grow25 1987ms alternate infinite;
-}
-
-@-webkit-keyframes grow25 {
-  0% {
-    height: 142px;
-  }
-
-  10% {
-    height: 172px;
-  }
-
-  20% {
-    height: 100px;
-  }
-
-  30% {
-    height: 176px;
-  }
-
-  40% {
-    height: 79px;
-  }
-
-  50% {
-    height: 198px;
-  }
-
-  60% {
-    height: 125px;
-  }
-
-  70% {
-    height: 54px;
-  }
-
-  80% {
-    height: 104px;
-  }
-
-  90% {
-    height: 101px;
-  }
-
-  100% {
-    height: 51px;
-  }
-}
-
-@keyframes grow25 {
-  0% {
-    height: 142px;
-  }
-
-  10% {
-    height: 172px;
-  }
-
-  20% {
-    height: 100px;
-  }
-
-  30% {
-    height: 176px;
-  }
-
-  40% {
-    height: 79px;
-  }
-
-  50% {
-    height: 198px;
-  }
-
-  60% {
-    height: 125px;
-  }
-
-  70% {
-    height: 54px;
-  }
-
-  80% {
-    height: 104px;
-  }
-
-  90% {
-    height: 101px;
-  }
-
-  100% {
-    height: 51px;
-  }
-}
-
-.soundwave:nth-child(26) {
-  height: 192px;
-}
-
-.soundwave.active:nth-child(26) {
-  -webkit-animation: grow26 2092ms alternate infinite;
-          animation: grow26 2092ms alternate infinite;
-}
-
-@-webkit-keyframes grow26 {
-  0% {
-    height: 93px;
-  }
-
-  10% {
-    height: 196px;
-  }
-
-  20% {
-    height: 69px;
-  }
-
-  30% {
-    height: 119px;
-  }
-
-  40% {
-    height: 124px;
-  }
-
-  50% {
-    height: 185px;
-  }
-
-  60% {
-    height: 124px;
-  }
-
-  70% {
-    height: 74px;
-  }
-
-  80% {
-    height: 149px;
-  }
-
-  90% {
-    height: 166px;
-  }
-
-  100% {
-    height: 142px;
-  }
-}
-
-@keyframes grow26 {
-  0% {
-    height: 93px;
-  }
-
-  10% {
-    height: 196px;
-  }
-
-  20% {
-    height: 69px;
-  }
-
-  30% {
-    height: 119px;
-  }
-
-  40% {
-    height: 124px;
-  }
-
-  50% {
-    height: 185px;
-  }
-
-  60% {
-    height: 124px;
-  }
-
-  70% {
-    height: 74px;
-  }
-
-  80% {
-    height: 149px;
-  }
-
-  90% {
-    height: 166px;
-  }
-
-  100% {
-    height: 142px;
-  }
-}
-
-.soundwave:nth-child(27) {
-  height: 67px;
-}
-
-.soundwave.active:nth-child(27) {
-  -webkit-animation: grow27 1603ms alternate infinite;
-          animation: grow27 1603ms alternate infinite;
-}
-
-@-webkit-keyframes grow27 {
-  0% {
-    height: 80px;
-  }
-
-  10% {
-    height: 183px;
-  }
-
-  20% {
-    height: 176px;
-  }
-
-  30% {
-    height: 150px;
-  }
-
-  40% {
-    height: 158px;
-  }
-
-  50% {
-    height: 154px;
-  }
-
-  60% {
-    height: 178px;
-  }
-
-  70% {
-    height: 86px;
-  }
-
-  80% {
-    height: 104px;
-  }
-
-  90% {
-    height: 176px;
-  }
-
-  100% {
-    height: 95px;
-  }
-}
-
-@keyframes grow27 {
-  0% {
-    height: 80px;
-  }
-
-  10% {
-    height: 183px;
-  }
-
-  20% {
-    height: 176px;
-  }
-
-  30% {
-    height: 150px;
-  }
-
-  40% {
-    height: 158px;
-  }
-
-  50% {
-    height: 154px;
-  }
-
-  60% {
-    height: 178px;
-  }
-
-  70% {
-    height: 86px;
-  }
-
-  80% {
-    height: 104px;
-  }
-
-  90% {
-    height: 176px;
-  }
-
-  100% {
-    height: 95px;
-  }
-}
-
-.soundwave:nth-child(28) {
-  height: 146px;
-}
-
-.soundwave.active:nth-child(28) {
-  -webkit-animation: grow28 2109ms alternate infinite;
-          animation: grow28 2109ms alternate infinite;
-}
-
-@-webkit-keyframes grow28 {
-  0% {
-    height: 170px;
-  }
-
-  10% {
-    height: 176px;
-  }
-
-  20% {
-    height: 62px;
-  }
-
-  30% {
-    height: 142px;
-  }
-
-  40% {
-    height: 188px;
-  }
-
-  50% {
-    height: 131px;
-  }
-
-  60% {
-    height: 149px;
-  }
-
-  70% {
-    height: 150px;
-  }
-
-  80% {
-    height: 112px;
-  }
-
-  90% {
-    height: 58px;
-  }
-
-  100% {
-    height: 85px;
-  }
-}
-
-@keyframes grow28 {
-  0% {
-    height: 170px;
-  }
-
-  10% {
-    height: 176px;
-  }
-
-  20% {
-    height: 62px;
-  }
-
-  30% {
-    height: 142px;
-  }
-
-  40% {
-    height: 188px;
-  }
-
-  50% {
-    height: 131px;
-  }
-
-  60% {
-    height: 149px;
-  }
-
-  70% {
-    height: 150px;
-  }
-
-  80% {
-    height: 112px;
-  }
-
-  90% {
-    height: 58px;
-  }
-
-  100% {
-    height: 85px;
-  }
-}
-
-.soundwave:nth-child(29) {
-  height: 190px;
-}
-
-.soundwave.active:nth-child(29) {
-  -webkit-animation: grow29 1526ms alternate infinite;
-          animation: grow29 1526ms alternate infinite;
-}
-
-@-webkit-keyframes grow29 {
-  0% {
-    height: 133px;
-  }
-
-  10% {
-    height: 129px;
-  }
-
-  20% {
-    height: 149px;
-  }
-
-  30% {
-    height: 99px;
-  }
-
-  40% {
-    height: 124px;
-  }
-
-  50% {
-    height: 59px;
-  }
-
-  60% {
-    height: 94px;
-  }
-
-  70% {
-    height: 144px;
-  }
-
-  80% {
-    height: 162px;
-  }
-
-  90% {
-    height: 167px;
-  }
-
-  100% {
-    height: 195px;
-  }
-}
-
-@keyframes grow29 {
-  0% {
-    height: 133px;
-  }
-
-  10% {
-    height: 129px;
-  }
-
-  20% {
-    height: 149px;
-  }
-
-  30% {
-    height: 99px;
-  }
-
-  40% {
-    height: 124px;
-  }
-
-  50% {
-    height: 59px;
-  }
-
-  60% {
-    height: 94px;
-  }
-
-  70% {
-    height: 144px;
-  }
-
-  80% {
-    height: 162px;
-  }
-
-  90% {
-    height: 167px;
-  }
-
-  100% {
-    height: 195px;
-  }
-}
-
-.soundwave:nth-child(30) {
-  height: 137px;
-}
-
-.soundwave.active:nth-child(30) {
-  -webkit-animation: grow30 1518ms alternate infinite;
-          animation: grow30 1518ms alternate infinite;
-}
-
-@-webkit-keyframes grow30 {
-  0% {
-    height: 119px;
-  }
-
-  10% {
-    height: 190px;
-  }
-
-  20% {
-    height: 105px;
-  }
-
-  30% {
-    height: 161px;
-  }
-
-  40% {
-    height: 124px;
-  }
-
-  50% {
-    height: 69px;
-  }
-
-  60% {
-    height: 148px;
-  }
-
-  70% {
-    height: 127px;
-  }
-
-  80% {
-    height: 194px;
-  }
-
-  90% {
-    height: 113px;
-  }
-
-  100% {
-    height: 106px;
-  }
-}
-
-@keyframes grow30 {
-  0% {
-    height: 119px;
-  }
-
-  10% {
-    height: 190px;
-  }
-
-  20% {
-    height: 105px;
-  }
-
-  30% {
-    height: 161px;
-  }
-
-  40% {
-    height: 124px;
-  }
-
-  50% {
-    height: 69px;
-  }
-
-  60% {
-    height: 148px;
-  }
-
-  70% {
-    height: 127px;
-  }
-
-  80% {
-    height: 194px;
-  }
-
-  90% {
-    height: 113px;
-  }
-
-  100% {
-    height: 106px;
-  }
-}
-
-.soundwave:nth-child(31) {
-  height: 128px;
-}
-
-.soundwave.active:nth-child(31) {
-  -webkit-animation: grow31 2065ms alternate infinite;
-          animation: grow31 2065ms alternate infinite;
-}
-
-@-webkit-keyframes grow31 {
-  0% {
-    height: 102px;
-  }
-
-  10% {
-    height: 107px;
-  }
-
-  20% {
-    height: 79px;
-  }
-
-  30% {
-    height: 51px;
-  }
-
-  40% {
-    height: 183px;
-  }
-
-  50% {
-    height: 137px;
-  }
-
-  60% {
-    height: 99px;
-  }
-
-  70% {
-    height: 139px;
-  }
-
-  80% {
-    height: 80px;
-  }
-
-  90% {
-    height: 102px;
-  }
-
-  100% {
-    height: 155px;
-  }
-}
-
-@keyframes grow31 {
-  0% {
-    height: 102px;
-  }
-
-  10% {
-    height: 107px;
-  }
-
-  20% {
-    height: 79px;
-  }
-
-  30% {
-    height: 51px;
-  }
-
-  40% {
-    height: 183px;
-  }
-
-  50% {
-    height: 137px;
-  }
-
-  60% {
-    height: 99px;
-  }
-
-  70% {
-    height: 139px;
-  }
-
-  80% {
-    height: 80px;
-  }
-
-  90% {
-    height: 102px;
-  }
-
-  100% {
-    height: 155px;
-  }
-}
-
-.soundwave:nth-child(32) {
-  height: 78px;
-}
-
-.soundwave.active:nth-child(32) {
-  -webkit-animation: grow32 1813ms alternate infinite;
-          animation: grow32 1813ms alternate infinite;
-}
-
-@-webkit-keyframes grow32 {
-  0% {
-    height: 94px;
-  }
-
-  10% {
-    height: 176px;
-  }
-
-  20% {
-    height: 148px;
-  }
-
-  30% {
-    height: 135px;
-  }
-
-  40% {
-    height: 162px;
-  }
-
-  50% {
-    height: 97px;
-  }
-
-  60% {
-    height: 166px;
-  }
-
-  70% {
-    height: 186px;
-  }
-
-  80% {
-    height: 145px;
-  }
-
-  90% {
-    height: 151px;
-  }
-
-  100% {
-    height: 121px;
-  }
-}
-
-@keyframes grow32 {
-  0% {
-    height: 94px;
-  }
-
-  10% {
-    height: 176px;
-  }
-
-  20% {
-    height: 148px;
-  }
-
-  30% {
-    height: 135px;
-  }
-
-  40% {
-    height: 162px;
-  }
-
-  50% {
-    height: 97px;
-  }
-
-  60% {
-    height: 166px;
-  }
-
-  70% {
-    height: 186px;
-  }
-
-  80% {
-    height: 145px;
-  }
-
-  90% {
-    height: 151px;
-  }
-
-  100% {
-    height: 121px;
-  }
-}
-
-.soundwave:nth-child(33) {
-  height: 64px;
-}
-
-.soundwave.active:nth-child(33) {
-  -webkit-animation: grow33 1814ms alternate infinite;
-          animation: grow33 1814ms alternate infinite;
-}
-
-@-webkit-keyframes grow33 {
-  0% {
-    height: 80px;
-  }
-
-  10% {
-    height: 146px;
-  }
-
-  20% {
-    height: 139px;
-  }
-
-  30% {
-    height: 196px;
-  }
-
-  40% {
-    height: 187px;
-  }
-
-  50% {
-    height: 130px;
-  }
-
-  60% {
-    height: 82px;
-  }
-
-  70% {
-    height: 160px;
-  }
-
-  80% {
-    height: 81px;
-  }
-
-  90% {
-    height: 148px;
-  }
-
-  100% {
-    height: 104px;
-  }
-}
-
-@keyframes grow33 {
-  0% {
-    height: 80px;
-  }
-
-  10% {
-    height: 146px;
-  }
-
-  20% {
-    height: 139px;
-  }
-
-  30% {
-    height: 196px;
-  }
-
-  40% {
-    height: 187px;
-  }
-
-  50% {
-    height: 130px;
-  }
-
-  60% {
-    height: 82px;
-  }
-
-  70% {
-    height: 160px;
-  }
-
-  80% {
-    height: 81px;
-  }
-
-  90% {
-    height: 148px;
-  }
-
-  100% {
-    height: 104px;
-  }
-}
-
-.soundwave:nth-child(34) {
-  height: 123px;
-}
-
-.soundwave.active:nth-child(34) {
-  -webkit-animation: grow34 1931ms alternate infinite;
-          animation: grow34 1931ms alternate infinite;
-}
-
-@-webkit-keyframes grow34 {
-  0% {
-    height: 64px;
-  }
-
-  10% {
-    height: 90px;
-  }
-
-  20% {
-    height: 102px;
-  }
-
-  30% {
-    height: 72px;
-  }
-
-  40% {
-    height: 191px;
-  }
-
-  50% {
-    height: 65px;
-  }
-
-  60% {
-    height: 162px;
-  }
-
-  70% {
-    height: 200px;
-  }
-
-  80% {
-    height: 188px;
-  }
-
-  90% {
-    height: 168px;
-  }
-
-  100% {
-    height: 65px;
-  }
-}
-
-@keyframes grow34 {
-  0% {
-    height: 64px;
-  }
-
-  10% {
-    height: 90px;
-  }
-
-  20% {
-    height: 102px;
-  }
-
-  30% {
-    height: 72px;
-  }
-
-  40% {
-    height: 191px;
-  }
-
-  50% {
-    height: 65px;
-  }
-
-  60% {
-    height: 162px;
-  }
-
-  70% {
-    height: 200px;
-  }
-
-  80% {
-    height: 188px;
-  }
-
-  90% {
-    height: 168px;
-  }
-
-  100% {
-    height: 65px;
-  }
-}
-
-.soundwave:nth-child(35) {
-  height: 150px;
-}
-
-.soundwave.active:nth-child(35) {
-  -webkit-animation: grow35 1901ms alternate infinite;
-          animation: grow35 1901ms alternate infinite;
-}
-
-@-webkit-keyframes grow35 {
-  0% {
-    height: 113px;
-  }
-
-  10% {
-    height: 123px;
-  }
-
-  20% {
-    height: 114px;
-  }
-
-  30% {
-    height: 98px;
-  }
-
-  40% {
-    height: 139px;
-  }
-
-  50% {
-    height: 199px;
-  }
-
-  60% {
-    height: 59px;
-  }
-
-  70% {
-    height: 151px;
-  }
-
-  80% {
-    height: 121px;
-  }
-
-  90% {
-    height: 64px;
-  }
-
-  100% {
-    height: 52px;
-  }
-}
-
-@keyframes grow35 {
-  0% {
-    height: 113px;
-  }
-
-  10% {
-    height: 123px;
-  }
-
-  20% {
-    height: 114px;
-  }
-
-  30% {
-    height: 98px;
-  }
-
-  40% {
-    height: 139px;
-  }
-
-  50% {
-    height: 199px;
-  }
-
-  60% {
-    height: 59px;
-  }
-
-  70% {
-    height: 151px;
-  }
-
-  80% {
-    height: 121px;
-  }
-
-  90% {
-    height: 64px;
-  }
-
-  100% {
-    height: 52px;
-  }
-}
-
-.soundwave:nth-child(36) {
-  height: 52px;
-}
-
-.soundwave.active:nth-child(36) {
-  -webkit-animation: grow36 1666ms alternate infinite;
-          animation: grow36 1666ms alternate infinite;
-}
-
-@-webkit-keyframes grow36 {
-  0% {
-    height: 103px;
-  }
-
-  10% {
-    height: 168px;
-  }
-
-  20% {
-    height: 142px;
-  }
-
-  30% {
-    height: 152px;
-  }
-
-  40% {
-    height: 94px;
-  }
-
-  50% {
-    height: 185px;
-  }
-
-  60% {
-    height: 103px;
-  }
-
-  70% {
     height: 73px;
   }
 
-  80% {
-    height: 61px;
-  }
-
-  90% {
-    height: 89px;
-  }
-
-  100% {
-    height: 99px;
-  }
-}
-
-@keyframes grow36 {
-  0% {
-    height: 103px;
-  }
-
-  10% {
-    height: 168px;
-  }
-
-  20% {
-    height: 142px;
-  }
-
-  30% {
-    height: 152px;
-  }
-
-  40% {
-    height: 94px;
-  }
-
-  50% {
-    height: 185px;
-  }
-
-  60% {
-    height: 103px;
-  }
-
   70% {
-    height: 73px;
+    height: 60px;
   }
 
   80% {
-    height: 61px;
-  }
-
-  90% {
-    height: 89px;
-  }
-
-  100% {
-    height: 99px;
-  }
-}
-
-.soundwave:nth-child(37) {
-  height: 168px;
-}
-
-.soundwave.active:nth-child(37) {
-  -webkit-animation: grow37 1781ms alternate infinite;
-          animation: grow37 1781ms alternate infinite;
-}
-
-@-webkit-keyframes grow37 {
-  0% {
-    height: 70px;
-  }
-
-  10% {
-    height: 196px;
-  }
-
-  20% {
-    height: 77px;
-  }
-
-  30% {
-    height: 146px;
-  }
-
-  40% {
-    height: 188px;
-  }
-
-  50% {
-    height: 168px;
-  }
-
-  60% {
-    height: 134px;
-  }
-
-  70% {
-    height: 150px;
-  }
-
-  80% {
-    height: 106px;
-  }
-
-  90% {
-    height: 75px;
-  }
-
-  100% {
-    height: 101px;
-  }
-}
-
-@keyframes grow37 {
-  0% {
-    height: 70px;
-  }
-
-  10% {
-    height: 196px;
-  }
-
-  20% {
-    height: 77px;
-  }
-
-  30% {
-    height: 146px;
-  }
-
-  40% {
-    height: 188px;
-  }
-
-  50% {
-    height: 168px;
-  }
-
-  60% {
-    height: 134px;
-  }
-
-  70% {
-    height: 150px;
-  }
-
-  80% {
-    height: 106px;
-  }
-
-  90% {
-    height: 75px;
-  }
-
-  100% {
-    height: 101px;
-  }
-}
-
-.soundwave:nth-child(38) {
-  height: 75px;
-}
-
-.soundwave.active:nth-child(38) {
-  -webkit-animation: grow38 1805ms alternate infinite;
-          animation: grow38 1805ms alternate infinite;
-}
-
-@-webkit-keyframes grow38 {
-  0% {
-    height: 191px;
-  }
-
-  10% {
-    height: 69px;
-  }
-
-  20% {
-    height: 164px;
-  }
-
-  30% {
-    height: 75px;
-  }
-
-  40% {
-    height: 198px;
-  }
-
-  50% {
-    height: 191px;
-  }
-
-  60% {
-    height: 79px;
-  }
-
-  70% {
-    height: 129px;
-  }
-
-  80% {
-    height: 90px;
-  }
-
-  90% {
-    height: 160px;
-  }
-
-  100% {
-    height: 56px;
-  }
-}
-
-@keyframes grow38 {
-  0% {
-    height: 191px;
-  }
-
-  10% {
-    height: 69px;
-  }
-
-  20% {
-    height: 164px;
-  }
-
-  30% {
-    height: 75px;
-  }
-
-  40% {
-    height: 198px;
-  }
-
-  50% {
-    height: 191px;
-  }
-
-  60% {
-    height: 79px;
-  }
-
-  70% {
-    height: 129px;
-  }
-
-  80% {
-    height: 90px;
-  }
-
-  90% {
-    height: 160px;
-  }
-
-  100% {
-    height: 56px;
-  }
-}
-
-.soundwave:nth-child(39) {
-  height: 101px;
-}
-
-.soundwave.active:nth-child(39) {
-  -webkit-animation: grow39 1983ms alternate infinite;
-          animation: grow39 1983ms alternate infinite;
-}
-
-@-webkit-keyframes grow39 {
-  0% {
-    height: 155px;
-  }
-
-  10% {
-    height: 54px;
-  }
-
-  20% {
-    height: 168px;
-  }
-
-  30% {
-    height: 182px;
-  }
-
-  40% {
-    height: 92px;
-  }
-
-  50% {
-    height: 183px;
-  }
-
-  60% {
-    height: 153px;
-  }
-
-  70% {
-    height: 176px;
-  }
-
-  80% {
-    height: 149px;
-  }
-
-  90% {
-    height: 83px;
-  }
-
-  100% {
-    height: 106px;
-  }
-}
-
-@keyframes grow39 {
-  0% {
-    height: 155px;
-  }
-
-  10% {
-    height: 54px;
-  }
-
-  20% {
-    height: 168px;
-  }
-
-  30% {
-    height: 182px;
-  }
-
-  40% {
-    height: 92px;
-  }
-
-  50% {
-    height: 183px;
-  }
-
-  60% {
-    height: 153px;
-  }
-
-  70% {
-    height: 176px;
-  }
-
-  80% {
-    height: 149px;
-  }
-
-  90% {
-    height: 83px;
-  }
-
-  100% {
-    height: 106px;
-  }
-}
-
-.soundwave:nth-child(40) {
-  height: 55px;
-}
-
-.soundwave.active:nth-child(40) {
-  -webkit-animation: grow40 2107ms alternate infinite;
-          animation: grow40 2107ms alternate infinite;
-}
-
-@-webkit-keyframes grow40 {
-  0% {
-    height: 114px;
-  }
-
-  10% {
-    height: 51px;
-  }
-
-  20% {
-    height: 163px;
-  }
-
-  30% {
     height: 72px;
   }
 
-  40% {
-    height: 176px;
-  }
-
-  50% {
-    height: 191px;
-  }
-
-  60% {
-    height: 89px;
-  }
-
-  70% {
-    height: 179px;
-  }
-
-  80% {
-    height: 188px;
-  }
-
   90% {
-    height: 122px;
-  }
-
-  100% {
-    height: 58px;
-  }
-}
-
-@keyframes grow40 {
-  0% {
-    height: 114px;
-  }
-
-  10% {
-    height: 51px;
-  }
-
-  20% {
-    height: 163px;
-  }
-
-  30% {
-    height: 72px;
-  }
-
-  40% {
-    height: 176px;
-  }
-
-  50% {
-    height: 191px;
-  }
-
-  60% {
-    height: 89px;
-  }
-
-  70% {
-    height: 179px;
-  }
-
-  80% {
-    height: 188px;
-  }
-
-  90% {
-    height: 122px;
-  }
-
-  100% {
-    height: 58px;
-  }
-}
-
-.soundwave:nth-child(41) {
-  height: 158px;
-}
-
-.soundwave.active:nth-child(41) {
-  -webkit-animation: grow41 1754ms alternate infinite;
-          animation: grow41 1754ms alternate infinite;
-}
-
-@-webkit-keyframes grow41 {
-  0% {
-    height: 188px;
-  }
-
-  10% {
-    height: 76px;
-  }
-
-  20% {
-    height: 174px;
-  }
-
-  30% {
-    height: 68px;
-  }
-
-  40% {
-    height: 65px;
-  }
-
-  50% {
-    height: 176px;
-  }
-
-  60% {
-    height: 119px;
-  }
-
-  70% {
-    height: 118px;
-  }
-
-  80% {
-    height: 153px;
-  }
-
-  90% {
-    height: 153px;
-  }
-
-  100% {
-    height: 183px;
-  }
-}
-
-@keyframes grow41 {
-  0% {
-    height: 188px;
-  }
-
-  10% {
-    height: 76px;
-  }
-
-  20% {
-    height: 174px;
-  }
-
-  30% {
-    height: 68px;
-  }
-
-  40% {
-    height: 65px;
-  }
-
-  50% {
-    height: 176px;
-  }
-
-  60% {
-    height: 119px;
-  }
-
-  70% {
-    height: 118px;
-  }
-
-  80% {
-    height: 153px;
-  }
-
-  90% {
-    height: 153px;
-  }
-
-  100% {
-    height: 183px;
-  }
-}
-
-.soundwave:nth-child(42) {
-  height: 158px;
-}
-
-.soundwave.active:nth-child(42) {
-  -webkit-animation: grow42 1662ms alternate infinite;
-          animation: grow42 1662ms alternate infinite;
-}
-
-@-webkit-keyframes grow42 {
-  0% {
-    height: 81px;
-  }
-
-  10% {
-    height: 132px;
-  }
-
-  20% {
-    height: 181px;
-  }
-
-  30% {
-    height: 81px;
-  }
-
-  40% {
-    height: 61px;
-  }
-
-  50% {
-    height: 193px;
-  }
-
-  60% {
-    height: 163px;
-  }
-
-  70% {
-    height: 130px;
-  }
-
-  80% {
-    height: 191px;
-  }
-
-  90% {
-    height: 196px;
-  }
-
-  100% {
-    height: 66px;
-  }
-}
-
-@keyframes grow42 {
-  0% {
-    height: 81px;
-  }
-
-  10% {
-    height: 132px;
-  }
-
-  20% {
-    height: 181px;
-  }
-
-  30% {
-    height: 81px;
-  }
-
-  40% {
-    height: 61px;
-  }
-
-  50% {
-    height: 193px;
-  }
-
-  60% {
-    height: 163px;
-  }
-
-  70% {
-    height: 130px;
-  }
-
-  80% {
-    height: 191px;
-  }
-
-  90% {
-    height: 196px;
-  }
-
-  100% {
-    height: 66px;
-  }
-}
-
-.soundwave:nth-child(43) {
-  height: 128px;
-}
-
-.soundwave.active:nth-child(43) {
-  -webkit-animation: grow43 1747ms alternate infinite;
-          animation: grow43 1747ms alternate infinite;
-}
-
-@-webkit-keyframes grow43 {
-  0% {
-    height: 78px;
-  }
-
-  10% {
-    height: 114px;
-  }
-
-  20% {
-    height: 71px;
-  }
-
-  30% {
-    height: 62px;
-  }
-
-  40% {
-    height: 183px;
-  }
-
-  50% {
-    height: 70px;
-  }
-
-  60% {
-    height: 167px;
-  }
-
-  70% {
-    height: 170px;
-  }
-
-  80% {
-    height: 107px;
-  }
-
-  90% {
-    height: 77px;
-  }
-
-  100% {
-    height: 131px;
-  }
-}
-
-@keyframes grow43 {
-  0% {
-    height: 78px;
-  }
-
-  10% {
-    height: 114px;
-  }
-
-  20% {
-    height: 71px;
-  }
-
-  30% {
-    height: 62px;
-  }
-
-  40% {
-    height: 183px;
-  }
-
-  50% {
-    height: 70px;
-  }
-
-  60% {
-    height: 167px;
-  }
-
-  70% {
-    height: 170px;
-  }
-
-  80% {
-    height: 107px;
-  }
-
-  90% {
-    height: 77px;
-  }
-
-  100% {
-    height: 131px;
-  }
-}
-
-.soundwave:nth-child(44) {
-  height: 58px;
-}
-
-.soundwave.active:nth-child(44) {
-  -webkit-animation: grow44 1749ms alternate infinite;
-          animation: grow44 1749ms alternate infinite;
-}
-
-@-webkit-keyframes grow44 {
-  0% {
-    height: 125px;
-  }
-
-  10% {
-    height: 122px;
-  }
-
-  20% {
-    height: 90px;
-  }
-
-  30% {
-    height: 189px;
-  }
-
-  40% {
-    height: 137px;
-  }
-
-  50% {
-    height: 164px;
-  }
-
-  60% {
-    height: 65px;
-  }
-
-  70% {
-    height: 57px;
-  }
-
-  80% {
-    height: 106px;
-  }
-
-  90% {
-    height: 73px;
-  }
-
-  100% {
-    height: 66px;
-  }
-}
-
-@keyframes grow44 {
-  0% {
-    height: 125px;
-  }
-
-  10% {
-    height: 122px;
-  }
-
-  20% {
-    height: 90px;
-  }
-
-  30% {
-    height: 189px;
-  }
-
-  40% {
-    height: 137px;
-  }
-
-  50% {
-    height: 164px;
-  }
-
-  60% {
-    height: 65px;
-  }
-
-  70% {
-    height: 57px;
-  }
-
-  80% {
-    height: 106px;
-  }
-
-  90% {
-    height: 73px;
-  }
-
-  100% {
-    height: 66px;
-  }
-}
-
-.soundwave:nth-child(45) {
-  height: 125px;
-}
-
-.soundwave.active:nth-child(45) {
-  -webkit-animation: grow45 2061ms alternate infinite;
-          animation: grow45 2061ms alternate infinite;
-}
-
-@-webkit-keyframes grow45 {
-  0% {
-    height: 94px;
-  }
-
-  10% {
-    height: 75px;
-  }
-
-  20% {
-    height: 195px;
-  }
-
-  30% {
     height: 91px;
   }
 
-  40% {
-    height: 168px;
-  }
-
-  50% {
-    height: 70px;
-  }
-
-  60% {
-    height: 71px;
-  }
-
-  70% {
-    height: 117px;
-  }
-
-  80% {
-    height: 143px;
-  }
-
-  90% {
-    height: 135px;
-  }
-
   100% {
-    height: 159px;
-  }
-}
-
-@keyframes grow45 {
-  0% {
-    height: 94px;
-  }
-
-  10% {
-    height: 75px;
-  }
-
-  20% {
-    height: 195px;
-  }
-
-  30% {
-    height: 91px;
-  }
-
-  40% {
-    height: 168px;
-  }
-
-  50% {
-    height: 70px;
-  }
-
-  60% {
-    height: 71px;
-  }
-
-  70% {
-    height: 117px;
-  }
-
-  80% {
-    height: 143px;
-  }
-
-  90% {
-    height: 135px;
-  }
-
-  100% {
-    height: 159px;
-  }
-}
-
-.soundwave:nth-child(46) {
-  height: 190px;
-}
-
-.soundwave.active:nth-child(46) {
-  -webkit-animation: grow46 1938ms alternate infinite;
-          animation: grow46 1938ms alternate infinite;
-}
-
-@-webkit-keyframes grow46 {
-  0% {
-    height: 150px;
-  }
-
-  10% {
-    height: 200px;
-  }
-
-  20% {
-    height: 93px;
-  }
-
-  30% {
-    height: 83px;
-  }
-
-  40% {
-    height: 148px;
-  }
-
-  50% {
-    height: 122px;
-  }
-
-  60% {
-    height: 140px;
-  }
-
-  70% {
-    height: 117px;
-  }
-
-  80% {
-    height: 121px;
-  }
-
-  90% {
-    height: 121px;
-  }
-
-  100% {
-    height: 168px;
+    height: 88px;
   }
 }
 
 @keyframes grow46 {
   0% {
-    height: 150px;
-  }
-
-  10% {
-    height: 200px;
-  }
-
-  20% {
-    height: 93px;
-  }
-
-  30% {
-    height: 83px;
-  }
-
-  40% {
-    height: 148px;
-  }
-
-  50% {
-    height: 122px;
-  }
-
-  60% {
-    height: 140px;
-  }
-
-  70% {
-    height: 117px;
-  }
-
-  80% {
-    height: 121px;
-  }
-
-  90% {
-    height: 121px;
-  }
-
-  100% {
-    height: 168px;
-  }
-}
-
-.soundwave:nth-child(47) {
-  height: 52px;
-}
-
-.soundwave.active:nth-child(47) {
-  -webkit-animation: grow47 2001ms alternate infinite;
-          animation: grow47 2001ms alternate infinite;
-}
-
-@-webkit-keyframes grow47 {
-  0% {
     height: 127px;
   }
 
   10% {
-    height: 183px;
+    height: 59px;
   }
 
   20% {
-    height: 111px;
-  }
-
-  30% {
     height: 131px;
   }
 
+  30% {
+    height: 177px;
+  }
+
   40% {
-    height: 109px;
+    height: 55px;
   }
 
   50% {
-    height: 134px;
+    height: 53px;
   }
 
   60% {
-    height: 102px;
+    height: 73px;
   }
 
   70% {
-    height: 138px;
+    height: 60px;
   }
 
   80% {
-    height: 79px;
+    height: 72px;
   }
 
   90% {
-    height: 193px;
+    height: 91px;
   }
 
   100% {
-    height: 53px;
+    height: 88px;
+  }
+}
+
+.soundwave:nth-child(47) {
+  height: 102px;
+}
+
+.soundwave.active:nth-child(47) {
+  -webkit-animation: grow47 2178ms alternate infinite;
+          animation: grow47 2178ms alternate infinite;
+}
+
+@-webkit-keyframes grow47 {
+  0% {
+    height: 60px;
+  }
+
+  10% {
+    height: 63px;
+  }
+
+  20% {
+    height: 62px;
+  }
+
+  30% {
+    height: 167px;
+  }
+
+  40% {
+    height: 116px;
+  }
+
+  50% {
+    height: 77px;
+  }
+
+  60% {
+    height: 113px;
+  }
+
+  70% {
+    height: 153px;
+  }
+
+  80% {
+    height: 198px;
+  }
+
+  90% {
+    height: 133px;
+  }
+
+  100% {
+    height: 171px;
   }
 }
 
 @keyframes grow47 {
   0% {
-    height: 127px;
+    height: 60px;
   }
 
   10% {
-    height: 183px;
+    height: 63px;
   }
 
   20% {
-    height: 111px;
+    height: 62px;
   }
 
   30% {
-    height: 131px;
+    height: 167px;
   }
 
   40% {
-    height: 109px;
+    height: 116px;
   }
 
   50% {
-    height: 134px;
+    height: 77px;
   }
 
   60% {
-    height: 102px;
+    height: 113px;
   }
 
   70% {
-    height: 138px;
+    height: 153px;
   }
 
   80% {
-    height: 79px;
+    height: 198px;
   }
 
   90% {
-    height: 193px;
+    height: 133px;
   }
 
   100% {
-    height: 53px;
+    height: 171px;
   }
 }
 
 .soundwave:nth-child(48) {
-  height: 81px;
+  height: 96px;
 }
 
 .soundwave.active:nth-child(48) {
-  -webkit-animation: grow48 1634ms alternate infinite;
-          animation: grow48 1634ms alternate infinite;
+  -webkit-animation: grow48 1724ms alternate infinite;
+          animation: grow48 1724ms alternate infinite;
 }
 
 @-webkit-keyframes grow48 {
   0% {
-    height: 78px;
+    height: 179px;
   }
 
   10% {
-    height: 199px;
+    height: 85px;
   }
 
   20% {
-    height: 171px;
+    height: 144px;
   }
 
   30% {
-    height: 199px;
+    height: 153px;
   }
 
   40% {
-    height: 104px;
+    height: 134px;
   }
 
   50% {
-    height: 135px;
+    height: 99px;
   }
 
   60% {
-    height: 98px;
+    height: 57px;
   }
 
   70% {
-    height: 197px;
+    height: 83px;
   }
 
   80% {
-    height: 136px;
+    height: 89px;
   }
 
   90% {
-    height: 170px;
+    height: 163px;
   }
 
   100% {
-    height: 57px;
+    height: 140px;
   }
 }
 
 @keyframes grow48 {
   0% {
-    height: 78px;
+    height: 179px;
   }
 
   10% {
-    height: 199px;
+    height: 85px;
   }
 
   20% {
-    height: 171px;
+    height: 144px;
   }
 
   30% {
-    height: 199px;
+    height: 153px;
   }
 
   40% {
-    height: 104px;
+    height: 134px;
   }
 
   50% {
-    height: 135px;
+    height: 99px;
   }
 
   60% {
-    height: 98px;
+    height: 57px;
   }
 
   70% {
-    height: 197px;
+    height: 83px;
   }
 
   80% {
-    height: 136px;
+    height: 89px;
   }
 
   90% {
-    height: 170px;
+    height: 163px;
   }
 
   100% {
-    height: 57px;
+    height: 140px;
   }
 }
 
 .soundwave:nth-child(49) {
-  height: 79px;
+  height: 141px;
 }
 
 .soundwave.active:nth-child(49) {
-  -webkit-animation: grow49 1566ms alternate infinite;
-          animation: grow49 1566ms alternate infinite;
+  -webkit-animation: grow49 1539ms alternate infinite;
+          animation: grow49 1539ms alternate infinite;
 }
 
 @-webkit-keyframes grow49 {
   0% {
-    height: 77px;
+    height: 176px;
   }
 
   10% {
-    height: 94px;
+    height: 122px;
   }
 
   20% {
-    height: 96px;
+    height: 121px;
   }
 
   30% {
-    height: 127px;
+    height: 179px;
   }
 
   40% {
-    height: 110px;
+    height: 179px;
   }
 
   50% {
-    height: 115px;
-  }
-
-  60% {
-    height: 90px;
-  }
-
-  70% {
-    height: 187px;
-  }
-
-  80% {
     height: 136px;
   }
 
+  60% {
+    height: 151px;
+  }
+
+  70% {
+    height: 166px;
+  }
+
+  80% {
+    height: 110px;
+  }
+
   90% {
-    height: 190px;
+    height: 141px;
   }
 
   100% {
-    height: 198px;
+    height: 121px;
   }
 }
 
 @keyframes grow49 {
   0% {
-    height: 77px;
+    height: 176px;
   }
 
   10% {
-    height: 94px;
+    height: 122px;
   }
 
   20% {
-    height: 96px;
+    height: 121px;
   }
 
   30% {
-    height: 127px;
+    height: 179px;
   }
 
   40% {
-    height: 110px;
+    height: 179px;
   }
 
   50% {
-    height: 115px;
-  }
-
-  60% {
-    height: 90px;
-  }
-
-  70% {
-    height: 187px;
-  }
-
-  80% {
     height: 136px;
   }
 
+  60% {
+    height: 151px;
+  }
+
+  70% {
+    height: 166px;
+  }
+
+  80% {
+    height: 110px;
+  }
+
   90% {
-    height: 190px;
+    height: 141px;
   }
 
   100% {
-    height: 198px;
+    height: 121px;
   }
 }
 
 .soundwave:nth-child(50) {
-  height: 76px;
+  height: 69px;
 }
 
 .soundwave.active:nth-child(50) {
-  -webkit-animation: grow50 2034ms alternate infinite;
-          animation: grow50 2034ms alternate infinite;
+  -webkit-animation: grow50 1600ms alternate infinite;
+          animation: grow50 1600ms alternate infinite;
 }
 
 @-webkit-keyframes grow50 {
   0% {
-    height: 112px;
+    height: 125px;
   }
 
   10% {
-    height: 195px;
+    height: 61px;
   }
 
   20% {
-    height: 95px;
+    height: 103px;
   }
 
   30% {
-    height: 149px;
+    height: 103px;
   }
 
   40% {
-    height: 162px;
+    height: 156px;
   }
 
   50% {
-    height: 174px;
+    height: 153px;
   }
 
   60% {
-    height: 171px;
+    height: 177px;
   }
 
   70% {
-    height: 107px;
+    height: 55px;
   }
 
   80% {
-    height: 118px;
+    height: 187px;
   }
 
   90% {
-    height: 200px;
+    height: 163px;
   }
 
   100% {
-    height: 148px;
+    height: 70px;
   }
 }
 
 @keyframes grow50 {
   0% {
-    height: 112px;
+    height: 125px;
   }
 
   10% {
-    height: 195px;
+    height: 61px;
   }
 
   20% {
-    height: 95px;
+    height: 103px;
   }
 
   30% {
-    height: 149px;
+    height: 103px;
   }
 
   40% {
-    height: 162px;
+    height: 156px;
   }
 
   50% {
-    height: 174px;
+    height: 153px;
   }
 
   60% {
-    height: 171px;
+    height: 177px;
   }
 
   70% {
-    height: 107px;
+    height: 55px;
   }
 
   80% {
-    height: 118px;
+    height: 187px;
   }
 
   90% {
-    height: 200px;
+    height: 163px;
   }
 
   100% {
-    height: 148px;
+    height: 70px;
   }
 }
 
@@ -5836,7 +5836,6 @@ header .soundwaves-bg {
 
 .swiper-container {
   width: 100%;
-  height: 400px;
 }
 
 .imageHolder {
@@ -5873,7 +5872,6 @@ header .soundwaves-bg {
 }
 
 .swiper-slide {
-  height: 340px !important;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column;

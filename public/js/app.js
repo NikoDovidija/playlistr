@@ -72372,7 +72372,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -72398,6 +72397,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.swiper = new Swiper(".swiper-container", {
                 slidesPerView: self.numberslides,
                 initialSlide: 2,
+                direction: "vertical",
                 centeredSlides: true,
                 breakpoints: {
                     // when window width is <= 320px
@@ -72453,9 +72453,7 @@ var render = function() {
         _c("c-slider-slide")
       ],
       1
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "swiper-pagination" })
+    )
   ])
 }
 var staticRenderFns = []
@@ -72566,6 +72564,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: [],
@@ -72584,63 +72584,87 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    { staticClass: "swiper-slide grid grid-full" },
+    _vm._l(3, function(x) {
+      return _c("div", [
+        _vm._m(0, true),
+        _vm._v(" "),
+        _vm._m(1, true),
+        _vm._v(" "),
+        _vm._m(2, true),
+        _vm._v(" "),
+        _vm._m(3, true)
+      ])
+    })
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "swiper-slide grid" }, [
-      _c("div", { staticClass: "imageHolder grid-item" }, [
-        _c("img", {
-          attrs: { src: "/images/intervalsalbum.jpg", alt: "slideImage" }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "playButton" }, [
-          _c("span", { staticClass: "grid grid-item grid-center" }, [
-            _c("i", { staticClass: "icon btn bt2" }, [_vm._v("play_arrow")])
+    return _c("div", { staticClass: "imageHolder grid grid-col" }, [
+      _c("img", {
+        attrs: { src: "/images/intervalsalbum.jpg", alt: "slideImage" }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "playButton" }, [
+        _c("span", { staticClass: "grid grid-item grid-center" }, [
+          _c("i", { staticClass: "icon btn bt2" }, [_vm._v("play_arrow")])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "titleHolder grid grid-col" }, [
+      _c("div", { staticClass: "playlistTitle" }, [
+        _c("p", [_c("b", [_vm._v("Progressive metal playlist")])])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "authorHolder grid grid-col" }, [
+      _c("div", { staticClass: "authorTitle" }, [
+        _vm._v("\n                by John Pretruccio\n            ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "socialHolder grid grid-col" }, [
+      _c("div", { staticClass: "grid" }, [
+        _c("div", { staticClass: "grid grid-item grid-left grid-even" }, [
+          _c("span", { staticClass: "grid grid-item iconsHolder" }, [
+            _c("i", { staticClass: "icon btn bt2" }, [
+              _vm._v("play_circle_outline")
+            ]),
+            _vm._v("\n                        512\n                    ")
           ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "titleHolder grid-item" }, [
-        _c("div", { staticClass: "playlistTitle" }, [
-          _c("p", [_c("b", [_vm._v("Progressive metal playlist")])])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "authorHolder grid-item" }, [
-        _c("div", { staticClass: "authorTitle" }, [
-          _vm._v("\n                by John Pretruccio\n            ")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "socialHolder grid-item" }, [
-        _c("div", { staticClass: "grid" }, [
-          _c("div", { staticClass: "grid-item grid-left grid-even" }, [
-            _c("span", { staticClass: "grid grid-item iconsHolder" }, [
-              _c("i", { staticClass: "icon btn bt2" }, [
-                _vm._v("play_circle_outline")
-              ]),
-              _vm._v("\n                        512\n                    ")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "grid-item grid-center grid-even" }, [
-            _c("span", { staticClass: "grid grid-item iconsHolder" }, [
-              _c("i", { staticClass: "icon btn bt2" }, [
-                _vm._v("sentiment_very_satisfied")
-              ]),
-              _vm._v("\n                        62\n                    ")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "grid-item grid-right grid-even" }, [
-            _c("span", { staticClass: "grid grid-item iconsHolder" }, [
-              _c("i", { staticClass: "icon btn bt2" }, [_vm._v("share")]),
-              _vm._v("\n                        28\n                    ")
-            ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "grid grid-item grid-center grid-even" }, [
+          _c("span", { staticClass: "grid grid-item iconsHolder" }, [
+            _c("i", { staticClass: "icon btn bt2" }, [
+              _vm._v("sentiment_very_satisfied")
+            ]),
+            _vm._v("\n                        62\n                    ")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "grid grid-item grid-right grid-even" }, [
+          _c("span", { staticClass: "grid grid-item iconsHolder" }, [
+            _c("i", { staticClass: "icon btn bt2" }, [_vm._v("share")]),
+            _vm._v("\n                        28\n                    ")
           ])
         ])
       ])
