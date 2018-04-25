@@ -15,12 +15,8 @@
     </head>
     <body>
         <div id="app">
-            <c-header></c-header>
-
-            <div class="body-content">
-                @yield("content")
-            </div>
-
+            
+            @yield("content")
 
         </div>
 

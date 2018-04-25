@@ -42,7 +42,7 @@ if (token) {
 window.moment = require("moment");
 window.progress = require("progressbar.js");
 window.howler = require("howler");
-
+window.Swiper = require("swiper/dist/js/swiper.min.js");
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting

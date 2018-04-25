@@ -23,6 +23,11 @@ class PlaylistController extends BaseController
         return $playlist;
     }
 
+    public function getSongs($id) {
+        $songs = Playlist::find($id)->songs;
+        return response()->json(["songs" => $songs]);
+    }
+
     public function getById($id) {
         return response()->json($this->getPlaylist($id));
     }

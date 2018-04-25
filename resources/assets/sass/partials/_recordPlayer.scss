@@ -1,0 +1,102 @@
+#recordPlayer{
+    padding: 12px 20px;
+
+    [class*="record-"] {
+        border-radius: 100%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        &:after {
+            content: '';
+            display: block;
+            padding-bottom: 100%;
+        }
+    }
+
+    .record-container {
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: unset;
+        width: 100%;
+        max-width: 264px;
+        box-shadow: 2px 2px 24px -1px black;
+
+        .record-spin-wrap {
+            width: 100%;
+            top: 0;
+            left: 0;          
+            &.playing {
+                animation: spin 5s linear infinite;
+    
+                @keyframes spin {
+                    from {
+                        transform: rotate(0deg);
+                    }
+    
+                    to {
+                        transform: rotate(359deg);
+                    }
+                }
+            }
+        }
+
+        .record-outer {
+            width: 100%;
+            background: $black;
+            box-shadow: $shadow-box;
+        }
+
+        .record-artwork-container {
+            width: 33%;
+            overflow: hidden;
+
+            .record-artwork {
+                width: 100%;
+            }
+        }
+
+        .record-blur {
+            width: 40%;
+            background: $white;
+            opacity: .1;
+        }
+    
+        .record-hole {
+            width: 4%;
+            background: $white;
+            border: 0.1em solid $black;
+        }
+    }
+
+    .under-record {
+        width: 100%;
+    }
+
+    .handle-container {
+        position: relative;
+
+
+        .handle-stand {
+            width: 50px;;
+            border-radius: 100%;
+            background: $black;
+
+            &:after {
+                content: '';
+                display: block;
+                padding-bottom: 100%;
+            }
+        }
+
+        .handle-arm {
+            position: absolute;
+            left: 20px;
+            bottom: 0;
+            width: 90px;
+        }
+    }
+
+}

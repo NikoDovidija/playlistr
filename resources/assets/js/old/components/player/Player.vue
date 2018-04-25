@@ -1,13 +1,13 @@
 <template>
-    <div id="player" class="player">
+<div id = "recordPlayer">
+    <div id="recordPlayerVinyl">
+    </div>
+    <div class="playerSection"></div>
+    <div class="commentSection"></div>
+</div>    
+    <!-- <div id="player" class="player">
 
         <div id="ytplayer" class="hide"></div>
-
-        <!-- <div class="navigation">
-            
-
-        </div> -->
-
         <div class="controls">
 
             <div class="previous" v-on:click="goPrevious">
@@ -65,7 +65,7 @@
                 v-bind:style="{ right: ((1 - playtimeRelative) * 100) + '%' }"></div>
                 </div>
         </div>
-    </div>
+    </div> -->
 </template>
 
 <script>

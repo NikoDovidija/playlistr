@@ -1,55 +1,50 @@
 <template>
-    <div class="player-container">
-        <div class="soundwaves-container">
-            <!-- <img src="http://www.lgam.info/local--files/wayne-eddy-s-photos-6/Artvo-Shark.jpg" alt=""> -->
-            <span class="soundwave" v-bind:class="{active: isPlaying}" v-for="x in 50"></span>
-        </div>
-        <div class="player grid">
+    <div class="player-container grid grid-half">
+        <div class="player grid grid-wide grid-col">
 
-            <div class="volume-container">
-                <div class="volume-wrap" v-on:click="setVolume">
-                    <div id="volume" ref="volume" class="volume"></div>
-                </div>
-                <i class="icon">volume_up</i>
-            </div>
-
-
-
-            <div class="controls grid grid-center grid-square">
-                <span class="btn btn-circle btn-3 skip-btn">
-                    <i class="icon">skip_previous</i>
-                </span>
-
-                <span class="btn btn-circle btn-3 play-btn" v-on:click="play" v-bind:class="{hide: isPlaying}">
-                    <i class="icon">play_arrow</i>
-                </span>
-
-                <span class="btn btn-circle btn-3 pause-btn" v-on:click="pause" v-bind:class="{hide: !isPlaying}">
-                    <i class="icon">pause</i>
-                </span>
-
-                <span class="btn btn-circle btn-3 skip-btn">
-                    <i class="icon">skip_next</i>
-                </span>
+            <div class="song-playing sm-only grid grid-wide grid-center">
+                <span>Ka$cade</span> - <span>Animals As Leaders</span>
             </div>
 
             <div class="grid grid-col grid-left playtime">
-                <div class="song-details">
-                    <span class="name">Fable</span> - <span class="artist">Intervals</span>
-                    <div class="album">The Shape of Colour</div>
-                </div>
-
                 <div class="progress-container grid">
                     <div class="song-progress-wrap" v-on:click="setProgress">
                         <div id="song-progress" ref="progress" class="song-progress"></div>
                     </div>
                     <div class="duration">
-                        <span>{{progress}}</span> <!--| <span>{{fullDuration}}</span> -->
+                        <span>{{progress}}</span>
                     </div>
                 </div>
             </div>
 
+            <div class="grid">
 
+                <div class="volume-container grid">
+                    <i class="icon">volume_up</i>
+                    <div class="volume-progress-wrap" v-on:click="setVolume">
+                        <div id="volume" ref="volume" class="volume-progress"></div>
+                    </div>
+                </div>
+
+                <div class="controls grid grid-full grid-center">
+                    <span class="btn skip-btn">
+                        <i class="icon btn">skip_previous</i>
+                    </span>
+
+                    <span class="btn play-btn" v-on:click="play" v-bind:class="{hide: isPlaying}">
+                        <i class="icon btn">play_arrow</i>
+                    </span>
+
+                    <span class="btn pause-btn" v-on:click="pause" v-bind:class="{hide: !isPlaying}">
+                        <i class="icon btn">pause</i>
+                    </span>
+
+                    <span class="btn skip-btn">
+                        <i class="icon btn">skip_next</i>
+                    </span>
+                </div>
+
+            </div>
         </div>
     </div>
 </template>
@@ -89,14 +84,10 @@
 
             initializeProgressBars () {
                 this.progressBar = new ProgressBar.Line("#song-progress", {
-                    color: "#e64a19",
+                    color: "#212121",
                 });
                 this.volumeBar = new ProgressBar.Line("#volume", {
-                    color: "#e64a19",
-                    svgStyle: {
-                        transform: "rotate(90deg)",
-                        width: "100px",
-                    }
+                    color: "#212121",
                 });
             },
 
@@ -148,10 +139,10 @@
             
             setVolume (event) {
                 let bar = this.$refs.volume.getBoundingClientRect(),
-                    start = bar.bottom,
-                    height = bar.height,
-                    y = event.clientY - start;
-                let relative = y / height;
+                    start = bar.left,
+                    width = bar.width,
+                    x = event.clientX - start;
+                let relative = x / width;
                 this.player.volume(Math.abs(relative));
                 this.volumeBar.set(relative);
             }

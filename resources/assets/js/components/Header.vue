@@ -1,25 +1,8 @@
 <template>
     <header>
-        <!-- <div class="soundwaves-bg">
-            <span class="soundwave"  v-for="x in 50"></span>
-        </div> -->
-        <div class="grid grid-top">
-            <a href="/" class="logo grid-item">
-                <div class="logo"></div>
-            </a>
-
-            <div class="grid-item">
-                <span class="btn btn-2 btn-circle">
-                    <i class="icon">search</i>
-                </span>
-
-                <span class="btn btn-1 btn-text">
-                    <span v-if="page == 'playlist'">Upload</span>
-                    <span v-if="page == 'home'">Create</span>
-                    <i class="icon">add</i>
-                </span>
-            </div>
-        </div>
+        <a href="/" class="logo">
+            <img src="/public/images/logo-small.svg" alt="Logo">
+        </a>
     </header>
 </template>
 

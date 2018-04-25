@@ -20,10 +20,12 @@
     "vue": "^2.5.7"
   },
   "dependencies": {
+    "gulp": "^3.9.1",
     "howler": "^2.0.9",
     "moment": "^2.22.0",
     "moment-duration-format": "^2.2.2",
     "progressbar.js": "^1.0.1",
+    "swiper": "^3.4.2",
     "vue-scrollto": "^2.11.0"
   }
 }

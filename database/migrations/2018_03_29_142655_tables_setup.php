@@ -10,7 +10,7 @@ class TablesSetup extends Migration {
         Schema::create("playlists", function (Blueprint $table) {
             $this->configure($table);
             $table->increments("playlist_id");
-            $table->string("creator");
+            $table->string("creator")->default("Anonymous");
             $table->char("name", 255)->default("My Playlist");
             $table->string("description")->nullable();
             $table->string("artwork")->nullable();

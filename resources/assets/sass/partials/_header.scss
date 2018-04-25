@@ -1,24 +1,18 @@
 header {
-    height: 220px;
     padding: 12px 20px;
-    background: $orange;
-    color: white;
-    display: table;
-    width: 100%;
 
     .btn {
         margin-left: 8px;
     }
 
     .logo {
-        width: 100%;
-        height: 36px;
-        background-image: url("/public/images/logo-small.svg");
-        background-repeat: no-repeat;
+        display: block;
+        width: 20%;
+        min-width: 120px;
+        max-width: 200px;
 
-        @include media("screen", ">=md") {
-            background-image: url("/public/images/logo-big.svg");
-            height: 100px;
+        img {
+            width: 100%;
         }
     }
 }

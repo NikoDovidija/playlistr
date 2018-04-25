@@ -1,19 +1,19 @@
 * {
     box-sizing: border-box;
 }
-
 html, body, #app {
-    height: 100%;
+    height: 100vh;
     margin: 0;
+    overflow: hidden;
 }
 
 body, #app {
     font-family: $main-font-family;
     font-size: $main-font-size;
-    background: $black;
+    background: $white;
     display: flex;
     flex-direction: column;
-    color: $white;
+    color: $black;
 }
 
 ul {
@@ -23,8 +23,7 @@ ul {
 }
 
 .body-content {
-    // padding: $container-padding;
-    //text-align: center;
+    //flex-grow: 1;
 }
 
 // !!container with this inside requires horizontal center alignment!!
@@ -35,6 +34,8 @@ ul {
     text-align: left;
     margin: 0 auto;
 }
+
+
 
 .hide {
     display: none !important;

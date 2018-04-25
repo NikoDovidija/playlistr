@@ -1,31 +1,25 @@
 @extends("layouts/main")
 
-@section("title", "PlaylistR")
+@section("title", "Playlistr")
 
 @section("content")
 
-<div class="filter-container grid">
-    <div class="filter-item grid grid-center">
-        <div class="blur"></div>
-        <span class="text">Top 10</span>
+<div class="grid grid-wide">
+    <div class="grid-item grid-left">
+        <c-header></c-header>
     </div>
-    <div class="filter-item grid grid-center">
-        <div class="blur"></div>
-        <span class="text">Recommended</span>
-    </div>
-    <div class="filter-item grid grid-center">
-        <div class="blur"></div>
-        <span class="text">Random</span>
+    <div class="grid grid-col grid-right iconsOuterHolder">
+        <span class="iconsHolder">
+            <i class="icon btn btn2">search</i>
+        </span>
+        <span class="iconsHolder">
+            <i class="icon btn btn2">note_add</i>
+        </span>
     </div>
 </div>
+<div class="grid grid-full">
 
-<div class="grid double-list-wrap">
-    <c-list api-get="" heading="Most played today"></c-list>
-    <c-list api-get="" heading="Recently created"></c-list>
+    <c-playlist-slider></c-playlist-slider>
+
 </div>
-
-
-<c-scroll-list api-get="" heading="Staff picks"></c-scroll-list>
-
-
 @endsection
