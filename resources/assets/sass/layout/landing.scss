@@ -1,9 +1,15 @@
-.btn2{
-    font-size:35px !important;
+.btn2 {
+    font-size: 24px;
 }
-.iconsHolder{
-    flex-flow:column;
+
+.iconsHolder {
+    flex-flow: column;
 }
-.iconsOuterHolder{
-    padding:15px;
+
+.iconsHolder + .iconsHolder {
+    padding-top: 6px;
+}
+
+.iconsOuterHolder {
+    padding: 12px;
 }

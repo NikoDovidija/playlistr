@@ -34030,8 +34030,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_ScrollList_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__components_ScrollList_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_PlaylistSlider_vue__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_PlaylistSlider_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_PlaylistSlider_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_SliderSlide_vue__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_SliderSlide_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_SliderSlide_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Comments_vue__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Comments_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_Comments_vue__);
 __webpack_require__(146);
 __webpack_require__(172);
 window.ProgressBar = __webpack_require__(139);
@@ -34058,7 +34058,8 @@ Vue.component("c-playlist", __WEBPACK_IMPORTED_MODULE_5__components_Playlist_vue
 Vue.component("c-list", __WEBPACK_IMPORTED_MODULE_6__components_List_vue___default.a);
 Vue.component("c-scroll-list", __WEBPACK_IMPORTED_MODULE_7__components_ScrollList_vue___default.a);
 Vue.component("c-playlist-slider", __WEBPACK_IMPORTED_MODULE_8__components_PlaylistSlider_vue___default.a);
-Vue.component("c-slider-slide", __WEBPACK_IMPORTED_MODULE_9__components_SliderSlide_vue___default.a);
+Vue.component("c-comments", __WEBPACK_IMPORTED_MODULE_9__components_Comments_vue___default.a);
+
 // Global component setup
 Vue.mixin({
     props: ["apiGet"],
@@ -72409,6 +72410,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -72455,13 +72458,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 self.playlists = currentPlaylists;
             });
         },
-        slides: function slides() {
+        getItemWidth: function getItemWidth() {
+            var numItems = this.getNumItems();
+            return "width-" + numItems;
+        },
+        getNumItems: function getNumItems() {
             var numItems = 1;
             var width = $(window).width();
             if (width > 468) numItems = 2;
             if (width > 720) numItems = 3;
             if (width > 1000) numItems = 4;
             if (width > 1200) numItems = 5;
+            return numItems;
+        },
+        slides: function slides() {
+            var numItems = this.getNumItems();
 
             var slides = [];
             var i = 0;
@@ -72475,8 +72486,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     i = 0;
                 }
             }
-
-            slides.push(currentSlide);
+            if (currentSlide.length > 0) {
+                slides.push(currentSlide);
+            }
             return slides;
         }
     }
@@ -72490,24 +72502,31 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "swiper-container grid grid-full" }, [
+  return _c("div", { staticClass: "swiper-container" }, [
     _c(
       "div",
       { staticClass: "swiper-wrapper" },
       _vm._l(_vm.slides(), function(slide) {
         return _c(
           "div",
-          { staticClass: "swiper-slide grid grid-full" },
-          _vm._l(slide, function(playlist) {
-            return _c("div", { staticClass: "playlist-item grid grid-col" }, [
-              _vm._m(0, true),
-              _vm._v(" "),
-              _vm._m(1, true),
-              _vm._v(" "),
-              _vm._m(2, true),
-              _vm._v(" "),
-              _vm._m(3, true)
-            ])
+          { staticClass: "swiper-slide grid grid-even" },
+          _vm._l(slide, function(playlist, index) {
+            return _c(
+              "div",
+              {
+                staticClass: "playlist-item grid grid-col",
+                class: _vm.getItemWidth()
+              },
+              [
+                _vm._m(0, true),
+                _vm._v(" "),
+                _vm._m(1, true),
+                _vm._v(" "),
+                _vm._m(2, true),
+                _vm._v(" "),
+                _vm._m(3, true)
+              ]
+            )
           })
         )
       })
@@ -72519,13 +72538,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "imageHolder grid grid-col" }, [
+    return _c("div", { staticClass: "imageHolder grid" }, [
       _c("img", {
         attrs: { src: "/images/intervalsalbum.jpg", alt: "slideImage" }
       }),
       _vm._v(" "),
       _c("div", { staticClass: "playButton" }, [
-        _c("span", { staticClass: "grid grid-item grid-center" }, [
+        _c("span", { staticClass: "grid grid-center grid-full" }, [
           _c("i", { staticClass: "icon-play3 btn bt2" })
         ])
       ])
@@ -72535,7 +72554,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "titleHolder grid grid-col" }, [
+    return _c("div", { staticClass: "titleHolder grid" }, [
       _c("div", { staticClass: "playlistTitle" }, [
         _c("p", [_c("b", [_vm._v("Progressive metal playlist")])])
       ])
@@ -72545,7 +72564,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "authorHolder grid grid-col" }, [
+    return _c("div", { staticClass: "authorHolder grid" }, [
       _c("div", { staticClass: "authorTitle" }, [
         _vm._v(
           "\n                        by John Pretruccio\n                    "
@@ -72557,34 +72576,23 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "socialHolder grid grid-col" }, [
-      _c("div", { staticClass: "grid" }, [
-        _c("div", { staticClass: "grid grid-item grid-left grid-even" }, [
-          _c("span", { staticClass: "grid grid-item iconsHolder" }, [
-            _c("i", { staticClass: "icon-play3 btn bt2" }),
-            _vm._v(
-              "\n                                512\n                            "
-            )
-          ])
-        ]),
+    return _c("div", { staticClass: "socialHolder grid grid-wide grid-even" }, [
+      _c("div", { staticClass: "grid iconsHolder" }, [
+        _c("i", { staticClass: "icon-play3 btn bt2" }),
         _vm._v(" "),
-        _c("div", { staticClass: "grid grid-item grid-center grid-even" }, [
-          _c("span", { staticClass: "grid grid-item iconsHolder" }, [
-            _c("i", { staticClass: "icon-favorite btn bt2" }),
-            _vm._v(
-              "\n                                62\n                            "
-            )
-          ])
-        ]),
+        _c("span", [_vm._v("512")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "grid grid-item iconsHolder" }, [
+        _c("i", { staticClass: "icon-favorite btn bt2" }),
         _vm._v(" "),
-        _c("div", { staticClass: "grid grid-item grid-right grid-even" }, [
-          _c("span", { staticClass: "grid grid-item iconsHolder" }, [
-            _c("i", { staticClass: "icon-share2 btn bt2" }),
-            _vm._v(
-              "\n                                28\n                            "
-            )
-          ])
-        ])
+        _c("span", [_vm._v("62")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "grid grid-item iconsHolder" }, [
+        _c("i", { staticClass: "icon-share2 btn bt2" }),
+        _vm._v(" "),
+        _c("span", [_vm._v("28")])
       ])
     ])
   }
@@ -72599,15 +72607,28 @@ if (false) {
 }
 
 /***/ }),
-/* 200 */
+/* 200 */,
+/* 201 */,
+/* 202 */,
+/* 203 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 204 */,
+/* 205 */,
+/* 206 */,
+/* 207 */,
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(201)
+var __vue_script__ = __webpack_require__(209)
 /* template */
-var __vue_template__ = __webpack_require__(202)
+var __vue_template__ = __webpack_require__(210)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -72624,7 +72645,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\SliderSlide.vue"
+Component.options.__file = "resources\\assets\\js\\components\\Comments.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -72633,9 +72654,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-246dcfa9", Component.options)
+    hotAPI.createRecord("data-v-251fea6b", Component.options)
   } else {
-    hotAPI.reload("data-v-246dcfa9", Component.options)
+    hotAPI.reload("data-v-251fea6b", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -72646,7 +72667,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 201 */
+/* 209 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -72667,168 +72688,72 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: [],
     data: function data() {
-        return {};
+        return {
+            slider: null,
+            comments: []
+        };
+    },
+    mounted: function mounted() {
+        this.initSlider();
     },
 
-    methods: {
-        detachAll: function detachAll() {
-            var playlists = $(".playlist-item").detach();
 
-            console.log(playlists);
+    methods: {
+        initSlider: function initSlider() {
+            this.slider = new Swiper(".comments-container", {
+                direction: "vertical",
+                slidesPerView: "auto",
+                centeredSlides: true,
+                spaceBetween: 0,
+                grabCursor: true,
+                watchSlidesVisibility: true,
+                mousewheelControl: true,
+                freeModeSticky: true
+            });
         }
     }
 });
 
 /***/ }),
-/* 202 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "swiper-slide grid grid-full" },
-    _vm._l(3, function(x) {
-      return _c(
+  return _c("div", { staticClass: "grid grid-full grid-center" }, [
+    _c("div", { staticClass: "comments-container swiper-container" }, [
+      _c("div", { staticClass: "fade fade-top" }),
+      _vm._v(" "),
+      _c(
         "div",
-        { staticClass: "playlist-item grid grid-col grid-third" },
-        [
-          _c("div", { staticClass: "imageHolder grid grid-col" }, [
-            _c("img", {
-              attrs: { src: "/images/intervalsalbum.jpg", alt: "slideImage" }
-            }),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "playButton", on: { click: _vm.detachAll } },
-              [_vm._m(0, true)]
+        { staticClass: "swiper-wrapper" },
+        _vm._l(_vm.comments, function(comment, index) {
+          return _c("div", { staticClass: "comment swiper-slide" }, [
+            _vm._v(
+              "\n                 " + _vm._s(comment.text) + "\n             "
             )
-          ]),
-          _vm._v(" "),
-          _vm._m(1, true),
-          _vm._v(" "),
-          _vm._m(2, true),
-          _vm._v(" "),
-          _vm._m(3, true)
-        ]
-      )
-    })
-  )
+          ])
+        })
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "fade fade-bottom" })
+    ])
+  ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "grid grid-item grid-center" }, [
-      _c("i", { staticClass: "icon btn bt2" }, [_vm._v("play_arrow")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "titleHolder grid grid-col" }, [
-      _c("div", { staticClass: "playlistTitle" }, [
-        _c("p", [_c("b", [_vm._v("Progressive metal playlist")])])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "authorHolder grid grid-col" }, [
-      _c("div", { staticClass: "authorTitle" }, [
-        _vm._v("\n                by John Pretruccio\n            ")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "socialHolder grid grid-col" }, [
-      _c("div", { staticClass: "grid" }, [
-        _c("div", { staticClass: "grid grid-item grid-left grid-even" }, [
-          _c("span", { staticClass: "grid grid-item iconsHolder" }, [
-            _c("i", { staticClass: "icon btn bt2" }, [
-              _vm._v("play_circle_outline")
-            ]),
-            _vm._v("\n                        512\n                    ")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "grid grid-item grid-center grid-even" }, [
-          _c("span", { staticClass: "grid grid-item iconsHolder" }, [
-            _c("i", { staticClass: "icon btn bt2" }, [
-              _vm._v("sentiment_very_satisfied")
-            ]),
-            _vm._v("\n                        62\n                    ")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "grid grid-item grid-right grid-even" }, [
-          _c("span", { staticClass: "grid grid-item iconsHolder" }, [
-            _c("i", { staticClass: "icon btn bt2" }, [_vm._v("share")]),
-            _vm._v("\n                        28\n                    ")
-          ])
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-246dcfa9", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-251fea6b", module.exports)
   }
 }
-
-/***/ }),
-/* 203 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

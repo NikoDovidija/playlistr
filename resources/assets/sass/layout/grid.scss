@@ -77,14 +77,24 @@
 
 }
 
-.blue {
-    background: blue;
-}
+.width {
+    &-1 {
+        width: 100%;
+    }
 
-.red {
-    background: red;
-}
+    &-2 {
+        width: 50%;
+    }
 
-.gray {
-    background: gray;
+    &-3 {
+        width: 33%;
+    }
+
+    &-4 {
+        width: 25%;
+    }
+
+    &-5 {
+        width: 20%;
+    }
 }

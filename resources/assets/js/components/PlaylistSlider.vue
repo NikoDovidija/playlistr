@@ -1,49 +1,51 @@
 <template>
-    <div class="swiper-container grid grid-full">
+    <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide grid grid-full" v-for="slide in slides()">
-                <div v-for="playlist in slide" class="playlist-item grid grid-col">
-                    <div class="imageHolder grid grid-col">
+            <div class="swiper-slide grid grid-even" v-for="slide in slides()">
+                <div v-for="(playlist, index) in slide" class="playlist-item grid grid-col" v-bind:class="getItemWidth()">
+
+
+                    <div class="imageHolder grid">
                         <img src="/images/intervalsalbum.jpg" alt="slideImage"/>
                         <div class="playButton">
-                            <span class="grid grid-item grid-center">
+                            <span class="grid grid-center grid-full">
                                 <i class="icon-play3 btn bt2"></i>
                             </span>
                         </div>
                     </div>
-                    <div class="titleHolder grid grid-col">
+                    <div class="titleHolder grid">
                         <div class="playlistTitle">
                             <p><b>Progressive metal playlist</b></p>
                         </div>      
                     </div>
-                    <div class="authorHolder grid grid-col">
+                    <div class="authorHolder grid">
                         <div class="authorTitle">
                             by John Pretruccio
                         </div>  
                     </div>
-                    <div class="socialHolder grid grid-col">
-                        <div class="grid">
-                            <div class="grid grid-item grid-left grid-even">
-                                <span class="grid grid-item iconsHolder">
+                    <div class="socialHolder grid grid-wide grid-even">
+
+                                <div class="grid iconsHolder">
                                     <i class="icon-play3 btn bt2"></i>
-                                    512
-                                </span>
-                            </div>
-                            <div class="grid grid-item grid-center grid-even">
-                                <span class="grid grid-item iconsHolder">
+                                    <span>512</span>
+                                </div>
+
+
+                                <div class="grid grid-item iconsHolder">
                                     <i class="icon-favorite btn bt2"></i>
-                                    62
-                                </span>
-                            </div>
-                            <div class="grid grid-item grid-right grid-even">
-                                <span class="grid grid-item iconsHolder">
+                                    <span>62</span>
+                                </div>
+
+
+                                <div class="grid grid-item iconsHolder">
                                     <i class="icon-share2 btn bt2"></i>
-                                    28
-                                </span>
-                            </div>
-                        </div>  
+                                    <span>28</span>
+                                </div>
+
+                        </div>
                     </div>
                 </div>
+
             </div>
 
         </div>
@@ -99,13 +101,23 @@
                 });
             },
 
-            slides () {
+            getItemWidth () {
+                let numItems = this.getNumItems();
+                return "width-" + numItems;
+            },
+
+            getNumItems () {
                 let numItems = 1;
                 let width = $(window).width();
                 if (width > 468) numItems = 2;
                 if (width > 720) numItems = 3;
                 if (width > 1000) numItems = 4;
                 if (width > 1200) numItems = 5;
+                return numItems;
+            },
+
+            slides () {
+                let numItems = this.getNumItems();
 
                 var slides = [];
                 var i = 0;
@@ -119,8 +131,9 @@
                         i = 0;
                     }
                 }
-
-                slides.push(currentSlide);
+                if (currentSlide.length > 0) {
+                    slides.push(currentSlide);
+                }
                 return slides;
             }
 

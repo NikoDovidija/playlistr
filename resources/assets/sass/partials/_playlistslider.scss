@@ -1,3 +1,44 @@
-.swiper-container {
-    width: 100%;
+
+
+  .imageHolder {
+      width:100%;
+
+      img {
+          width: 60%;
+          margin: 0 auto;
+          height: auto;
+          transition: .5s ease;
+          &:hover {
+              opacity: 0.3;
+          }
+          &:hover + .playButton {
+              opacity: 1;
+          }
+      }
+  }
+
+  .playButton {
+      transition: .5s ease;
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      text-align: center;
+  }   
+  .playlist-slider {
+
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+        flex-flow: row;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
   }
