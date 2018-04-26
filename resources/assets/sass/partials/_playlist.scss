@@ -4,6 +4,18 @@
 //     padding: 32px 42px;
 // }
 
+.play-page {
+    .social-icon + .social-icon {
+        padding-left: 8px;
+    }
+    
+    .social-icon {
+        .btn.icon {
+            font-size: 16px;
+        }
+    }
+}
+
 .playlist, .comments {
     
     >.heading {
@@ -29,19 +41,9 @@
     }
 }
 
-.playlist-header{
 
-        padding-top:25%;
 
-}
-.playlist-name{
-    padding-top:5%;
-    font-size:25px;
-}
-.playlist-creator{
-    padding-top:15%;
-    font-size:15px;
-}
+
 .playlist-container {
     @include media("screen", "<=md") {
         flex-flow: column;
@@ -51,7 +53,6 @@
         }
     }
 }
-
 
 .playlist {
     width: 33.333%;
@@ -87,9 +88,10 @@
     }
 }
 
-.btn4{
-    font-size:35px;
+.btn4 {
+    font-size: 35px;
 }
+
 .comments {
     width: 66.666%;
     padding-right: 32px;

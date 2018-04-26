@@ -79,6 +79,7 @@
             display: none;
             left: 100%;
             top: 0;
+            padding-left: 6px;
 
             &:hover {
                 display: inline;
@@ -86,6 +87,7 @@
 
             .icon.btn {
                 height: 100%;
+                font-size: 16px;
             }
         }
 

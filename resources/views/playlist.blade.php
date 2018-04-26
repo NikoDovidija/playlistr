@@ -4,7 +4,7 @@
 
 @section("content")
 
-<div class="grid grid-full grid-col">
+<div class="grid grid-full grid-col play-page">
 
 
 
@@ -29,11 +29,11 @@
                     <div class="playlist-name">Progressive metal playlist</div>
                     <div class="playlist-creator">by Jon Petruccio</div>
                     <div class="playlist-social sm-only grid grid-half grid-center">
-                        <span class="grid">
+                        <span class="grid social-icon">
                             <i class="icon btn icon-favorite"></i>
                             <span>312</span>
                         </span>
-                        <span class="grid">
+                        <span class="grid social-icon">
                             <i class="icon btn2 btn icon-share2"></i>
                             <span>56</span>
                         </span>
@@ -49,11 +49,11 @@
     <div class="grid grid-wide playercontentHolder">
         
         <div class="playlist-social not-sm grid grid-half grid-center">
-            <span class="grid">
+            <span class="grid social-icon">
                 <i class="icon btn4 btn icon-favorite"></i>
                 <span>312</span>
             </span>
-            <span class="grid">
+            <span class="grid social-icon">
                 <i class="icon btn4 btn icon-share2"></i>
                 <span>56</span>
             </span>

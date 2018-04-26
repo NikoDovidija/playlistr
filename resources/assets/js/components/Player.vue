@@ -18,16 +18,16 @@
             </div>
 
             <div class="grid gri-col grid-wide">
-                <div class="volume-container grid grid-third grid-left ">
+                <div class="volume-container grid width-2 grid-center">
                     <i class="icon btn3 icon-volume-medium"></i>
                     <div class="volume-progress-wrap" v-on:click="setVolume">
                         <div id="volume" ref="volume" class="volume-progress"></div>
                     </div>
                 </div>
 
-                <div class="controls grid grid-twothird grid-right">
+                <div class="controls grid width-2 grid-even">
                     <span class="btn skip-btn">
-                        <i class="icon btn3 btn  icon-previous2"></i>
+                        <i class="icon btn4 btn  icon-previous2"></i>
                     </span>
 
                     <span class="btn play-btn" v-on:click="play" v-bind:class="{hide: isPlaying}">
@@ -35,11 +35,11 @@
                     </span>
 
                     <span class="btn pause-btn" v-on:click="pause" v-bind:class="{hide: !isPlaying}">
-                        <i class="icon btn icon-pause2"></i>
+                        <i class="icon btn btn3 icon-pause2"></i>
                     </span>
 
                     <span class="btn skip-btn">
-                        <i class="icon btn3 btn icon-next2"></i>
+                        <i class="icon btn4 btn icon-next2"></i>
                     </span>
                 </div>
 

@@ -1,6 +1,10 @@
 #recordPlayer{
     padding: 12px 20px;
 
+    @include media("screen", "<=sm") {
+        padding-top: 0
+    }
+
     [class*="record-"] {
         border-radius: 100%;
         position: absolute;
@@ -22,8 +26,12 @@
         transform: unset;
         width: 100%;
         //max-width: 264px;
-        max-width: 360px;
+        max-width: 288px;
         box-shadow: 2px 2px 24px -1px black;
+
+        @include media("screen", "<=sm") {
+            width: 45%;
+        }
 
         .record-spin-wrap {
             width: 100%;
