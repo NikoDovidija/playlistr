@@ -1,4 +1,6 @@
 #recordPlayer{
+
+    
     padding: 12px 20px;
 
     @include media("screen", "<=sm") {
@@ -32,6 +34,11 @@
         @include media("screen", "<=sm") {
             width: 45%;
         }
+        @media(-webkit-min-device-pixel-ratio:1.5),(min--moz-device-pixel-ratio:1.5),(-o-min-device-pixel-ratio:3/2),(min-resolution:1.5dppx){ 
+            max-width:350px;
+            
+         }
+
 
         .record-spin-wrap {
             width: 100%;
@@ -109,3 +116,8 @@
     }
 
 }
+
+
+
+
+
