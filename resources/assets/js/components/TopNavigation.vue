@@ -3,13 +3,13 @@
 
         <div class="grid grid-col">
             <span class="plus-btn">
-                <i class="icon btn">add</i>
+                <i class="icon btn2 btn  icon-plus"></i>
             </span>
             <span class="comment-btn">
-                <i class="icon btn">mode_comment</i>
+                <i class="icon btn2 btn  icon-icon"></i>
             </span>
             <span class="playlist-btn hide">
-                <i class="icon btn">playlist_play</i>
+                <i class="icon btn2 btn ">playlist_play</i>
             </span>
         </div>
     </div>

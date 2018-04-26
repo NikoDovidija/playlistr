@@ -9,7 +9,7 @@
                     <span class="song-artist">
                         {{song.artist}}
                         <span class="song-options">
-                            <i class="icon btn">more_horiz</i>
+                            <i class="icon btn4 btn icon-more"></i>
                         </span>
                     </span>
                 </div>

@@ -6,5 +6,13 @@
 }
 
 .playlist-header {
+    @include media("screen", "<=sm") {
+        padding-top:25%;
+    }
     padding: 12px 20px;
+}
+.playlist-social{
+    @include media("screen", "<=sm") {
+        padding:15px;
+    }
 }

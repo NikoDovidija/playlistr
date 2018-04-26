@@ -2,7 +2,7 @@
     <div class="playlist-container grid grid-top">
         <div class="comments grid grid-col grid-left">
             <div class="heading">
-                <i class="icon">mode_comment</i> {{numComments}} Comments
+                <i class="icon icon-icon"></i> {{numComments}} Comments
             </div>
             <div class="body">
                 <div class="comments-container grid grid-col grid-left">

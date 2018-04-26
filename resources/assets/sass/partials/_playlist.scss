@@ -5,7 +5,7 @@
 // }
 
 .playlist, .comments {
-
+    
     >.heading {
         margin-bottom: 20px;
         position: relative;
@@ -29,7 +29,19 @@
     }
 }
 
+.playlist-header{
 
+        padding-top:25%;
+
+}
+.playlist-name{
+    padding-top:5%;
+    font-size:25px;
+}
+.playlist-creator{
+    padding-top:15%;
+    font-size:15px;
+}
 .playlist-container {
     @include media("screen", "<=md") {
         flex-flow: column;
@@ -75,8 +87,9 @@
     }
 }
 
-
-
+.btn4{
+    font-size:35px;
+}
 .comments {
     width: 66.666%;
     padding-right: 32px;
