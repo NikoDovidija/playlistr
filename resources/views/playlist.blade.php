@@ -8,9 +8,9 @@
 
 
 
-    <div class="grid grid-full">
+    <div class="grid grid-full grid-sm-start">
 
-        <div class="grid grid-full grid-half grid-left grid-col">
+        <div class="grid grid-full grid-half grid-left grid-col grid-sm-start">
             <div class="grid grid-wide">
                 <c-header></c-header>
                 <span class="m-drawer-btn">

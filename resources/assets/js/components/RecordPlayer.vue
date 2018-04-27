@@ -22,31 +22,6 @@
 
             </div>
 
-            <div class="under-record grid">
-                <div class="handle-container hide">
-
-                    <!-- The circular stand where arm comes out -->
-                    <div class="handle-stand">
-
-                    </div>
-
-                    <!-- The arm of the record -->
-                    <div class="handle-arm">
-                        <img src="/public/images/record-handle.svg" alt="">
-                    </div>
-                </div>
-
-                <!-- <div class="playlist-social grid grid-full grid-center">
-                    <span class="grid">
-                        <i class="icon btn">favorite_border</i>
-                        <span>312</span>
-                    </span>
-                    <span class="grid">
-                        <i class="icon btn">share</i>
-                        <span>56</span>
-                    </span>
-                </div> -->
-            </div>
 
 
     </div>

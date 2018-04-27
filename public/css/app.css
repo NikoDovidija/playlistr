@@ -419,6 +419,19 @@ footer {
   position: relative;
 }
 
+@media screen and (max-width: 376px) {
+  .player .controls {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.player .controls .play-btn,
+.player .controls .pause-btn {
+  padding: 0 22px;
+}
+
 .player .song-playing {
   font-size: 18px;
   margin-bottom: 12px;
@@ -444,7 +457,7 @@ footer {
 }
 
 .player .playtime {
-  padding-bottom: 10px;
+  padding: 3px 8px 6px 0px;
   width: 100%;
 }
 
@@ -511,12 +524,19 @@ footer {
   font-size: 18px;
 }
 
+@media screen and (max-width: 376px) {
+  .player .volume-container {
+    display: none;
+  }
+}
+
 .play-page .social-icon + .social-icon {
-  padding-left: 8px;
+  padding-left: 10px;
 }
 
 .play-page .social-icon .btn.icon {
-  font-size: 16px;
+  font-size: 18px;
+  padding-right: 6px;
 }
 
 .playlist > .heading,
@@ -864,7 +884,10 @@ footer {
 
 @media screen and (max-width: 576px) {
   #recordPlayer {
-    padding-top: 0;
+    height: auto;
+    -webkit-box-flex: unset;
+        -ms-flex: unset;
+            flex: unset;
   }
 }
 
@@ -890,20 +913,26 @@ footer {
   -webkit-transform: unset;
           transform: unset;
   width: 100%;
-  max-width: 288px;
+  max-width: 360px;
   -webkit-box-shadow: 2px 2px 24px -1px black;
           box-shadow: 2px 2px 24px -1px black;
 }
 
 @media screen and (max-width: 576px) {
   #recordPlayer .record-container {
-    width: 45%;
+    width: 60%;
   }
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
   #recordPlayer .record-container {
     max-width: 350px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  #recordPlayer .record-container {
+    width: 80%;
   }
 }
 
@@ -1022,6 +1051,7 @@ footer {
   padding-top: 6px;
   font-size: 14px;
   color: #585858;
+  font-style: italic;
 }
 
 @media screen and (max-width: 576px) {
@@ -1122,6 +1152,30 @@ footer {
   .grid-half {
     width: 100%;
   }
+}
+
+@media screen and (max-width: 576px) {
+  .grid-sm-start {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    height: auto;
+    -webkit-box-flex: unset;
+        -ms-flex: unset;
+            flex: unset;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .grid-xs-center {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.grid-height {
+  height: 100%;
 }
 
 .grid-third {
@@ -1232,6 +1286,7 @@ footer {
 .song-list-container {
   width: 100%;
   height: 50%;
+  margin: 36px 0;
 }
 
 .song-list.swiper-container {
@@ -1319,7 +1374,17 @@ footer {
 }
 
 .playercontentHolder {
-  padding-bottom: 25px;
+  padding-top: 0;
+  padding-bottom: 26px;
+}
+
+@media screen and (max-width: 576px) {
+  .playercontentHolder {
+    padding-top: 24px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
 }
 
 .m-drawer-btn {
@@ -1363,17 +1428,6 @@ footer {
 
 .btn2 {
   font-size: 24px;
-}
-
-.iconsHolder {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-}
-
-.iconsHolder + .iconsHolder {
-  padding-top: 6px;
 }
 
 .iconsOuterHolder {

@@ -23,6 +23,24 @@
         }
     }
 
+    &-sm-start {
+        @include media("screen", "<=sm") {
+            justify-content: start;
+            height: auto;
+            flex: unset;
+        }
+    }
+
+    &-xs-center {
+        @include media("screen", "<=xs") {
+            justify-content: center;
+        }
+    }
+
+    &-height {
+        height: 100%;
+    }
+
     &-third {
         width: 33%
     }
