@@ -4,7 +4,8 @@
     padding: 12px 20px;
 
     @include media("screen", "<=sm") {
-        padding-top: 0
+        height: auto;
+        flex: unset;
     }
 
     [class*="record-"] {
@@ -27,12 +28,15 @@
         top: 0;
         transform: unset;
         width: 100%;
-        //max-width: 264px;
-        max-width: 288px;
+        max-width: 360px;
         box-shadow: 2px 2px 24px -1px black;
 
         @include media("screen", "<=sm") {
-            width: 45%;
+            width: 60%;
+        }
+
+        @include media("screen", "<=xs") {
+            width: 80%;
         }
         @media(-webkit-min-device-pixel-ratio:2),(min--moz-device-pixel-ratio:2),(-o-min-device-pixel-ratio:4/2),(min-resolution:2dppx){ 
             max-width:350px;

@@ -71451,6 +71451,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ["songUrl"],
@@ -71548,9 +71555,122 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "player-container grid grid-half" })
+  return _c("div", { staticClass: "player-container grid grid-half" }, [
+    _c("div", { staticClass: "player grid grid-wide grid-col" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "grid grid-wide grid-top" }, [
+        _c("div", { staticClass: "grid grid-full grid-col" }, [
+          _c("div", { staticClass: "grid grid-col grid-left playtime" }, [
+            _c("div", { staticClass: "progress-container grid" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "song-progress-wrap",
+                  on: { click: _vm.setProgress }
+                },
+                [
+                  _c("div", {
+                    ref: "progress",
+                    staticClass: "song-progress",
+                    attrs: { id: "song-progress" }
+                  })
+                ]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "grid grid-wide grid-xs-center" }, [
+            _c(
+              "div",
+              { staticClass: "volume-container grid width-2 grid-center" },
+              [
+                _c("i", { staticClass: "icon btn3 icon-volume-medium" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "volume-progress-wrap",
+                    on: { click: _vm.setVolume }
+                  },
+                  [
+                    _c("div", {
+                      ref: "volume",
+                      staticClass: "volume-progress",
+                      attrs: { id: "volume" }
+                    })
+                  ]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "controls grid width-2 grid-right" }, [
+              _vm._m(1),
+              _vm._v(" "),
+              _c(
+                "span",
+                {
+                  staticClass: "btn play-btn",
+                  class: { hide: _vm.isPlaying },
+                  on: { click: _vm.play }
+                },
+                [_c("i", { staticClass: "icon btn3 btn icon-play3" })]
+              ),
+              _vm._v(" "),
+              _c(
+                "span",
+                {
+                  staticClass: "btn pause-btn",
+                  class: { hide: !_vm.isPlaying },
+                  on: { click: _vm.pause }
+                },
+                [_c("i", { staticClass: "icon btn btn3 icon-pause2" })]
+              ),
+              _vm._v(" "),
+              _vm._m(2)
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "duration grid- grid-height" }, [
+          _c("span", [_vm._v(_vm._s(_vm.progress))])
+        ])
+      ])
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "song-playing sm-only grid grid-wide grid-center" },
+      [
+        _c("span", [_vm._v("Ka$cade")]),
+        _vm._v(" - "),
+        _c("span", [_vm._v("Animals As Leaders")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "btn skip-btn" }, [
+      _c("i", { staticClass: "icon btn4 btn  icon-previous2" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "btn skip-btn" }, [
+      _c("i", { staticClass: "icon btn4 btn icon-next2" })
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -71642,31 +71762,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -71720,18 +71815,6 @@ var staticRenderFns = [
           _c("div", { staticClass: "record-blur" }),
           _vm._v(" "),
           _c("div", { staticClass: "record-hole" })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "under-record grid" }, [
-          _c("div", { staticClass: "handle-container hide" }, [
-            _c("div", { staticClass: "handle-stand" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "handle-arm" }, [
-              _c("img", {
-                attrs: { src: "/public/images/record-handle.svg", alt: "" }
-              })
-            ])
-          ])
         ])
       ]
     )

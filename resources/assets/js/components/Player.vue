@@ -1,50 +1,57 @@
 <template>
     <div class="player-container grid grid-half">
-        <!-- <div class="player grid grid-wide grid-col">
+        <div class="player grid grid-wide grid-col">
 
             <div class="song-playing sm-only grid grid-wide grid-center">
                 <span>Ka$cade</span> - <span>Animals As Leaders</span>
             </div>
 
-            <div class="grid grid-col grid-left playtime">
-                <div class="progress-container grid">
-                    <div class="song-progress-wrap" v-on:click="setProgress">
-                        <div id="song-progress" ref="progress" class="song-progress"></div>
+
+            <div class="grid grid-wide grid-top">
+                <div class="grid grid-full grid-col">
+                <div class="grid grid-col grid-left playtime">
+                    <div class="progress-container grid">
+                        <div class="song-progress-wrap" v-on:click="setProgress">
+                            <div id="song-progress" ref="progress" class="song-progress"></div>
+                        </div>
+
                     </div>
-                    <div class="duration">
+                </div>
+
+                <div class="grid grid-wide grid-xs-center">
+
+                    <div class="volume-container grid width-2 grid-center">
+                        <i class="icon btn3 icon-volume-medium"></i>
+                        <div class="volume-progress-wrap" v-on:click="setVolume">
+                            <div id="volume" ref="volume" class="volume-progress"></div>
+                        </div>
+                    </div>
+
+                    <div class="controls grid width-2 grid-right">
+                        <span class="btn skip-btn">
+                            <i class="icon btn4 btn  icon-previous2"></i>
+                        </span>
+
+                        <span class="btn play-btn" v-on:click="play" v-bind:class="{hide: isPlaying}">
+                            <i class="icon btn3 btn icon-play3"></i>
+                        </span>
+
+                        <span class="btn pause-btn" v-on:click="pause" v-bind:class="{hide: !isPlaying}">
+                            <i class="icon btn btn3 icon-pause2"></i>
+                        </span>
+
+                        <span class="btn skip-btn">
+                            <i class="icon btn4 btn icon-next2"></i>
+                        </span>
+                    </div>
+                </div>
+                </div>
+                    <div class="duration grid- grid-height">
                         <span>{{progress}}</span>
                     </div>
-                </div>
             </div>
 
-            <div class="grid gri-col grid-wide">
-                <div class="volume-container grid width-2 grid-center">
-                    <i class="icon btn3 icon-speaker"></i>
-                    <div class="volume-progress-wrap" v-on:click="setVolume">
-                        <div id="volume" ref="volume" class="volume-progress"></div>
-                    </div>
-                </div>
-
-                <div class="controls grid width-2 grid-even">
-                    <span class="btn skip-btn">
-                        <i class="icon btn4 btn icon-forward"></i>
-                    </span>
-
-                    <span class="btn play-btn" v-on:click="play" v-bind:class="{hide: isPlaying}">
-                        <i class="icon btn3 btn icon-play-button"></i>
-                    </span>
-
-                    <span class="btn pause-btn" v-on:click="pause" v-bind:class="{hide: !isPlaying}">
-                        <i class="icon btn btn3 icon-pause"></i>
-                    </span>
-
-                    <span class="btn skip-btn">
-                        <i class="icon btn4 btn icon-forward2"></i>
-                    </span>
-                </div>
-
-            </div>
-        </div> -->
+        </div>
     </div>
 </template>
 
