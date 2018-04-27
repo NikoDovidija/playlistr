@@ -118,11 +118,17 @@
         }
     }
 
-    .icon-volume-medium {
-        font-size: 18px;
+    .icon-speaker {
+        font-size: 20px;
     }
 
     .volume-container {
+        @include media("screen", "<=xs") {
+            display: none;
+        }
+    }
+
+    .duration {
         @include media("screen", "<=xs") {
             display: none;
         }

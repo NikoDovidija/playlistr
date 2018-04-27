@@ -30,11 +30,11 @@
                     <div class="playlist-creator">by Jon Petruccio</div>
                     <div class="playlist-social sm-only grid grid-half grid-center">
                         <span class="grid social-icon">
-                            <i class="icon btn icon-favorite"></i>
+                            <i class="icon btn btn2 icon-favorite"></i>
                             <span>312</span>
                         </span>
                         <span class="grid social-icon">
-                            <i class="icon btn2 btn icon-share2"></i>
+                            <i class="icon btn btn2 btn icon-share2"></i>
                             <span>56</span>
                         </span>
                 </div>
@@ -49,11 +49,11 @@
     <div class="grid grid-wide playercontentHolder">
         <div class="playlist-social not-sm grid grid-half grid-center">
             <span class="grid social-icon">
-                <i class="icon btn4 icon-like"></i>
+                <i class="icon btn btn4 icon-like"></i>
                 <span>312</span>
             </span>
             <span class="grid social-icon">
-                <i class="icon btn4 icon-share"></i>
+                <i class="icon btn btn4 icon-share"></i>
                 <span>56</span>
             </span>
         </div>

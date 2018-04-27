@@ -1,6 +1,13 @@
 .m-drawer-btn {
     display: none;
-    padding: 8px 20px;
+    padding: 16px 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    .icon {
+        font-weight: bold;
+    }
 }
 
 .m-drawer {
