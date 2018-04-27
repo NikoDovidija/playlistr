@@ -71585,7 +71585,7 @@ var render = function() {
               "div",
               { staticClass: "volume-container grid width-2 grid-center" },
               [
-                _c("i", { staticClass: "icon btn3 icon-volume-medium" }),
+                _c("i", { staticClass: "icon btn3 icon-speaker" }),
                 _vm._v(" "),
                 _c(
                   "div",
@@ -71614,7 +71614,7 @@ var render = function() {
                   class: { hide: _vm.isPlaying },
                   on: { click: _vm.play }
                 },
-                [_c("i", { staticClass: "icon btn3 btn icon-play3" })]
+                [_c("i", { staticClass: "icon btn3 btn icon-play-button" })]
               ),
               _vm._v(" "),
               _c(
@@ -71624,7 +71624,7 @@ var render = function() {
                   class: { hide: !_vm.isPlaying },
                   on: { click: _vm.pause }
                 },
-                [_c("i", { staticClass: "icon btn btn3 icon-pause2" })]
+                [_c("i", { staticClass: "icon btn btn3 icon-pause" })]
               ),
               _vm._v(" "),
               _vm._m(2)
@@ -71659,7 +71659,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("span", { staticClass: "btn skip-btn" }, [
-      _c("i", { staticClass: "icon btn4 btn  icon-previous2" })
+      _c("i", { staticClass: "icon btn4 btn  icon-forward" })
     ])
   },
   function() {
@@ -71667,7 +71667,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("span", { staticClass: "btn skip-btn" }, [
-      _c("i", { staticClass: "icon btn4 btn icon-next2" })
+      _c("i", { staticClass: "icon btn4 btn icon-forward2" })
     ])
   }
 ]
