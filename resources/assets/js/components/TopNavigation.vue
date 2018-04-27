@@ -3,10 +3,10 @@
 
         <div class="grid grid-col">
             <span class="plus-btn">
-                <i class="icon btn2 btn  icon-plus"></i>
+                <i class="icon btn2 btn icon-icons8-plus-math"></i>
             </span>
             <span class="comment-btn">
-                <i class="icon btn2 btn  icon-icon"></i>
+                <i class="icon btn2 btn icon-more"></i>
             </span>
             <span class="playlist-btn hide">
                 <i class="icon btn2 btn ">playlist_play</i>

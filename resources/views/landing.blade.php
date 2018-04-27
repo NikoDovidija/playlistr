@@ -7,11 +7,11 @@
     <div class="grid grid-wide grid-top">
             <c-header></c-header>
         <div class="grid grid-col grid-right iconsOuterHolder">
-            <span class="iconsHolder">
-                <i class="icon-plus btn btn2"></i>
+            <span data-open-modal="add-playlist" class="iconsHolder">
+                <i class="icon-icons8-plus-math btn btn2"></i>
             </span>
             <span class="iconsHolder">
-                <i class="icon-search btn btn2"></i>
+                <i class="icon-icons8-search btn btn2"></i>
             </span>
         </div>
     </div>

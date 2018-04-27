@@ -14,10 +14,11 @@
     
     </head>
     <body>
+        <!-- <button data-open-modal="testmodal">open me</button> -->
         <div id="app">
             
             @yield("content")
-
+            <c-modal id="add-playlist"></c-modal>
         </div>
 
     <script src="{{ asset('js/app.js')}}"></script>

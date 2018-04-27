@@ -23,19 +23,19 @@
                  <div class="grid">
                     <div class="grid grid-item grid-left grid-even">
                         <span class="grid grid-item iconsHolder">
-                            <i class="icon btn bt2">play_circle_outline</i>
+                            <i class="icon btn bt2 icon-play-button"></i>
                             512
                         </span>
                     </div>
                      <div class="grid grid-item grid-center grid-even">
                         <span class="grid grid-item iconsHolder">
-                            <i class="icon btn bt2">sentiment_very_satisfied</i>
+                            <i class="icon btn bt2 icon-like"></i>
                             62
                         </span>
                     </div>
                      <div class="grid grid-item grid-right grid-even">
                             <span class="grid grid-item iconsHolder">
-                            <i class="icon btn bt2">share</i>
+                            <i class="icon btn bt2 icon-share">share</i>
                             28
                         </span>
                     </div>

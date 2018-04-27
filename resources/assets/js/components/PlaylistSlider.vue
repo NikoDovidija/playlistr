@@ -26,19 +26,19 @@
                     <div class="socialHolder grid grid-wide grid-even">
 
                                 <div class="grid iconsHolder">
-                                    <i class="icon-play3 btn bt2"></i>
+                                    <i class="icon-play-button btn bt2"></i>
                                     <span>512</span>
                                 </div>
 
 
                                 <div class="grid grid-item iconsHolder">
-                                    <i class="icon-favorite btn bt2"></i>
+                                    <i class="icon-like btn bt2"></i>
                                     <span>62</span>
                                 </div>
 
 
                                 <div class="grid grid-item iconsHolder">
-                                    <i class="icon-share2 btn bt2"></i>
+                                    <i class="icon-share btn bt2"></i>
                                     <span>28</span>
                                 </div>
 

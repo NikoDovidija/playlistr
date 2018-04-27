@@ -1,6 +1,6 @@
 <template>
     <div class="player-container grid grid-half">
-        <div class="player grid grid-wide grid-col">
+        <!-- <div class="player grid grid-wide grid-col">
 
             <div class="song-playing sm-only grid grid-wide grid-center">
                 <span>Ka$cade</span> - <span>Animals As Leaders</span>
@@ -19,7 +19,7 @@
 
             <div class="grid gri-col grid-wide">
                 <div class="volume-container grid width-2 grid-center">
-                    <i class="icon btn3 icon-volume-medium"></i>
+                    <i class="icon btn3 icon-speaker"></i>
                     <div class="volume-progress-wrap" v-on:click="setVolume">
                         <div id="volume" ref="volume" class="volume-progress"></div>
                     </div>
@@ -27,24 +27,24 @@
 
                 <div class="controls grid width-2 grid-even">
                     <span class="btn skip-btn">
-                        <i class="icon btn4 btn  icon-previous2"></i>
+                        <i class="icon btn4 btn icon-forward"></i>
                     </span>
 
                     <span class="btn play-btn" v-on:click="play" v-bind:class="{hide: isPlaying}">
-                        <i class="icon btn3 btn icon-play3"></i>
+                        <i class="icon btn3 btn icon-play-button"></i>
                     </span>
 
                     <span class="btn pause-btn" v-on:click="pause" v-bind:class="{hide: !isPlaying}">
-                        <i class="icon btn btn3 icon-pause2"></i>
+                        <i class="icon btn btn3 icon-pause"></i>
                     </span>
 
                     <span class="btn skip-btn">
-                        <i class="icon btn4 btn icon-next2"></i>
+                        <i class="icon btn4 btn icon-forward2"></i>
                     </span>
                 </div>
 
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 

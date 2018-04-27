@@ -14,7 +14,7 @@
             <div class="grid grid-wide">
                 <c-header></c-header>
                 <span class="m-drawer-btn">
-                    <i class="icon btn2 btn icon-arrow-right2"></i>
+                    <i class="icon btn2 btn icon-next"></i>
                 </span>
             </div>
             <c-record></c-record>
@@ -23,7 +23,7 @@
         <div class="m-drawer grid grid-full grid-half grid-right">
             <div class="grid grid-col grid-full">
                     <span class="m-drawer-btn">
-                            <i class="icon btn2 btn icon-arrow-left2"></i>
+                            <i class="icon btn2 btn icon-back"></i>
                         </span>
                 <div class="playlist-header grid grid-col grid-center">
                     <div class="playlist-name">Progressive metal playlist</div>
@@ -47,14 +47,13 @@
     </div>
 
     <div class="grid grid-wide playercontentHolder">
-        
         <div class="playlist-social not-sm grid grid-half grid-center">
             <span class="grid social-icon">
-                <i class="icon btn4 btn icon-favorite"></i>
+                <i class="icon btn4 icon-like"></i>
                 <span>312</span>
             </span>
             <span class="grid social-icon">
-                <i class="icon btn4 btn icon-share2"></i>
+                <i class="icon btn4 icon-share"></i>
                 <span>56</span>
             </span>
         </div>
