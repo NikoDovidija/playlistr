@@ -901,6 +901,12 @@ footer {
   }
 }
 
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
+  #recordPlayer .record-container {
+    max-width: 350px;
+  }
+}
+
 #recordPlayer .record-container .record-spin-wrap {
   width: 100%;
   top: 0;
