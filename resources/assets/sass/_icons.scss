@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'playlistr';
-  src:  url('/public/fonts/playlistr.eot?qapbe9');
-  src:  url('/public/fonts/playlistr.eot?qapbe9#iefix') format('embedded-opentype'),
-    url('/public/fonts/playlistr.ttf?qapbe9') format('truetype'),
-    url('/public/fonts/playlistr.woff?qapbe9') format('woff'),
-    url('/public/fonts/playlistr.svg?qapbe9#playlistr') format('svg');
+  src:  url('/public/fonts/playlistr.eot?olclci');
+  src:  url('/public/fonts/playlistr.eot?olclci#iefix') format('embedded-opentype'),
+    url('/public/fonts/playlistr.ttf?olclci') format('truetype'),
+    url('/public/fonts/playlistr.woff?olclci') format('woff'),
+    url('/public/fonts/playlistr.svg?olclci#playlistr') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -200,6 +200,9 @@
 }
 .icon-share2:before {
   content: "\ea82";
+}
+.icon-icons8-add:before {
+  content: "\e914";
 }
 .icon-forward:before {
   content: "\e90a";
