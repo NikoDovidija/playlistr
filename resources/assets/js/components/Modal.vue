@@ -7,7 +7,7 @@
                         <i class="icon-icons8-delete btn btn2"></i>
                     </span>
                 </div> 
-                <div class="modal-action grid grid-right grid-half">
+                <div v-if="getId=='add-playlist'" class="modal-action grid grid-right grid-half">
                     <span data-close-modal="testmodal" class="iconsHolder">
                         <i class="icon-icons8-add btn btn2"></i>
                     </span>
