@@ -10,7 +10,7 @@
             <span data-open-modal="add-playlist" class="iconsHolder">
                 <i class="icon-icons8-plus-math btn btn2"></i>
             </span>
-            <span class="iconsHolder">
+            <span data-open-modal="search-playlist" class="iconsHolder">
                 <i class="icon-icons8-search btn btn2"></i>
             </span>
         </div>

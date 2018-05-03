@@ -7,6 +7,7 @@ window.Howler = require("howler");
 import Swiper from "swiper/dist/js/swiper.min.js";
 
 import AddPlaylist from "./components/AddPlaylist.vue";
+import SearchPlaylist from "./components/SearchPlaylist";
 import Header from "./components/Header.vue";
 import TopNav from "./components/TopNavigation.vue";
 import Player from "./components/Player.vue";
@@ -16,9 +17,12 @@ import Modal from "./components/Modal.vue";
 import List from "./components/List.vue";
 import ScrollList from "./components/ScrollList.vue";
 import PlaylistSlider from "./components/PlaylistSlider.vue";
+import FileUpload from 'v-file-upload';
+//import Comments from "./components/Comments.vue";
 import Comments from "./components/Comments.vue";
 import PostComment from "./components/PostComment.vue";
-
+Vue.component("c-file-up",FileUpload);
+Vue.component("c-search-playlist",SearchPlaylist);
 Vue.component("c-add-playlist",AddPlaylist);
 Vue.component("c-modal",Modal);
 Vue.component("c-header", Header);

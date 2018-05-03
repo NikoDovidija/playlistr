@@ -1,23 +1,28 @@
 <template>
-    <div v-bind:id='getId' class="modal-wrapper hide">
-        <div class="modal-container grid grid-wide">
+    <div v-bind:id='getId' class="modal-wrapper hide" >
+        <div class="modal-container grid grid-wide grid-twothird grid-center grid-wrap">
             <div class="modal-header grid grid-wide">
-                <div class="modal-close grid grid-right">
-                    <button data-close-modal="testmodal"> close me</button>
+                <div class="modal-close grid grid-left grid-half">
+                    <span data-close-modal="testmodal" class="iconsHolder">
+                        <i class="icon-icons8-delete btn btn2"></i>
+                    </span>
+                </div> 
+                <div v-if="getId=='add-playlist'" class="modal-action grid grid-right grid-half">
+                    <span data-close-modal="testmodal" class="iconsHolder">
+                        <i class="icon-icons8-add btn btn2"></i>
+                    </span>
                 </div>
             </div>
-            <div class="modal-content">
-                 <!-- <component
-                    v-bind:is="passedComponent"
-                 ></component> -->
+            <div class="modal-content grid grid-full grid-center">
+            <c-add-playlist v-if="getId=='add-playlist'"></c-add-playlist>
+            <c-search-playlist v-else-if="getId=='search-playlist'"></c-search-playlist>
             </div>
-<!-- header, close,  -->
         </div>
     </div>
 </template>
 
 <script>
-
+    
     export default {
         props: ["id"]
         ,
