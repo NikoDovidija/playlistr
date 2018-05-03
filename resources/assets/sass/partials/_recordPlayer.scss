@@ -4,7 +4,7 @@
     padding: 12px 20px;
 
     @include media("screen", "<=sm") {
-        height: auto;
+        //height: auto;
         flex: unset;
     }
 

@@ -28,6 +28,14 @@ class PlaylistController extends BaseController
         return response()->json(["songs" => $songs]);
     }
 
+    public function getComments($id) {
+        $comments = Playlist::find($id)->comments;
+        foreach ($comments as $comment) {
+            $responses = $comment->responses;
+        }
+        return response()->json(["comments" => $comments]);
+    }
+
     public function getById($id) {
         return response()->json($this->getPlaylist($id));
     }

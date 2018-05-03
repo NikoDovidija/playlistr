@@ -16,7 +16,8 @@ import Modal from "./components/Modal.vue";
 import List from "./components/List.vue";
 import ScrollList from "./components/ScrollList.vue";
 import PlaylistSlider from "./components/PlaylistSlider.vue";
-//import Comments from "./components/Comments.vue";
+import Comments from "./components/Comments.vue";
+import PostComment from "./components/PostComment.vue";
 
 Vue.component("c-add-playlist",AddPlaylist);
 Vue.component("c-modal",Modal);
@@ -28,8 +29,8 @@ Vue.component("c-playlist", Playlist);
 Vue.component("c-list", List);
 Vue.component("c-scroll-list", ScrollList);
 Vue.component("c-playlist-slider",PlaylistSlider);
-//Vue.component("c-comments", Comments);
-
+Vue.component("c-comments", Comments);
+Vue.component("c-post-comment", PostComment);
 
 // Global component setup
 Vue.mixin({
@@ -84,4 +85,20 @@ const app = new Vue({
 
 $(".m-drawer-btn").on("click", function () {
     $(".m-drawer").toggleClass("active");
+});
+
+$(".comment-btn").on("click", function () {
+    $(this).addClass("hide");
+    $(".playlist-btn").removeClass("hide");
+    $(".song-list-container").addClass("hide");
+    $(".comments-wrap").removeClass("hide");
+    $(".post-comment").removeClass("hide");
+});
+
+$(".playlist-btn").on("click", function () {
+    $(this).addClass("hide");
+    $(".comment-btn").removeClass("hide");
+    $(".song-list-container").removeClass("hide");
+    $(".comments-wrap").addClass("hide");
+    $(".post-comment").addClass("hide");
 });

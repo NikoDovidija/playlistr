@@ -6,10 +6,10 @@
                 <i class="icon btn2 btn icon-icons8-plus-math"></i>
             </span>
             <span class="comment-btn">
-                <i class="icon btn2 btn icon-more"></i>
+                <i class="icon btn2 btn icon-bubbles"></i>
             </span>
             <span class="playlist-btn hide">
-                <i class="icon btn2 btn ">playlist_play</i>
+                <i class="icon btn2 btn icon-playlist"></i>
             </span>
         </div>
     </div>

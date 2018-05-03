@@ -73,7 +73,9 @@
 
                 $(window).on("resize", function () {
                     setTimeout(function () {
-                        self.swiper.update();
+                        if (self.swiper != null) {
+                            self.swiper.update();
+                        }
                     }, 200);
                 });
 

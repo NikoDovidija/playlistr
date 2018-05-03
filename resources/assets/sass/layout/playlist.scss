@@ -104,7 +104,6 @@
     padding-bottom: 26px;
 
     @include media("screen", "<=sm") {
-        padding-top: 24px;
-        flex: 1;
+        padding-bottom: 42px;
     }
 }

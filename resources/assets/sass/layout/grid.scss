@@ -26,8 +26,6 @@
     &-sm-start {
         @include media("screen", "<=sm") {
             justify-content: start;
-            height: auto;
-            flex: unset;
         }
     }
 

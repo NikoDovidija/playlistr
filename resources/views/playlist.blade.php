@@ -8,7 +8,7 @@
 
 
 
-    <div class="grid grid-full grid-sm-start">
+    <div class="grid grid-full">
 
         <div class="grid grid-full grid-half grid-left grid-col grid-sm-start">
             <div class="grid grid-wide">
@@ -41,6 +41,8 @@
                 </div>
                 <c-top-nav></c-top-nav>
                 <c-scroll-list api-get="{{ Request::path().'/songs' }}"></c-scroll-list>
+                <c-comments api-get="{{ Request::path().'/comments' }}"></c-comments>
+                <c-post-comment></c-post-comment>
             </div>
         </div>
 

@@ -20,4 +20,5 @@ Route::get("/comments/{id}", "commentController@getById");
 
 
 Route::get("/{id}/songs", "playlistController@getSongs");
+Route::get("/{id}/comments", "playlistController@getComments");
 Route::get("/{id}", "playlistController@getById");

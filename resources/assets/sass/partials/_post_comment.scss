@@ -1,0 +1,29 @@
+.post-comment {
+    margin-bottom: 32px;
+    padding: 0 20px;
+
+    input,
+    textarea {
+        font-family: inherit;
+        border: 1px solid $gray;
+        border-radius: 6px;
+        padding: 4px;
+    }
+
+    input {
+        margin-bottom: 20px;
+    }
+
+    textarea {
+        width: 100%;
+        resize: none;
+    }
+
+    .reply-btn {
+        padding: 0 3px 0 13px;
+
+        .btn {
+            font-size: 24px;
+        }
+    }
+}

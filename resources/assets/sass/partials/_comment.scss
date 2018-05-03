@@ -1,0 +1,27 @@
+.comments-wrap {
+    padding: 32px;
+
+    .comment {
+    
+        &.swiper-slide {
+            height: auto;
+            width: auto;
+        }
+    
+        .comment-wrapper {
+            padding: 12px;
+        }
+    
+        .comment-body {
+            padding: 0 20px;
+    
+            .comment-author {
+                margin-right: 20px;
+            }
+        }
+
+        .reply {
+            margin-left: 32px;
+        }
+    }
+}
