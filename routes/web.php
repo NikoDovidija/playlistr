@@ -21,8 +21,17 @@ Route::get('/', function () {
     );
 });
 
-Route::get('/{id_playlist}', function ($id_playlist) {
+ Route::get('/playlists/{id_playlist}', function ($id_playlist) {
+     return view('playlist', [
+             "songs" => app(PlaylistController::class)->getById($id_playlist),
+             "comments" => app(PlaylistController::class)->getComments($id_playlist)
+         ]
+     );
+ });
+
+
+Route::get('/playlists/{id_playlist}', function ($id_playlist) {
     return view("playlist", [
-        "songUrl" => "/public".Storage::url("Intervals - Fable.mp3"),
+        "songUrl" => "/public".Storage::url("Intervals - Fable.mp3")
     ]);
 });

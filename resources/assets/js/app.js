@@ -5,7 +5,6 @@ window.ProgressBar = require("progressbar.js");
 window.Vue = require('vue');
 window.Howler = require("howler");
 import Swiper from "swiper/dist/js/swiper.min.js";
-
 import AddPlaylist from "./components/AddPlaylist.vue";
 import SearchPlaylist from "./components/SearchPlaylist";
 import Header from "./components/Header.vue";
@@ -21,6 +20,10 @@ import FileUpload from 'v-file-upload';
 //import Comments from "./components/Comments.vue";
 import Comments from "./components/Comments.vue";
 import PostComment from "./components/PostComment.vue";
+
+import InstantSearch from 'vue-instantsearch';
+Vue.use(InstantSearch);
+
 Vue.component("c-file-up",FileUpload);
 Vue.component("c-search-playlist",SearchPlaylist);
 Vue.component("c-add-playlist",AddPlaylist);
@@ -35,10 +38,9 @@ Vue.component("c-scroll-list", ScrollList);
 Vue.component("c-playlist-slider",PlaylistSlider);
 Vue.component("c-comments", Comments);
 Vue.component("c-post-comment", PostComment);
-
 // Global component setup
 Vue.mixin({
-    props: ["apiGet"],
+    props: ["apiGet", 'apiPost'],
     created () {
         // if component has "api-get" property fetch and assign data
         if (this.apiGet != undefined) {
@@ -67,10 +69,20 @@ Vue.mixin({
         /* 
         execute http GET request
         */
-        apiGetCall(url) {
-            axios.get("/api/" + url)
+        apiGetCall(url, data) {
+            axios.get("/api/" + url, data)
             .then(response => {
                 this.setData(response.data);
+            })
+            .catch(e => {
+                console.error(e);
+            });
+        },
+
+        apiPostCall(url,data) {
+            axios.post("/api/" + url,data)
+            .then(response => {
+                console.log(response)
             })
             .catch(e => {
                 console.error(e);

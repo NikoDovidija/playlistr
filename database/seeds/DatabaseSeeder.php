@@ -4,7 +4,8 @@ use Illuminate\Database\Seeder;
 use App\Models\Playlist;
 use App\Models\Comment;
 use App\Models\Song;
-
+use App\Models\Artwork;
+use App\User;
 class DatabaseSeeder extends Seeder
 {
     
@@ -15,46 +16,46 @@ class DatabaseSeeder extends Seeder
         $playlists = [
             [
                 1, 
-                "Thomas 121",
+                1,
                 "My Playlist 1", 
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 Ut enim ad minim veniam, quis nostrud exercitation.", 
-                "http://www.lgam.info/local--files/wayne-eddy-s-photos-6/Artvo-Shark.jpg",
+                1,
                 12,
                 6,
             ],
             [
                 2, 
-                "Mike Myong",
+                2,
                 "My Playlist 2", 
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt.", 
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiTIj0OzDPkaoeFaG-qvRTvLh9bW3ECk3L1ZqbSf-9miQu7zcb",
-                7,
                 1,
+                12,
+                6,
             ],
             [
                 3, 
-                "John Petrucci",
+                3,
                 "My Playlist 3", 
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, 
                 consectetur adipiscing elit, sed do eiusmod tempor incididunt.", 
-                "https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster.png/0/images/fandangoblog/Garofalo-It-Final-crop-Silk.jpg",
                 1,
-                0,
+                12,
+                6,
             ],
             [
                 4, 
-                "Tookras324",
+                4,
                 "My Playlist 4", 
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, 
                 consectetur adipiscing elit, sed do eiusmod tempor incididunt.", 
-                "http://s3.weddbook.com/t4/2/6/1/2616913/flowerfishswan-watercolor-paintingoriginal-watercolor-artunique-artoriginal-watercolor-ooakartworkaquarelleflowerart-collectibes.jpg",
-                0,
-                0,
+                1,
+                12,
+                6,
             ],
         ];
     
@@ -183,14 +184,117 @@ class DatabaseSeeder extends Seeder
                 "comment",
             ],
         ];
+        $artworks = [
+            [
+                1,
+                1,
+                "http://www.lgam.info/local--files/wayne-eddy-s-photos-6/Artvo-Shark.jpg",
+
+            ],
+            [
+                2,
+                2,
+                "https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster.png/0/images/fandangoblog/Garofalo-It-Final-crop-Silk.jpg",
+            ],
+            [
+                3,
+                3,
+                "http://s3.weddbook.com/t4/2/6/1/2616913/flowerfishswan-watercolor-paintingoriginal-watercolor-artunique-artoriginal-watercolor-ooakartworkaquarelleflowerart-collectibes.jpg",
+            ],
+            [
+                4,
+                4,
+                "http://s3.weddbook.com/t4/2/6/1/2616913/flowerfishswan-watercolor-paintingoriginal-watercolor-artunique-artoriginal-watercolor-ooakartworkaquarelleflowerart-collectibes.jpg",
+            ],
+            [
+                5,
+                4,
+                "http://s3.weddbook.com/t4/2/6/1/2616913/flowerfishswan-watercolor-paintingoriginal-watercolor-artunique-artoriginal-watercolor-ooakartworkaquarelleflowerart-collectibes.jpg",
+            ],
+            [
+                6,
+                4,
+                "http://s3.weddbook.com/t4/2/6/1/2616913/flowerfishswan-watercolor-paintingoriginal-watercolor-artunique-artoriginal-watercolor-ooakartworkaquarelleflowerart-collectibes.jpg",
+            ],
+            [
+                7,
+                4,
+                "http://s3.weddbook.com/t4/2/6/1/2616913/flowerfishswan-watercolor-paintingoriginal-watercolor-artunique-artoriginal-watercolor-ooakartworkaquarelleflowerart-collectibes.jpg",
+            ],
+        ];
+
+        $users = [
+            [
+                1,
+                "User1",
+                "Email1",
+                "Pass1",
+            ],
+            [
+                2,
+                "User2",
+                "Email2",
+                "Pass2",
+            ],
+            [
+                3,
+                "User3",
+                "Email3",
+                "Pass3",
+            ],
+            [
+                4,
+                "User4",
+                "Email4",
+                "Pass4",
+            ],
+            [
+                5,
+                "User5",
+                "Email5",
+                "Pass5",
+            ],
+            [
+                6,
+                "User6",
+                "Email6",
+                "Pass6",
+            ],
+            [
+                7,
+                "User7",
+                "Email7",
+                "Pass7",
+            ],
+        ];
+
+        foreach ($users as $user) {
+            $u = new User;
+            $u->user_id =$user[0];
+            $u->name =$user[1];
+            $u->email =$user[2];
+            $u->password =$user[3];
+            $u->save();
+        }
     
         foreach ($playlists as $playlist) {
             $p = new Playlist;
             $p->playlist_id = $playlist[0];
-            $p->name = $playlist[1];
-            $p->description = $playlist[2];
-            $p->artwork = $playlist[3];
+            $p->user_id = $playlist[1];
+            $p->name = $playlist[2];
+            $p->description = $playlist[3];
+            $p->artwork_id = $playlist[4];
+            $p->times_played = $playlist[5];
+            $p->times_recommended = $playlist[6];
             $p->save();
+        }
+
+        foreach ($artworks as $artwork) {
+            $a = new Artwork;
+            $a->artwork_id = $artwork[0];
+            $a->playlist_id = $artwork[1];
+            $a->url = $artwork[2];
+            $a->save();
         }
 
         foreach ($songs as $song) {
@@ -216,6 +320,8 @@ class DatabaseSeeder extends Seeder
             $c->parent_type = $comment[4];
             $c->save();
         }
+
+       
 
 
     }

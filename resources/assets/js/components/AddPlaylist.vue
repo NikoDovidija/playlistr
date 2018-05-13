@@ -1,5 +1,4 @@
 <template>
-
     <div class="grid grid-full">
     <div class="grid grid-full grid-wrap modal-add-content">
         <div class="grid grid-col grid-center grid-right">
@@ -10,63 +9,133 @@
             <div class="grid grid-wide grid-left">
                 <h4>Basic information</h4>
             </div>
-            <form id="basic-input-data">
+            <form id="basic-input-data" action="">
+                 <p v-if="errors.length">
+                    <b>Please fill the following fields:</b>
+                    <ul>
+                    <li v-for="error in errors">{{ error }}</li>
+                    </ul>
+                </p>
                 Playlist name:
-                <input type="text" name="username"><br>
+                <input type="text" name="username" v-model="playname"><br>
                 Playlist creator:
-                <input type="text" name="playlistname">
+                <input type="text" name="playlistname" v-model="creator">
+                <br>
+                <textarea rows="4" cols="50" v-model="descp"></textarea>
+                <br>
+                Thumbnail
+                <br>
+                <input type="file" name="pic" accept="image/*" @change="previewFile" id="fileinput">
+                <br>
+                <img v-if="this.imageurl" v-bind:src="this.imageurl" alt="image" v-on:dblclick='eraseImage'>
             </form>
         </div>
-        <div class="grid grid-wide grid-wrap">
-            <div class="grid grid-wide grid-left">
-                   <h4>Song upload</h4>
-                   </div>
-            <div class="grid grid-wide grid-left">
-                    <c-file-up id="file-upload" :url='url' :thumb-url='thumbUrl' :headers="headers" @change="onFileChange"></c-file-up>
-             </div>       
-        </div>
-           <div class="grid grid-wide grid-center grid-wrap">
-            <div class="grid grid-wide grid-left">
-                <div class="grid grid-wide grid-left upload-holder">
-                   <h4>Playlist description</h4>
-                </div>
-            </div>
-            <div id="rich-text">
-                  <quill-editor ref="myTextEditor">
-        </quill-editor>
-            </div>
-        </div>
+        
     </div> 
 
     </div>   
 </template>
 
 <script>
-    import { quillEditor } from 'vue-quill-editor'
 
     export default {
         data(){
             return {
-                url: 'http://your-post.url',
-                headers: {'access-token': '<your-token>'},
-                filesUploaded: []
-            }
-            
+                
+                image: '',
+                imageurl:'',
+                files: [],
+                creator:'',
+                content:'',
+                username:'',
+                errors:[],
+                playname:'',
+                descp:'',
+                url: 'api/upload',
+                success: false,
+                error:null,
+                accept:'.mp3,.flac',
+            }  
         },
         computed: {
 
         },
         methods:{
-        thumbUrl (file) {
-            return file.myThumbUrlProperty
-            },
+            thumbUrl(file) {
+                return (file) || this.success
+                ? 'uspeh'
+                : ''
+                console.log();
+             },
             onFileChange (file) {
-            // Handle files like:
-            this.fileUploaded = file
+                this.fileUploaded = file
+                console.log(file);
+                },
+                onSucess() {
+                this.error = ''
+                this.success = true
+                var filee = e.target.files || e.dataTransfer.files;
+                    if (!filee.length)
+                    return;
+                this.image = file.target.files[0];
+                this.submitImage();
+                },
+                onError(e) {
+                this.error = e
+            },
+            postBasicInfo(){
+                console.log(this.content);
+            },
+            selectionChange(editor, range) {
+                if (range) {
+                    if (range.start !== range.end) {
+                        this.content = editor.getContents();
+            }
+            }
+            },
+            previewFile(e) {
+                var file = e.target.files || e.dataTransfer.files;
+                    if (!file.length)
+                    return;
+                this.image = e.target.files[0];
+                this.submitImage();
+            },
+            submitImage () {
+                const formData = new FormData()
+                formData.append('file',this.image)
+                var tempurl = '';
+                var self = this;
+                axios.post('api/upload/thumbnail', formData)
+                    .then(function (response) {
+                        self.imageurl = decodeURIComponent(response.data["url"]);
+                        console.log(self.imageurl);
+                    })
+                    .catch(function (error) {
+                    console.log(error)
+                    })    
+                
+                },
+            eraseImage(item){
+                $('input[name=pic').val('');
+                var self = this;
+                const formData = new FormData()
+                formData.append('url',this.imageurl)
+                 axios.post('api/upload/removeThumbnail', formData)
+                    .then(function (response) {
+                        self.imageurl = null;
+                    })
+                    .catch(function (error) {
+                    console.log(error)
+                    })    
+            },
+            checkForm() {
+                if(this.playname && this.creator) return true;
+                this.errors = [];
+                if(!this.playname) this.errors.push("Playlist name required.");
+                if(!this.creator) this.errors.push("Playlist creator required.");
             }
         },
         components:{
-            quillEditor
         },
     }
 </script>

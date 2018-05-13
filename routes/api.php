@@ -19,6 +19,12 @@ Route::post("/comments", "commentController@create");
 Route::get("/comments/{id}", "commentController@getById");
 
 
-Route::get("/{id}/songs", "playlistController@getSongs");
-Route::get("/{id}/comments", "playlistController@getComments");
-Route::get("/{id}", "playlistController@getById");
+Route::get("/playlists/{id}/songs", "playlistController@getSongs");
+Route::get("/playlists/{id}/comments", "playlistController@getComments");
+Route::get("/playlists/{id}", "playlistController@getById");
+
+ 
+Route::get('/upload', 'UploadController@uploadForm');
+Route::post('/upload', 'UploadController@uploadSubmit');
+Route::post('/upload/thumbnail','UploadController@uploadThumbnail');
+Route::post('/upload/removeThumbnail','UploadController@removeThumbnail');

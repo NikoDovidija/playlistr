@@ -6,13 +6,28 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use App\Models\Playlist;
 use App\Models\Comment;
-
+use App\Models\Artwork;
+use App\User;
 class PlaylistController extends BaseController
 {
     public function index() {
-        return response()->json(["playlists" => Playlist::all()]);
+        $allplay = Playlist::all();
+        $urlarr = array();
+        $usrarr = array();
+        for($i = 0 ; $i < count($allplay); $i++){
+            $user_id = $allplay[$i]->user_id;
+            $art_id = $allplay[$i]->artwork_id;
+            $allplay[$i]->artwork_id = Artwork::find($art_id)->url;
+            $allplay[$i]->user_id = User::find($user_id)->name;
+            //$urlarr[$id] = Artwork::find($id)->url;
+            //$usrarr[$id] = User::find($id)->name;
+        }
+        return response()->json(["playlists" => $allplay]);
     }
 
+    public function getSearchedPlaylist($string){
+        return Playlist::search($string)->get();
+    }
     public function getPlaylist($id) {
         $playlist = Playlist::find($id);
         $comments = $playlist->comments;
@@ -45,9 +60,23 @@ class PlaylistController extends BaseController
         try {
             $playlist = new Playlist;
             $playlist->name = $req->name;
-            $playlist->description = $req->description;
-            $playlist->artwork = $req->artwork;
+            $playlist->description = $req->descp;
+            $playlist->user_id = 1;
             $playlist->save();
+            
+            
+            $artwork = new Artwork;
+            $artwork->playlist_id = $playlist->playlist_id;
+            if($req->artwork == ''){
+                $artwork->url = '/images/intervalsalbum.jpg';
+            }
+            else{
+                $artwork->url = $req->artwork;
+            }
+            $artwork->save();
+            $playlist->artwork_id = $artwork->artwork_id;
+            $playlist->save();
+            
             return response()->json($playlist);
         }
         catch (Exception $e) {

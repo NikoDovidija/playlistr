@@ -10,10 +10,10 @@ class TablesSetup extends Migration {
         Schema::create("playlists", function (Blueprint $table) {
             $this->configure($table);
             $table->increments("playlist_id");
-            $table->string("creator")->default("Anonymous");
+            $table->integer("user_id")->default(0);
             $table->char("name", 255)->default("My Playlist");
             $table->string("description")->nullable();
-            $table->string("artwork")->nullable();
+            $table->integer("artwork_id")->nullable();
             $table->integer("times_played")->default(0);
             $table->integer("times_recommended")->default(0);
             $table->timestamps();
@@ -44,6 +44,23 @@ class TablesSetup extends Migration {
             $table->timestamps();
         });
 
+        Schema::create("artwork", function (Blueprint $table) {
+            $this->configure($table);    
+            $table->increments("artwork_id");
+            $table->integer("playlist_id");
+            $table->string("url", 255);
+            $table->timestamps();
+        });
+
+        Schema::create("users", function (Blueprint $table) {
+            $this->configure($table);    
+            $table->increments("user_id");
+            $table->string("name",255);
+            $table->string("email", 255);
+            $table->string("password", 255);
+            $table->timestamps();
+        });
+
 
     }
 
@@ -51,7 +68,8 @@ class TablesSetup extends Migration {
         Schema::dropIfExists("playlists");
         Schema::dropIfExists("comments");
         Schema::dropIfExists("songs");
-        
+        Schema::dropIfExists("artwork");
+        Schema::dropIfExists("users");
     }
 
     public function configure(Blueprint $table) {

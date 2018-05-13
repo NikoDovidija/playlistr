@@ -4,12 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-
+use Laravel\Scout\Searchable;
 class Playlist extends Model
 {
+    use Searchable;
     protected $table = "playlists";
     protected $primaryKey = "playlist_id";
-    protected $fillable = ["creator", "name", "description", "artwork", "times_played", "times_recommended"];
+    protected $fillable = ["user_id", "name", "description", "artwork_id", "times_played", "times_recommended"];
 
 
 
@@ -22,4 +23,12 @@ class Playlist extends Model
                     ->where("comments.parent_type", "playlist");
     }
 
+    public function artwork(){
+        return $this->hasOne("App\Models\Artwork");
+    }
+
+    public function creator()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

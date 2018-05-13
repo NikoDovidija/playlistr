@@ -5,11 +5,7 @@
 @section("content")
 
 <div class="grid grid-full grid-col play-page">
-
-
-
     <div class="grid grid-full">
-
         <div class="grid grid-full grid-half grid-left grid-col grid-sm-start">
             <div class="grid grid-wide">
                 <c-header></c-header>
@@ -59,7 +55,6 @@
                 <span>56</span>
             </span>
         </div>
-
         <c-player :song-url="'{{$songUrl}}'"></c-player>
     </div>
 

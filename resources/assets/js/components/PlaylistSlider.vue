@@ -2,11 +2,9 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide grid grid-even" v-for="slide in slides()">
-                <div v-for="(playlist, index) in slide" class="playlist-item grid grid-col" v-bind:class="getItemWidth()">
-
-
-                    <div class="imageHolder grid">
-                        <img src="/images/intervalsalbum.jpg" alt="slideImage"/>
+                <div v-for="playlist in slide" class="playlist-item grid grid-col" v-bind:class="getItemWidth()" :key="playlist.playlist_id" >
+                    <div class="imageHolder grid" v-on:click="redirectTo(playlist.playlist_id)">
+                        <img :src="playlist.artwork_id" alt="slideImage"/>
                         <div class="playButton">
                             <span class="grid grid-center grid-full">
                                 <i class="icon-play3 btn bt2"></i>
@@ -15,41 +13,32 @@
                     </div>
                     <div class="titleHolder grid">
                         <div class="playlistTitle">
-                            <p><b>Progressive metal playlist</b></p>
+                            <p><b>{{playlist.name}}</b></p>
                         </div>      
                     </div>
                     <div class="authorHolder grid">
                         <div class="authorTitle">
-                            by John Pretruccio
+                             <p>{{playlist.user_id}}</p>
                         </div>  
                     </div>
                     <div class="socialHolder grid grid-wide grid-even">
-
-                                <div class="grid iconsHolder">
-                                    <i class="icon-play-button btn bt2"></i>
-                                    <span>512</span>
-                                </div>
-
-
-                                <div class="grid grid-item iconsHolder">
-                                    <i class="icon-like btn bt2"></i>
-                                    <span>62</span>
-                                </div>
-
-
-                                <div class="grid grid-item iconsHolder">
-                                    <i class="icon-share btn bt2"></i>
-                                    <span>28</span>
-                                </div>
-
+                        <div class="grid iconsHolder">
+                            <i class="icon-play-button btn bt2"></i>
+                                <span>512</span>
+                        </div>
+                        <div class="grid grid-item iconsHolder">
+                            <i class="icon-like btn bt2"></i>
+                                <span>{{playlist.times_played}}</span>
+                        </div>
+                        <div class="grid grid-item iconsHolder">
+                            <i class="icon-share btn bt2"></i>
+                                <span>{{playlist.times_recommended}}</span>
                         </div>
                     </div>
+                    </div>
                 </div>
-
             </div>
-
         </div>
-    </div>
 </template>
 
 <script>
@@ -65,11 +54,11 @@
         },
 
         mounted () {
-            this.initSwiper();
+           this.initSwiper();
         },
 
         computed: {
-            
+              
         },
 
         updated () {
@@ -81,6 +70,9 @@
         },
 
         methods: {
+                redirectTo(id){
+                   window.location.href = '/playlists/'+id;
+                },
               initSwiper () {
                 var ww_temp = $(window).width();
                 let self = this;   
@@ -115,10 +107,8 @@
                 if (width > 1200) numItems = 5;
                 return numItems;
             },
-
             slides () {
                 let numItems = this.getNumItems();
-
                 var slides = [];
                 var i = 0;
                 var currentSlide = [];

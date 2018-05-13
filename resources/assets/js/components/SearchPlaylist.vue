@@ -1,6 +1,6 @@
 <template>
     <div class="grid grid-wide grid-wrap">
-         <div class="grid grid-wide grid-center">
+         <!-- <div class="grid grid-wide grid-center">
             <h3>Search</h3>
         </div>
         <div class="grid grid-wide search-holder">
@@ -11,7 +11,16 @@
         </div>
           <div class="grid grid-wide list-holder grid-center">
             list content
-        </div>
+        </div> -->
+<ais-index app-id="HUH5HSSLJ2"
+           api-key="553c9236e9611caaf74d78cc3285f457"
+           index-name="playlists">
+
+           <ais-input placeholder="Search playlists..."></ais-input>
+
+           <ais-results></ais-results>
+
+</ais-index>
     </div>
 </template>
 
@@ -22,6 +31,9 @@
 
         },
         methods:{
+
+        },
+        components:{
 
         }
     }
