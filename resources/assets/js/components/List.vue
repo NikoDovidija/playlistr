@@ -5,7 +5,7 @@
                 {{heading}}
             </div>
             <div class="list-body grid grid-col">
-                <div class="item grid" v-for="playlist in playlists">
+                <div class="item grid" v-for="playlist in playlists" :key="playlist.playlist_id">
                     <a class="grid" v-bind:href="playlist.playlist_id">
                         <span>{{playlist.name}}</span>
                         <span class="time">{{formatTime(playlist.created_at)}}</span>

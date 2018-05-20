@@ -2,7 +2,7 @@
     <div class="top-navigation">
 
         <div class="grid grid-col">
-            <span class="plus-btn">
+            <span class="plus-btn" data-open-modal="add-song">
                 <i class="icon btn2 btn icon-icons8-plus-math"></i>
             </span>
             <span class="comment-btn">

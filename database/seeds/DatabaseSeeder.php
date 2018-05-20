@@ -67,7 +67,6 @@ class DatabaseSeeder extends Seeder
                 "Fable",
                 "Intervals",
                 "The Shape of Colour",
-                "http://www.metalsucks.net/wp-content/uploads/2015/11/intervals-theshapeofcolour.jpg",
                 258,
                 0,
             ],
@@ -78,7 +77,6 @@ class DatabaseSeeder extends Seeder
                 "I'm Awake",
                 "Intervals",
                 "The Shape of Colour",
-                "http://www.metalsucks.net/wp-content/uploads/2015/11/intervals-theshapeofcolour.jpg",
                 233,
                 0,
             ],
@@ -89,7 +87,6 @@ class DatabaseSeeder extends Seeder
                 "Salt + Charcoal",
                 "Plini",
                 null,
-                "https://f4.bcbits.com/img/a3133840958_10.jpg",
                 null,
                 260,
                 0,
@@ -101,7 +98,6 @@ class DatabaseSeeder extends Seeder
                 "Waves",
                 "Guthrie Govan",
                 "Erotic cakes",
-                "https://images-na.ssl-images-amazon.com/images/I/510oayZZfHL._SS500.jpg",
                 309,
                 0,
             ],
@@ -112,7 +108,6 @@ class DatabaseSeeder extends Seeder
                 "Lingus",
                 "Snarky Puppy",
                 "We Like It Here",
-                "https://cdn.shopify.com/s/files/1/0946/3300/products/Snarky-Puppy-We-Like-It-Here1-1024x1024.jpg?v=1442261322",
                 643,
                 0,
             ],
@@ -123,7 +118,6 @@ class DatabaseSeeder extends Seeder
                 "Ka\$cade",
                 "Animals ss Leaders",
                 "Joy of Motion",
-                "http://www.metalsucks.net/wp-content/uploads/2014/03/animalsasleaders-thejoyofmotion.jpg",
                 323,
                 0,
             ],
@@ -134,7 +128,6 @@ class DatabaseSeeder extends Seeder
                 "Celestial Elixir",
                 "Haken",
                 "Aquarius",
-                "https://images-na.ssl-images-amazon.com/images/I/81XdrAyRoNL._SL1500_.jpg",
                 1022,
                 0,
             ],
@@ -184,44 +177,44 @@ class DatabaseSeeder extends Seeder
                 "comment",
             ],
         ];
-        $artworks = [
-            [
-                1,
-                1,
-                "http://www.lgam.info/local--files/wayne-eddy-s-photos-6/Artvo-Shark.jpg",
+        // $artworks = [
+        //     [
+        //         1,
+        //         1,
+        //         "http://www.lgam.info/local--files/wayne-eddy-s-photos-6/Artvo-Shark.jpg",
 
-            ],
-            [
-                2,
-                2,
-                "https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster.png/0/images/fandangoblog/Garofalo-It-Final-crop-Silk.jpg",
-            ],
-            [
-                3,
-                3,
-                "http://s3.weddbook.com/t4/2/6/1/2616913/flowerfishswan-watercolor-paintingoriginal-watercolor-artunique-artoriginal-watercolor-ooakartworkaquarelleflowerart-collectibes.jpg",
-            ],
-            [
-                4,
-                4,
-                "http://s3.weddbook.com/t4/2/6/1/2616913/flowerfishswan-watercolor-paintingoriginal-watercolor-artunique-artoriginal-watercolor-ooakartworkaquarelleflowerart-collectibes.jpg",
-            ],
-            [
-                5,
-                4,
-                "http://s3.weddbook.com/t4/2/6/1/2616913/flowerfishswan-watercolor-paintingoriginal-watercolor-artunique-artoriginal-watercolor-ooakartworkaquarelleflowerart-collectibes.jpg",
-            ],
-            [
-                6,
-                4,
-                "http://s3.weddbook.com/t4/2/6/1/2616913/flowerfishswan-watercolor-paintingoriginal-watercolor-artunique-artoriginal-watercolor-ooakartworkaquarelleflowerart-collectibes.jpg",
-            ],
-            [
-                7,
-                4,
-                "http://s3.weddbook.com/t4/2/6/1/2616913/flowerfishswan-watercolor-paintingoriginal-watercolor-artunique-artoriginal-watercolor-ooakartworkaquarelleflowerart-collectibes.jpg",
-            ],
-        ];
+        //     ],
+        //     [
+        //         2,
+        //         2,
+        //         "https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster.png/0/images/fandangoblog/Garofalo-It-Final-crop-Silk.jpg",
+        //     ],
+        //     [
+        //         3,
+        //         3,
+        //         "http://s3.weddbook.com/t4/2/6/1/2616913/flowerfishswan-watercolor-paintingoriginal-watercolor-artunique-artoriginal-watercolor-ooakartworkaquarelleflowerart-collectibes.jpg",
+        //     ],
+        //     [
+        //         4,
+        //         4,
+        //         "http://s3.weddbook.com/t4/2/6/1/2616913/flowerfishswan-watercolor-paintingoriginal-watercolor-artunique-artoriginal-watercolor-ooakartworkaquarelleflowerart-collectibes.jpg",
+        //     ],
+        //     [
+        //         5,
+        //         4,
+        //         "http://s3.weddbook.com/t4/2/6/1/2616913/flowerfishswan-watercolor-paintingoriginal-watercolor-artunique-artoriginal-watercolor-ooakartworkaquarelleflowerart-collectibes.jpg",
+        //     ],
+        //     [
+        //         6,
+        //         4,
+        //         "http://s3.weddbook.com/t4/2/6/1/2616913/flowerfishswan-watercolor-paintingoriginal-watercolor-artunique-artoriginal-watercolor-ooakartworkaquarelleflowerart-collectibes.jpg",
+        //     ],
+        //     [
+        //         7,
+        //         4,
+        //         "http://s3.weddbook.com/t4/2/6/1/2616913/flowerfishswan-watercolor-paintingoriginal-watercolor-artunique-artoriginal-watercolor-ooakartworkaquarelleflowerart-collectibes.jpg",
+        //     ],
+        // ];
 
         $users = [
             [
@@ -283,31 +276,29 @@ class DatabaseSeeder extends Seeder
             $p->user_id = $playlist[1];
             $p->name = $playlist[2];
             $p->description = $playlist[3];
-            $p->artwork_id = $playlist[4];
             $p->times_played = $playlist[5];
-            $p->times_recommended = $playlist[6];
+            $p->recommended = $playlist[6];
             $p->save();
         }
 
-        foreach ($artworks as $artwork) {
-            $a = new Artwork;
-            $a->artwork_id = $artwork[0];
-            $a->playlist_id = $artwork[1];
-            $a->url = $artwork[2];
-            $a->save();
-        }
+        // foreach ($artworks as $artwork) {
+        //     $a = new Artwork;
+        //     $a->artwork_id = $artwork[0];
+        //     $a->playlist_id = $artwork[1];
+        //     $a->url = $artwork[2];
+        //     $a->save();
+        // }
 
         foreach ($songs as $song) {
             $s = new Song;
             $s->song_id = $song[0];
             $s->playlist_id = $song[1];
-            $s->video_id = $song[2];
+            $s->song_url = $song[2];
             $s->name = $song[3];
             $s->artist = $song[4];
             $s->album = $song[5];
-            $s->artwork = $song[6];
-            $s->duration = $song[7];
-            $s->playcount = $song[8];
+            $s->duration = $song[6];
+            $s->playcount = $song[7];
             $s->save();
         }
 

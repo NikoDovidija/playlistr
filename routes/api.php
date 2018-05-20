@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
-Route::get("/", "playlistController@index");
+Route::get("/","playlistController@index");
+Route::get("/mostfavourite", "playlistController@mostFavourite");
+Route::get("/recommended", "playlistController@recommended");
 Route::post("/create", "playlistController@create");
 
 Route::get("/songs", "songController@index");
@@ -21,9 +23,13 @@ Route::get("/comments/{id}", "commentController@getById");
 
 Route::get("/playlists/{id}/songs", "playlistController@getSongs");
 Route::get("/playlists/{id}/comments", "playlistController@getComments");
-Route::get("/playlists/{id}", "playlistController@getById");
 
- 
+Route::post("/playlists/{id}/upload/mp3","UploadController@uploadMusic");
+
+Route::get("/playlists/{id}", "playlistController@getById");
+Route::get("/playlists/url/{id}", "playlistController@imageUrl");
+Route::post("/{id}/incrementFav", "playlistController@incrementFav");
+
 Route::get('/upload', 'UploadController@uploadForm');
 Route::post('/upload', 'UploadController@uploadSubmit');
 Route::post('/upload/thumbnail','UploadController@uploadThumbnail');

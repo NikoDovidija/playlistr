@@ -23,7 +23,21 @@ class SongController extends BaseController
         return $response;
     }
 
-
+    public function returnUrls($id) {
+        $allplay = Song::where('playlist_id',$id)
+            ->get(); 
+        $newarr = array();
+        for($i = 0 ; $i < count($allplay); $i++){
+            $url = "/public/storage/".$id.'/'.explode("/",$allplay[$i]->song_url)[2];
+            $newarr[] = $url;
+            // $newarr[] = $url;
+            //$file = Storage::disk('public')->Storage::get("Intervals - Fable.mp3");
+            //$file = Storage::get("Intervals - Fable.mp3");
+            //$response = new BinaryFileResponse($file);
+            //BinaryFileResponse::trustXSendFileTypeHeader();
+            } 
+        return json_encode($newarr);
+    }
 
     public function create(Request $req) {
         try {

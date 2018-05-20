@@ -1,6 +1,7 @@
 require('./bootstrap');
 require('moment-duration-format');
 require('./modal.js');
+const VueUploadComponent = require('vue-upload-component')
 window.ProgressBar = require("progressbar.js");
 window.Vue = require('vue');
 window.Howler = require("howler");
@@ -17,13 +18,15 @@ import List from "./components/List.vue";
 import ScrollList from "./components/ScrollList.vue";
 import PlaylistSlider from "./components/PlaylistSlider.vue";
 import FileUpload from 'v-file-upload';
-//import Comments from "./components/Comments.vue";
 import Comments from "./components/Comments.vue";
 import PostComment from "./components/PostComment.vue";
-
 import InstantSearch from 'vue-instantsearch';
+import AddSong from "./components/AddSong.vue";
+import SocialPlayer from "./components/SocialPlayer.vue";
 Vue.use(InstantSearch);
 
+Vue.component('c-social-player', SocialPlayer)
+Vue.component('file-upload', VueUploadComponent)
 Vue.component("c-file-up",FileUpload);
 Vue.component("c-search-playlist",SearchPlaylist);
 Vue.component("c-add-playlist",AddPlaylist);
@@ -38,6 +41,7 @@ Vue.component("c-scroll-list", ScrollList);
 Vue.component("c-playlist-slider",PlaylistSlider);
 Vue.component("c-comments", Comments);
 Vue.component("c-post-comment", PostComment);
+Vue.component("c-add-song", AddSong);
 // Global component setup
 Vue.mixin({
     props: ["apiGet", 'apiPost'],
@@ -62,8 +66,6 @@ Vue.mixin({
                     }
                 }
             }
-            //this.dataLoaded();
-            console.log(data);
         },
 
         /* 
@@ -78,7 +80,6 @@ Vue.mixin({
                 console.error(e);
             });
         },
-
         apiPostCall(url,data) {
             axios.post("/api/" + url,data)
             .then(response => {
@@ -87,15 +88,11 @@ Vue.mixin({
             .catch(e => {
                 console.error(e);
             });
-        },
-
-        dataLoaded () {
-
         }
     }
 });
 
-const app = new Vue({
+export const app = new Vue({
     el: "#app",
 });
 

@@ -5,8 +5,6 @@
             <div class="song-playing sm-only grid grid-wide grid-center">
                 <span>Ka$cade</span> - <span>Animals As Leaders</span>
             </div>
-
-
             <div class="grid grid-wide grid-top">
                 <div class="grid grid-full grid-col">
                 <div class="grid grid-col grid-left playtime">
@@ -17,9 +15,7 @@
 
                     </div>
                 </div>
-
                 <div class="grid grid-wide grid-xs-center">
-
                     <div class="volume-container grid width-2 grid-center">
                         <i class="icon btn3 icon-speaker"></i>
                         <div class="volume-progress-wrap" v-on:click="setVolume">
@@ -40,7 +36,7 @@
                             <i class="icon btn btn3 icon-pause"></i>
                         </span>
 
-                        <span class="btn skip-btn">
+                        <span class="btn skip-btn" v-on:click="forward">
                             <i class="icon btn4 btn icon-forward2"></i>
                         </span>
                     </div>
@@ -57,7 +53,7 @@
 
 <script>
     export default {
-        props: ["songUrl"],
+        props: ["songurls"],
 
         data () {
             return {
@@ -66,6 +62,7 @@
                 progressBar: null,
                 playerProgress: 0,
                 progressTicker: null,
+                playingid:0
             }
         },
 
@@ -83,11 +80,11 @@
                 if (this.player == null || this.player.duration() == 0)
                     return "00:00";
                 return moment.duration(this.player.duration(), "seconds").format("mm:ss", {trim: false});
-            }
+            },
+
         },
 
         methods: {
-
             initializeProgressBars () {
                 this.progressBar = new ProgressBar.Line("#song-progress", {
                     color: "#212121",
@@ -99,8 +96,10 @@
 
             initializePlayer () {
                 let self = this;
+                console.log(this.songurls);
+                let arr = JSON.parse(self.songurls);
                 this.player = new Howl({
-                    src: [self.songUrl],
+                    src: arr,
                 });
                 this.volumeBar.set(this.player.volume());
             },
@@ -120,9 +119,19 @@
                 if (this.player.playing())
                     return;
 
-                this.player.play();
+                this.playingid = this.player.play();
                 this.isPlaying = true;
                 this.tickProgress();
+            },
+
+            forward (){
+                if (this.player.playing())
+                    this.player.stop();
+                    this.isPlaying = false;
+                console.log(this.playingid);
+                this.playingid++;
+                console.log(this.playingid);
+                this.player.play(this.playingid);
             },
 
             pause () {

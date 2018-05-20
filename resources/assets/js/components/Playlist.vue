@@ -16,7 +16,6 @@
                         <div class="footing">
                             Reply
                         </div>
-
                         <div class="comment comment-reply" v-for="reply in comment.responses">
                             <div class="heading">
                                 <span class="author">{{reply.author}}</span><span class="time">{{formatTime(reply.created_at)}}</span>
@@ -31,11 +30,8 @@
             </div>
 
             <div class="footing">
-
             </div>
-
         </div>
-
         <div class="playlist grid grid-col grid-left">
             <div class="heading">
                 <i class="icon">play_arrow</i> {{songs.length}} Songs
@@ -43,13 +39,12 @@
 
             <div class="body">
                 <div class="songs-container grid grid-col grid-left">
-                    <div class="song grid grid-col grid-left" v-for="(song, index) in songs">
+                    <div class="song grid grid-col grid-left" v-for="(song, index) in songs" :key="song.id">
                             <span class="order">{{index + 1}}</span>
                             <span>{{song.name}}</span> - <span>{{song.artist}}</span>
                     </div>
                 </div>
             </div>
-
             <div class="footing">
 
             </div>

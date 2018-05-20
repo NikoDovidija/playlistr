@@ -13,9 +13,10 @@ class TablesSetup extends Migration {
             $table->integer("user_id")->default(0);
             $table->char("name", 255)->default("My Playlist");
             $table->string("description")->nullable();
-            $table->integer("artwork_id")->nullable();
+            $table->string("url")->default("/images/intervalsalbum.jpg");
             $table->integer("times_played")->default(0);
-            $table->integer("times_recommended")->default(0);
+            $table->boolean("recommended")->default(false);
+            $table->integer("favourites")->default(0);;
             $table->timestamps();
         });
 
@@ -34,11 +35,10 @@ class TablesSetup extends Migration {
             $this->configure($table);    
             $table->increments("song_id");
             $table->integer("playlist_id");
-            $table->string("video_id");
+            $table->string("song_url");
             $table->string("name");
             $table->string("artist")->nullable();
             $table->string("album", 255)->nullable();
-            $table->string("artwork")->nullable();
             $table->integer("duration")->nullable();
             $table->integer("playcount")->default(0);
             $table->timestamps();

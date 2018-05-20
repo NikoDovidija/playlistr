@@ -11,14 +11,13 @@
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
-        <link href="https://cdn.quilljs.com/1.2.6/quill.snow.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
     </head>
     <body>
         <!-- <button data-open-modal="testmodal">open me</button> -->
         <div id="app">
             
             @yield("content")
-            <c-modal id="add-playlist"></c-modal>
             <c-modal id="search-playlist"></c-modal>
         </div>
 

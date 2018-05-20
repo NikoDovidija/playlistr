@@ -25,7 +25,7 @@ const modal = {
 
     },
     open : function(name){
-        var highest = 0;
+        var highest = 1;
         $("#"+name).removeClass('hide').css("z-index",highest+1);
     },
 

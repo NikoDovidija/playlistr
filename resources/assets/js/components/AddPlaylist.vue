@@ -40,8 +40,7 @@
 
     export default {
         data(){
-            return {
-                
+            return {   
                 image: '',
                 imageurl:'',
                 files: [],
@@ -108,7 +107,6 @@
                 axios.post('api/upload/thumbnail', formData)
                     .then(function (response) {
                         self.imageurl = decodeURIComponent(response.data["url"]);
-                        console.log(self.imageurl);
                     })
                     .catch(function (error) {
                     console.log(error)

@@ -15,15 +15,22 @@
             </div>
             <div class="modal-content grid grid-full grid-center">
             <c-add-playlist ref="addPlay" v-if="getId=='add-playlist'" ></c-add-playlist>
-            <c-search-playlist v-else-if="getId=='search-playlist'"></c-search-playlist>
+            <c-search-playlist v-else-if="getId=='search-playlist'" ></c-search-playlist>
+            <c-add-song v-else ></c-add-song>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    
     export default {
+         data(){
+            return {
+            }  
+        },    
+        mounted:{
+         
+        },
         props: ["id"]
         ,
         computed: {
@@ -33,7 +40,6 @@
         },
         methods:{
             postData(){
-                
                 if(this.$refs.addPlay.checkForm()){
                     const formData = new FormData();
                     formData.append('name',this.$refs.addPlay.playname)
@@ -43,8 +49,8 @@
                     var self = this;
                     axios.post("/api/create",formData)
                     .then(response => {
-                        console.log(response)
-                        self.closeModal();
+                        self.closeModal(); 
+                        self.toparent(response.data);
                     })
                     .catch(e => {
                         console.error(e);
@@ -54,6 +60,9 @@
             closeModal(){
                 $(".modal-wrapper").addClass('hide');
             },
+            toparent(data){
+                this.$emit('test', data);
+            }
         },
         mounted(){
             console.log(this.id);

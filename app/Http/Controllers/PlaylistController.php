@@ -12,22 +12,60 @@ class PlaylistController extends BaseController
 {
     public function index() {
         $allplay = Playlist::all();
-        $urlarr = array();
-        $usrarr = array();
         for($i = 0 ; $i < count($allplay); $i++){
             $user_id = $allplay[$i]->user_id;
-            $art_id = $allplay[$i]->artwork_id;
-            $allplay[$i]->artwork_id = Artwork::find($art_id)->url;
             $allplay[$i]->user_id = User::find($user_id)->name;
-            //$urlarr[$id] = Artwork::find($id)->url;
-            //$usrarr[$id] = User::find($id)->name;
         }
         return response()->json(["playlists" => $allplay]);
+    }
+
+    public function mostFavourite() {
+        $allplay = Playlist::where('favourites','>',0)
+                        ->orderBy('favourites', 'desc')
+                        ->get();
+        for($i = 0 ; $i < count($allplay); $i++){
+            $user_id = $allplay[$i]->user_id;
+            $allplay[$i]->user_id = User::find($user_id)->name;
+        }
+        return response()->json(["playlists" => $allplay]);
+    }
+
+    public function recommended() {
+        $allplay = Playlist::where('recommended',1)
+                        ->orderBy('name', 'desc')
+                        ->get();
+        for($i = 0 ; $i < count($allplay); $i++){
+            $user_id = $allplay[$i]->user_id;
+            $allplay[$i]->user_id = User::find($user_id)->name;
+        }                
+        return response()->json(["playlists" => $allplay]);
+    }
+
+    public function ref(){
+        return back();
+    }
+
+    public function imageUrl($id){
+        return response()->json(["url"=>Playlist::find($id)->url]);
     }
 
     public function getSearchedPlaylist($string){
         return Playlist::search($string)->get();
     }
+
+
+    public function incrementFav($id){
+        try {
+            $playlist = Playlist::find($id);
+            $playlist->favourites = $playlist->favourites+1;
+            $playlist->save();
+            return response()->json(["favourites"=>$playlist->favourites]);
+        }
+        catch (Exception $e) {
+            return response()->json("error: ".$e->getMessage(), 400);
+        }
+    }
+    
     public function getPlaylist($id) {
         $playlist = Playlist::find($id);
         $comments = $playlist->comments;
@@ -36,6 +74,12 @@ class PlaylistController extends BaseController
         }
         $songs = $playlist->songs;
         return $playlist;
+    }
+
+
+    public function getCreator($id){
+        $idusr = Playlist::find($id)->user_id;
+        return User::where('user_id',$idusr)->get()[0];
     }
 
     public function getSongs($id) {
@@ -51,10 +95,6 @@ class PlaylistController extends BaseController
         return response()->json(["comments" => $comments]);
     }
 
-    public function getById($id) {
-        return response()->json($this->getPlaylist($id));
-    }
-
 
     public function create(Request $req) {
         try {
@@ -62,21 +102,15 @@ class PlaylistController extends BaseController
             $playlist->name = $req->name;
             $playlist->description = $req->descp;
             $playlist->user_id = 1;
-            $playlist->save();
-            
-            
-            $artwork = new Artwork;
-            $artwork->playlist_id = $playlist->playlist_id;
+            $url = '';
             if($req->artwork == ''){
-                $artwork->url = '/images/intervalsalbum.jpg';
+                $url = '/images/intervalsalbum.jpg';
             }
             else{
-                $artwork->url = $req->artwork;
+                $url = $req->artwork;
             }
-            $artwork->save();
-            $playlist->artwork_id = $artwork->artwork_id;
+            $playlist->url = $url;
             $playlist->save();
-            
             return response()->json($playlist);
         }
         catch (Exception $e) {

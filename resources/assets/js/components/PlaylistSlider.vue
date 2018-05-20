@@ -1,10 +1,22 @@
 <template>
-    <div class="swiper-container">
+    <div class="swipecomponent grid grid-wide grid-wrap">
+               <div class="button-holder grid grid-item grid-wide ">
+              <button
+                    v-for="tab in tabs"
+                    v-bind:key="tab"
+                    v-bind:class="['tab-button', { active: currentTab === tab }]"
+                    v-on:click="callto(tab)"
+                >{{ tab }}
+                </button>
+        </div>
+    <div class="swiper-container grid grid-item grid-wide ">
+        <c-modal v-on:test="parentHandler" id="add-playlist"></c-modal>
         <div class="swiper-wrapper">
-            <div class="swiper-slide grid grid-even" v-for="slide in slides()">
-                <div v-for="playlist in slide" class="playlist-item grid grid-col" v-bind:class="getItemWidth()" :key="playlist.playlist_id" >
+            <div class="swiper-slide grid grid-even" v-for="(slide,index) in slides()" :key="index">
+                
+                <div v-for="(playlist,index) in slide" class="playlist-item grid grid-col" v-bind:class="getItemWidth()" :key="index" >
                     <div class="imageHolder grid" v-on:click="redirectTo(playlist.playlist_id)">
-                        <img :src="playlist.artwork_id" alt="slideImage"/>
+                        <img :src="playlist.url" alt="slideImage"/>
                         <div class="playButton">
                             <span class="grid grid-center grid-full">
                                 <i class="icon-play3 btn bt2"></i>
@@ -24,11 +36,11 @@
                     <div class="socialHolder grid grid-wide grid-even">
                         <div class="grid iconsHolder">
                             <i class="icon-play-button btn bt2"></i>
-                                <span>512</span>
+                                <span>{{playlist.times_played}}</span>
                         </div>
                         <div class="grid grid-item iconsHolder">
                             <i class="icon-like btn bt2"></i>
-                                <span>{{playlist.times_played}}</span>
+                                <span>{{playlist.favourites}}</span>
                         </div>
                         <div class="grid grid-item iconsHolder">
                             <i class="icon-share btn bt2"></i>
@@ -37,30 +49,32 @@
                     </div>
                     </div>
                 </div>
+                
             </div>
-        </div>
+    </div>    
+    </div>
 </template>
 
 <script>
-
     export default {
-        props: [],
         data () {
             return {
                 swiper: null,
                 numberslides: null,
-                playlists: [],
+                display: true,
+                playlists:[],
+                tabs:["All","Recommended","Most liked"],
+                currentTab:'',
+                previousTab:'',
+                
             }
         },
-
         mounted () {
-           this.initSwiper();
+        this.initSwiper();
         },
-
         computed: {
-              
-        },
 
+        },
         updated () {
             this.$nextTick(function () {
                 if (this.swiper != null) {
@@ -68,10 +82,50 @@
                 }
             });
         },
-
         methods: {
+                callto(tab){
+                    this.previousTab = this.currentTab;
+                    this.currentTab = tab;
+                    console.log("blup");
+                    if(this.previousTab != this.currentTab){
+                        this.fetchPlaylists(this.currentTab);
+                    }
+
+                },
+                fetchPlaylists(tab){
+                    var self= this;
+                    var getRequest = null;
+                    switch(tab){
+                        case "All":
+                        getRequest = axios.get('api/');
+                        break;
+                        case "Recommended":
+                        getRequest = axios.get('api/recommended');
+                        break;
+                        case "Most liked": 
+                        getRequest = axios.get('api/mostfavourite');
+                        break;   
+                    }
+                    getRequest.then(function (response) {
+                        self.playlists = response.data["playlists"];
+                         if (self.swiper != null) {
+                            self.swiper.update();
+                            self.swiper.slideTo(0, 500, false);
+                            console.log("SI");
+                        }
+                        })
+                        .catch(function (error) {
+                            console.log(error)
+                        })    
+                          
+                },
                 redirectTo(id){
+                    //this.swiper.destroy();
                    window.location.href = '/playlists/'+id;
+                },
+                parentHandler(data){
+                    console.log('parent recieved'+data);
+                    this.playlists.push(data);
                 },
               initSwiper () {
                 var ww_temp = $(window).width();
@@ -79,12 +133,10 @@
                 this.swiper = new Swiper(".swiper-container", {
                     direction: "vertical",
                     centeredSlides: true,
-                    grabCursor: true,
                     watchSlidesVisibility: true,
                     mousewheelControl: true,
                     freeModeSticky: true,
                 });  
-
 
                 $(window).on("resize", function () {
                     let currentPlaylists = self.playlists;

@@ -13,7 +13,7 @@
                 </div>
                 <div class="item">
                     <div class="name">{{name}}</div>
-                    <div class="creator">by Jost Gombac</div>
+                    <div class="creator">by Niko Dovidija</div>
                 </div>
             </div>
 
@@ -22,7 +22,7 @@
             </div>
             <div class="item song-list-container">
                 <div class="song-list" v-bind:class="{short: songs.length > 3}">
-                    <div class="song-name" v-for="(song, index) in shortSongList">
+                    <div class="song-name" v-for="(song, index) in shortSongList" :key="index">
                         {{ index + 1 }}. {{ song.name }}
                     </div>
                 </div>

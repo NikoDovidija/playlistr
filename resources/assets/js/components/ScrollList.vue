@@ -4,7 +4,7 @@
         <div class="song-list swiper-container">
             <div class="fade fade-top"></div>
             <div class="swiper-wrapper">
-                <div class="song swiper-slide" v-for="(song, index) in songs">
+                <div class="song swiper-slide" v-for="(song, index) in songs " :key="index" @click="setSong(index)">
                     <span class="song-name">{{song.name}}</span>
                     <span class="song-artist">
                         {{song.artist}}
@@ -22,7 +22,7 @@
 
 <script>
     export default {
-        props: [],
+        props: [''],
         data () {
             return {
                 songs: [],
@@ -32,7 +32,7 @@
         },
 
         mounted () {
-
+            this.initSwiper();
         },
 
         watch: {
@@ -51,7 +51,11 @@
                 this.currentSong = index;
                 this.swiper.slideTo(index, 100, true);
             },
-
+            // updateSlide(){
+            //     if (this.swiper != null) {
+            //         this.swiper.update();
+            //     }
+            // },
             initSwiper () {
                 let self = this;
                 this.swiper = new Swiper(".swiper-container", {
@@ -69,18 +73,6 @@
                         $(".swiper-slide-prev").prev().addClass("swiper-slide-edge");
                         $(".swiper-slide-next").next().addClass("swiper-slide-edge");
                     },
-                });
-
-                $(window).on("resize", function () {
-                    setTimeout(function () {
-                        if (self.swiper != null) {
-                            self.swiper.update();
-                        }
-                    }, 200);
-                });
-
-                $(".song").on("click", function () {
-                    self.setSong($(this).index());
                 });
             },
         }
