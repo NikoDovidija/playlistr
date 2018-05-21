@@ -13,7 +13,7 @@ class TablesSetup extends Migration {
             $table->integer("user_id")->default(0);
             $table->char("name", 255)->default("My Playlist");
             $table->string("description")->nullable();
-            $table->string("url")->default("/images/intervalsalbum.jpg");
+            $table->string("url");
             $table->integer("times_played")->default(0);
             $table->boolean("recommended")->default(false);
             $table->integer("favourites")->default(0);;

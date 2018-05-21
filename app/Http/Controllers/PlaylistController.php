@@ -41,8 +41,15 @@ class PlaylistController extends BaseController
         return response()->json(["playlists" => $allplay]);
     }
 
-    public function ref(){
-        return back();
+    public function removePlaylist($id){
+        try{
+            Playlist::destroy($id);
+            return redirect('/');
+        }
+        catch (Exception $e) {
+            return response()->json("error: ".$e->getMessage(), 400);
+        }
+        
     }
 
     public function imageUrl($id){

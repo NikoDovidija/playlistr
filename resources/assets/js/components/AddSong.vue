@@ -105,7 +105,6 @@ export default {
                     console.log(response);
                     if (response.data.success) {
                         console.log('Successfull Upload');
-                        toastr.success('Files Uploaded!', 'Success');
                         this.resetData();
                     } else {
                         console.log('Unsuccessful Upload');

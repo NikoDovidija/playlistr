@@ -21,7 +21,6 @@ class CommentController extends BaseController
     public function getById($id) {
         $comment = Comment::find($id);
         $responses = $comment->responses;
-
         return response()->json($comment);
     }
 
@@ -34,6 +33,11 @@ class CommentController extends BaseController
             $comment->text = $req->text;
             $comment->parent_type = $req->parent_type;
             $comment->save();
+
+            if($req->response_to < 0){
+                $comment->response_to = $comment->comment_id;
+                $comment->save();
+            }
             return response()->json($comment);
         }
         catch (Exception $e) {

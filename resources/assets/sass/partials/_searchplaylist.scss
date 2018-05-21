@@ -1,5 +1,7 @@
 
-
+.search-result-container:hover{
+    background-color: grey;
+}
 
 #search-holder-main{
     width:100%;
@@ -17,13 +19,14 @@
     & #search-p:focus {
         width: 100%;
     }
+
 }
 .search-result-inner{
     padding-top:40px;
     padding-left:5px;
     .main-image{
-        width:120px;
-        height:120px;
+        width:160px;
+        height:160px;
     }
 }
 .search-holder{

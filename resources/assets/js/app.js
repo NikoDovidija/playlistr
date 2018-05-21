@@ -23,6 +23,7 @@ import PostComment from "./components/PostComment.vue";
 import InstantSearch from 'vue-instantsearch';
 import AddSong from "./components/AddSong.vue";
 import SocialPlayer from "./components/SocialPlayer.vue";
+
 Vue.use(InstantSearch);
 
 Vue.component('c-social-player', SocialPlayer)
@@ -92,7 +93,7 @@ Vue.mixin({
     }
 });
 
-export const app = new Vue({
+const app = new Vue({
     el: "#app",
 });
 

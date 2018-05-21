@@ -8,7 +8,7 @@
                     <span class="song-name">{{song.name}}</span>
                     <span class="song-artist">
                         {{song.artist}}
-                        <span class="song-options">
+                        <span class="song-options" v-on:click="moreOptions">
                             <i class="icon btn4 btn icon-more"></i>
                         </span>
                     </span>
@@ -46,10 +46,14 @@
         },
 
         methods: {
-
+            moreOptions(){
+                console.log('more options');
+            },
             setSong (index) {
                 this.currentSong = index;
-                this.swiper.slideTo(index, 100, true);
+                console.log(index);
+                this.$root.$emit('song-selected',index);
+                //this.swiper.slideTo(index, 100, true);
             },
             // updateSlide(){
             //     if (this.swiper != null) {

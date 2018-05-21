@@ -4,7 +4,7 @@
         <div class="comments-container swiper-container grid grid-full">
             <div class="fade fade-top"></div>
             <div class="swiper-wrapper">
-                <div class="comment swiper-slide" v-for="(comment, index) in comments">
+                <div class="comment swiper-slide" v-for="(comment) in comments" :key="comment.comment_id">
                     <div class="comment-wrapper grid grid-left grid-wide">
                         <div class="grid grid-col grid-even">
                             <span>
@@ -30,7 +30,7 @@
                                         {{ formatTime(comment.created_at) }}
                                     </span>
                                 </div>
-                                <span class="comment-reply">
+                                <span class="comment-reply" v-on:click="replyTo(comment.comment_id)">
                                     <i class="icon-undo2 btn"></i>
                                 </span>
                             </div>
@@ -43,7 +43,7 @@
                         </div>
                     </div>
 
-                    <div class="reply" v-for="reply in comment.responses">
+                    <div class="reply" v-for="(reply,index) in comment.responses" :key="index">
                         <div class="comment-wrapper grid grid-left grid-wide">
                         <div class="grid grid-col grid-even">
                             <span>
@@ -89,7 +89,9 @@
 </template>
 
 <script>
+///Applications/MAMP/htdocs/oo-playlistr/resources/assets/js/event-bus.js
     export default {
+        
         data () {
             return {
                 slider: null,
@@ -102,6 +104,9 @@
         },
 
         methods: {
+            replyTo(id){
+                this.$root.$emit('comment-response', id);
+            },
 
             initSlider () {
                 this.slider = new Swiper(".comments-container", {

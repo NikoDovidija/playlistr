@@ -31,7 +31,7 @@
                         </span>
                         <span class="grid social-icon">
                             <i class="icon btn btn2 btn icon-share2"></i>
-                            <span>56</span>
+                            <span></span>
                         </span>
                     </div>
                 </div>
