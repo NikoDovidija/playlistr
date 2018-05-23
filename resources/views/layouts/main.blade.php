@@ -14,9 +14,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
     </head>
     <body>
-        <!-- <button data-open-modal="testmodal">open me</button> -->
         <div id="app">
-            
             @yield("content")
             <c-modal id="search-playlist"></c-modal>
         </div>

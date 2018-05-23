@@ -17,17 +17,17 @@
                     </ul>
                 </p>
                 Playlist name:
-                <input type="text" name="username" v-model="playname"><br>
-                Playlist creator:
-                <input type="text" name="playlistname" v-model="creator">
                 <br>
-                <textarea rows="4" cols="50" v-model="descp"></textarea>
+                <input type="text" name="username" v-model="playname">
+                <br>
+                Description<br>
+                <textarea rows="4" cols="4" v-model="descp" id="descp-input"></textarea>
                 <br>
                 Thumbnail
                 <br>
                 <input type="file" name="pic" accept="image/*" @change="previewFile" id="fileinput">
                 <br>
-                <img v-if="this.imageurl" v-bind:src="this.imageurl" alt="image" v-on:dblclick='eraseImage'>
+                <img v-if="this.imageurl" v-bind:src="this.imageurl" alt="image" v-on:dblclick='eraseImage' id="prev-image">
             </form>
         </div>
         
@@ -127,10 +127,9 @@
                     })    
             },
             checkForm() {
-                if(this.playname && this.creator) return true;
+                if(this.playname) return true;
                 this.errors = [];
                 if(!this.playname) this.errors.push("Playlist name required.");
-                if(!this.creator) this.errors.push("Playlist creator required.");
             }
         },
         components:{

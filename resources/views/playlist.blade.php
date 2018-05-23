@@ -35,7 +35,15 @@
                         </span>
                     </div>
                 </div>
+                @if (Auth::check())
+                    @if ($creator->user_id === Auth::user()->user_id)
+                    <c-top-nav :usrid="{{ Auth::user()->user_id }}"></c-top-nav>
+                    @else
+                    <c-top-nav></c-top-nav>
+                    @endif
+                @else
                 <c-top-nav></c-top-nav>
+                @endif
                 <c-scroll-list api-get="{{ Request::path().'/songs' }}"></c-scroll-list>
                 <c-comments api-get="{{ Request::path().'/comments' }}"></c-comments>
                 <c-post-comment></c-post-comment>

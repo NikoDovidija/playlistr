@@ -8,6 +8,8 @@ use App\Models\Playlist;
 use App\Models\Comment;
 use App\Models\Artwork;
 use App\User;
+use Illuminate\Support\Facades\Storage;
+use Auth;
 class PlaylistController extends BaseController
 {
     public function index() {
@@ -44,6 +46,7 @@ class PlaylistController extends BaseController
     public function removePlaylist($id){
         try{
             Playlist::destroy($id);
+            Storage::disk('public')->deleteDirectory($id);
             return redirect('/');
         }
         catch (Exception $e) {
@@ -104,11 +107,12 @@ class PlaylistController extends BaseController
 
 
     public function create(Request $req) {
+        
         try {
             $playlist = new Playlist;
             $playlist->name = $req->name;
             $playlist->description = $req->descp;
-            $playlist->user_id = 1;
+            $playlist->user_id = Auth::user()->user_id;
             $url = '';
             if($req->artwork == ''){
                 $url = '/images/intervalsalbum.jpg';
@@ -137,5 +141,10 @@ class PlaylistController extends BaseController
         catch (Exception $e) {
             return response()->json("Message: ".$e->getMessage(), 400);
         }
+    }
+
+    public function __construct()
+    {
+        
     }
 }

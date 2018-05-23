@@ -1,7 +1,7 @@
 <template>
     <div class="top-navigation">
         <div class="grid grid-col">
-            <span class="plus-btn" data-open-modal="add-song">
+            <span class="plus-btn" data-open-modal="add-song" v-if="usrid">
                 <i class="icon btn2 btn icon-icons8-plus-math"></i>
             </span>
             <span class="comment-btn">
@@ -10,7 +10,7 @@
             <span class="playlist-btn hide">
                 <i class="icon btn2 btn icon-playlist"></i>
             </span>
-            <span class="remove-btn" v-on:click="confirmdelete">
+            <span class="remove-btn" v-on:click="confirmdelete" v-if="usrid">
                 <i class="icon btn2 btn icon-icons8-delete"></i>
             </span>
         </div>
@@ -20,6 +20,7 @@
 
 <script>
     export default {
+        props:['usrid'],
         data () {
             return {
                 
@@ -36,7 +37,7 @@
 
             postdelete(id){
                 var self = this;
-                axios.post('/api/playlists/'+id+'/removePlay')
+                axios.post('/playlists/'+id+'/removePlay')
                 .then(function (response) {
                     console.log('success')
                         self.redirectTo();

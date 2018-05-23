@@ -1,6 +1,5 @@
 <template>
     <div class="song-list-container grid grid-full grid-center">
-
         <div class="song-list swiper-container">
             <div class="fade fade-top"></div>
             <div class="swiper-wrapper">
@@ -8,7 +7,7 @@
                     <span class="song-name">{{song.name}}</span>
                     <span class="song-artist">
                         {{song.artist}}
-                        <span class="song-options" v-on:click="moreOptions">
+                        <span class="song-options" v-on:click="moreOptions" data-open-modal="edit-song">
                             <i class="icon btn4 btn icon-more"></i>
                         </span>
                     </span>
@@ -51,7 +50,6 @@
             },
             setSong (index) {
                 this.currentSong = index;
-                console.log(index);
                 this.$root.$emit('song-selected',index);
                 //this.swiper.slideTo(index, 100, true);
             },

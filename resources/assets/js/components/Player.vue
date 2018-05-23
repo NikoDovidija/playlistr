@@ -183,6 +183,10 @@
                 this.playingname = this.songarr[this.playingid]["name"];
                 this.playingartist = this.songarr[this.playingid]["artist"];
                 this.tickProgress();
+                this.registerEvent(true);
+            },
+            registerEvent(should){
+                this.$root.$emit('play-record',should);
             },
 
              skip: function(direction) {
@@ -217,6 +221,7 @@
                 clearInterval(this.progressTicker);
                 this.songarr[this.playingid].howl.pause();
                 this.isPlaying = false;
+                this.registerEvent(false);
             },
 
             setProgress (event) {

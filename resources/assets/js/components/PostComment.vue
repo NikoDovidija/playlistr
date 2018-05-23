@@ -59,7 +59,7 @@
                   axios.get('/api/playlists/'+id+'/comments')
                     .then(function (response) {
                         console.log('success')
-                        self.c
+                        self.comments = response.data['']
                     })
                     .catch(function (error) {
                         console.log(error)

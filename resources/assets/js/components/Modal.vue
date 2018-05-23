@@ -16,7 +16,8 @@
             <div class="modal-content grid grid-full grid-center">
             <c-add-playlist ref="addPlay" v-if="getId=='add-playlist'" ></c-add-playlist>
             <c-search-playlist v-else-if="getId=='search-playlist'" ></c-search-playlist>
-            <c-add-song v-else ></c-add-song>
+            <c-add-song v-else-if="getId=='add-song'" ></c-add-song>
+            <c-edit-song v-else></c-edit-song>
             </div>
         </div>
     </div>
@@ -47,7 +48,7 @@
                     formData.append('descp',this.$refs.addPlay.descp);
                     formData.append('artwork',this.$refs.addPlay.imageurl);
                     var self = this;
-                    axios.post("/api/create",formData)
+                    axios.post("/create",formData)
                     .then(response => {
                         self.closeModal(); 
                         self.toparent(response.data);

@@ -1,10 +1,7 @@
 #recordPlayer{
 
-    
     padding: 12px 20px;
-
     @include media("screen", "<=sm") {
-        //height: auto;
         flex: unset;
     }
 
@@ -40,25 +37,35 @@
         }
         @media(-webkit-min-device-pixel-ratio:2),(min--moz-device-pixel-ratio:2),(-o-min-device-pixel-ratio:4/2),(min-resolution:2dppx){ 
             max-width:350px;
-            
          }
 
 
         .record-spin-wrap {
             width: 100%;
             top: 0;
-            left: 0;          
+            left: 0;     
+            &.still{
+                width: 100%;
+                top: 50%;
+                left: 50%;
+            }     
             &.playing {
                 animation: spin 5s linear infinite;
     
                 @keyframes spin {
-                    from {
-                        transform: rotate(0deg);
-                    }
+                    // from {
+                    //     transform: rotate(0deg);
+                    // }
     
-                    to {
+                    // to {
+                    //     transform: rotate(359deg);
+                    // }
+                       0% {
+                        transform: rotate(0deg);
+                      }
+                         100% {
                         transform: rotate(359deg);
-                    }
+                      }
                 }
             }
         }

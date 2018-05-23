@@ -15,6 +15,9 @@ use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\SongController;
 use Illuminate\Support\Facades\Storage;
 
+Route::middleware("auth")->post("/create", "playlistController@create");
+
+Route::middleware("auth")->post("/playlists/{id}/removePlay", "playlistController@removePlaylist");
 Route::get('/', function () {
     return view('landing', [
             "playlists" => app(PlaylistController::class)->index(),
@@ -24,6 +27,23 @@ Route::get('/', function () {
 
 Route::get('/ref', function () {
     return back();
+});
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('/register', function () {
+    return view('register');
+});
+
+Route::middleware("auth")->get('/profile', function () {
+    return view('profile');
+});
+
+Route::middleware("auth")->get('/logout',function(){
+    Auth::logout(); 
+    return view('auth.login');
 });
 
 
@@ -37,3 +57,5 @@ Route::get('/ref', function () {
      );
  });
 
+
+Auth::routes();

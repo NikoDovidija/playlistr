@@ -23,9 +23,14 @@ import PostComment from "./components/PostComment.vue";
 import InstantSearch from 'vue-instantsearch';
 import AddSong from "./components/AddSong.vue";
 import SocialPlayer from "./components/SocialPlayer.vue";
+import EditSong from "./components/EditSong.vue";
+import MenuOptions from "./components/MenuOptions.vue";
 
 Vue.use(InstantSearch);
 
+
+Vue.component('c-menu-options', MenuOptions)
+Vue.component('c-edit-song', EditSong)
 Vue.component('c-social-player', SocialPlayer)
 Vue.component('file-upload', VueUploadComponent)
 Vue.component("c-file-up",FileUpload);

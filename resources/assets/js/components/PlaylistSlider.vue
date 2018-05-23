@@ -56,6 +56,7 @@
 </template>
 
 <script>
+
     export default {
         data () {
             return {
@@ -111,7 +112,6 @@
                          if (self.swiper != null) {
                             self.swiper.update();
                             self.swiper.slideTo(0, 500, false);
-                            console.log("SI");
                         }
                         })
                         .catch(function (error) {

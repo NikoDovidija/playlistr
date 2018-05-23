@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 Route::get("/","playlistController@index");
 Route::get("/mostfavourite", "playlistController@mostFavourite");
 Route::get("/recommended", "playlistController@recommended");
-Route::post("/create", "playlistController@create");
+
 
 Route::get("/songs", "songController@index");
 Route::post("/songs/add", "songController@create");
