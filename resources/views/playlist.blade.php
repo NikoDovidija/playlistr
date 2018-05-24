@@ -44,9 +44,31 @@
                 @else
                 <c-top-nav></c-top-nav>
                 @endif
-                <c-scroll-list api-get="{{ Request::path().'/songs' }}"></c-scroll-list>
-                <c-comments api-get="{{ Request::path().'/comments' }}"></c-comments>
-                <c-post-comment></c-post-comment>
+                
+
+                @if (Auth::check())
+                    @if ($creator->user_id === Auth::user()->user_id)
+                    <c-scroll-list api-get="{{ Request::path().'/songs' }}" :usrid="{{ Auth::user()->user_id }}"></c-scroll-list>
+                    @else    
+                    <c-scroll-list api-get="{{ Request::path().'/songs' }}"></c-scroll-list>
+                    @endif    
+                @else
+                    <c-scroll-list api-get="{{ Request::path().'/songs' }}"></c-scroll-list> 
+                @endif
+
+
+
+                <c-comments api-get="{{ Request::path().'/comments' }}"></c-comments> 
+                
+                @if (Auth::check())
+                    @if ($creator->user_id === Auth::user()->user_id)
+                    <c-post-comment :usrid="{{ Auth::user()->user_id }}"></c-post-comment>
+                    @else    
+                    <c-post-comment :usrid="{{ Auth::user()->user_id }}"></c-post-comment>
+                    @endif    
+                @else
+                    <c-post-comment></c-post-comment>  
+                @endif
             </div>
         </div>
 
@@ -54,7 +76,15 @@
 
     <div class="grid grid-wide playercontentHolder">
         <c-social-player :playlistid="'{{$playlistInfo->playlist_id}}'" :favourites="'{{$playlistInfo->favourites}}'" :played="'{{$playlistInfo->times_played}}'"></c-social-player>
-        <c-player :songurls="'{{$songurls}}'" ></c-player>
+        @if (Auth::check())
+                    @if ($creator->user_id === Auth::user()->user_id)
+                    <c-player :songurls="'{{$songurls}}'" :usrid="{{ Auth::user()->user_id }}" ></c-player>
+                    @else
+                    <c-player :songurls="'{{$songurls}}'"></c-player>
+                    @endif
+        @else
+        <c-player :songurls="'{{$songurls}}'"></c-player>
+        @endif
     </div>
 
 </div>

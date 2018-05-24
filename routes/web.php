@@ -16,8 +16,11 @@ use App\Http\Controllers\SongController;
 use Illuminate\Support\Facades\Storage;
 
 Route::middleware("auth")->post("/create", "playlistController@create");
-
+Route::middleware("auth")->get("/playlists/user/{id}", "playlistController@fromUser");
 Route::middleware("auth")->post("/playlists/{id}/removePlay", "playlistController@removePlaylist");
+Route::middleware("auth")->post("/songs/{id}/removeSong", "songController@removeSong");
+Route::middleware("auth")->post("/songs/{id}/editSong", "songController@editSong");
+
 Route::get('/', function () {
     return view('landing', [
             "playlists" => app(PlaylistController::class)->index(),

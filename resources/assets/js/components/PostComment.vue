@@ -1,5 +1,5 @@
 <template>
-    <div class="post-comment grid grid-wide hide">
+    <div class="post-comment grid grid-wide hide" v-if="usrid">
         <div class="grid grid-quarter grid-col grid-left" v-if="reply">
               <div class="reply-btn grid grid-center" v-on:click="unreply">
                     <i class="icon-undo2 btn" ></i>
@@ -19,7 +19,7 @@
 
 <script>
    export default {
-       
+        props:['usrid'],
          data(){
             return {
                 name:'',

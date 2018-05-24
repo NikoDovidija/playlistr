@@ -89,9 +89,7 @@
 </template>
 
 <script>
-///Applications/MAMP/htdocs/oo-playlistr/resources/assets/js/event-bus.js
     export default {
-        
         data () {
             return {
                 slider: null,

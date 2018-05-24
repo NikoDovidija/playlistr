@@ -50,17 +50,21 @@ Vue.component("c-post-comment", PostComment);
 Vue.component("c-add-song", AddSong);
 // Global component setup
 Vue.mixin({
-    props: ["apiGet", 'apiPost'],
+    props: ["apiGet", 'apiPost','get'],
     created () {
         // if component has "api-get" property fetch and assign data
         if (this.apiGet != undefined) {
             this.apiGetCall(this.apiGet);
         }   
+        else if(this.get != undefined){
+            this.getCall(this.get);
+        }
     },
     methods: {
         /* 
         sets components data retrieved from url
         */
+
         setData (data) {
             let props = this.$data;
             // Loop over components data
@@ -77,6 +81,15 @@ Vue.mixin({
         /* 
         execute http GET request
         */
+       getCall(url,data){
+            axios.get("/" + url, data)
+            .then(response => {
+                this.setData(response.data);
+            })
+            .catch(e => {
+                console.error(e);
+            });
+       },
         apiGetCall(url, data) {
             axios.get("/api/" + url, data)
             .then(response => {

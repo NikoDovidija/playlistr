@@ -50,7 +50,7 @@
 
 <script>
     export default {
-        props: ["songurls"],
+        props: ["songurls","usrid"],
 
         data () {
             return {
@@ -82,6 +82,11 @@
                 }
                 this.playingid = id;
                 this.skipTo(this.playingid);
+            });
+
+
+            this.$root.$on('song-edit', index => {
+               
             });
         },
 

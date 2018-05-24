@@ -43,6 +43,17 @@ class PlaylistController extends BaseController
         return response()->json(["playlists" => $allplay]);
     }
 
+
+    public function fromUser($id){
+        try{
+            $allplay = Playlist::where('user_id',$id)
+                        ->get();
+            return response()->json(["playlists" => $allplay]);
+        }
+        catch (Exception $e) {
+            return response()->json("error: ".$e->getMessage(), 400);
+        }
+    }
     public function removePlaylist($id){
         try{
             Playlist::destroy($id);

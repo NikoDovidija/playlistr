@@ -36,7 +36,7 @@
         <!-- <c-menu-options></c-menu-options> -->
     </div>
     <div class="playlist-slider grid grid-full">
-        <c-playlist-slider api-get="/" ref="sldr" ></c-playlist-slider>
+        <c-playlist-slider api-get="/" ref="sldr" :profile='0' ></c-playlist-slider>
     </div>
 
 @endsection

@@ -17,7 +17,7 @@
             <c-add-playlist ref="addPlay" v-if="getId=='add-playlist'" ></c-add-playlist>
             <c-search-playlist v-else-if="getId=='search-playlist'" ></c-search-playlist>
             <c-add-song v-else-if="getId=='add-song'" ></c-add-song>
-            <c-edit-song v-else></c-edit-song>
+            <c-edit-song :sid="songid" v-else></c-edit-song>
             </div>
         </div>
     </div>
@@ -27,6 +27,7 @@
     export default {
          data(){
             return {
+                songid:null
             }  
         },    
         mounted:{

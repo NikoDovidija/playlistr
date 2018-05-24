@@ -1,6 +1,6 @@
 <template>
     <div class="swipecomponent grid grid-wide grid-wrap">
-               <div class="button-holder grid grid-item grid-wide ">
+               <div class="button-holder grid grid-item grid-wide" v-if="profile==0">
               <button
                     v-for="tab in tabs"
                     v-bind:key="tab"
@@ -58,6 +58,7 @@
 <script>
 
     export default {
+        props:['profile'],
         data () {
             return {
                 swiper: null,
@@ -124,7 +125,6 @@
                    window.location.href = '/playlists/'+id;
                 },
                 parentHandler(data){
-                    console.log('parent recieved'+data);
                     this.playlists.push(data);
                 },
               initSwiper () {

@@ -1,16 +1,23 @@
 <template>
     <div class="song-list-container grid grid-full grid-center">
+        <c-modal id="edit-song" ref="editref" ></c-modal>
         <div class="song-list swiper-container">
             <div class="fade fade-top"></div>
             <div class="swiper-wrapper">
-                <div class="song swiper-slide" v-for="(song, index) in songs " :key="index" @click="setSong(index)">
+                <div class="song swiper-slide" v-for="(song, index) in songs " :key="index">
+                    <div class="grid grid-wrap">
+                    <div class="grid grid-item grid-left grid-twothird" @click="setSong(index)">
                     <span class="song-name">{{song.name}}</span>
                     <span class="song-artist">
                         {{song.artist}}
-                        <span class="song-options" v-on:click="moreOptions" data-open-modal="edit-song">
+                    </span>
+                    </div>
+                    <div class = "grid grid-item grid-left grid-third" v-on:click="moreOptions(song.song_id)" v-if="usrid">
+                     <span class="song-options" data-open-modal="edit-song">
                             <i class="icon btn4 btn icon-more"></i>
                         </span>
-                    </span>
+                    </div>    
+                </div>
                 </div>
             </div>
             <div class="fade fade-bottom"></div>
@@ -21,7 +28,7 @@
 
 <script>
     export default {
-        props: [''],
+        props: ['usrid'],
         data () {
             return {
                 songs: [],
@@ -45,8 +52,9 @@
         },
 
         methods: {
-            moreOptions(){
+            moreOptions(index){
                 console.log('more options');
+                this.$root.$emit('song-options',index);
             },
             setSong (index) {
                 this.currentSong = index;
