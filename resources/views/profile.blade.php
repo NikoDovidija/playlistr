@@ -10,11 +10,10 @@
             <span data-open-modal="add-playlist" class="iconsHolder">
                 <i class="icon-icons8-plus-math btn btn2"></i>
             </span>
-            <span data-open-modal="search-playlist" class="iconsHolder">
-                <i class="icon-icons8-search btn btn2"></i>
-            </span>
             <span class="iconsHolderLogin">
-                <i class="icon-user-plus btn btn2"></i>
+            <a href="/logout">
+                <i class="icon-exit btn btn2"></i>
+                </a>
             </span>
         </div>
         <div class="playlist-slider grid grid-full">

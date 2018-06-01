@@ -6,24 +6,12 @@
             <div class="swiper-wrapper">
                 <div class="comment swiper-slide" v-for="(comment) in comments" :key="comment.comment_id">
                     <div class="comment-wrapper grid grid-left grid-wide">
-                        <div class="grid grid-col grid-even">
-                            <span>
-                                <i class="icon-chevron-up btn"></i>
-                            </span>
-                            <span>
-                                12
-                            </span>
-                            <span>
-                                <i class="icon-chevron-down btn"></i>
-                            </span>
-                        </div>
-
                         <div class="comment-body grid grid-col grid-full">
 
                             <div class="grid grid-wide">
                                 <div>
                                     <span class="comment-author">
-                                        {{ comment.author }}
+                                        {{ comment.user_name }}
                                     </span>
 
                                     <span class="comment-time">
@@ -46,15 +34,6 @@
                     <div class="reply" v-for="(reply,index) in comment.responses" :key="index">
                         <div class="comment-wrapper grid grid-left grid-wide">
                         <div class="grid grid-col grid-even">
-                            <span>
-                                <i class="icon-chevron-up btn"></i>
-                            </span>
-                            <span>
-                                12
-                            </span>
-                            <span>
-                                <i class="icon-chevron-down btn"></i>
-                            </span>
                         </div>
 
                         <div class="comment-body grid grid-col grid-full">
@@ -62,7 +41,7 @@
                             <div class="grid grid-wide">
                                 <div>
                                     <span class="comment-author">
-                                        {{ reply.author }}
+                                        {{ reply.user_name }}
                                     </span>
 
                                     <span class="comment-time">

@@ -111,8 +111,13 @@ class PlaylistController extends BaseController
     public function getComments($id) {
         $comments = Playlist::find($id)->comments;
         foreach ($comments as $comment) {
+            $comment->user_name = User::find($comment->user_id)->name;
             $responses = $comment->responses;
+            foreach($responses as $response){
+                $response->user_name = User::find($response->user_id)->name;
+            }
         }
+
         return response()->json(["comments" => $comments]);
     }
 

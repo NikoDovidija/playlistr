@@ -19,13 +19,13 @@
             </a>
             <a href="/logout">
             <span class="iconsHolderLogin">
-                <i class="icon-lock btn btn2"></i>
+                <i class="icon-exit btn btn2"></i>
             </span>
             </a>
             @else
             <a href="/login">
             <span class="iconsHolderLogin">
-                <i class="icon-user-plus btn btn2"></i>
+                <i class="icon-login btn btn2"></i>
             </span>
             </a>
             @endif

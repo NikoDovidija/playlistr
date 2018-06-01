@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'playlistr';
-  src:  url('/public/fonts/playlistr.eot?afwjiv');
-  src:  url('/public/fonts/playlistr.eot?afwjiv#iefix') format('embedded-opentype'),
-    url('/public/fonts/playlistr.ttf?afwjiv') format('truetype'),
-    url('/public/fonts/playlistr.woff?afwjiv') format('woff'),
-    url('/public/fonts/playlistr.svg?afwjiv#playlistr') format('svg');
+  src:  url('/public/fonts/playlistr.eot?285uii');
+  src:  url('/public/fonts/playlistr.eot?285uii#iefix') format('embedded-opentype'),
+    url('/public/fonts/playlistr.ttf?285uii') format('truetype'),
+    url('/public/fonts/playlistr.woff?285uii') format('woff'),
+    url('/public/fonts/playlistr.svg?285uii#playlistr') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -29,6 +29,18 @@
 }
 .icon-chevron-up:before {
   content: "\e907";
+}
+.icon-list-menu:before {
+  content: "\e915";
+}
+.icon-chat-comment-oval-speech-bubble-with-text-lines:before {
+  content: "\e916";
+}
+.icon-exit:before {
+  content: "\e917";
+}
+.icon-login:before {
+  content: "\e918";
 }
 .icon-share:before {
   content: "\e911";

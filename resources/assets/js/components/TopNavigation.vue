@@ -5,10 +5,10 @@
                 <i class="icon btn2 btn icon-icons8-plus-math"></i>
             </span>
             <span class="comment-btn">
-                <i class="icon btn2 btn icon-bubbles"></i>
+                <i class="icon btn2 btn icon-chat-comment-oval-speech-bubble-with-text-lines"></i>
             </span>
             <span class="playlist-btn hide">
-                <i class="icon btn2 btn icon-playlist"></i>
+                <i class="icon btn2 btn icon-list-menu"></i>
             </span>
             <span class="remove-btn" v-on:click="confirmdelete" v-if="usrid">
                 <i class="icon btn2 btn icon-icons8-delete"></i>

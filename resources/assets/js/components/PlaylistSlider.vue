@@ -1,11 +1,12 @@
 <template>
-    <div class="swipecomponent grid grid-wide grid-wrap">
-               <div class="button-holder grid grid-item grid-wide" v-if="profile==0">
+    <div class="swipecomponent grid grid-wide grid-wrap grid-center">
+        <div class="button-holder grid grid-item" v-if="profile==0">
               <button
                     v-for="tab in tabs"
                     v-bind:key="tab"
                     v-bind:class="['tab-button', { active: currentTab === tab }]"
                     v-on:click="callto(tab)"
+                    id="cat-button"
                 >{{ tab }}
                 </button>
         </div>
@@ -13,7 +14,6 @@
         <c-modal v-on:test="parentHandler" id="add-playlist"></c-modal>
         <div class="swiper-wrapper">
             <div class="swiper-slide grid grid-even" v-for="(slide,index) in slides()" :key="index">
-                
                 <div v-for="(playlist,index) in slide" class="playlist-item grid grid-col" v-bind:class="getItemWidth()" :key="index" >
                     <div class="imageHolder grid" v-on:click="redirectTo(playlist.playlist_id)">
                         <img :src="playlist.url" alt="slideImage"/>
@@ -49,9 +49,8 @@
                     </div>
                     </div>
                 </div>
-                
             </div>
-    </div>    
+        </div>    
     </div>
 </template>
 

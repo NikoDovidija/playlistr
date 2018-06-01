@@ -1,29 +1,33 @@
 <template>
     <div class="grid grid-full grid-wrap">
     <div class="grid grid-full grid-wrap modal-add-content">
-        <div class="grid grid-col grid-center grid-right">
+        <div class="grid grid-center grid-right">
             <h3>Add song </h3>
         </div>
-        <hr>
+        <div class="grid  grid-center grid-right">
+            <button class="btn btn-primary" @click="submit">Upload songs</button>
+        </div>
     </div> 
     <div class="grid grid-full">
-        <div class="form-group grid grid-wide">
-            <label for="logo" class="control-label">Attachments</label>
-            <br><br>
-             <div class="col-md-12">
-                <input type="file" multiple="multiple" id="attachments" @change="uploadFieldChange">
-                <hr>
-                <div class="col-md-12">
+        <div class="form-group grid grid-wide grid-wrap">
+            <!-- <label for="logo" class="control-label">Attachments</label> -->
+            <!-- <br> -->
+             <div class="grid grid-wide grid-wrap">
+                <input type="file" multiple="multiple" accept=".mp3,audio/*" id="attachments" @change="uploadFieldChange">
+                <!-- <hr> -->
+                <div class="grid grid-item grid-wrap">
                     <div class="attachment-holder animated fadeIn" v-cloak v-for="(attachment, index) in attachments" :key="index"> 
-                        <span class="label label-primary" >{{ attachment.name + ' (' + Number((attachment.size / 1024 / 1024).toFixed(1)) + 'MB)'}}</span> 
-                        Artist:<input type="text" :name='"artist"+index' >
-                        Song name:<input type="text" :name='"songname"+index' >
-                        <span class="" style="background: red; cursor: pointer;" @click="removeAttachment(attachment)"><button class="btn btn-xs btn-danger">Remove</button></span>
+                        <hr>
+                        <div class="grid grid-wide">
+                            <span class="label label-primary" >{{ attachment.name + ' (' + Number((attachment.size / 1024 / 1024).toFixed(1)) + 'MB)'}}</span> 
+                                Artist:<input type="text" :name='"artist"+index' >
+                                Song name:<input type="text" :name='"songname"+index' >
+                            <span class="" style="background: red; cursor: pointer;" @click="removeAttachment(attachment)"><button class="btn btn-xs btn-danger">Remove</button></span>
+                        </div>
                     </div>
                 </div>
              </div>
-             <br><br>
-             <button class="btn btn-primary" @click="submit">Upload</button>
+             <!-- <br><br> -->
         </div>
     </div>
 </div>
@@ -100,12 +104,14 @@ export default {
                     }.bind(this)
                 };
                 let id = parseInt(window.location.pathname.split('/')[2]);
+                var self =this;
                 axios.post('/api/playlists/'+id+'/upload/mp3', this.data, config)
                 .then(function (response) {
                     console.log(response);
                     if (response.data.success) {
                         console.log('Successfull Upload');
                         this.resetData();
+                        self.redirectTo(id);
                     } else {
                         console.log('Unsuccessful Upload');
                         this.errors = response.data.errors;
@@ -124,6 +130,9 @@ export default {
             start() {
                 console.log('Starting File Management Component');
             },
+            redirectTo(id){
+                window.location.href = "/playlists/"+id;
+            }
         },
         created() {
             this.start();

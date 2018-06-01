@@ -23,8 +23,6 @@ Route::get("/comments/{id}", "commentController@getById");
 
 Route::get("/playlists/{id}/songs", "playlistController@getSongs");
 Route::get("/playlists/{id}/comments", "playlistController@getComments");
-Route::post("/playlists/{id}/removePlay", "playlistController@removePlaylist");
-
 Route::post("/playlists/{id}/upload/mp3","UploadController@uploadMusic");
 
 Route::get("/playlists/{id}", "playlistController@getById");

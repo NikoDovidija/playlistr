@@ -9,13 +9,15 @@
             <ais-results inline-template>
             <div id="grid grid-wide search-result-container grid-wrap">
             <div v-for="result in results" :key="result.playlist_id" class="grid grid-row grid-full grid-wrap search-result-inner" @onclick="redirectTo(result.playlist_id)" >
-                <div class="grid grid-item grid-third image-search" :href="'/playlists/'+result.playlist_id" >
+                <div class="grid grid-item grid-forth image-search" >
                 <img class="main-image" :src="result.url" alt="slideImage" />
                 </div>
-                  <div class="grid-item grid-col grid-third">
+                  <div class="grid-item grid-col grid-forth">
                       <div class="grid grid-wide grid-wrap">
                           <div class="grid-item grid-wide">
+                            <a :href="'/playlists/'+result.playlist_id">
                               <h4>{{result.name}}</h4>
+                              </a>
                               </div>
                           <div class="grid-item grid-wide">
                                <i class="icon btn btn2 btn icon-share2"></i>
@@ -31,7 +33,7 @@
                               </div>
                       </div>
                 </div>
-                  <div class="grid-item grid-col grid-third">
+                  <div class="grid-item grid-col grid-half">
                         <p>{{result.description}}</p>
                 </div>
             </div>      

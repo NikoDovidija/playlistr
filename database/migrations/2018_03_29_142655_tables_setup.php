@@ -24,7 +24,7 @@ class TablesSetup extends Migration {
             $this->configure($table);
             $table->increments("comment_id");
             $table->integer("response_to");
-            $table->char("author", 25);
+            $table->integer("user_id");
             $table->string("text");
             $table->integer("score")->default(0);
             $table->char("parent_type", 10);

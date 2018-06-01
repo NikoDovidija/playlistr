@@ -60,6 +60,8 @@
                 }
             },
             closeModal(){
+                this.$refs.addPlay.playname = "";
+                this.$refs.addPlay.descp = "";
                 $(".modal-wrapper").addClass('hide');
             },
             toparent(data){

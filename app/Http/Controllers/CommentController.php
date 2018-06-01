@@ -29,7 +29,7 @@ class CommentController extends BaseController
         try {
             $comment = new Comment;
             $comment->response_to = $req->response_to;
-            $comment->author = $req->author;
+            $comment->user_id= $req->author;
             $comment->text = $req->text;
             $comment->parent_type = $req->parent_type;
             $comment->save();

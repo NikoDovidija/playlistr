@@ -6,28 +6,26 @@
         </div>
         <hr>
         <div class="grid grid-wide grid-left grid-wrap ">
-            <div class="grid grid-wide grid-left">
-                <h4>Basic information</h4>
-            </div>
             <form id="basic-input-data" action="">
                  <p v-if="errors.length">
                     <b>Please fill the following fields:</b>
                     <ul>
-                    <li v-for="error in errors">{{ error }}</li>
+                    <li v-for="(error,index) in errors" :key="index" >{{ error }}</li>
                     </ul>
                 </p>
-                Playlist name:
                 <br>
-                <input type="text" name="username" v-model="playname">
+                <input id="playlistname" type="text" name="username" v-model="playname" placeholder="Playlist name">
                 <br>
-                Description<br>
-                <textarea rows="4" cols="4" v-model="descp" id="descp-input"></textarea>
-                <br>
-                Thumbnail
+                <textarea id="playdescp" rows="4" cols="4" v-model="descp" placeholder="Description"></textarea>
                 <br>
                 <input type="file" name="pic" accept="image/*" @change="previewFile" id="fileinput">
                 <br>
+                <div class="container">
                 <img v-if="this.imageurl" v-bind:src="this.imageurl" alt="image" v-on:dblclick='eraseImage' id="prev-image">
+                <div class="cross">
+                    Remove image
+                </div>
+                </div>
             </form>
         </div>
         

@@ -4,8 +4,8 @@
         <div class="song-list swiper-container">
             <div class="fade fade-top"></div>
             <div class="swiper-wrapper">
-                <div class="song swiper-slide" v-for="(song, index) in songs " :key="index">
-                    <div class="grid grid-wrap">
+                <div class="song swiper-slide grid grid-center" v-for="(song, index) in songs " :key="index">
+                    <div class="grid grid-wrap grid-half">
                     <div class="grid grid-item grid-left grid-twothird" @click="setSong(index)">
                     <span class="song-name">{{song.name}}</span>
                     <span class="song-artist">
